@@ -2,12 +2,8 @@
 The world's first Broomball video game made with Godot Engine.  
 This game is open source, with no ads and no tracking.
 
-<div style="margin-left: 12px">
-  <a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="55" ></a>
-</div>
-<div>
-  <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="80"></a>
-</div>
+<a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
+<a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
 
 
 
