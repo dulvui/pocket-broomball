@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/game/singleplayer/Score.gd" type="Script" id=2]
+[ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 3 )
+
+[node name="Score" type="Node2D"]
+
+[node name="AwayScore" type="Label" parent="."]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 0.470588 )
+margin_left = 615.0
+margin_top = 495.0
+margin_right = 713.0
+margin_bottom = 738.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0
+"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeScore" type="Label" parent="."]
+pause_mode = 2
+modulate = Color( 0, 0, 0, 0.470588 )
+margin_left = 615.0
+margin_top = 665.0
+margin_right = 713.0
+margin_bottom = 908.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0
+"
+align = 1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

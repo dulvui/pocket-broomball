@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/championship/dashboard/final-stage/FinalStage.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
+
+[node name="FinalStage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 49.0
+margin_top = 37.0
+margin_right = 49.0
+margin_bottom = 37.0
+rect_scale = Vector2( 0.85, 0.85 )
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 53.5294
+margin_top = 132.0
+margin_right = 687.529
+margin_bottom = 889.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 151.765
+margin_top = 329.412
+margin_right = 587.765
+margin_bottom = 889.412
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 44
+custom_constants/hseparation = 30
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StageName" type="Label" parent="."]
+margin_left = 78.8235
+margin_top = 174.118
+margin_right = 884.824
+margin_bottom = 272.118
+rect_scale = Vector2( 0.7, 0.7 )
+text = "QUARTER FINALS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinnerIcon" type="Sprite" parent="."]
+position = Vector2( 370.823, 607.058 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Winner" type="Label" parent="."]
+margin_left = 99.9999
+margin_top = 291.765
+margin_right = 627.0
+margin_bottom = 388.765
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

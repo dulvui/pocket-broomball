@@ -1,0 +1,154 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/settings/Settings.gd" type="Script" id=2]
+[ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FadeIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeOut"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Settings" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 100.0
+margin_right = 620.0
+margin_bottom = 1280.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 553.0
+margin_bottom = 1280.0
+custom_constants/separation = 8
+alignment = 1
+
+[node name="RoundLimit" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 148.0
+margin_right = 520.0
+margin_bottom = 247.0
+text = "roundlimit"
+
+[node name="Music" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 255.0
+margin_right = 553.0
+margin_bottom = 354.0
+text = "MUSIC_ON"
+
+[node name="Sfx" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 362.0
+margin_right = 553.0
+margin_bottom = 461.0
+text = "SFX_ON"
+
+[node name="GameServices" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 469.0
+margin_right = 553.0
+margin_bottom = 568.0
+text = "LOGIN_ARCADE"
+
+[node name="RateAndReview" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 576.0
+margin_right = 553.0
+margin_bottom = 675.0
+text = "RATE"
+
+[node name="MoreGames" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 683.0
+margin_right = 553.0
+margin_bottom = 782.0
+text = "MORE_GAMES"
+
+[node name="Language" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 790.0
+margin_right = 553.0
+margin_bottom = 889.0
+text = "LANGUAGE"
+
+[node name="AboutMe" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+margin_top = 790.0
+margin_right = 521.0
+margin_bottom = 889.0
+text = "about me"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 897.0
+margin_right = 553.0
+margin_bottom = 917.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="GoBack" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 925.0
+margin_right = 553.0
+margin_bottom = 1024.0
+text = "GO_BACK"
+
+[node name="EasterEgg" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 305.431
+margin_top = 2.26952
+margin_right = 825.431
+margin_bottom = 1282.27
+rect_scale = Vector2( 0.793488, 0.042611 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EasterEggTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 1 )
+anims/FadeOut = SubResource( 2 )
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RoundLimit" to="." method="_on_RoundLimit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_Music_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Sfx" to="." method="_on_Sfx_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GameServices" to="." method="_on_GameServices_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RateAndReview" to="." method="_on_RateAndReview_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MoreGames" to="." method="_on_MoreGames_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Language" to="." method="_on_Language_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/AboutMe" to="." method="_on_AboutMe_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="button_down" from="EasterEgg" to="." method="_on_EasterEgg_button_down"]
+[connection signal="button_up" from="EasterEgg" to="." method="_on_EasterEgg_button_up"]
+[connection signal="timeout" from="EasterEggTimer" to="." method="_on_EasterEggTimer_timeout"]

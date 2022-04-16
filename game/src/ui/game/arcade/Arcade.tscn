@@ -1,0 +1,86 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/field/Goals.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/field/RoundCorners.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/ui/game/arcade/Arcade.gd" type="Script" id=3]
+[ext_resource path="res://src/actors/player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/field/Field.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/actors/ball/Ball.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=7]
+[ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://src/actors/computer/Computer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/ui/game/arcade/game_over/ArcadeGameOver.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/ui/pause/Pause.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/broomballcentral.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 8 )
+
+[node name="Arcade" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Field" parent="." instance=ExtResource( 5 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 242.174
+margin_top = 624.562
+margin_right = 282.174
+margin_bottom = 664.562
+rect_scale = Vector2( 6.20948, 0.806925 )
+color = Color( 0.933333, 0.933333, 0.933333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BroombalCentral" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.85098 )
+position = Vector2( 360, 640 )
+scale = Vector2( 0.764549, 0.764549 )
+texture = ExtResource( 12 )
+
+[node name="PowerUps" type="Node2D" parent="."]
+
+[node name="Score" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 970.0
+margin_right = 710.0
+margin_bottom = 1070.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 0.627451 )
+custom_fonts/font = SubResource( 1 )
+text = "000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goals" parent="." instance=ExtResource( 1 )]
+
+[node name="RoundCorners" parent="." instance=ExtResource( 2 )]
+
+[node name="Ball" parent="." instance=ExtResource( 6 )]
+position = Vector2( 368.321, 809.014 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 376.075, 966.682 )
+
+[node name="Computer" parent="." instance=ExtResource( 9 )]
+position = Vector2( 375.177, 234.844 )
+
+[node name="Pause" parent="." instance=ExtResource( 11 )]
+
+[node name="GameOver" parent="." instance=ExtResource( 10 )]
+pause_mode = 2
+visible = false
+
+[node name="PowerUpTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="EffectTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="away_goal" from="Goals" to="." method="_on_Goals_away_goal"]
+[connection signal="home_goal" from="Goals" to="." method="_on_Goals_home_goal"]
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]
+[connection signal="timeout" from="EffectTimer" to="." method="_on_EffectTimer_timeout"]

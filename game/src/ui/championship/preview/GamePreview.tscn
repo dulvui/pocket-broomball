@@ -1,0 +1,174 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/championship/preview/GamePreview.gd" type="Script" id=2]
+[ext_resource path="res://assets/field.png" type="Texture" id=3]
+[ext_resource path="res://assets/teams/italian-teams/pochi.png" type="Texture" id=4]
+[ext_resource path="res://assets/teams/italian-teams/sharks.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Show"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Control/VS:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.6, 2, 2.001, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 1.2, 1.2 ), Vector2( 1.2, 1.2 ), Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Control/Home:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1.6, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 720, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( -600, 0 ), Vector2( -600, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Control/Away:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 1.6, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -600, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 720, 0 ), Vector2( 720, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/Home/HomeIcon:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 1.6, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/Away/AwayIcon:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4, 1.6, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Control/VS:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.6, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="GamePreview" type="Control"]
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldCupSimulation" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VS" type="Label" parent="Control"]
+margin_top = 600.0
+margin_right = 720.0
+margin_bottom = 684.0
+rect_scale = Vector2( 0.1, 0.1 )
+rect_pivot_offset = Vector2( 360, 42 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "VS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Home" type="Control" parent="Control"]
+margin_left = 720.0
+margin_right = 760.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeIcon" type="Sprite" parent="Control/Home"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 360, 840 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 4 )
+
+[node name="HomeName" type="Label" parent="Control/Home"]
+margin_top = 1000.0
+margin_right = 720.0
+margin_bottom = 1084.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Pochi 89"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Away" type="Control" parent="Control"]
+margin_left = -600.0
+margin_right = -560.0
+margin_bottom = 40.0
+
+[node name="AwayIcon" type="Sprite" parent="Control/Away"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 360, 336 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 5 )
+
+[node name="AwayName" type="Label" parent="Control/Away"]
+margin_top = 488.0
+margin_right = 720.0
+margin_bottom = 572.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sharks"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Show = SubResource( 1 )

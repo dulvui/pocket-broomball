@@ -1,0 +1,212 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/ui/championship/dashboard/Dashboard.gd" type="Script" id=1]
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Confetti.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/broomballcoin.png" type="Texture" id=6]
+[ext_resource path="res://src/ui/championship/dashboard/table/Table.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/ui/championship/dashboard/final-stage/FinalStage.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/ui/championship/dashboard/group-stage/GroupStage.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 84
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Content:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "FadeOut"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Content:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Dashboard" type="Control"]
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="Confetti" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="Content" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Table" parent="Content" instance=ExtResource( 7 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 360.0
+margin_top = 464.63
+margin_right = 360.0
+margin_bottom = 464.63
+
+[node name="GroupStage" parent="Content" instance=ExtResource( 9 )]
+visible = false
+
+[node name="FinalStage" parent="Content" instance=ExtResource( 8 )]
+visible = false
+margin_left = 46.5452
+margin_top = 13.7278
+margin_right = 46.5452
+margin_bottom = 13.7278
+
+[node name="Buttons" type="MarginContainer" parent="Content"]
+margin_left = 143.393
+margin_top = 840.0
+margin_right = 697.393
+margin_bottom = 2064.0
+rect_scale = Vector2( 0.793933, 0.846419 )
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Table" type="VBoxContainer" parent="Content/Buttons"]
+margin_right = 554.0
+margin_bottom = 1224.0
+theme = ExtResource( 2 )
+custom_constants/separation = 12
+
+[node name="NextMatch" type="Button" parent="Content/Buttons/Table"]
+margin_right = 554.0
+margin_bottom = 99.0
+text = "PLAY"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons/Table"]
+margin_top = 111.0
+margin_right = 554.0
+margin_bottom = 239.0
+
+[node name="BroomballCoins" type="TextureRect" parent="Content/Buttons/Table/HBoxContainer"]
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 6 )
+
+[node name="PrizeMoney" type="Label" parent="Content/Buttons/Table/HBoxContainer"]
+margin_left = 132.0
+margin_top = 22.0
+margin_right = 408.0
+margin_bottom = 106.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "1000"
+align = 1
+
+[node name="Buttons2" type="MarginContainer" parent="Content"]
+margin_left = 143.393
+margin_top = 1025.0
+margin_right = 697.393
+margin_bottom = 2249.0
+rect_scale = Vector2( 0.793933, 0.846419 )
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Table" type="VBoxContainer" parent="Content/Buttons2"]
+margin_right = 554.0
+margin_bottom = 1224.0
+theme = ExtResource( 2 )
+custom_constants/separation = 12
+
+[node name="NewChampionship" type="Button" parent="Content/Buttons2/Table"]
+margin_right = 554.0
+margin_bottom = 99.0
+text = "START_NEW"
+
+[node name="GoBack" type="Button" parent="Content/Buttons2/Table"]
+margin_top = 111.0
+margin_right = 554.0
+margin_bottom = 210.0
+text = "MENU"
+
+[node name="Matchday" type="Label" parent="Content"]
+margin_left = 306.286
+margin_top = 76.15
+margin_right = 580.286
+margin_bottom = 160.15
+rect_scale = Vector2( 0.635103, 0.635103 )
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1/9"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 2 )
+anims/FadeOut = SubResource( 3 )
+
+[node name="NewLeaguePopUp" type="Popup" parent="."]
+margin_left = 64.0
+margin_top = 316.0
+margin_right = 668.0
+margin_bottom = 857.0
+
+[node name="Panel" type="Panel" parent="NewLeaguePopUp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Cancel" type="Button" parent="NewLeaguePopUp"]
+margin_left = 75.95
+margin_top = 412.0
+margin_right = 223.95
+margin_bottom = 506.0
+text = "NO"
+
+[node name="Okay" type="Button" parent="NewLeaguePopUp"]
+margin_left = 384.0
+margin_top = 412.0
+margin_right = 543.0
+margin_bottom = 506.0
+text = "YES"
+
+[node name="Label" type="Label" parent="NewLeaguePopUp"]
+margin_left = 16.0
+margin_top = 28.0
+margin_right = 595.0
+margin_bottom = 373.0
+text = "WARNING_NEW"
+
+[connection signal="pressed" from="Content/Buttons/Table/NextMatch" to="." method="_on_NextMatch_pressed"]
+[connection signal="pressed" from="Content/Buttons2/Table/NewChampionship" to="." method="_on_NewChampionship_pressed"]
+[connection signal="pressed" from="Content/Buttons2/Table/GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="pressed" from="NewLeaguePopUp/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="pressed" from="NewLeaguePopUp/Okay" to="." method="_on_Okay_pressed"]

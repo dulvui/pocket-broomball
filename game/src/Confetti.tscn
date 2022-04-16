@@ -1,0 +1,67 @@
+[gd_scene format=2]
+
+[node name="NewHighscore" type="Node2D"]
+
+[node name="Blue" type="CPUParticles2D" parent="."]
+position = Vector2( 343.232, -204.672 )
+amount = 100
+lifetime = 10.0
+preprocess = 20.0
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 100 )
+radial_accel = 10.0
+radial_accel_random = 0.8
+angle = 45.0
+angle_random = 1.0
+scale_amount = 20.0
+scale_amount_random = 0.8
+color = Color( 0.34902, 0.427451, 0.882353, 1 )
+hue_variation = 1.0
+
+[node name="Red" type="CPUParticles2D" parent="."]
+position = Vector2( 343.232, -204.672 )
+amount = 100
+lifetime = 10.0
+preprocess = 20.0
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 100 )
+radial_accel = 10.0
+radial_accel_random = 0.8
+angle = 45.0
+angle_random = 1.0
+scale_amount = 20.0
+scale_amount_random = 0.8
+color = Color( 0.941176, 0.207843, 0.12549, 1 )
+hue_variation = 1.0
+
+[node name="Yellow" type="CPUParticles2D" parent="."]
+position = Vector2( 343.232, -204.672 )
+amount = 100
+lifetime = 10.0
+preprocess = 20.0
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 100 )
+radial_accel = 10.0
+radial_accel_random = 0.8
+angle = 45.0
+angle_random = 1.0
+scale_amount = 20.0
+scale_amount_random = 0.8
+color = Color( 0.960784, 0.729412, 0.168627, 1 )
+hue_variation = 1.0
+
+[node name="Green" type="CPUParticles2D" parent="."]
+position = Vector2( 343.232, -204.672 )
+amount = 100
+lifetime = 10.0
+preprocess = 20.0
+emission_shape = 2
+emission_rect_extents = Vector2( 400, 100 )
+radial_accel = 10.0
+radial_accel_random = 0.8
+angle = 45.0
+angle_random = 1.0
+scale_amount = 20.0
+scale_amount_random = 0.8
+color = Color( 0.631373, 0.917647, 0.207843, 1 )
+hue_variation = 1.0

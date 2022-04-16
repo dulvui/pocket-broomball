@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/new_highscore.ogg-95cb3abfe211cde46d543573a577f096.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/commentator/new_highscore.ogg"
+dest_files=[ "res://.import/new_highscore.ogg-95cb3abfe211cde46d543573a577f096.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

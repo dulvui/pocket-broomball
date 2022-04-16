@@ -1,0 +1,207 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/field.png" type="Texture" id=1]
+[ext_resource path="res://src/field/RoundCorners.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/field/Field.gd" type="Script" id=3]
+[ext_resource path="res://assets/sounds/horn.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/commentator/goal.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/croud.ogg" type="AudioStream" id=6]
+[ext_resource path="res://src/actors/commentator/Commentator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/field/Goals.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/field/wall_physicsmaterial.tres" type="PhysicsMaterial" id=9]
+[ext_resource path="res://assets/teams/australian-teams/DoonsideDirtSquirrels.png" type="Texture" id=10]
+[ext_resource path="res://assets/broomballcentral.png" type="Texture" id=11]
+[ext_resource path="res://assets/teams/australian-teams/BlacktownPirates.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 609.948, 329.61 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2825.97, 911.4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2835, 1019.37 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1845.94, 2427.46 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="Field" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Goals" parent="." instance=ExtResource( 8 )]
+
+[node name="Floor" type="TextureRect" parent="."]
+margin_right = 180.0
+margin_bottom = 320.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleLines" type="Node2D" parent="."]
+
+[node name="Player" type="StaticBody2D" parent="MiddleLines"]
+position = Vector2( 367.549, 586.68 )
+scale = Vector2( 3.95532, 2.63974 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleLines/Player"]
+position = Vector2( 4.66541, -327.745 )
+shape = SubResource( 1 )
+
+[node name="Computer" type="StaticBody2D" parent="MiddleLines"]
+position = Vector2( 367.939, 687.024 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleLines/Computer"]
+position = Vector2( 0.564331, 330.481 )
+shape = SubResource( 1 )
+
+[node name="Border" type="Node2D" parent="."]
+
+[node name="BottomLeft" type="StaticBody2D" parent="Border"]
+collision_layer = 4
+collision_mask = 0
+physics_material_override = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/BottomLeft"]
+position = Vector2( -2597.18, 2189.16 )
+shape = SubResource( 2 )
+
+[node name="BottomRight" type="StaticBody2D" parent="Border"]
+position = Vector2( 8, 0 )
+collision_layer = 4
+collision_mask = 0
+physics_material_override = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/BottomRight"]
+position = Vector2( 3305.87, 2191.39 )
+shape = SubResource( 2 )
+
+[node name="TopLeft" type="StaticBody2D" parent="Border"]
+position = Vector2( 0, -32 )
+collision_layer = 4
+collision_mask = 0
+physics_material_override = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/TopLeft"]
+position = Vector2( -2602.88, -987.472 )
+shape = SubResource( 3 )
+
+[node name="TopRight" type="StaticBody2D" parent="Border"]
+position = Vector2( 1.44995, -31.6168 )
+collision_layer = 4
+collision_mask = 0
+physics_material_override = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/TopRight"]
+position = Vector2( 3323.1, -987.107 )
+shape = SubResource( 3 )
+
+[node name="Left" type="StaticBody2D" parent="Border"]
+collision_layer = 4
+collision_mask = 0
+physics_material_override = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Left"]
+position = Vector2( -1850.98, 621.366 )
+shape = SubResource( 4 )
+
+[node name="Right" type="StaticBody2D" parent="Border"]
+collision_layer = 4
+collision_mask = 0
+physics_material_override = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/Right"]
+position = Vector2( 2565.38, 691.825 )
+shape = SubResource( 4 )
+
+[node name="Post" type="Node2D" parent="."]
+
+[node name="UpLeft" type="StaticBody2D" parent="Post"]
+position = Vector2( 224.53, 12.0603 )
+scale = Vector2( 1.45635, 1.45635 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Post/UpLeft"]
+position = Vector2( 0, -4.76837e-07 )
+scale = Vector2( 0.856117, 0.856117 )
+shape = SubResource( 5 )
+
+[node name="UpRight" type="StaticBody2D" parent="Post"]
+position = Vector2( 495.653, 12.3107 )
+scale = Vector2( 1.45635, 1.45635 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Post/UpRight"]
+position = Vector2( 0, -4.76837e-07 )
+scale = Vector2( 0.856117, 0.856117 )
+shape = SubResource( 5 )
+
+[node name="DownRight" type="StaticBody2D" parent="Post"]
+position = Vector2( 495.653, 1268.43 )
+scale = Vector2( 1.45635, 1.45635 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Post/DownRight"]
+position = Vector2( 0, -4.76837e-07 )
+scale = Vector2( 0.856117, 0.856117 )
+shape = SubResource( 5 )
+
+[node name="DownLeft" type="StaticBody2D" parent="Post"]
+position = Vector2( 224.566, 1268.43 )
+scale = Vector2( 1.45635, 1.45635 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Post/DownLeft"]
+position = Vector2( 0, -4.76837e-07 )
+scale = Vector2( 0.856117, 0.856117 )
+shape = SubResource( 5 )
+
+[node name="RoundCorners" parent="." instance=ExtResource( 2 )]
+
+[node name="HomeIcon" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 360, 1030 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 12 )
+
+[node name="AwayIcon" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.470588 )
+position = Vector2( 360, 250 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Crowd" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( 368.273, 636.613 )
+stream = ExtResource( 6 )
+
+[node name="GoalSound" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( 368.273, 636.613 )
+stream = ExtResource( 4 )
+volume_db = 10.0
+
+[node name="GoalCheer" type="AudioStreamPlayer2D" parent="Sounds"]
+position = Vector2( 368.273, 636.613 )
+stream = ExtResource( 5 )
+
+[node name="Commentator" parent="." instance=ExtResource( 7 )]
+
+[node name="BroomballCentral" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( 368.503, 736 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 11 )

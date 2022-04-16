@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/field.png" type="Texture" id=1]
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
+[ext_resource path="res://src/ui/background/Coins.gd" type="Script" id=3]
+[ext_resource path="res://src/field/Goals.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/broomballcoin.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+use_filter = true
+font_data = ExtResource( 6 )
+
+[node name="Background" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Field" type="TextureRect" parent="."]
+margin_right = 180.0
+margin_bottom = 320.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goals" parent="." instance=ExtResource( 5 )]
+
+[node name="Coins" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Icon" type="Sprite" parent="Coins"]
+position = Vector2( 71.0155, 57.1773 )
+scale = Vector2( 0.244976, 0.244976 )
+texture = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="Coins"]
+margin_left = 94.0
+margin_top = 40.0
+margin_right = 371.0
+margin_bottom = 89.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
