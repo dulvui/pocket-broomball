@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/goal.png" type="Texture" id=1]
+[ext_resource path="res://src/field/Goals.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Goals" type="Node2D"]
+z_index = 500
+script = ExtResource( 2 )
+
+[node name="HomePlayerBlocker" type="StaticBody2D" parent="."]
+position = Vector2( 343.727, 1203.97 )
+scale = Vector2( 4.16323, 4.16323 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomePlayerBlocker"]
+position = Vector2( 3.82773, 53.8267 )
+rotation = -1.5708
+scale = Vector2( 3.58386, 3.6226 )
+shape = SubResource( 1 )
+
+[node name="HomeBallDetector" type="Area2D" parent="."]
+position = Vector2( 349.142, 1158.84 )
+scale = Vector2( 2.92665, 6.77712 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeBallDetector"]
+position = Vector2( 3.82773, 53.8267 )
+rotation = -1.5708
+scale = Vector2( 3.58386, 3.6226 )
+shape = SubResource( 1 )
+
+[node name="AwayArea" type="StaticBody2D" parent="."]
+position = Vector2( 376.13, 74.529 )
+rotation = 3.14159
+scale = Vector2( 4.16323, 4.16323 )
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AwayArea"]
+position = Vector2( 3.69254, 54.3482 )
+rotation = -1.5708
+scale = Vector2( 3.61477, 3.65384 )
+shape = SubResource( 2 )
+
+[node name="AwayBallDetector" type="Area2D" parent="."]
+position = Vector2( 375.097, 138.76 )
+rotation = 3.14159
+scale = Vector2( 2.90435, 7.48628 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AwayBallDetector"]
+position = Vector2( 3.69254, 54.3482 )
+rotation = -1.5708
+scale = Vector2( 3.61477, 3.65384 )
+shape = SubResource( 2 )
+
+[node name="AwayGoal" type="TextureRect" parent="."]
+margin_left = 210.0
+margin_right = 282.0
+margin_bottom = 6.0
+rect_scale = Vector2( 4.16569, 4.16569 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeGoal" type="TextureRect" parent="."]
+margin_left = 210.0
+margin_top = 1254.5
+margin_right = 282.0
+margin_bottom = 1260.5
+rect_scale = Vector2( 4.16569, 4.16569 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="body_entered" from="HomeBallDetector" to="." method="_on_HomeBallDetector_body_entered"]
+[connection signal="body_entered" from="AwayBallDetector" to="." method="_on_AwayBallDetector_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

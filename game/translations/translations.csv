@@ -1,0 +1,71 @@
+keys,en,de,it,fr
+PLAY,Play,Spielen,Gioca,Jouer
+HALL,Hall of Fame,Hall of Fame,Hall of Fame,Hall of Fame
+SETTINGS,Settings,Einstellungen,Impostazioni,Paramètres
+EXIT,Exit,Exit,Esci,Exit
+MUSIC_OFF,Music off,Musik aus,Musica off,No musique
+MUSIC_1,Music 1,Musik 1,Musica 1,Musique 1
+MUSIC_2,Music 2,Musik 1,Musica 2,Musique 2
+SFX_ON,Sfx on,Sfx ein,Sfx si,Sfx oui
+SFX_OFF,Sfx off,Sfx aus,Sfx no,Sfx no
+LOGIN_ARCADE,Login arcade,Einloggen,Accedi arcade,Connexion
+RATE,Rate game,Bewerten,Valuta gioco,Évaluation
+MORE_GAMES,More games,Mehr Spiele,Piu giochi,Autres jeux
+SPECIAL_CODE,Special code,Spezial kode,Codice speciale,Code spécial
+GO_BACK,Go back,Zurück,Indietro,Retourner
+PLAYED,Played,Gesp.,Giocati,Joué
+WIN,Win,Gew.,Vinti,Gagner
+LEAGUE,League,Liga,Liga,Ligue
+TOURNAMENT,Tournament,Turnier,Torneo,Tournoi
+ARCADE,Arcade,Arcade,Arcade,Arcade
+P_VS_PC,1 Player,1 Spieler,1 Giocatore,1 Joueur
+P_VS_P,2 Players,2 Spieler,2 Giocatori,2 Joueurs
+SPEED,Speed,Speed,Velocità ,Rapidité
+POWER,Power,Kraft,Forza,Force
+FREEZE,Freeze,Erfrieren,Gela,Geler
+ONLINE,Online,Online,Online,Online
+EASY,Easy,Leicht,Facile,Facile
+MEDIUM,Medium,Mittel,Medio,Moyen
+HARD,Hard,Schwierig,Difficile,Dur
+EXTREME,Extreme,Extrem,Estremo,Extrême
+LEGEND,Legend,Legende,Leggenda,Légende
+RESUME,Resume,Weiter,Continua,Reprise
+MENU,Menu,Menü,Menù,Menu
+REPLAY,Replay,Nochmal,Rigioca,Rejouer
+INDIA,India,Indien,India,Inde
+GERMANY,Germany,Deutschland,Germania,Allemagne
+AUSTRIA,Austria,Österreich,Austria,Autriche
+SLOVENIA,Slovenia,Slovenien,Slovenia,Slovénie
+FRANCE,France,Frankreich,Francia,France
+RUSSIA,Russia,Russland,Russia,Russie
+JAPAN,Japan,Japan,Giappone,Japon
+AUSTRALIA,Australia,Australien,Australia,Australie
+ITALY,Italy,Italien,Italia ,Italie
+SWITZERLAND,Switzerland,Schweiz,Svizzera,Suisse
+USA,Usa,Usa,Stati uniti,États-unis
+CANADA,Canada,Kanada,Canada,Canada
+GROUP,Group,Gruppe,Gruppo,Groupe
+START_NEW,Start new,Neustart,Rinizia,Nouveau départ
+TEAM,Team,Mannschaft,Squadra,Équipe
+CONTINUE,Continue,Weiter,Continua,Continuer
+BUY,Buy,Kaufen,Compra,Acheter
+BALLS,Balls,,,
+GLOVES,Gloves,,,
+STICKS,Sticks,,,
+FIELDS,Fields,,,
+SHOP,Shop,,,
+YES,Yes,Ja,Si,Oui
+NO,No,Nein,No,No
+WARNING_NEW,YOUR CURRENT\nPROGRESS WILL\nBE LOST!\nCONTINUE?,DEIN AKTUELLER\nFORTSCHRITT\nGEHT VERLOREN!\nBIST DU SICHER?,IL TUO TORNEO\nATTUALE SARA'\nPERSO!\nCONTINUARE?,VOTRE PROGRES\nACTUEL SERA\nPERDU !\nCONTINUER ?
+GROUP_A,GROUP A,GRUPPE A,GRUPPO A,GROUPE A
+GROUP_B,GROUP B,GRUPPE B,GRUPPO B,GROUPE B
+GROUP_C,GROUP C,GRUPPE C,GRUPPO C,GROUPE C
+GROUP_D,GROUP D,GRUPPE D,GRUPPO D,GROUPE D
+P,G,S,G,J
+W,W,G,V,W
+L,L,V,P,P
+GD,GD,TD,DR,DDB
+SEMI_FINALS,SEMI FINALS,SEMI FINALE,SEMI FINALE,SEMIFINALS
+QUARTER_FINALS,QUARTER FINALS,VIERTEL FINALE,QUARTI DI FINALE,QUART DE FINALES
+FINAL,FINAL,FINALE,FINALE,FINAL
+WORLD_CHAMPION,WORLD CHAMPION,WELTMEISTER,CAMPIONE DEL MONDO,CHAMPION MONDIAL

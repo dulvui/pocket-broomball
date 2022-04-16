@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/ui/championship/team-picker/TeamPicker.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=2]
+
+[node name="Championship" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="TeamPicker" parent="." instance=ExtResource( 1 )]

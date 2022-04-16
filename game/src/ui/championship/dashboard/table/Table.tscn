@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/championship/dashboard/table/Table.gd" type="Script" id=2]
+
+[node name="Table" type="CenterContainer"]
+margin_left = 364.783
+margin_top = 465.241
+margin_right = 364.783
+margin_bottom = 465.241
+rect_scale = Vector2( 0.45, 0.45 )
+theme = ExtResource( 1 )
+use_top_left = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+show_behind_parent = true
+margin_left = -650.0
+margin_top = -92.0
+margin_right = 650.0
+margin_bottom = 92.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1250.0
+margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1250.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 1200, 0 )
+custom_constants/margin_right = 35
+custom_constants/margin_top = 30
+custom_constants/margin_left = 35
+custom_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer"]
+margin_left = 35.0
+margin_top = 30.0
+margin_right = 1165.0
+margin_bottom = 114.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 34
+columns = 6
+
+[node name="Position" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
+margin_right = 42.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
+text = "#"
+
+[node name="Name" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
+margin_left = 76.0
+margin_right = 736.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "TEAM"
+
+[node name="Points" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
+margin_left = 770.0
+margin_right = 813.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
+text = "P"
+align = 1
+
+[node name="Win" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
+margin_left = 847.0
+margin_right = 922.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
+text = "W"
+align = 1
+
+[node name="Lost" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
+margin_left = 956.0
+margin_right = 991.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
+text = "L"
+align = 1
+
+[node name="GD" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
+margin_left = 1025.0
+margin_right = 1130.0
+margin_bottom = 84.0
+custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
+text = "GD"
+align = 1

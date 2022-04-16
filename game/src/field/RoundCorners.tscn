@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/corner.png" type="Texture" id=1]
+
+[node name="RoundCorners" type="Node2D"]
+
+[node name="TopLeft" type="StaticBody2D" parent="."]
+position = Vector2( 61.7435, 61.015 )
+scale = Vector2( 6, 6 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopLeft"]
+position = Vector2( -0.362112, 3.17881 )
+polygon = PoolVector2Array( -4.2413, -8.56919, -6.6113, -5.53559, -8.5073, -1.74359, -9.3605, 4.98722, -9.92931, 12.5712, -9.9799, 26.0142, -33.6641, 27.0669, -33.5658, -39.2629, 25.3641, -39.0179, 25.4587, -13.284, 11.4955, -12.7404, 5.23871, -12.2664, 0.5935, -10.9392 )
+
+[node name="Sprite" type="Sprite" parent="TopLeft"]
+position = Vector2( 2.54276, 2.66417 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="TopRight" type="StaticBody2D" parent="."]
+position = Vector2( 679.363, 48.2668 )
+scale = Vector2( -6, 6 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopRight"]
+position = Vector2( 3.0555, 5.22936 )
+polygon = PoolVector2Array( -4.2413, -8.56919, -6.6113, -5.53559, -8.5073, -1.74359, -9.3605, 4.98722, -9.92931, 12.5712, -9.9799, 26.0142, -33.6641, 27.0669, -33.5658, -39.2629, 25.3641, -39.0179, 25.4587, -13.284, 11.4955, -12.7404, 5.23871, -12.2664, 0.5935, -10.9392 )
+
+[node name="Sprite" type="Sprite" parent="TopRight"]
+position = Vector2( 6.06049, 4.78886 )
+rotation = -3.14159
+scale = Vector2( -0.1, -0.1 )
+texture = ExtResource( 1 )
+
+[node name="DownLeft" type="StaticBody2D" parent="."]
+position = Vector2( 77.5497, 1224.48 )
+scale = Vector2( -6, -6 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DownLeft"]
+position = Vector2( 2.98274, 4.12748 )
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -4.2413, -8.56919, -6.6113, -5.53559, -8.5073, -1.74359, -9.3605, 4.98722, -9.92931, 12.5712, -9.9799, 26.0142, -33.6641, 27.0669, -33.5658, -39.2629, 25.3641, -39.0179, 25.4587, -13.284, 11.4955, -12.7404, 5.23871, -12.2664, 0.5935, -10.9392 )
+
+[node name="Sprite" type="Sprite" parent="DownLeft"]
+position = Vector2( 0.091629, 3.57996 )
+rotation = 3.14159
+scale = Vector2( 0.1, -0.1 )
+texture = ExtResource( 1 )
+
+[node name="DownRight" type="StaticBody2D" parent="."]
+position = Vector2( 641.72, 1230.74 )
+scale = Vector2( 6, -6 )
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DownRight"]
+position = Vector2( 3.0555, 5.22936 )
+scale = Vector2( -1, 1 )
+polygon = PoolVector2Array( -4.2413, -8.56919, -6.6113, -5.53559, -8.5073, -1.74359, -9.3605, 4.98722, -9.92931, 12.5712, -9.9799, 26.0142, -33.6641, 27.0669, -33.5658, -39.2629, 25.3641, -39.0179, 25.4587, -13.284, 11.4955, -12.7404, 5.23871, -12.2664, 0.5935, -10.9392 )
+
+[node name="Sprite" type="Sprite" parent="DownRight"]
+position = Vector2( 0.213379, 4.62329 )
+rotation = -3.14159
+scale = Vector2( 0.1, -0.1 )
+texture = ExtResource( 1 )
