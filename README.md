@@ -41,7 +41,7 @@ of the changes you made.
 
 # Licenses and Copyrights
 The game itself is licensed under the GNU AGPL v3.0 or later license and all  
-assets are made by myself and licensed under the CC-BY-SA-4.0 license.  
+assets made by myself are licensed under the CC-BY-SA-4.0 license.  
 All third parties assets and code have different licenses and copyrights holders.
 
 This project uses the [FSFE reuse tool](https://github.com/fsfe/reuse-tool) to license files.  
