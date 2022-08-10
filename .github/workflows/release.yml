@@ -26,12 +26,15 @@ jobs:
       - name: Create keystore
         run: echo $SIGNING_KEY_BASE64 | base64 --decode > keystore.keystore
 
-      - name: Add keystore path to export_presets.cfg
-        run: echo keystore/release=$GITHUB_WORKSPACE/keystore.keystore >> $WORKING_DIRECTORY/export_presets.cfg
+      - name: Replace keystore path in export_presets.cfg
+        run: sed -i 's/KEYSTORE_PATH/$GITHUB_WORKSPACE/keystore.keystore/g' $WORKING_DIRECTORY/export_presets.cfg
+            
 
       - name: Add version to export_presets.cfg [HARDCODED FOR NOW...]
         run: |
           echo "version/code=68" >> $WORKING_DIRECTORY/export_presets.cfg
+          sed -i 's/VERSION_CODE/68/g' $WORKING_DIRECTORY/export_presets.cfg
+          sed -i 's/VERSION_NAME/4.0.3/g' $WORKING_DIRECTORY/export_presets.cfg
           echo "version/name="4.0.3"" >> $WORKING_DIRECTORY/export_presets.cfg
       
       - name: ls and cat 
