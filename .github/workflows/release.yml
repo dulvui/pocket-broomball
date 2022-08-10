@@ -23,8 +23,11 @@ jobs:
       - name: Create export_presets.cfg
         run: echo $GODOT_EXPORTS_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: Create keystore
+      - name: Create release keystore
         run: echo $SIGNING_KEY_BASE64 | base64 --decode > keystore.keystore
+
+      - name: Generate debug keystore
+        run: keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
 
       - name: Replace keystore path in export_presets.cfg
         run: sed -i "s/KEYSTORE_PATH/\/home\/runner\/work\/pocket-broomball\/pocket-broomball\/keystore.keystore/g" $WORKING_DIRECTORY/export_presets.cfg
