@@ -29,6 +29,12 @@ jobs:
       - name: Add keystore path to export_presets.cfg
         run: echo $GODOT_WORKSPACE/keystore.keystore >> $WORKING_DIRECTORY/export_presets.cfg
 
+      - name: Add version to export_presets.cfg [HARDCODED FOR NOW...]
+        run: |
+          echo "version/code=68" >> $WORKING_DIRECTORY/export_presets.cfg
+          echo "version/name="4.0.3"" >> $WORKING_DIRECTORY/export_presets.cfg
+
+
       - name: Release to internal testing
         uses: dulvui/godot-android-release@v1
         with:
