@@ -15,3 +15,4 @@ game/data_*/
 game/android/
 *.apk
 *.aab
+*.keystore
