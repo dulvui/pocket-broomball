@@ -35,3 +35,4 @@ jobs:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.broomball
           service-account-json: $GOOGLE_SERVICE_ACCOUNT_JSON
+          release-file: ./Broomball.aab
