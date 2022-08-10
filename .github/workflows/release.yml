@@ -33,6 +33,11 @@ jobs:
         run: |
           echo "version/code=68" >> $WORKING_DIRECTORY/export_presets.cfg
           echo "version/name="4.0.3"" >> $WORKING_DIRECTORY/export_presets.cfg
+      
+      - name: ls and cat 
+        run: |
+          ls $WORKING_DIRECTORY
+          cat $WORKING_DIRECTORY/export_presets.cfg
 
 
       - name: Release to internal testing
