@@ -27,7 +27,7 @@ jobs:
         run: echo $SIGNING_KEY_BASE64 | base64 --decode > keystore.keystore
 
       - name: Replace keystore path in export_presets.cfg
-        run: sed -i "s/KEYSTORE_PATH//keystore.keystore/g" $WORKING_DIRECTORY/export_presets.cfg
+        run: sed -i "s/KEYSTORE_PATH/keystore.keystore/g" $WORKING_DIRECTORY/export_presets.cfg
             
 
       - name: Add version to export_presets.cfg [HARDCODED FOR NOW...]
