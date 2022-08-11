@@ -1,16 +1,9 @@
-name: Release
+name: Release to internal testing
 
 on:
   push:
     tags:
       - '*'
-
-env:
-  SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-  SIGNING_KEY_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
-  DEBUG_SIGNING_KEY_BASE64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
-  GODOT_EXPORTS_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
-  WORKING_DIRECTORY: game
 
 jobs:
   deploy:
@@ -19,35 +12,20 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: create service-account.json
-        run: echo $SERVICE_ACCOUNT_JSON > service-account.json
-
-      - name: Create export_presets.cfg
-        run: echo $GODOT_EXPORTS_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
-
-      - name: Create release keystore
-        run: echo $SIGNING_KEY_BASE64 | base64 --decode > keystore.keystore
-
-      - name: Generate debug keystore
-        run: echo $DEBUG_SIGNING_KEY_BASE64 | base64 --decode > debug.keystore
-
-      - name: Replace keystore path in export_presets.cfg
-        run: sed -i "s|KEYSTORE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
-
-      - name: Set version number and code. Git tag must be 4.0.1-68
+      - name: Set version number and version code. Git tag must be 4.0.1-68
         run: |
           echo "VERSION_NAME=$(echo ${{ github.ref_name }} | cut -f1 -d-)" >> $GITHUB_ENV
           echo "VERSION_CODE=$(echo ${{ github.ref_name }} | cut -f2 -d-)" >> $GITHUB_ENV
 
-      - name: Add version to export_presets.cfg
-        run: |
-          sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
-
       - name: Release to internal testing
         uses: dulvui/godot-android-release@v1
         with:
-          working-directory: $WORKING_DIRECTORY
+          working-directory: game
           package-name: com.salvai.broomball
-          service-account-json: service-account.json
+          service-account-json: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           release-file: ./Broomball.apk
+          export-preset-cfg: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+          release-signing-key-base64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
+          debug-signing-key-base64: ${{ secrets.SIGNING_KEY_BASE64 }}
+          version-code: $VERSION_CODE
+          version-name: $VERSION_NAME
