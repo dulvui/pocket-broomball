@@ -12,7 +12,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Set version number and version code. Git tag must be 4.0.1-68
+      - name: Set version number and version code
         run: |
           echo "VERSION_NAME=$(echo ${{ github.ref_name }} | cut -f1 -d-)" >> $GITHUB_ENV
           echo "VERSION_CODE=$(echo ${{ github.ref_name }} | cut -f2 -d-)" >> $GITHUB_ENV
@@ -22,7 +22,7 @@ jobs:
         with:
           working-directory: game
           package-name: com.salvai.broomball
-          service-account-json: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          service-account-json: $SERVICE_ACCOUNT_JSON
           release-file: ./Broomball.apk
           export-preset-cfg: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
           release-signing-key-base64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
