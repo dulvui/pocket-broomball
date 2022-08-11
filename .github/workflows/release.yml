@@ -1,7 +1,9 @@
 name: Release
 
-on: 
+on:
   push:
+    tags:
+      - '*'
 
 env:
   SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
@@ -13,7 +15,6 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -32,7 +33,12 @@ jobs:
 
       - name: Replace keystore path in export_presets.cfg
         run: sed -i "s/KEYSTORE_PATH/\/home\/runner\/work\/pocket-broomball\/pocket-broomball\/keystore.keystore/g" $WORKING_DIRECTORY/export_presets.cfg
-            
+
+      - name: Set version number and code. Git tag must be 4.0.1-68
+        run: |
+          TAG_ARRAY=(${${{ github.ref_name }}//-/ })
+          echo "VERSION_NAME=${TAG_ARRAY[0]}" >> $GITHUB_ENV
+          echo "VERSION_CODE=${TAG_ARRAY[1]}" >> $GITHUB_ENV
 
       - name: Add version to export_presets.cfg [HARDCODED FOR NOW...]
         run: |
