@@ -44,15 +44,6 @@ jobs:
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: ls and cat 
-        run: |
-          echo ${{ github.workspace }}
-          echo $GITHUB_WORKSPACE
-          echo $VERSION_NAME
-          echo $VERSION_CODE
-          ls $WORKING_DIRECTORY
-          cat $WORKING_DIRECTORY/export_presets.cfg
-
       - name: Release to internal testing
         uses: dulvui/godot-android-release@v1
         with:
