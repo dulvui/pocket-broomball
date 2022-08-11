@@ -36,9 +36,8 @@ jobs:
 
       - name: Set version number and code. Git tag must be 4.0.1-68
         run: |
-          TAG_ARRAY=(${${{ github.ref_name }}//-/ })
-          echo "VERSION_NAME=${TAG_ARRAY[0]}" >> $GITHUB_ENV
-          echo "VERSION_CODE=${TAG_ARRAY[1]}" >> $GITHUB_ENV
+          echo "VERSION_NAME=$(echo $github.ref_name | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(echo $github.ref_name | cut -f2 -d-)" >> $GITHUB_ENV
 
       - name: Add version to export_presets.cfg [HARDCODED FOR NOW...]
         run: |
