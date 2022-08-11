@@ -28,11 +28,22 @@ jobs:
         uses: dulvui/godot-android-release@v1
         with:
           working-directory: game
-          package-name: com.salvai.broomball
-          service-account-json: ${{ env.SERVICE_ACCOUNT_JSON }}
           release-file: ./Broomball.apk
           export-preset-cfg: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
           release-signing-key-base64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
           debug-signing-key-base64: ${{ secrets.SIGNING_KEY_BASE64 }}
           version-code: $VERSION_CODE
           version-name: $VERSION_NAME
+
+      - name: Create service-account.json
+        shell: bash
+        run: echo -e ${{ inputs.service-account-json }} > service-account.json
+
+      - name: Publish to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service-account.json
+          packageName: com.salvai.broomball
+          releaseFiles: ./Broomball.apk
+          track: internal
+          status: completed
