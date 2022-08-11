@@ -4,6 +4,13 @@ on:
   push:
     tags:
       - '*'
+      
+env:
+  SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+  SIGNING_KEY_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
+  DEBUG_SIGNING_KEY_BASE64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
+  GODOT_EXPORTS_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+  WORKING_DIRECTORY: game
 
 jobs:
   deploy:
