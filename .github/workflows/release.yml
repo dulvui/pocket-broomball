@@ -36,21 +36,13 @@ jobs:
 
       - name: Set version number and code. Git tag must be 4.0.1-68
         run: |
-          echo "VERSION_NAME=$(echo $github.ref_name | cut -f1 -d-)" >> $GITHUB_ENV
-          echo "VERSION_CODE=$(echo $github.ref_name | cut -f2 -d-)" >> $GITHUB_ENV
+          echo "VERSION_NAME=$(echo ${{ github.ref_name }} | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(echo ${{ github.ref_name }} | cut -f2 -d-)" >> $GITHUB_ENV
 
-      - name: Add version to export_presets.cfg [HARDCODED FOR NOW...]
+      - name: Add version to export_presets.cfg
         run: |
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
-      
-      - name: ls and cat 
-        run: |
-          echo ${{ github.workspace }}
-          echo $GITHUB_WORKSPACE
-          ls $WORKING_DIRECTORY
-          cat $WORKING_DIRECTORY/export_presets.cfg
-
 
       - name: Release to internal testing
         uses: dulvui/godot-android-release@v1
