@@ -1,7 +1,11 @@
 name: Release Android
 
+# only when version file changes, the action runs
+# tag triggering doesn't support caching
 on:
   push:
+    paths:
+      - "version"
 
 env:
   RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
