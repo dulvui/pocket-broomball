@@ -48,3 +48,4 @@ jobs:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.broomball
           release-file: ./Broomball.apk
+          cache-version: 1
