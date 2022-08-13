@@ -13,10 +13,13 @@ env:
   EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
   WORKING_DIRECTORY: game
   BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+  DEVELOPMENT_CERTIFICATE_BASE64: ${{ secrets.DEVELOPMENT_CERTIFICATE_BASE64 }}
   P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
   PROVISION_PROFILE_BASE64: ${{ secrets.PROVISION_PROFILE_BASE64 }}
+  DEVELOPMENT_PROVISION_PROFILE_BASE64: ${{ secrets.DEVELOPMENT_PROVISION_PROFILE_BASE64 }}
   # https://stackoverflow.com/questions/24353061/ios-provisioning-profile-number-in-xcode
   PROVISION_PROFILE_ID: ${{ secrets.PROVISION_PROFILE_ID }}
+  # DEVELOPMENT_PROVISION_PROFILE_ID: ${{ secrets.PROVISION_PROFILE_ID }}
   KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
   APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
   APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
@@ -34,11 +37,15 @@ jobs:
           # create variables
           CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
           PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          DEVELOPMENT_CERTIFICATE_PATH=$RUNNER_TEMP/development_certificate.p12
+          DEVELOPMENT_PP_PATH=$RUNNER_TEMP/development__pp.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
           # import certificate and provisioning profile from secrets
           echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
           echo -n "$PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
+          echo -n "$DEVELOPMENT_CERTIFICATE_BASE64" | base64 --decode --output $DEVELOPMENT_CERTIFICATE_PATH
+          echo -n "$DEVELOPMENT_PROVISION_PROFILE_BASE64" | base64 --decode --output $DEVELOPMENT_PP_PATH
 
           # create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
@@ -47,11 +54,14 @@ jobs:
 
           # import certificate to keychain
           security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security import $DEVELOPMENT_CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
           # apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+          cp $DEVELOPMENT_CERTIFICATE_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+
 
       - name: Set version and short version
         run: |
