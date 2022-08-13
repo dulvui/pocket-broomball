@@ -19,7 +19,6 @@ env:
   APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
   APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
-
 jobs:
   deploy:
     runs-on: macos-11
