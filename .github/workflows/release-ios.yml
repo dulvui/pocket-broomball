@@ -83,5 +83,5 @@ jobs:
           apple-id-username: $APPLE_ID_USERNAME
           apple-id-password: $APPLE_ID_PASSWORD
           project-name: $PROJECT_NAME
-          provisioning-profile-id: 655b916a-b8d3-46f5-8af6-b6ab25e28214
+          provisioning-profile-id: $PROVISION_PROFILE_ID
           cache-version: 1
