@@ -70,4 +70,4 @@ jobs:
           apple-id-username: $APPLE_ID_USERNAME
           apple-id-password: $APPLE_ID_PASSWORD
           project-name: $PROJECT_NAME
-          provisioning-profile-id: 59c3ae72-52f4-468f-8640-c6020cc3b4a6
+          provisioning-profile-id: $PROVISION_PROFILE_ID
