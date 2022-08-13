@@ -1,0 +1,43 @@
+name: Release iOS
+
+# only when version-io file changes, the action runs
+# tag triggering doesn't support caching
+on:
+  push:
+    paths:
+      - "version-ios"
+
+env:
+  EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+  WORKING_DIRECTORY: game
+  PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+  APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
+  APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+
+
+jobs:
+  deploy:
+    runs-on: macos-11
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Set version and short version the same
+        run: |
+          echo "VERSION=$(cat version-ios | cut -f1 -d-)" >> $GITHUB_ENV
+
+      - name: Create and config export_presets.cfg
+        shell: bash
+        env:
+          EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+        run: |
+          echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|SHORT_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+
+      - name: Export and release to Test Flight
+        uses: dulvui/godot-ios-release@v1
+        with:
+          working-directory: $WORKING_DIRECTORY
+          apple-id-username: $APPLE_ID_USERNAME
+          apple-id-password: $APPLE_ID_PASSWORD
