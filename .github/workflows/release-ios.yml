@@ -57,6 +57,9 @@ jobs:
           security import $DEVELOPMENT_CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
+          security default-keychain -s $KEYCHAIN_PATH
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" $KEYCHAIN_PATH
+
           # apply provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
@@ -80,5 +83,5 @@ jobs:
           apple-id-username: $APPLE_ID_USERNAME
           apple-id-password: $APPLE_ID_PASSWORD
           project-name: $PROJECT_NAME
-          provisioning-profile-id: $PROVISION_PROFILE_ID
+          provisioning-profile-id: 655b916a-b8d3-46f5-8af6-b6ab25e28214
           cache-version: 1
