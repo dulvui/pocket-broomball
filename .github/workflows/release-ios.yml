@@ -36,7 +36,7 @@ jobs:
           sed -i "s|VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Export and release to Test Flight
-        uses: dulvui/godot-ios-release@v1
+        uses: dulvui/godot-ios-release@v0.1
         with:
           working-directory: $WORKING_DIRECTORY
           apple-id-username: $APPLE_ID_USERNAME
