@@ -34,8 +34,8 @@ jobs:
       - name: Create and config export_presets.cfg
         run: |
           echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|SHORT_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i -e "s|SHORT_VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i -e "s|VERSION|$VERSION|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Export and release to Test Flight
         uses: dulvui/godot-ios-release@v0.1
