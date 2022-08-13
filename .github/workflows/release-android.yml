@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - "version"
+      - ".github/workflows/release-android.yml"
 
 env:
   RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
