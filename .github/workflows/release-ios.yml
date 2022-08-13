@@ -71,3 +71,4 @@ jobs:
           apple-id-password: $APPLE_ID_PASSWORD
           project-name: $PROJECT_NAME
           provisioning-profile-id: $PROVISION_PROFILE_ID
+          cache-version: 1
