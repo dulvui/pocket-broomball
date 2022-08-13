@@ -8,9 +8,13 @@ on:
       - "version-ios"
 
 env:
+  PROJECT_NAME: PocketBroomball
   EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
   WORKING_DIRECTORY: game
-  PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+  # PROVISIONING_PROFILE_ID: ${{ secrets.PROVISIONING_PROFILE_ID }}
+  # PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE_BASE64 }}
+  PROVISIONING_PROFILE_ID: TBD
+  PROVISIONING_PROFILE_BASE64: TBD
   APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
   APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
@@ -41,3 +45,5 @@ jobs:
           working-directory: $WORKING_DIRECTORY
           apple-id-username: $APPLE_ID_USERNAME
           apple-id-password: $APPLE_ID_PASSWORD
+          project-name: $PROJECT_NAME
+          provisioning-profile-id: $PROVISIONING_PROFILE_ID
