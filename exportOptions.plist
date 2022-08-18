@@ -18,6 +18,6 @@
         <string>com.salvai.broomball</string>
     </dict>
     <key>signingCertificate</key>
-    <string>Apple Distribution</string>
+    <string>iOS App Store</string>
 </dict>
 </plist>
