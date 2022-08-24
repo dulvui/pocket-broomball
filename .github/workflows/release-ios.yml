@@ -1,7 +1,5 @@
 name: Release iOS
 
-# only when version-io file changes, the action runs
-# tag triggering doesn't support caching
 on:
   push:
     paths:
@@ -21,6 +19,34 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      # https://docs.github.com/en/actions/deployment/deploying-xcode-applications/installing-an-apple-certificate-on-macos-runners-for-xcode-development
+      - name: Install the Apple certificate and provisioning profile
+        run: |
+          # create variables
+          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+
+          # import certificate and provisioning profile from secrets
+          echo -n "${{ inputs.certificate-base64 }}" | base64 --decode --output $CERTIFICATE_PATH
+          echo -n "${{ inputs.provision-profile-base64}}" | base64 --decode --output $PP_PATH
+
+          # create temporary keychain
+          security create-keychain -p "" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "" $KEYCHAIN_PATH
+
+          # import certificate to keychain
+          security import $CERTIFICATE_PATH -P "${{ inputs.p12-password }}" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+          security default-keychain -s $KEYCHAIN_PATH
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" $KEYCHAIN_PATH
+
+          # apply provisioning profile
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          cp $PP_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+
       - name: Set version and short version
         run: echo "VERSION=$(cat version-ios)" >> $GITHUB_ENV
 
@@ -38,8 +64,7 @@ jobs:
         with:
           working-directory: $WORKING_DIRECTORY
           project-name: $PROJECT_NAME
-          certificate-base64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
-          provision-profile-base64: ${{ secrets.PROVISION_PROFILE_BASE64 }}
+          provision-profile-path: ~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision
           p12-password: ${{ secrets.P12_PASSWORD }}
           apple-id-username: ${{ secrets.APPLE_ID_USERNAME }}
           apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
