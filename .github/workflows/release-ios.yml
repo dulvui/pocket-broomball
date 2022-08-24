@@ -11,6 +11,9 @@ env:
   PROJECT_NAME: PocketBroomball
   WORKING_DIRECTORY: game
   EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
+  BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
+  PROVISION_PROFILE_BASE64: ${{ secrets.PROVISION_PROFILE_BASE64 }}
+  P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
 
 jobs:
   deploy:
@@ -28,8 +31,8 @@ jobs:
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
           # import certificate and provisioning profile from secrets
-          echo -n "${{ inputs.certificate-base64 }}" | base64 --decode --output $CERTIFICATE_PATH
-          echo -n "${{ inputs.provision-profile-base64}}" | base64 --decode --output $PP_PATH
+          echo -n "$BUILD_CERTIFICATE_BASE64" | base64 --decode --output $CERTIFICATE_PATH
+          echo -n "$PROVISION_PROFILE_BASE64" | base64 --decode --output $PP_PATH
 
           # create temporary keychain
           security create-keychain -p "" $KEYCHAIN_PATH
@@ -37,7 +40,7 @@ jobs:
           security unlock-keychain -p "" $KEYCHAIN_PATH
 
           # import certificate to keychain
-          security import $CERTIFICATE_PATH -P "${{ inputs.p12-password }}" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security import $CERTIFICATE_PATH -P "$P12_PASSWORD" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
           security default-keychain -s $KEYCHAIN_PATH
