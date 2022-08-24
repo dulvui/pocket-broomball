@@ -1,4 +1,4 @@
-name: Release iOS
+name: Export to iOS and release to Test Flight
 
 on:
   push:
