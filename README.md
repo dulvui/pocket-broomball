@@ -13,14 +13,16 @@ Every donation means a lot to me and helps me to cover the Apple Developer fees.
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P4BYZUR)
 
 **Table of contents**
-  - [Setup](#setup)
-  - [Join your team](#join-your-tem)
-  - [Contributions](#contributions)
-  - [Licenses and Copyrights](#licenses-and-copyrights)
+- [Pocket Broomball](#pocket-broomball)
+- [Setup](#setup)
+- [Join with your Broomball team](#join-with-your-broomball-team)
+- [Arcade Highscores](#arcade-highscores)
+- [Contributions](#contributions)
+- [Licenses and Copyrights](#licenses-and-copyrights)
 
 # Setup
 Get the latest version of the Godot Engine editor and check out the  
-repo. Then open the `project.godot` file with the editor.
+repo. Then open the `game/project.godot` file with the editor.
 
 For further instructions, like exporting to mobile, please read the official [Godot Docs](https://docs.godotengine.org/en/stable/).
 
