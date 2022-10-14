@@ -176,14 +176,9 @@ margin_right = 1148.85
 margin_bottom = 894.054
 rect_scale = Vector2( 0.507877, 0.507877 )
 text = "What's new?
-- Languages:
-    German, Italian, French
-- Available on iPhone again!
-- Arcade online leaderboard
-  temporarily  disabled
-  for Android :(
-- Support me on
-  simondalvai.com :)
+- Game is now Open source on Github! Check it out on simondalvai.com
+- Better ball physics and colissions
+
 Enjoy!"
 __meta__ = {
 "_edit_use_anchors_": false
