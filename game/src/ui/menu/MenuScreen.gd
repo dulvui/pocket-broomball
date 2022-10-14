@@ -76,4 +76,5 @@ func _on_SimonDalvai_pressed():
 
 
 func _on_Join_pressed():
-	pass # Replace with function body.
+	Global.click()
+	OS.shell_open("https://github.com/dulvui/pocket-broomball#join-with-your-broomball-team")
