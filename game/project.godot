@@ -40,6 +40,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+ShopUtil="*res://src/global/ShopUtil.gd"
 Teams="*res://src/global/Teams.gd"
 Global="*res://src/global/Global.tscn"
 TouchHelper="*res://src/global/TouchHelper.gd"

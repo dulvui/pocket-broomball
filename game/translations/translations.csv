@@ -49,11 +49,12 @@ START_NEW,Start new,Neustart,Rinizia,Nouveau départ
 TEAM,Team,Mannschaft,Squadra,Équipe
 CONTINUE,Continue,Weiter,Continua,Continuer
 BUY,Buy,Kaufen,Compra,Acheter
-BALLS,Balls,,,
-GLOVES,Gloves,,,
-STICKS,Sticks,,,
-FIELDS,Fields,,,
-SHOP,Shop,,,
+BALL,Ball,Ball,Palla,Boule
+GLOVES,Gloves,Handschuhe,Guanti,Gants
+STICK,Stick,Schläger,Mazza,Crosse
+FIELD,Field,Feld,Campo,Terrain
+HELMET,Helmet,Helm,Casco,Casque
+SHOP,Shop,Shop,Negozio,Boutique
 YES,Yes,Ja,Si,Oui
 NO,No,Nein,No,No
 WARNING_NEW,YOUR CURRENT\nPROGRESS WILL\nBE LOST!\nCONTINUE?,DEIN AKTUELLER\nFORTSCHRITT\nGEHT VERLOREN!\nBIST DU SICHER?,IL TUO TORNEO\nATTUALE SARA'\nPERSO!\nCONTINUARE?,VOTRE PROGRES\nACTUEL SERA\nPERDU !\nCONTINUER ?

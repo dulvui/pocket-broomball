@@ -59,7 +59,7 @@ margin_bottom = 87.0
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 4 )
 
-[node name="Item" type="Node2D" parent="."]
+[node name="Item" type="Sprite" parent="."]
 position = Vector2( 372.054, 607.832 )
 
 [node name="TypeLabel" type="Label" parent="."]
@@ -69,11 +69,8 @@ margin_right = 673.0
 margin_bottom = 233.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "BALLS"
+text = "BALL"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Buy" type="Button" parent="."]
 margin_left = 235.584
@@ -81,10 +78,7 @@ margin_top = 941.71
 margin_right = 506.584
 margin_bottom = 1040.71
 theme = ExtResource( 2 )
-text = "buy"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+text = "BUY"
 
 [node name="GoBack" type="Button" parent="."]
 margin_left = 235.584
@@ -92,7 +86,7 @@ margin_top = 1077.71
 margin_right = 506.584
 margin_bottom = 1176.71
 theme = ExtResource( 2 )
-text = "go back"
+text = "GO_BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }

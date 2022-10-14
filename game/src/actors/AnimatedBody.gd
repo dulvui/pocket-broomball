@@ -45,8 +45,6 @@ func _ready():
 			$Body/RightArm.self_modulate = Color(Global.home_team_colors[1])
 			$Body/LeftArm.self_modulate = Color(Global.home_team_colors[1])
 			
-			
-	
 	
 	$AnimationPlayer.play("Idle")
 

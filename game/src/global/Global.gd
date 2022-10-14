@@ -160,6 +160,9 @@ func load_data():
 	final_teams = config.get_value("worldcup", "final_teams", [])
 #	is_group_stage = config.get_value("worldcup", "is_group_stage", true)
 
+	#shop
+	ShopUtil.ball = config.get_value("shop", "ball", ShopUtil.BALLS[0])
+
 #TODO MAKE SAFE GENERAL, SAFE arcade etc...
 
 func save_all_data():
@@ -193,6 +196,10 @@ func save_all_data():
 #	config.set_value("worldcup","is_group_stage", is_group_stage)
 	config.set_value("worldcup","final_teams", final_teams)
 	config.set_value("worldcup","groups", groups)
+	
+	# shop
+	config.set_value("shop", "ball", ShopUtil.ball)
+	
 	
 	
 	save()
