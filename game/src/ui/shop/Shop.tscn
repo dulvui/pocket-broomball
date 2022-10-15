@@ -11,6 +11,20 @@ script = ExtResource( 3 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
+[node name="Player" type="Node2D" parent="."]
+
+[node name="Ball" type="Sprite" parent="Player"]
+position = Vector2( 361, 495 )
+
+[node name="Helmet" type="Sprite" parent="Player"]
+position = Vector2( 372.054, 607.832 )
+
+[node name="Stick" type="Sprite" parent="Player"]
+position = Vector2( 372.054, 607.832 )
+
+[node name="Gloves" type="Sprite" parent="Player"]
+position = Vector2( 372.054, 607.832 )
+
 [node name="TypeButtons" type="Node2D" parent="."]
 position = Vector2( 329.86, 574.428 )
 
@@ -46,9 +60,6 @@ margin_right = 313.0
 margin_bottom = 81.0
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PrevItem" type="TextureButton" parent="ItemButtons"]
 modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
@@ -58,9 +69,6 @@ margin_right = -226.0
 margin_bottom = 87.0
 rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 4 )
-
-[node name="Item" type="Sprite" parent="."]
-position = Vector2( 372.054, 607.832 )
 
 [node name="TypeLabel" type="Label" parent="."]
 margin_left = 73.0

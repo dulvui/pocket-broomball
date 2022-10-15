@@ -1,13 +1,40 @@
 extends Node
 
-const BALLS = ["orange.png", "red.png", "blue.png"]
+var balls
+var unlocked_balls_ids
+var selected_ball_id
 
-var ball = "orange.png"
 
-func select_ball(index):
-	ball = BALLS[index]
+func load_assets():
+	_load_balls()
+
+func _load_balls():
+		balls = [
+		 {
+			"id" : 0,
+			"price" : 0,
+			"texture": load("res://assets/balls/orange.png")
+		},
+		{
+			"id" : 1,
+			"price" : 10,
+			"texture": load("res://assets/balls/blue.png")
+		},
+		{
+			"id" : 2,
+			"price" : 10,
+			"texture": load("res://assets/balls/red.png")
+		}
+	]
+
+func select_ball(id):
+	if id in unlocked_balls_ids:
+		selected_ball_id = id
+	elif Global.use_coins(balls[id]["price"]):
+		unlocked_balls_ids.append(id)
+		selected_ball_id = id
 	
 func get_ball_texture(index=null):
 	if index != null:
-		return load("res://assets/balls/" + BALLS[index])
-	return load("res://assets/balls/" + ball)
+		return balls[index]["texture"]
+	return balls[selected_ball_id]["texture"]

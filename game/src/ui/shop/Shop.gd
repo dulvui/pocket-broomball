@@ -1,16 +1,14 @@
 extends Node2D
 
-#enum TYPES {BALL, STICK, HELMET, GLOVES, FIELD}
-enum TYPES {BALL}
-
-
-var current_type_index = 0
+enum TYPES {BALL, STICK, HELMET, GLOVES, FIELD}
+var current_type = "BALL"
 var current_item_index = 0
+var current_type_index = 0
 
 onready var type_label = $TypeLabel
 
 func _ready():
-	$Item.texture = ShopUtil.get_ball_texture()
+	$Player/Ball.texture = ShopUtil.get_ball_texture()
 
 func _on_GoBack_pressed():
 	Global.click()
@@ -29,16 +27,16 @@ func _on_PrevItem_pressed():
 	Global.click()
 	current_item_index -= 1
 	if current_item_index < 0:
-		current_item_index = ShopUtil.BALLS.size() - 1
-	$Item.texture = ShopUtil.get_ball_texture(current_item_index)
+		current_item_index = ShopUtil.balls.size() - 1
+	$Player/Ball.texture = ShopUtil.get_ball_texture(current_item_index)
 
 
 func _on_NextItem_pressed():
 	Global.click()
 	current_item_index += 1
-	if current_item_index > ShopUtil.BALLS.size() - 1:
+	if current_item_index > ShopUtil.balls.size() - 1:
 		current_item_index = 0
-	$Item.texture = ShopUtil.get_ball_texture(current_item_index)
+	$Player/Ball.texture = ShopUtil.get_ball_texture(current_item_index)
 
 
 func _on_PrevType_pressed():
