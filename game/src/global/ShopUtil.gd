@@ -86,7 +86,7 @@ func _load_helmets():
 func select(type,id):
 	if id in items[type]["unlocked"]:
 		items["selected"] = id
-	elif Global.use_coins(items[type][id]["price"]):
+	elif Global.use_coins(items[type]["list"][id]["price"]):
 		items[type]["unlocked"].append(id)
 		items[type]["selected"] = id
 	
