@@ -161,7 +161,7 @@ func load_data():
 #	is_group_stage = config.get_value("worldcup", "is_group_stage", true)
 
 	#shop
-	for type in ShopUtil.TYPES:
+	for type in ShopUtil.TYPES.keys():
 		ShopUtil.items[type]["selected"] = config.get_value("shop", "selected_" + type, 0)
 		ShopUtil.items[type]["unlocked"] = config.get_value("shop", "unlocked_" + type, [0])
 	
@@ -204,7 +204,7 @@ func save_all_data():
 	config.set_value("shop", "unlocked_balls_ids", ShopUtil.unlocked_balls_ids)
 	
 	#shop
-	for type in ShopUtil.TYPES:
+	for type in ShopUtil.TYPES.keys():
 		config.set_value("shop", "selected_" + type, ShopUtil.items[type]["selected"])
 		config.set_value("shop", "unlocked_" + type, ShopUtil.items[type]["unlocked"])
 

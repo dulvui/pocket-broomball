@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue.png-d6037136556b45e279692a40098cfaa9.stex"
+path="res://.import/blue.png-f857af701a5ba2eeefde53133d0a66cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/balls/blue.png"
-dest_files=[ "res://.import/blue.png-d6037136556b45e279692a40098cfaa9.stex" ]
+source_file="res://assets/shop/helmet/blue.png"
+dest_files=[ "res://.import/blue.png-f857af701a5ba2eeefde53133d0a66cc.stex" ]
 
 [params]
 

@@ -13,17 +13,16 @@ script = ExtResource( 3 )
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="Ball" type="Sprite" parent="Player"]
-position = Vector2( 361, 495 )
+[node name="BALL" type="Sprite" parent="Player"]
+position = Vector2( 218, 463 )
 
-[node name="Helmet" type="Sprite" parent="Player"]
-position = Vector2( 372.054, 607.832 )
+[node name="HELMET" type="Sprite" parent="Player"]
+position = Vector2( 372, 711 )
+scale = Vector2( 6, 6 )
 
-[node name="Stick" type="Sprite" parent="Player"]
-position = Vector2( 372.054, 607.832 )
-
-[node name="Gloves" type="Sprite" parent="Player"]
-position = Vector2( 372.054, 607.832 )
+[node name="STICK" type="Sprite" parent="Player"]
+position = Vector2( 369, 561 )
+scale = Vector2( 6, 6 )
 
 [node name="TypeButtons" type="Node2D" parent="."]
 position = Vector2( 312, 578 )
