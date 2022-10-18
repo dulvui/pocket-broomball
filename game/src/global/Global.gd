@@ -199,7 +199,7 @@ func save_all_data():
 	config.set_value("worldcup","groups", groups)
 	
 	# shop
-	config.set_value("shop", "selected_ball_id", ShopUtil.select_ball_id)
+	config.set_value("shop", "selected_ball_id", ShopUtil.selected_ball_id)
 	config.set_value("shop", "unlocked_balls_ids", ShopUtil.unlocked_balls_ids)
 
 	save()

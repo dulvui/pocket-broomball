@@ -117,6 +117,11 @@ func _on_EasterEggTimer_timeout():
 func _on_GameServices_pressed():
 	Global.click()
 	GameServices.login()
+	
+
+func _on_Join_pressed():
+	Global.click()
+	OS.shell_open("https://github.com/dulvui/pocket-broomball#join-with-your-broomball-team")
 
 
 func _on_AboutMe_pressed():
@@ -158,6 +163,4 @@ func update_dynamic_labels():
 	else:
 		$MarginContainer/VBoxContainer/Sfx.text = tr("SFX_OFF")
 		
-	
-	
-	
+

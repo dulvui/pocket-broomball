@@ -73,8 +73,3 @@ func _on_Okay_pressed():
 func _on_SimonDalvai_pressed():
 	Global.click()
 	OS.shell_open("https://simondalvai.com")
-
-
-func _on_Join_pressed():
-	Global.click()
-	OS.shell_open("https://github.com/dulvui/pocket-broomball#join-with-your-broomball-team")
