@@ -15,6 +15,9 @@ func _ready():
 	$Body/LeftUpperArm.self_modulate = Color(upper_arm_color)
 	$Body/RightUpperArm.self_modulate = Color(upper_arm_color)
 	
+	$Body/Stick.texture = ShopUtil.get_texture("STICK")
+	$Body/Head.texture = ShopUtil.get_texture("HELMET")	
+	
 	
 	if get_parent().name == "Computer":
 		if Global.away_team_icon != null:

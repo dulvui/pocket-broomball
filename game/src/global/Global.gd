@@ -198,10 +198,7 @@ func save_all_data():
 #	config.set_value("worldcup","is_group_stage", is_group_stage)
 	config.set_value("worldcup","final_teams", final_teams)
 	config.set_value("worldcup","groups", groups)
-	
-	# shop
-	config.set_value("shop", "selected_ball_id", ShopUtil.selected_ball_id)
-	config.set_value("shop", "unlocked_balls_ids", ShopUtil.unlocked_balls_ids)
+
 	
 	#shop
 	for type in ShopUtil.TYPES.keys():
