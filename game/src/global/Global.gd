@@ -199,7 +199,6 @@ func save_all_data():
 	config.set_value("worldcup","final_teams", final_teams)
 	config.set_value("worldcup","groups", groups)
 
-	
 	#shop
 	for type in ShopUtil.TYPES.keys():
 		config.set_value("shop", "selected_" + type, ShopUtil.items[type]["selected"])

@@ -3,6 +3,7 @@ extends Node2D
 export var shoulder_color:Color
 export var arm_color:Color
 export var upper_arm_color:Color
+export var computer:bool = false
 
 
 func _ready():
@@ -15,8 +16,12 @@ func _ready():
 	$Body/LeftUpperArm.self_modulate = Color(upper_arm_color)
 	$Body/RightUpperArm.self_modulate = Color(upper_arm_color)
 	
-	$Body/Stick.texture = ShopUtil.get_texture("STICK")
-	$Body/Head.texture = ShopUtil.get_texture("HELMET")	
+	if computer:
+		$Body/Stick.texture = ShopUtil.get_random_texture("STICK")
+		$Body/Head.texture = ShopUtil.get_random_texture("HELMET")
+	else:
+		$Body/Stick.texture = ShopUtil.get_texture("STICK")
+		$Body/Head.texture = ShopUtil.get_texture("HELMET")
 	
 	
 	if get_parent().name == "Computer":

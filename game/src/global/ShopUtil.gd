@@ -95,6 +95,9 @@ func get_texture(type,index=null):
 		return items[type]["list"][index]["texture"]
 	return items[type]["list"][items[type]["selected"]]["texture"]
 	
+func get_random_texture(type):
+	return items[type]["list"][randi() % items[type]["list"].size()]["texture"]
+	
 func get_ball_texture(index=null):
 	if index != null:
 		return items["BALL"]["list"][index]["texture"]

@@ -21,6 +21,7 @@ position = Vector2( -37.4938, 29.1615 )
 shoulder_color = Color( 0.0352941, 0.65098, 0.247059, 1 )
 arm_color = Color( 0.239216, 0.745098, 0.0980392, 1 )
 upper_arm_color = Color( 0.505882, 0.803922, 0.0705882, 1 )
+computer = true
 
 [node name="ChargeDetector" type="Area2D" parent="."]
 scale = Vector2( 0.705882, 0.705882 )
@@ -29,5 +30,6 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeDetector"]
 shape = SubResource( 2 )
+
 [connection signal="body_entered" from="ChargeDetector" to="." method="_on_ChargeDetector_body_entered"]
 [connection signal="body_exited" from="ChargeDetector" to="." method="_on_ChargeDetector_body_exited"]
