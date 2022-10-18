@@ -161,8 +161,9 @@ func load_data():
 #	is_group_stage = config.get_value("worldcup", "is_group_stage", true)
 
 	#shop
-	ShopUtil.selected_ball_id = config.get_value("shop", "selected_ball_id", 0)
-	ShopUtil.unlocked_balls_ids = config.get_value("shop", "unlocked_balls_ids", [0])
+	for type in ShopUtil.TYPES:
+		ShopUtil.items[type]["selected"] = config.get_value("shop", "selected_" + type, 0)
+		ShopUtil.items[type]["unlocked"] = config.get_value("shop", "unlocked_" + type, [0])
 	
 #TODO MAKE SAFE GENERAL, SAFE arcade etc...
 
@@ -201,6 +202,11 @@ func save_all_data():
 	# shop
 	config.set_value("shop", "selected_ball_id", ShopUtil.selected_ball_id)
 	config.set_value("shop", "unlocked_balls_ids", ShopUtil.unlocked_balls_ids)
+	
+	#shop
+	for type in ShopUtil.TYPES:
+		config.set_value("shop", "selected_" + type, ShopUtil.items[type]["selected"])
+		config.set_value("shop", "unlocked_" + type, ShopUtil.items[type]["unlocked"])
 
 	save()
 	

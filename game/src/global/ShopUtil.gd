@@ -1,40 +1,52 @@
 extends Node
 
-var balls
-var unlocked_balls_ids
-var selected_ball_id
+enum TYPES {BALL, STICK, HELMET, GLOVES, FIELD}
+var items = {}
 
+
+func _ready():
+	for type in TYPES:
+		items[type] = {}
 
 func load_assets():
 	_load_balls()
 
 func _load_balls():
-		balls = [
-		 {
-			"id" : 0,
-			"price" : 0,
-			"texture": load("res://assets/balls/orange.png")
-		},
-		{
-			"id" : 1,
-			"price" : 10,
-			"texture": load("res://assets/balls/blue.png")
-		},
-		{
-			"id" : 2,
-			"price" : 10,
-			"texture": load("res://assets/balls/red.png")
-		}
-	]
+		items["BALL"] = {
+			"selected_ball" : 0,
+			"unlocked" : [0],
+			"list": [
+			 {
+				"id" : 0,
+				"price" : 0,
+				"texture": load("res://assets/balls/orange.png")
+			},
+			{
+				"id" : 1,
+				"price" : 10,
+				"texture": load("res://assets/balls/blue.png")
+			},
+			{
+				"id" : 2,
+				"price" : 10,
+				"texture": load("res://assets/balls/red.png")
+			}
+		]
+	}
 
-func select_ball(id):
-	if id in unlocked_balls_ids:
-		selected_ball_id = id
-	elif Global.use_coins(balls[id]["price"]):
-		unlocked_balls_ids.append(id)
-		selected_ball_id = id
+func select(type,id):
+	if id in items[type]["unlocked"]:
+		items["selected"] = id
+	elif Global.use_coins(items[type][id]["price"]):
+		items[type]["unlocked"].append(id)
+		items[type]["selected"] = id
+	
+func get_texture(type,index=null):
+	if index != null:
+		return items[type]["list"][index]["texture"]
+	return items[type][items[type]["selected"]]["texture"]
 	
 func get_ball_texture(index=null):
 	if index != null:
-		return balls[index]["texture"]
-	return balls[selected_ball_id]["texture"]
+		return items["BALL"][index]["texture"]
+	return items["BALL"]["list"][items["BALL"]["selected"]]["texture"]

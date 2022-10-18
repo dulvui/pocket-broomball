@@ -26,7 +26,7 @@ position = Vector2( 372.054, 607.832 )
 position = Vector2( 372.054, 607.832 )
 
 [node name="TypeButtons" type="Node2D" parent="."]
-position = Vector2( 329.86, 574.428 )
+position = Vector2( 312, 578 )
 
 [node name="NextType" type="TextureButton" parent="TypeButtons"]
 modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
@@ -50,7 +50,7 @@ rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 4 )
 
 [node name="ItemButtons" type="Node2D" parent="."]
-position = Vector2( 329.86, 574.428 )
+position = Vector2( 316, 574 )
 
 [node name="NextItem" type="TextureButton" parent="ItemButtons"]
 modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
@@ -71,39 +71,48 @@ rect_scale = Vector2( 2, 2 )
 texture_normal = ExtResource( 4 )
 
 [node name="TypeLabel" type="Label" parent="."]
-margin_left = 73.0
-margin_top = 149.0
-margin_right = 673.0
-margin_bottom = 233.0
+margin_left = 59.0
+margin_top = 151.0
+margin_right = 659.0
+margin_bottom = 235.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "BALL"
 align = 1
 
-[node name="Buy" type="Button" parent="."]
-margin_left = 235.584
-margin_top = 941.71
-margin_right = 506.584
-margin_bottom = 1040.71
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = -4.0
+margin_top = 879.0
+margin_right = 714.0
+margin_bottom = 1279.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 186.0
+margin_top = 96.0
+margin_right = 531.0
+margin_bottom = 304.0
+
+[node name="Buy" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_right = 345.0
+margin_bottom = 99.0
 theme = ExtResource( 2 )
 text = "BUY"
 
-[node name="GoBack" type="Button" parent="."]
-margin_left = 235.584
-margin_top = 1077.71
-margin_right = 506.584
-margin_bottom = 1176.71
+[node name="GoBack" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 109.0
+margin_right = 345.0
+margin_bottom = 208.0
 theme = ExtResource( 2 )
 text = "GO_BACK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [connection signal="pressed" from="TypeButtons/NextType" to="." method="_on_NextType_pressed"]
 [connection signal="pressed" from="TypeButtons/PrevType" to="." method="_on_PrevType_pressed"]
 [connection signal="pressed" from="ItemButtons/NextItem" to="." method="_on_NextItem_pressed"]
 [connection signal="pressed" from="ItemButtons/PrevItem" to="." method="_on_PrevItem_pressed"]
-[connection signal="pressed" from="Buy" to="." method="_on_Buy_pressed"]
-[connection signal="pressed" from="GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Buy" to="." method="_on_Buy_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
