@@ -85,9 +85,9 @@ custom_constants/separation = 24
 alignment = 1
 
 [node name="Highscore" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 35.0
+margin_top = 104.0
 margin_right = 500.0
-margin_bottom = 159.0
+margin_bottom = 228.0
 rect_pivot_offset = Vector2( 250, 62 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -95,9 +95,9 @@ text = "32"
 align = 1
 
 [node name="Speed" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 183.0
+margin_top = 252.0
 margin_right = 500.0
-margin_bottom = 386.0
+margin_bottom = 455.0
 
 [node name="TextureProgress" parent="MarginContainer/VBoxContainer/Speed" instance=ExtResource( 5 )]
 margin_right = 500.0
@@ -112,9 +112,9 @@ margin_bottom = 203.0
 text = "64000"
 
 [node name="Power" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 410.0
+margin_top = 479.0
 margin_right = 500.0
-margin_bottom = 613.0
+margin_bottom = 682.0
 
 [node name="TextureProgress" parent="MarginContainer/VBoxContainer/Power" instance=ExtResource( 5 )]
 margin_right = 500.0
@@ -128,9 +128,9 @@ margin_bottom = 203.0
 text = "1000"
 
 [node name="Freeze" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 637.0
+margin_top = 706.0
 margin_right = 500.0
-margin_bottom = 840.0
+margin_bottom = 909.0
 
 [node name="TextureProgress" parent="MarginContainer/VBoxContainer/Freeze" instance=ExtResource( 5 )]
 margin_right = 500.0
@@ -145,6 +145,7 @@ margin_bottom = 203.0
 text = "2000"
 
 [node name="OnlineHighscore" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 margin_top = 864.0
 margin_right = 500.0
 margin_bottom = 979.0
@@ -152,15 +153,15 @@ text = "ONLINE"
 icon = ExtResource( 6 )
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 1003.0
+margin_top = 933.0
 margin_right = 500.0
-margin_bottom = 1102.0
+margin_bottom = 1032.0
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 1126.0
+margin_top = 1056.0
 margin_right = 500.0
-margin_bottom = 1225.0
+margin_bottom = 1155.0
 text = "GO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
