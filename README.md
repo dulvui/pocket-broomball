@@ -5,13 +5,6 @@ This game is open source, with no ads and no tracking.
 <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
 <a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
 
-
-
-If you like the game, consider supporting me on Ko-fi :-)  
-Every donation means a lot to me and helps me to cover the Apple Developer fees.
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P4BYZUR)
-
 **Table of contents**
 - [Pocket Broomball](#pocket-broomball)
 - [Setup](#setup)
