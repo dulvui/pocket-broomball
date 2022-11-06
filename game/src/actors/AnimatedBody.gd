@@ -55,6 +55,12 @@ func _ready():
 			
 	
 	$AnimationPlayer.play("Idle")
+	
+	
+func change_style():
+	print("change style")
+	$Body/Stick.texture = ShopUtil.get_texture("STICK")
+	$Body/Head.texture = ShopUtil.get_texture("HELMET")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

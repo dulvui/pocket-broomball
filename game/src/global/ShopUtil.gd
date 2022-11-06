@@ -85,10 +85,13 @@ func _load_helmets():
 
 func select(type,id):
 	if id in items[type]["unlocked"]:
-		items["selected"] = id
+		items[type]["selected"] = id
+		return true
 	elif Global.use_coins(items[type]["list"][id]["price"]):
 		items[type]["unlocked"].append(id)
 		items[type]["selected"] = id
+		return true
+	return false
 	
 func get_texture(type,index=null):
 	if index != null:

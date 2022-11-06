@@ -8,13 +8,12 @@ var current_index = {
 	"HELMET": 0,
 }
 
-onready var type_label = $TypeLabel
+onready var type_label = $Type/Label
 
 func _ready():
 	current_index["BALL"] = ShopUtil.items["BALL"]["selected"]
-	$Player/BALL.texture = ShopUtil.get_ball_texture()
-	$Player/STICK.texture = ShopUtil.get_texture("STICK")
-	$Player/HELMET.texture = ShopUtil.get_texture("HELMET")
+	$CurrentItem.texture = ShopUtil.get_ball_texture()
+	$Ball.texture = ShopUtil.get_ball_texture()
 	$CenterContainer/VBoxContainer/Buy.text = "SELECTED"
 
 func _on_GoBack_pressed():
@@ -23,10 +22,8 @@ func _on_GoBack_pressed():
 
 func _on_Buy_pressed():
 	Global.click()
-	# current item price as parameter
-#	Global.use_coins(current_item_index)
 	ShopUtil.select(current_type, current_index[current_type])
-	_select()
+	_update()
 
 
 func _on_PrevItem_pressed():
@@ -34,17 +31,15 @@ func _on_PrevItem_pressed():
 	current_index[current_type] -= 1
 	if current_index[current_type] < 0:
 		current_index[current_type] = ShopUtil.items[current_type]["list"].size() - 1
-	_select()
+	_update()
 	
-
 
 func _on_NextItem_pressed():
 	Global.click()
 	current_index[current_type] += 1
 	if current_index[current_type] > ShopUtil.items[current_type]["list"].size() - 1:
 		current_index[current_type] = 0
-	_select()
-
+	_update()
 
 func _on_PrevType_pressed():
 	Global.click()
@@ -54,6 +49,7 @@ func _on_PrevType_pressed():
 		current_type_index = 0
 	current_type = TYPES.keys()[current_index[current_type]]
 	type_label.text = current_type
+	_update()
 	
 
 func _on_NextType_pressed():
@@ -64,12 +60,18 @@ func _on_NextType_pressed():
 		current_type_index = TYPES.size() - 1
 	current_type = TYPES.keys()[current_type_index]
 	type_label.text = current_type
+	_update()
 
-func _select():
+func _update():
+	# update button text
 	if current_index[current_type] == ShopUtil.items[current_type]["selected"]:
 		$CenterContainer/VBoxContainer/Buy.text = "SELECTED"
 	elif current_index[current_type] in ShopUtil.items[current_type]["unlocked"]:
 		$CenterContainer/VBoxContainer/Buy.text = "SELECT"
 	else:
 		$CenterContainer/VBoxContainer/Buy.text = "BUY"
-	get_node("Player/" + current_type).texture = ShopUtil.get_texture(current_type,current_index[current_type])
+	
+	# update textures
+	$AnimatedBody.change_style()
+	$CurrentItem.texture = ShopUtil.get_texture(current_type,current_index[current_type])
+	$Ball.texture = ShopUtil.get_ball_texture()	
