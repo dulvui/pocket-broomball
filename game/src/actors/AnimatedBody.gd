@@ -58,7 +58,6 @@ func _ready():
 	
 	
 func change_style():
-	print("change style")
 	$Body/Stick.texture = ShopUtil.get_texture("STICK")
 	$Body/Head.texture = ShopUtil.get_texture("HELMET")
 
