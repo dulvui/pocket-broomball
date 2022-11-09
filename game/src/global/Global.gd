@@ -1,6 +1,6 @@
 extends Node
 
-var version = "7"
+var version = "8"
 
 var first_fade_in = true
 
