@@ -25,13 +25,48 @@ func _load_balls():
 				},
 				{
 					"id" : 1,
-					"price" : 10,
+					"price" : 10000,
 					"texture": load("res://assets/shop/ball/blue.png")
 				},
 				{
 					"id" : 2,
-					"price" : 10,
+					"price" : 10000,
 					"texture": load("res://assets/shop/ball/red.png")
+				},
+				{
+					"id" : 3,
+					"price" : 50000,
+					"texture": load("res://assets/shop/ball/white.png")
+				},
+				{
+					"id" : 4,
+					"price" : 50000,
+					"texture": load("res://assets/shop/ball/yellow.png")
+				},
+				{
+					"id" : 5,
+					"price" : 50000,
+					"texture": load("res://assets/shop/ball/pink.png")
+				},
+				{
+					"id" : 6,
+					"price" : 50000,
+					"texture": load("res://assets/shop/ball/orange.png")
+				},
+				{
+					"id" : 7,
+					"price" : 50000,
+					"texture": load("res://assets/shop/ball/green.png")
+				},
+				{
+					"id" : 8,
+					"price" : 100000,
+					"texture": load("res://assets/shop/ball/brown.png")
+				},
+				{
+					"id" : 9,
+					"price" : 100000,
+					"texture": load("res://assets/shop/ball/azure.png")
 				}
 			]
 		}
@@ -48,13 +83,48 @@ func _load_sticks():
 				},
 				{
 					"id" : 1,
-					"price" : 10,
+					"price" : 10000,
 					"texture": load("res://assets/shop/stick/blue.png")
 				},
 				{
 					"id" : 2,
-					"price" : 10,
+					"price" : 10000,
 					"texture": load("res://assets/shop/stick/green.png")
+				},
+				{
+					"id" : 3,
+					"price" : 50000,
+					"texture": load("res://assets/shop/stick/black.png")
+				},
+				{
+					"id" : 4,
+					"price" : 50000,
+					"texture": load("res://assets/shop/stick/beige.png")
+				},
+				{
+					"id" : 5,
+					"price" : 50000,
+					"texture": load("res://assets/shop/stick/brown.png")
+				},
+				{
+					"id" : 6,
+					"price" : 50000,
+					"texture": load("res://assets/shop/stick/lime.png")
+				},
+				{
+					"id" : 7,
+					"price" : 50000,
+					"texture": load("res://assets/shop/stick/wine.png")
+				},
+				{
+					"id" : 8,
+					"price" : 100000,
+					"texture": load("res://assets/shop/stick/yellow.png")
+				},
+				{
+					"id" : 9,
+					"price" : 100000,
+					"texture": load("res://assets/shop/stick/azure.png")
 				}
 			]
 		}
@@ -71,13 +141,48 @@ func _load_helmets():
 				},
 				{
 					"id" : 1,
-					"price" : 10,
+					"price" : 10000,
 					"texture": load("res://assets/shop/helmet/pink.png")
 				},
 				{
 					"id" : 2,
-					"price" : 10,
+					"price" : 10000,
 					"texture": load("res://assets/shop/helmet/blue.png")
+				},
+				{
+					"id" : 3,
+					"price" : 50000,
+					"texture": load("res://assets/shop/helmet/beige.png")
+				},
+				{
+					"id" : 4,
+					"price" : 50000,
+					"texture": load("res://assets/shop/helmet/green.png")
+				},
+				{
+					"id" : 5,
+					"price" : 50000,
+					"texture": load("res://assets/shop/helmet/red.png")
+				},
+				{
+					"id" : 6,
+					"price" : 50000,
+					"texture": load("res://assets/shop/helmet/white.png")
+				},
+				{
+					"id" : 7,
+					"price" : 50000,
+					"texture": load("res://assets/shop/helmet/yellow.png")
+				},
+				{
+					"id" : 8,
+					"price" : 100000,
+					"texture": load("res://assets/shop/helmet/red.png")
+				},
+				{
+					"id" : 9,
+					"price" : 100000,
+					"texture": load("res://assets/shop/helmet/turquoise.png")
 				}
 			]
 		}

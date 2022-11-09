@@ -23,6 +23,14 @@ func _on_GoBack_pressed():
 func _on_Buy_pressed():
 	Global.click()
 	ShopUtil.select(current_type, current_index[current_type])
+	
+	if $Locker.visible:
+		$Locker.play("open")
+		yield($Locker,"animation_finished")
+		$Locker.play("idle")
+		$Locker.hide()
+		$Price.hide()
+
 	_update()
 
 
@@ -66,12 +74,25 @@ func _update():
 	# update button text
 	if current_index[current_type] == ShopUtil.items[current_type]["selected"]:
 		$CenterContainer/VBoxContainer/Buy.text = "SELECTED"
+		$Locker.hide()
+		$Price.hide()
 	elif current_index[current_type] in ShopUtil.items[current_type]["unlocked"]:
 		$CenterContainer/VBoxContainer/Buy.text = "SELECT"
+		$Locker.hide()
+		$Price.hide()
 	else:
+		$Locker.show()
+		$Price.show()
+		$Price.text = str(ShopUtil.items[current_type]["list"][current_index[current_type]]["price"])
 		$CenterContainer/VBoxContainer/Buy.text = "BUY"
 	
 	# update textures
 	$AnimatedBody.change_style()
 	$CurrentItem.texture = ShopUtil.get_texture(current_type,current_index[current_type])
-	$Ball.texture = ShopUtil.get_ball_texture()	
+	$Ball.texture = ShopUtil.get_ball_texture()
+	
+	# scale if not ball
+	if current_type == "BALL":
+		$CurrentItem.scale = Vector2(4,4)
+	else:
+		$CurrentItem.scale = Vector2(8,8)
