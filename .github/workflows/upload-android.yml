@@ -1,4 +1,4 @@
-name: Release Android
+name: Upload Android
 
 # only when version file changes, the action runs
 # tag triggering doesn't support caching
@@ -6,7 +6,7 @@ on:
   push:
     paths:
       - "version"
-      - ".github/workflows/release-android.yml"
+      - ".github/workflows/upload-android.yml"
 
 env:
   RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
@@ -43,8 +43,8 @@ jobs:
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: Export signed apk and release to internal testing
-        uses: dulvui/godot-android-release@v1
+      - name: Export signed apk and upload to internal testing
+        uses: dulvui/godot-android-upload@v1
         with:
           working-directory: $WORKING_DIRECTORY
           package-name: com.salvai.broomball
