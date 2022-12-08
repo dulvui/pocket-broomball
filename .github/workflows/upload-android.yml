@@ -1,9 +1,9 @@
 name: Upload Android
 
-# only when version file changes, the action runs
-# tag triggering doesn't support caching
 on:
   push:
+    branches:    
+      - 'prod'
     paths:
       - "version"
       - ".github/workflows/upload-android.yml"

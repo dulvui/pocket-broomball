@@ -2,6 +2,8 @@ name: Upload iOS
 
 on:
   push:
+    branches:    
+      - 'prod'
     paths:
       - "version-ios"
       - ".github/workflows/upload-ios.yml"
