@@ -22,9 +22,9 @@ func _on_GoBack_pressed():
 
 func _on_Buy_pressed():
 	Global.click()
-	ShopUtil.select(current_type, current_index[current_type])
+	var success = ShopUtil.select(current_type, current_index[current_type])
 	
-	if $Locker.visible:
+	if $Locker.visible and success:
 		$Locker.play("open")
 		yield($Locker,"animation_finished")
 		$Locker.play("idle")
@@ -45,7 +45,7 @@ func _on_PrevItem_pressed():
 func _on_NextItem_pressed():
 	Global.click()
 	current_index[current_type] += 1
-	if current_index[current_type] > ShopUtil.items[current_type]["list"].size() - 1:
+	if current_index[current_type] >= ShopUtil.items[current_type]["list"].size():
 		current_index[current_type] = 0
 	_update()
 
@@ -55,7 +55,7 @@ func _on_PrevType_pressed():
 	current_type_index += 1
 	if current_type_index >= TYPES.size():
 		current_type_index = 0
-	current_type = TYPES.keys()[current_index[current_type]]
+	current_type = TYPES.keys()[current_type_index]
 	type_label.text = current_type
 	_update()
 	
