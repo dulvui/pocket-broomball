@@ -7,7 +7,7 @@ const LANGUAGES = {
 	"fr" : "Français"
 }
 
-var animation_player
+onready var animation_player = $AnimationPlayer
 
 func _ready():
 	$MarginContainer/VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
@@ -18,7 +18,6 @@ func _ready():
 #		$MarginContainer/VBoxContainer/MoreGames.hide()
 		$MarginContainer/VBoxContainer/GameServices.hide()
 		
-	animation_player = $AnimationPlayer
 	animation_player.play("FadeIn")
 		
 
@@ -124,10 +123,6 @@ func _on_Join_pressed():
 	OS.shell_open("https://github.com/dulvui/pocket-broomball#join-with-your-broomball-team")
 
 
-func _on_AboutMe_pressed():
-	Global.click()
-	OS.shell_open("https://simondalvai.com")
-
 
 func _on_Language_pressed():
 	var locale = Global.locale
@@ -163,4 +158,3 @@ func update_dynamic_labels():
 	else:
 		$MarginContainer/VBoxContainer/Sfx.text = tr("SFX_OFF")
 		
-

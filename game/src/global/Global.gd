@@ -2,6 +2,8 @@ extends Node
 
 var version = "8"
 
+const FDROID = false
+
 var first_fade_in = true
 
 var sfx

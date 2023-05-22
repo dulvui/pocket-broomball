@@ -73,3 +73,11 @@ func _on_Okay_pressed():
 func _on_SimonDalvai_pressed():
 	Global.click()
 	OS.shell_open("https://simondalvai.com")
+
+
+func _on_Info_pressed():
+	Global.click()
+	animation_player.play("FadeOut")
+	yield(animation_player, "animation_finished")
+	get_tree().change_scene("res://src/ui/info/Info.tscn")
+

@@ -1,11 +1,11 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://assets/theme/button_style.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/theme/button_pressed_style.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/font/Carlito-Regular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=4]
-size = 84
+size = 86
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
@@ -24,6 +24,22 @@ bg_color = Color( 0.0630798, 0.0686588, 0.152344, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0117647, 0.662745, 0.956863, 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
 
 [resource]
 default_font = SubResource( 4 )
@@ -59,4 +75,6 @@ ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = SubResource( 4 )
 ProgressBar/styles/bg = SubResource( 2 )
 ProgressBar/styles/fg = SubResource( 3 )
+RichTextLabel/fonts/bold_font = SubResource( 5 )
+RichTextLabel/fonts/normal_font = SubResource( 6 )
 VBoxContainer/constants/separation = 10
