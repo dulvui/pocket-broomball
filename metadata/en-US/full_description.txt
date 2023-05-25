@@ -22,6 +22,14 @@ If you want to add your team to the game, send me a mail at info@simondalvai.com
 📖 Open Source on https://github.com/dulvui/pocket-broomall
 👨‍💻 Created with Godot Engine 3
 
+
+AntiFeature: Not all assets of this game a free  
+The team logos where send to me by themselves, so I'm authorized to use them.  
+Since they haven't issued a license for the logos and at the time of creating the game  
+if wasn't aware of the impacts of not asking what license this logos have, no license  
+is available and all rights belong to the corresponding team.  
+If you want to use them, please contact me or the teams directly.
+
 Made with love by Simon Dalvai
 https://simondalvai.com
 info@simondalvai.com
