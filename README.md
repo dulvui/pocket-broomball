@@ -1,6 +1,7 @@
 # Pocket Broomball
 [![Android upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-android.yml)
 [![iOS upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml)
+[![itch.io upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-itchio.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-itchio.yml)
 
 The world's first Broomball video game made with Godot Engine.  
 This game is open source, with no ads and no tracking.
