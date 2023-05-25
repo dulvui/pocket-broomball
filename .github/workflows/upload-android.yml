@@ -22,6 +22,31 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
+      - name: Read version number and version code
+        run: |
+          echo "VERSION_NAME=$(cat version-android | cut -f1 -d-)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(cat version-android | cut -f2 -d-)" >> $GITHUB_ENV
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Check if changelog exists
+        run: test -f "metadata/en-US/changelogs/$VERSION_CODE.txt"
+
+      - name: Create changelog text for Github releases
+        id: changelog
+        run: |
+          r=$(cat metadata/en-US/changelogs/$VERSION_CODE.txt)
+          r="${r//'%'/'%25'}"               # Multiline escape sequences for %
+          r="${r//$'\n'/'%0A'}"             # Multiline escape sequences for '\n'
+          r="${r//$'\r'/'%0D'}"             # Multiline escape sequences for '\r'
+          echo "RELEASE_BODY=$r" >> $GITHUB_OUTPUT
+
+      - name: Create changelog text for Google Play Store
+        run: |
+          mkdir -p distribution/whatsnew
+          cp metadata/en-US/changelogs/$VERSION_CODE.txt  distribution/whatsnew/whatsnew-en-US
+
       - name: Create service-account.json
         run: echo $SERVICE_ACCOUNT_JSON > service-account.json
 
@@ -31,11 +56,6 @@ jobs:
       - name: Create debug keystore
         run: echo $DEBUG_KEY_STORE_BASE64 | base64 --decode > debug.keystore
 
-      - name: Set version number and version code
-        run: |
-          echo "VERSION_NAME=$(cat version | cut -f1 -d-)" >> $GITHUB_ENV
-          echo "VERSION_CODE=$(cat version | cut -f2 -d-)" >> $GITHUB_ENV
-
       - name: Create and config export_presets.cfg
         run: |
           echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
@@ -43,10 +63,41 @@ jobs:
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
 
-      - name: Export signed apk and upload to internal testing
-        uses: dulvui/godot-android-upload@v1
+      - name: Delete iOS icons
+        run: rm -rf $WORKING_DIRECTORY/AppIcons
+
+      # GODOT EXPORT
+      - name: Godot Android export
+        uses: dulvui/godot-android-export@v2.0.0
         with:
           working-directory: $WORKING_DIRECTORY
-          package-name: com.salvai.broomball
-          release-file: ./Broomball.apk
-          cache-version: 1
+
+      # GOOGLE PLAY STORE
+      - name: Publish to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: service-account.json
+          packageName: com.salvai.broomball
+          releaseFile: ./Broomball.apk
+          whatsNewDirectory: distribution/whatsnew
+          track: 'internal'
+          status: completed
+
+      # GITHUB RELEASES
+      - name: Bundle aab to apk
+        run: |
+          wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
+          java -jar bundletool-all-1.14.0.jar build-apks --bundle=PocketBroomball.aab --output=PocketBroomball.apks \
+          --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
+          --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
+          unzip -p PocketBroomball.apks universal.apk > PocketBroomball.apk
+
+      - name: Upload binaries to Github release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./PocketBroomball.apk
+          asset_name: PocketBroomball.apk
+          tag: v${{ env.VERSION_NAME }}
+          overwrite: true
+          body:  ${{ steps.changelog.outputs.RELEASE_BODY }}
