@@ -67,7 +67,7 @@ margin_bottom = 600.0
 rect_min_size = Vector2( 589, 600 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "This game is open source under the [url=https://github.com/dulvui/ball2box/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
+bbcode_text = "This game is open source under the [url=https://github.com/dulvui/pocket-broomball/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
 Its created with Godot Engine and lots of love <3
 
 
@@ -79,28 +79,28 @@ MIT
 [url=https://godotengine.org/license]godotengine.org/license[/url]
 
 \"Smoothing addon\"
-Copyright: 2019 Lawnjelly  https://github.com/lawnjelly/smoothing-addon
+Copyright: 2019 Lawnjelly [url=https://github.com/lawnjelly/smoothing-addon][/url]
 License: MIT
 
 [b]Audio[/b]
 \"Chill music\"
-Copyright: 2016 furbyguy https://freesound.org/people/furbyguy/sounds/365187/
+Copyright: 2016 furbyguy[url=https://freesound.org/people/furbyguy/sounds/365187/]freesound.org/people/furbyguy/sounds/365187/[/url]
 License: CC0-1.0
 
 \"Energetic music\"
-Copyright: 2017 furbyguy https://freesound.org/people/furbyguy/sounds/388101/
+Copyright: 2017 furbyguy[url=https://freesound.org/people/furbyguy/sounds/388101/]freesound.org/people/furbyguy/sounds/388101/[/url]
 License: CC0-1.0
 
 \"Croud\"
-Copyright: 2017 giddster https://freesound.org/people/giddster/sounds/406214/
+Copyright: 2017 giddster[url=https://freesound.org/people/giddster/sounds/406214/]freesound.org/people/giddster/sounds/406214/[/url]
 License: CC0-1.0
 
 \"Horn\"
-Copyright: 2012 santino_c https://freesound.org/people/santino_c/sounds/170825/
+Copyright: 2012 santino_c[url=https://freesound.org/people/santino_c/sounds/170825/]freesound.org/people/santino_c/sounds/170825/[/url]
 License: CC0-1.0
 
 \"Ball hit\"
-Copyright: 2012 volivieri https://freesound.org/people/volivieri/sounds/37155/
+Copyright: 2012 volivieri[url=https://freesound.org/people/volivieri/sounds/37155/]freesound.org/people/volivieri/sounds/37155/[/url]
 License: CC-BY-3.0
 
 [b]2D[/b]
@@ -109,16 +109,16 @@ CC0-1.0
 [url=https://www.kenney.nl/assets/game-icons]kenney.nl/assets/game-icons[/url]
 
 \"Snowflake\"
-Copyright: 2014 mkwong98 https://opengameart.org/content/snow-flake
+Copyright: 2014 mkwong98[url=https://opengameart.org/content/snow-flake]opengameart.org/content/snow-flake[/url]
 License: CC0-1.0
 
 [b]Font[/b]
 \"Carlito Regular\"
-Copyright: 2022 Łukasz Dziedzic https://www.1001fonts.com/carlito-font.html
+Copyright: 2022 Łukasz Dziedzic[url=https://www.1001fonts.com/carlito-font.html]www.1001fonts.com/carlito-font.html[/url]
 License: OFL-1.1
 
 \"DSEG7ClassicMini Bold\"
-Copyright: 2022 Keshikan https://github.com/keshikan/DSEG
+Copyright: 2022 Keshikan[url=https://github.com/keshikan/DSEG]github.com/keshikan/DSEG[/url]
 License: OFL-1.1
 
 All other assets made by me are licensed under the CC-BY-SA-4.0 license.
@@ -139,28 +139,28 @@ MIT
 godotengine.org/license
 
 \"Smoothing addon\"
-Copyright: 2019 Lawnjelly  https://github.com/lawnjelly/smoothing-addon
+Copyright: 2019 Lawnjelly [url=https://github.com/lawnjelly/smoothing-addon
 License: MIT
 
 Audio
 \"Chill music\"
-Copyright: 2016 furbyguy https://freesound.org/people/furbyguy/sounds/365187/
+Copyright: 2016 furbyguy[url=https://freesound.org/people/furbyguy/sounds/365187/
 License: CC0-1.0
 
 \"Energetic music\"
-Copyright: 2017 furbyguy https://freesound.org/people/furbyguy/sounds/388101/
+Copyright: 2017 furbyguy[url=https://freesound.org/people/furbyguy/sounds/388101/
 License: CC0-1.0
 
 \"Croud\"
-Copyright: 2017 giddster https://freesound.org/people/giddster/sounds/406214/
+Copyright: 2017 giddster[url=https://freesound.org/people/giddster/sounds/406214/
 License: CC0-1.0
 
 \"Horn\"
-Copyright: 2012 santino_c https://freesound.org/people/santino_c/sounds/170825/
+Copyright: 2012 santino_c[url=https://freesound.org/people/santino_c/sounds/170825/
 License: CC0-1.0
 
 \"Ball hit\"
-Copyright: 2012 volivieri https://freesound.org/people/volivieri/sounds/37155/
+Copyright: 2012 volivieri[url=https://freesound.org/people/volivieri/sounds/37155/
 License: CC-BY-3.0
 
 2D
@@ -169,16 +169,16 @@ CC0-1.0
 kenney.nl/assets/game-icons
 
 \"Snowflake\"
-Copyright: 2014 mkwong98 https://opengameart.org/content/snow-flake
+Copyright: 2014 mkwong98[url=https://opengameart.org/content/snow-flake
 License: CC0-1.0
 
 Font
 \"Carlito Regular\"
-Copyright: 2022 Łukasz Dziedzic https://www.1001fonts.com/carlito-font.html
+Copyright: 2022 Łukasz Dziedzic[url=https://www.1001fonts.com/carlito-font.html
 License: OFL-1.1
 
 \"DSEG7ClassicMini Bold\"
-Copyright: 2022 Keshikan https://github.com/keshikan/DSEG
+Copyright: 2022 Keshikan[url=https://github.com/keshikan/DSEG
 License: OFL-1.1
 
 All other assets made by me are licensed under the CC-BY-SA-4.0 license.
