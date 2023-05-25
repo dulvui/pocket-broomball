@@ -83,7 +83,7 @@ jobs:
           track: 'internal'
           status: completed
 
-      # GITHUB RELEASES
+      # BUNDLE FOR GITHUB RELEASES
       - name: Bundle aab to apk
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
@@ -91,7 +91,8 @@ jobs:
           --ks=keystore.keystore --ks-pass=pass:${{ secrets.ANDROID_STORE_PASSWORD }} --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
           --key-pass=pass:${{ secrets.ANDROID_KEYSTORE_PASSWORD }} --mode=universal
           unzip -p PocketBroomball.apks universal.apk > PocketBroomball.apk
-
+      
+      # UPLOAD TO GITHUB RELEASES
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
         with:
