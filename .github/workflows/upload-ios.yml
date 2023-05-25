@@ -1,4 +1,4 @@
-name: Upload iOS
+name: iOS upload
 
 on:
   push:

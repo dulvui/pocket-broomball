@@ -1,4 +1,4 @@
-name: itch.io upload
+name: itch.io upload 
 
 on:
   push:

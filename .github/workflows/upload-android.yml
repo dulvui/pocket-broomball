@@ -1,4 +1,4 @@
-name: Upload Android
+name: Android upload
 
 on:
   push:
