@@ -1,0 +1,2 @@
+- first release on F-Droid
+- add info screen with license information

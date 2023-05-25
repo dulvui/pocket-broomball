@@ -1,0 +1,43 @@
+name: itch.io upload
+
+on:
+  push:
+    paths:
+      - "version-android"
+      - "version-ios"
+      - ".github/workflows/upload-itchio.yml"
+
+env:
+  WORKING_DIRECTORY: game
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/prod'
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+
+      - name: Delete iOS icons
+        run: rm -rf $WORKING_DIRECTORY/AppIcons
+
+      - name: Create export directory
+        run: mkdir html5
+
+      - name: Godot HTML5 export
+        uses: dulvui/godot-html-export@v0.0.2
+        with:
+          working-directory: $WORKING_DIRECTORY
+
+      - name: Upload to itch.io
+        uses: dulvui/itchio-butler-upload@v0.0.1
+        with:
+          working-directory: html5
+          api-key: ${{ secrets.ITCHIO_API_KEY }}
+          user: simondalvai
+          game: pocket-broomball
+          channel: html5
+
+
+
+
