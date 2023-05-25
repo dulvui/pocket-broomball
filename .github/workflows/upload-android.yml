@@ -78,7 +78,7 @@ jobs:
         with:
           serviceAccountJson: service-account.json
           packageName: com.salvai.broomball
-          releaseFile: ./Broomball.apk
+          releaseFiles: ./PocketBroomball.aab
           whatsNewDirectory: distribution/whatsnew
           track: 'internal'
           status: completed
