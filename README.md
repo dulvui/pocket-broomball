@@ -9,11 +9,11 @@ This game is open source, with no ads and no tracking.
 <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
 <a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
 
-<div style="display: flex;overflow: auto;">
-  <img style="margin-right: 10px;" src="metadata/en-US/images/phoneScreenshots/screenshot-1.png" alt="Level 1" width="200"/>
-  <img style="margin-right: 10px;" src="metadata/en-US/images/phoneScreenshots/screenshot-2.png" alt="Level 2" width="200"/>
-  <img style="margin-right: 10px;" src="metadata/en-US/images/phoneScreenshots/screenshot-3.png" alt="Level 3" width="200"/>
-  <img style="margin-right: 10px;" src="metadata/en-US/images/phoneScreenshots/screenshot-4.png" alt="Level 4" width="200"/>
+<div>
+  <img src="metadata/en-US/images/phoneScreenshots/screenshot-1.png" alt="Level 1" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/screenshot-2.png" alt="Level 2" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/screenshot-3.png" alt="Level 3" width="200"/>
+  <img src="metadata/en-US/images/phoneScreenshots/screenshot-4.png" alt="Level 4" width="200"/>
 </div>
 
 ## Table of contents
