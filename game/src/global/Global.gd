@@ -1,6 +1,7 @@
 extends Node
 
-var version = "8"
+# increase to show 'Whats new' screen
+var version = "9"
 
 const FDROID = false
 

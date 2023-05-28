@@ -180,11 +180,11 @@ margin_bottom = 894.054
 rect_scale = Vector2( 0.507877, 0.507877 )
 text = "What's new?
 
-- Buy new helmets, sticks
-and balls in the shop!
-- Game is now Open source
-on Github!
-- Better ball physics
+- Available on itch.io
+  and F-Droid
+- Bugfix in Store
+- Info screen with license 
+  infos and more
 
 Enjoy!"
 __meta__ = {

@@ -41,9 +41,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 17.9383, 31.9031 )
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Icon" parent="." instance=ExtResource( 2 )]
 position = Vector2( 360, 640 )
