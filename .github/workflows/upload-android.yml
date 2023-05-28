@@ -9,7 +9,7 @@ on:
       - ".github/workflows/upload-android.yml"
 
 env:
-  RELEASE_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_BASE64 }}
+  RELEASE_KEY_STORE_BASE64: ${{ secrets.ANDROID_SIGNING_KEY_BASE64 }}
   SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
   DEBUG_KEY_STORE_BASE64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
   EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
