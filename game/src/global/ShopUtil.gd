@@ -67,7 +67,28 @@ func _load_balls():
 					"id" : 9,
 					"price" : 100000,
 					"texture": load("res://assets/shop/ball/azure.png")
+				},
+				{
+					"id" : 10,
+					"price" : 200000,
+					"texture": load("res://assets/shop/ball/white-red.png")
+				},
+				{
+					"id" : 11,
+					"price" : 200000,
+					"texture": load("res://assets/shop/ball/blue-white.png")
+				},
+				{
+					"id" : 12,
+					"price" : 200000,
+					"texture": load("res://assets/shop/ball/yellow-green.png")
+				},
+				{
+					"id" : 13,
+					"price" : 200000,
+					"texture": load("res://assets/shop/ball/pink-azure.png")
 				}
+				
 			]
 		}
 
