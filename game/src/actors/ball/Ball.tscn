@@ -12,16 +12,7 @@
 radius = 22.6274
 
 [node name="Ball" type="Node2D"]
-rotation = -1.1392
 script = ExtResource( 7 )
-
-[node name="Smoothing2D" type="Node2D" parent="."]
-script = ExtResource( 6 )
-target = NodePath("../RigidBody2D")
-
-[node name="Sprite" type="Sprite" parent="Smoothing2D"]
-scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 1 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." groups=["ball"]]
 collision_layer = 8
@@ -46,5 +37,14 @@ script = ExtResource( 5 )
 position = Vector2( -202.838, 0.50515 )
 rotation = -3.14159
 scale = Vector2( 0.923824, 0.795064 )
+
+[node name="Smoothing2D" type="Node2D" parent="."]
+script = ExtResource( 6 )
+target = NodePath("../RigidBody2D")
+flags = 7
+
+[node name="Sprite" type="Sprite" parent="Smoothing2D"]
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
 
 [connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_RigidBody2D_body_entered"]
