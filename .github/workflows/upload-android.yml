@@ -35,8 +35,8 @@ jobs:
 
       - name: F-Droid check if versions are correct in fdroid/export_presets.cfg
         run: |
-            grep -Fxq 'version/code=$VERSION_CODE' fdroid/export_presets.cfg
-            grep -Fxq 'version/name="$VERSION_NAME"' fdroid/export_presets.cfg
+            grep -Fxq "version/code=$VERSION_CODE" fdroid/export_presets.cfg
+            grep -Fxq "version/name=\"$VERSION_NAME\"" fdroid/export_presets.cfg
 
       - name: Create changelog text for Github releases
         id: changelog
