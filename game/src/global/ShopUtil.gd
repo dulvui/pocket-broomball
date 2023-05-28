@@ -11,7 +11,7 @@ func _ready():
 func load_assets():
 	_load_balls()
 	_load_sticks()
-	_load_helmets()	
+	_load_helmets()
 
 func _load_balls():
 		items["BALL"] = {

@@ -29,9 +29,16 @@ func _on_Donate_pressed():
 	OS.shell_open("https://simondalvai.com/donate")
 	
 
+func _on_Join_pressed():
+	Global.click()
+	OS.shell_open("https://github.com/dulvui/pocket-broomball#join-with-your-broomball-team")
+	
+
 func _on_Back_pressed() -> void:
 	Global.click()
 	animation_player.play("FadeOut")
 	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
+
+
 

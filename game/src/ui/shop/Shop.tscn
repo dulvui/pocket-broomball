@@ -118,21 +118,21 @@ margin_bottom = 1279.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 149.0
-margin_top = 96.0
+margin_top = 93.0
 margin_right = 569.0
-margin_bottom = 304.0
+margin_bottom = 307.0
 
 [node name="Buy" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_right = 420.0
-margin_bottom = 99.0
+margin_bottom = 102.0
 rect_min_size = Vector2( 420, 0 )
 theme = ExtResource( 2 )
 text = "BUY"
 
 [node name="GoBack" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 109.0
+margin_top = 112.0
 margin_right = 420.0
-margin_bottom = 208.0
+margin_bottom = 214.0
 theme = ExtResource( 2 )
 text = "GO_BACK"
 __meta__ = {

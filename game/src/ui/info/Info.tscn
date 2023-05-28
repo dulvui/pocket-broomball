@@ -50,7 +50,6 @@ script = ExtResource( 2 )
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -191,12 +190,19 @@ Simon"
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 642.0
 margin_right = 589.0
-margin_bottom = 968.0
+margin_bottom = 1080.0
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
 margin_right = 589.0
 margin_bottom = 102.0
 text = "Website"
+
+[node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
+margin_top = -109.0
+margin_right = 589.0
+margin_bottom = -7.0
+text = "DONATE"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 112.0
@@ -204,17 +210,16 @@ margin_right = 589.0
 margin_bottom = 214.0
 text = "Github"
 
-[node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
-visible = false
-margin_top = -109.0
-margin_right = 589.0
-margin_bottom = -10.0
-text = "DONATE"
-
-[node name="Back" type="Button" parent="VBoxContainer/Buttons"]
+[node name="Join" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 224.0
 margin_right = 589.0
 margin_bottom = 326.0
+text = "JOIN"
+
+[node name="Back" type="Button" parent="VBoxContainer/Buttons"]
+margin_top = 336.0
+margin_right = 589.0
+margin_bottom = 438.0
 text = "GO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -223,6 +228,7 @@ anims/FadeOut = SubResource( 3 )
 
 [connection signal="meta_clicked" from="VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Website" to="." method="_on_Website_pressed"]
-[connection signal="pressed" from="VBoxContainer/Buttons/Github" to="." method="_on_Github_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Donate" to="." method="_on_Donate_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Github" to="." method="_on_Github_pressed"]
+[connection signal="pressed" from="VBoxContainer/Buttons/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Back" to="." method="_on_Back_pressed"]
