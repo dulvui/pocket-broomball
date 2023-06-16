@@ -6,6 +6,7 @@ on:
       - 'prod'
     paths:
       - "version-android"
+      - "fdroid"
       - ".github/workflows/upload-android.yml"
 
 env:
