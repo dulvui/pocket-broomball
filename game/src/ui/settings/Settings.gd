@@ -13,10 +13,9 @@ func _ready():
 	$MarginContainer/VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 	
 	update_dynamic_labels()
-		
-	if OS.get_name() == "iOS":
-#		$MarginContainer/VBoxContainer/MoreGames.hide()
-		$MarginContainer/VBoxContainer/GameServices.hide()
+	
+	if Global.FDROID:
+		$MarginContainer/VBoxContainer/RateAndReview.hide()
 		
 	animation_player.play("FadeIn")
 		

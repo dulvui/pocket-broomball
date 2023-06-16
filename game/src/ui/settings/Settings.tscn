@@ -75,13 +75,6 @@ margin_right = 533.0
 margin_bottom = 512.0
 text = "SFX_ON"
 
-[node name="GameServices" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-margin_top = 469.0
-margin_right = 553.0
-margin_bottom = 568.0
-text = "LOGIN_ARCADE"
-
 [node name="RateAndReview" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_top = 520.0
 margin_right = 533.0
@@ -140,7 +133,6 @@ anims/FadeOut = SubResource( 2 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RoundLimit" to="." method="_on_RoundLimit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_Music_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Sfx" to="." method="_on_Sfx_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/GameServices" to="." method="_on_GameServices_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/RateAndReview" to="." method="_on_RateAndReview_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MoreGames" to="." method="_on_MoreGames_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Join" to="." method="_on_Join_pressed"]
