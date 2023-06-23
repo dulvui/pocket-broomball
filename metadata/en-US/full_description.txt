@@ -23,12 +23,10 @@ If you want to add your team to the game, send me a mail at info@simondalvai.com
 👨‍💻 Created with Godot Engine 3
 
 
-AntiFeature: Not all assets of this game a free  
-The team logos where send to me by themselves, so I'm authorized to use them.  
-Since they haven't issued a license for the logos and at the time of creating the game  
-if wasn't aware of the impacts of not asking what license this logos have, no license  
-is available and all rights belong to the corresponding team.  
-If you want to use them, please contact me or the teams directly.
+AntiFeature: Not all assets of this game are free
+The team logos were sent to me directly by the teams themselves, granting me authorization to use them. However, it is crucial to acknowledge that no explicit license has been issued for these logos, and at the time of creating the game, I was unaware of the implications of not inquiring about their licensing status. As a result, all rights to the logos belong to the respective teams.
+If you want to use these logos, please contact me or the teams directly.
+
 
 Made with love by Simon Dalvai
 https://simondalvai.com
