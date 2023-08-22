@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _on_Website_pressed() -> void:
 	Global.click()
-	OS.shell_open("https://simondalvai.com")
+	OS.shell_open("https://simondalvai.org")
 
 
 func _on_Github_pressed() -> void:
@@ -26,7 +26,7 @@ func _on_RichTextLabel_meta_clicked(meta) -> void:
 
 func _on_Donate_pressed():
 	Global.click()
-	OS.shell_open("https://simondalvai.com/donate")
+	OS.shell_open("https://simondalvai.org/donate")
 	
 
 func _on_Join_pressed():

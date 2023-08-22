@@ -72,7 +72,7 @@ func _on_Okay_pressed():
 
 func _on_SimonDalvai_pressed():
 	Global.click()
-	OS.shell_open("https://simondalvai.com")
+	OS.shell_open("https://simondalvai.org")
 
 
 func _on_Info_pressed():

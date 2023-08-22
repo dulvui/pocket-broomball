@@ -39,7 +39,7 @@ For further instructions, like exporting to mobile, please read the official [Go
 
 ## Join with your Broomball team
 If you want to see your broomball team or even the whole league in the game,  
-just contact me at info@simondalvai.com  
+just contact me at info@simondalvai.org  
 Or make a pull request with the team's logos, names and stats (speed, power) and I'll publish them!
 
 ## Arcade Highscores
@@ -65,7 +65,7 @@ The corresponding full license texts can be found in the LICENSES/ directory.
 Note: The team logos where send to me by themselves, so I'm authorized to use them.  
       Since they haven't issued a license for the logos, no license is available and  
       all rights belong to the corresponding team.  
-      If you want to use them, please contact me at info@simondalvai.com or the  
+      If you want to use them, please contact me at info@simondalvai.org or the  
       teams directly.
 
 ## Licenses

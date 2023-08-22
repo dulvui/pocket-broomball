@@ -157,7 +157,7 @@ margin_right = 817.0
 margin_bottom = 1216.0
 rect_scale = Vector2( 0.4, 0.4 )
 theme = ExtResource( 4 )
-text = "simondalvai.com"
+text = "simondalvai.org"
 __meta__ = {
 "_edit_use_anchors_": false
 }
