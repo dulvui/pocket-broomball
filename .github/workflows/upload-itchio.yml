@@ -9,7 +9,6 @@ on:
 
 env:
   WORKING_DIRECTORY: game
-  ITCHIO_API_KEY: ${{ secrets.ITCHIO_API_KEY }}
 
 jobs:
   deploy:
@@ -25,18 +24,20 @@ jobs:
       - name: Create export directory
         run: mkdir html5
 
+      - name: Create export_presets.cfg
+        run: cp game/export_presets.html.example game/export_presets.cfg
+
       - name: Godot HTML5 export
         uses: dulvui/godot-html-export@v0.0.2
         with:
           working-directory: $WORKING_DIRECTORY
           create-export-preset-cfg: false
 
-
       - name: Upload to itch.io
         uses: dulvui/itchio-butler-upload@v0.0.1
         with:
           working-directory: html5
-          api-key: $ITCHIO_API_KEY
+          api-key: ${{ secrets.ITCHIO_API_KEY }}
           user: simondalvai
           game: pocket-broomball
           channel: html5
