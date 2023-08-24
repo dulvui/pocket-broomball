@@ -11,7 +11,7 @@ on:
 
 env:
   WORKING_DIRECTORY: game
-  SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
+  ANDROID_SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
   ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
   ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
   ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
@@ -56,7 +56,7 @@ jobs:
           cp metadata/en-US/changelogs/$VERSION_CODE.txt  distribution/whatsnew/whatsnew-en-US
 
       - name: Create service-account.json
-        run: echo $SERVICE_ACCOUNT_JSON > service-account.json
+        run: echo $ANDROID_SERVICE_ACCOUNT_JSON > service-account.json
 
       - name: Create keystores
         run: |
