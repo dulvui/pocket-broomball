@@ -20,6 +20,7 @@ This game is open source, with no ads and no tracking.
 - [Pocket Broomball](#pocket-broomball)
   - [Table of contents](#table-of-contents)
   - [Setup](#setup)
+    - [export\_presets.cfg](#export_presetscfg)
   - [Join with your Broomball team](#join-with-your-broomball-team)
   - [Arcade Highscores](#arcade-highscores)
   - [Contributions](#contributions)
@@ -36,6 +37,13 @@ Get the latest version of the Godot Engine editor and check out the
 repo. Then open the `game/project.godot` file with the editor.
 
 For further instructions, like exporting to mobile, please read the official [Godot Docs](https://docs.godotengine.org/en/stable/).
+
+### export_presets.cfg
+
+To be able to export for Android or iOS, copy the `export_presets.exmaple` file and fill in your values.
+```sh
+cp game/export_presets.example game/export_presets.cfg
+```
 
 ## Join with your Broomball team
 If you want to see your broomball team or even the whole league in the game,  

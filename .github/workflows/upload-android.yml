@@ -10,15 +10,17 @@ on:
       - ".github/workflows/upload-android.yml"
 
 env:
-  RELEASE_KEY_STORE_BASE64: ${{ secrets.ANDROID_SIGNING_KEY_BASE64 }}
-  SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-  DEBUG_KEY_STORE_BASE64: ${{ secrets.DEBUG_SIGNING_KEY_BASE64 }}
-  EXPORT_PRESET_CFG: ${{ secrets.GODOT_EXPORTS_PRESET_CFG }}
   WORKING_DIRECTORY: game
+  SERVICE_ACCOUNT_JSON: ${{ secrets.ANDROID_SERVICE_ACCOUNT_JSON }}
+  ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+  ANDROID_KEYSTORE_ALIAS: ${{ secrets.ANDROID_KEYSTORE_ALIAS }}
+  ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+  ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+  ANDROID_KEYSTORE_DEBUG_BASE64: ${{ secrets.ANDROID_KEYSTORE_DEBUG_BASE64 }}
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -56,25 +58,27 @@ jobs:
       - name: Create service-account.json
         run: echo $SERVICE_ACCOUNT_JSON > service-account.json
 
-      - name: Create release keystore
-        run: echo $RELEASE_KEY_STORE_BASE64 | base64 --decode > keystore.keystore
-
-      - name: Create debug keystore
-        run: echo $DEBUG_KEY_STORE_BASE64 | base64 --decode > debug.keystore
-
-      - name: Create and config export_presets.cfg
+      - name: Create keystores
         run: |
-          echo $EXPORT_PRESET_CFG > $WORKING_DIRECTORY/export_presets.cfg
-          sed -i "s|KEYSTORE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
+          echo $ANDROID_KEYSTORE_BASE64 | base64 --decode > keystore.keystore
+          echo $ANDROID_KEYSTORE_DEBUG_BASE64 | base64 --decode > debug.keystore
+
+      - name: Create export_presets.cfg and inject values
+        run: |
+          cp game/export_presets.android.example game/export_presets.cfg
           sed -i "s|VERSION_CODE|$VERSION_CODE|g" $WORKING_DIRECTORY/export_presets.cfg
           sed -i "s|VERSION_NAME|$VERSION_NAME|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|KEYSTORE_RELEASE_PATH|$GITHUB_WORKSPACE/keystore.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|KEYSTORE_DEBUG_PATH|$GITHUB_WORKSPACE/debug.keystore|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|ANDROID_KEYSTORE_ALIAS|$ANDROID_KEYSTORE_ALIAS|g" $WORKING_DIRECTORY/export_presets.cfg
+          sed -i "s|ANDROID_KEYSTORE_PASSWORD|$ANDROID_KEYSTORE_PASSWORD|g" $WORKING_DIRECTORY/export_presets.cfg
 
       - name: Delete iOS icons
         run: rm -rf $WORKING_DIRECTORY/AppIcons
 
       # GODOT EXPORT
       - name: Godot Android export
-        uses: dulvui/godot-android-export@v2.0.0
+        uses: dulvui/godot-android-export@v2.0.1
         with:
           working-directory: $WORKING_DIRECTORY
 
@@ -89,13 +93,13 @@ jobs:
           track: 'internal'
           status: completed
 
-      # BUNDLE FOR GITHUB RELEASES
+      # GITHUB RELEASES
       - name: Bundle aab to apk
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=PocketBroomball.aab --output=PocketBroomball.apks \
-          --ks=keystore.keystore --ks-pass=pass:"${{ secrets.ANDROID_STORE_PASSWORD }}" --ks-key-alias=${{ secrets.ANDROID_KEYSTORE_ALIAS }} \
-          --key-pass=pass:"${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" --mode=universal
+          --ks=keystore.keystore --ks-pass=pass:$ANDROID_STORE_PASSWORD --ks-key-alias=$ANDROID_KEYSTORE_ALIAS \
+          --key-pass=pass:$ANDROID_KEYSTORE_PASSWORD --mode=universal
           unzip -p PocketBroomball.apks universal.apk > PocketBroomball.apk
       
       # UPLOAD TO GITHUB RELEASES
