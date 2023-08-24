@@ -99,10 +99,9 @@ jobs:
         run: |
           wget -q https://github.com/google/bundletool/releases/download/1.14.0/bundletool-all-1.14.0.jar
           java -jar bundletool-all-1.14.0.jar build-apks --bundle=PocketBroomball.aab --output=PocketBroomball.apks \
-          --ks=keystore.keystore --ks-pass=pass:$ANDROID_STORE_PASSWORD --ks-key-alias=$ANDROID_KEYSTORE_ALIAS \
-          --key-pass=pass:$ANDROID_KEYSTORE_PASSWORD --mode=universal
+          --ks=keystore.keystore --ks-pass=pass:"$ANDROID_STORE_PASSWORD" --ks-key-alias="$ANDROID_KEYSTORE_ALIAS" \
+          --key-pass=pass:"$ANDROID_KEYSTORE_PASSWORD" --mode=universal
           unzip -p PocketBroomball.apks universal.apk > PocketBroomball.apk
-
 
       # UPLOAD TO GITHUB RELEASES
       - name: Upload binaries to Github release
