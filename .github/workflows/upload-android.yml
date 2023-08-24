@@ -84,15 +84,15 @@ jobs:
           working-directory: $WORKING_DIRECTORY
 
       # # GOOGLE PLAY STORE
-      - name: Publish to Play Store
-        uses: r0adkll/upload-google-play@v1
-        with:
-          serviceAccountJson: service-account.json
-          packageName: com.salvai.broomball
-          releaseFiles: ./PocketBroomball.aab
-          whatsNewDirectory: distribution/whatsnew
-          track: 'internal'
-          status: completed
+      # - name: Publish to Play Store
+      #   uses: r0adkll/upload-google-play@v1
+      #   with:
+      #     serviceAccountJson: service-account.json
+      #     packageName: com.salvai.broomball
+      #     releaseFiles: ./PocketBroomball.aab
+      #     whatsNewDirectory: distribution/whatsnew
+      #     track: 'internal'
+      #     status: completed
 
       # GITHUB RELEASES
       - name: Bundle aab to apk
@@ -102,7 +102,8 @@ jobs:
           --ks=keystore.keystore --ks-pass=pass:$ANDROID_STORE_PASSWORD --ks-key-alias=$ANDROID_KEYSTORE_ALIAS \
           --key-pass=pass:$ANDROID_KEYSTORE_PASSWORD --mode=universal
           unzip -p PocketBroomball.apks universal.apk > PocketBroomball.apk
-      
+
+
       # UPLOAD TO GITHUB RELEASES
       - name: Upload binaries to Github release
         uses: svenstaro/upload-release-action@v2
