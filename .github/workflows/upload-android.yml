@@ -5,7 +5,7 @@ on:
     branches:    
       - 'prod'
     paths:
-      - "version-android"
+      - "version"
       - "fdroid/*"
       - ".github/workflows/upload-android.yml"
       - "export_presets.android.example"

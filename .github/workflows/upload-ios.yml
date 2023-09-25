@@ -5,7 +5,7 @@ on:
     branches:    
       - 'prod'
     paths:
-      - "version-ios"
+      - "version"
       - ".github/workflows/upload-ios.yml"
       - "exportOptions.plist"
       - "export_presets.ios.example"
