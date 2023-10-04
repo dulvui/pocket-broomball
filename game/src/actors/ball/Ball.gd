@@ -11,6 +11,8 @@ var stop_away
 
 var computer
 
+onready var hit_sound:AudioStreamPlayer2D = $HitSound
+
 func _ready():
 	if get_parent().singleplayer:
 		computer = get_parent().get_parent().get_node("Computer")
@@ -66,4 +68,4 @@ func _on_RigidBody2D_body_entered(body):
 		apply_central_impulse((global_position - body.global_position).normalized() * Global.power_factor  * body.power)
 		body.animation_player.play("Shoot")
 	if Global.sfx:
-		$HitSound.play()
+		hit_sound.play()
