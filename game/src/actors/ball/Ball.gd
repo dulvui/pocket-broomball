@@ -64,8 +64,11 @@ func on_away_goal():
 	reset_away = true
 	
 func _on_RigidBody2D_body_entered(body):
+	var speed:float = linear_velocity.length()
 	if body is Computer || body is Player:
-		apply_central_impulse((global_position - body.global_position).normalized() * Global.power_factor  * body.power)
+		var impulse:Vector2 = (global_position - body.global_position).normalized() * Global.power_factor  * body.power
+		speed = impulse.length()
+		apply_central_impulse(impulse)
 		body.animation_player.play("Shoot")
 	if Global.sfx:
-		hit_sound.play()
+		hit_sound.hit(speed)

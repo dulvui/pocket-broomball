@@ -30,7 +30,6 @@ shape = SubResource( 1 )
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="RigidBody2D"]
 stream = ExtResource( 4 )
-volume_db = -3.0
 script = ExtResource( 5 )
 
 [node name="ComputerHitPosition" type="Position2D" parent="RigidBody2D"]
