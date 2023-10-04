@@ -68,7 +68,7 @@ rect_min_size = Vector2( 589, 600 )
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "This game is open source under the [url=https://github.com/dulvui/pocket-broomball/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
-Its created with Godot Engine and lots of love <3
+It's created with Godot Engine and lots of love <3
 
 
 [center][b]Credits[/b][/center]
