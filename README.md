@@ -50,11 +50,6 @@ If you want to see your broomball team or even the whole league in the game,
 just contact me at info@simondalvai.org  
 Or make a pull request with the team's logos, names and stats (speed, power) and I'll publish them!
 
-## Arcade Highscores
-
-Google Play Services (Android) and GameCenter (iOS) are currently not working with the latest Godot 3.4.4.  
-I'm working on it to make it work again.
-
 ## Contributions
 If you want to contribute to the project, please fork the repo,    
 make your changes and make a pull request with a short description  
