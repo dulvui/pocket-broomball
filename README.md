@@ -8,6 +8,9 @@ This game is open source, with no ads and no tracking.
 
 <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
 <a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
+<a href="https://f-droid.org/en/packages/com.simondalvai.pocketbroomball/" target="_blank"><img src="store-images/get-it-on-en.webp" alt="Get it on F-Droid" height="50px" ></a>
+<a href="https://github.com/dulvui/pocket-broomball/releases/" target="_blank"><img src="store-images/Github.webp" alt="Get it on Github" height="50px" ></a>
+<a href="https://simondalvai.itch.io/pocket-broomball" target="_blank"><img src="store-images/itchio.webp" alt="Available on itch.io" height="50px" ></a>
 
 <div>
   <img src="metadata/en-US/images/phoneScreenshots/screenshot-1.png" alt="Level 1" width="200"/>
@@ -22,7 +25,6 @@ This game is open source, with no ads and no tracking.
   - [Setup](#setup)
     - [export\_presets.cfg](#export_presetscfg)
   - [Join with your Broomball team](#join-with-your-broomball-team)
-  - [Arcade Highscores](#arcade-highscores)
   - [Contributions](#contributions)
   - [Licenses and Copyrights](#licenses-and-copyrights)
   - [Licenses](#licenses)
