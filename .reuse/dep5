@@ -1,20 +1,20 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Pocket Broomball
-Upstream-Contact: Simon Dalvai <simon.dalvai@posteo.de>
+Upstream-Contact: Simon Dalvai <info@simondalvai.org>
 Source: https://github.com/dulvui/pocket-broomball
 
 Files: game/src/*
-Copyright: 2022 Simon Dalvai <simon.dalvai@posteo.de>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: AGPL-3.0-or-later
 
 Files: game/assets/locker/* game/assets/animated-player/* game/assets/progressbar* game/assets/ball.png
        game/assets/field.png game/assets/corner.png game/assets/goal.png game/assets/pause.png
        game/assets/broomballcoin.png game/assets/gamebreak.png
-Copyright: 2022 Simon Dalvai <simon.dalvai@posteo.de>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: CC-BY-SA-4.0
 
 Files: game/translations/* game/assets/theme/* README.md *.import game/project.godot game/default_bus_layout.tres .gitignore
-Copyright: 2022 Simon Dalvai <simon.dalvai@posteo.de>
+Copyright: 2022 Simon Dalvai <info@simondalvai.org>
 License: CC0-1.0
 
 # Third parties assets and code
