@@ -114,7 +114,6 @@ func _on_EasterEggTimer_timeout():
 
 func _on_GameServices_pressed():
 	Global.click()
-	GameServices.login()
 	
 
 func _on_Join_pressed():

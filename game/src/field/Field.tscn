@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/field.png" type="Texture" id=1]
 [ext_resource path="res://src/field/RoundCorners.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/field/Field.gd" type="Script" id=3]
-[ext_resource path="res://assets/sounds/horn.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/sounds/commentator/goal.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/commentator/goal.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/croud.ogg" type="AudioStream" id=6]
 [ext_resource path="res://src/actors/commentator/Commentator.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/field/Goals.tscn" type="PackedScene" id=8]
@@ -195,7 +194,6 @@ volume_db = 10.0
 
 [node name="GoalCheer" type="AudioStreamPlayer2D" parent="Sounds"]
 position = Vector2( 368.273, 636.613 )
-stream = ExtResource( 5 )
 
 [node name="Commentator" parent="." instance=ExtResource( 7 )]
 

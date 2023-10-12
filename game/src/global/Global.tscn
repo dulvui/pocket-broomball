@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/global/Global.gd" type="Script" id=1]
-[ext_resource path="res://assets/sounds/click.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sounds/music.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/click.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/music.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/global/Music.gd" type="Script" id=4]
+[ext_resource path="res://assets/sounds/chill-music.ogg" type="AudioStream" id=5]
 [ext_resource path="res://src/field/RoundCorners.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sounds/chill-music.wav" type="AudioStream" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FadeIn"
@@ -53,7 +53,7 @@ script = ExtResource( 4 )
 [node name="ChillMusic" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2
 position = Vector2( 352, 664 )
-stream = ExtResource( 7 )
+stream = ExtResource( 5 )
 bus = "Music"
 script = ExtResource( 4 )
 

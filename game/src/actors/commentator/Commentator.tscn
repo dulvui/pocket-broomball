@@ -1,20 +1,20 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/sounds/commentator/1.wav" type="AudioStream" id=1]
-[ext_resource path="res://assets/sounds/commentator/3.wav" type="AudioStream" id=2]
-[ext_resource path="res://assets/sounds/commentator/4.wav" type="AudioStream" id=3]
-[ext_resource path="res://assets/sounds/commentator/2.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/sounds/commentator/you_win.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/sounds/commentator/ready.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/sounds/commentator/you_loose.wav" type="AudioStream" id=7]
-[ext_resource path="res://assets/sounds/commentator/go.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/commentator/1.ogg" type="AudioStream" id=1]
+[ext_resource path="res://assets/sounds/commentator/3.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/sounds/commentator/4.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/commentator/2.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/commentator/you_win.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/commentator/ready.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/commentator/you_loose.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/commentator/go.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/actors/commentator/Commentator.gd" type="Script" id=9]
-[ext_resource path="res://assets/sounds/commentator/8.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/sounds/commentator/9.wav" type="AudioStream" id=11]
-[ext_resource path="res://assets/sounds/commentator/6.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/sounds/commentator/7.wav" type="AudioStream" id=13]
-[ext_resource path="res://assets/sounds/commentator/10.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/sounds/commentator/5.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/commentator/7.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/commentator/9.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/commentator/6.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/commentator/8.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/commentator/10.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/commentator/5.ogg" type="AudioStream" id=15]
 
 [node name="Commentator" type="Node2D"]
 position = Vector2( 349.767, 3.70124 )
@@ -39,10 +39,10 @@ stream = ExtResource( 15 )
 stream = ExtResource( 12 )
 
 [node name="Goal7" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 10 )
 
 [node name="Goal8" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 13 )
 
 [node name="Goal9" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/goal.ogg-5a455dce87ed5ecdc3c7934ab0524283.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/commentator/goal.ogg"
+dest_files=[ "res://.import/goal.ogg-5a455dce87ed5ecdc3c7934ab0524283.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

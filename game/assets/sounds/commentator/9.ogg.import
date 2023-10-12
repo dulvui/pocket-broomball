@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/9.ogg-d2c02cb1c496bbe6d06efd76569bc8d2.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/commentator/9.ogg"
+dest_files=[ "res://.import/9.ogg-d2c02cb1c496bbe6d06efd76569bc8d2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
