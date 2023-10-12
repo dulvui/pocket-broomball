@@ -53,4 +53,4 @@ func _on_GameOver_visibility_changed():
 
 
 func _on_Highscore_pressed():
-	GameServices.show_leaderboard()
+	pass

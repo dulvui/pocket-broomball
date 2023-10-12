@@ -43,8 +43,6 @@ func _on_Goals_away_goal():
 	else:
 		$GameOver.is_highscore(false)
 		
-	GameServices.submit_arcade_score(score)
-		
 	Global.save_all_data()
 	$Pause.hide()
 	$GameOver.set_collected_coins_and_score(collected_coins,score)

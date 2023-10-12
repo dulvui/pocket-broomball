@@ -110,10 +110,6 @@ func _on_EasterEgg_button_up():
 
 func _on_EasterEggTimer_timeout():
 	Global.add_coins(50000)
-
-
-func _on_GameServices_pressed():
-	Global.click()
 	
 
 func _on_Join_pressed():

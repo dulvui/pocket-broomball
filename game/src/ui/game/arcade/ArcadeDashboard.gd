@@ -100,4 +100,3 @@ func _on_FreezeUp_pressed():
 
 func _on_OnlineHighscore_pressed():
 	Global.click()
-	GameServices.show_leaderboard()
