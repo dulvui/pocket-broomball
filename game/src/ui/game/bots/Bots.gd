@@ -80,7 +80,7 @@ func _process(delta):
 		Global.game_over(home_score.goals,away_score.goals)
 		get_tree().paused = true
 		$Pause.queue_free()
-		$Player.queue_free()
+		$Computer2.queue_free()
 		$Computer.queue_free()
 		$Ball.queue_free()
 		$GameOver.show()
@@ -100,7 +100,7 @@ func _process(delta):
 			get_tree().paused = true
 			$Pause.queue_free()
 			Global.game_over(home_score.goals,away_score.goals)
-			$Player.queue_free()
+			$Computer2.queue_free()
 			$Computer.queue_free()
 			$Ball.queue_free()
 			$LeagueGameover.show()
