@@ -20,6 +20,7 @@ TOURNAMENT,Tournament,Turnier,Torneo,Tournoi
 ARCADE,Arcade,Arcade,Arcade,Arcade
 P_VS_PC,1 Player,1 Spieler,1 Giocatore,1 Joueur
 P_VS_P,2 Players,2 Spieler,2 Giocatori,2 Joueurs
+B_VS_B,Bot vs Bot,Bot vs Bot,Bot vs Bot,Bot vs Bot
 SPEED,Speed,Speed,Velocità ,Rapidité
 POWER,Power,Kraft,Forza,Force
 FREEZE,Freeze,Erfrieren,Gela,Geler
