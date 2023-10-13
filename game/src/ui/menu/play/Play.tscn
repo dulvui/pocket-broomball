@@ -97,27 +97,33 @@ __meta__ = {
 }
 
 [node name="League" type="Button" parent="VBoxContainer"]
-margin_right = 518.0
-margin_bottom = 99.0
+margin_right = 531.0
+margin_bottom = 102.0
 text = "TOURNAMENT"
 
 [node name="Arcade" type="Button" parent="VBoxContainer"]
-margin_top = 109.0
-margin_right = 518.0
-margin_bottom = 208.0
+margin_top = 112.0
+margin_right = 531.0
+margin_bottom = 214.0
 text = "ARCADE"
 
 [node name="Single Match" type="Button" parent="VBoxContainer"]
-margin_top = 218.0
-margin_right = 518.0
-margin_bottom = 317.0
+margin_top = 224.0
+margin_right = 531.0
+margin_bottom = 326.0
 text = "P_VS_PC"
 
 [node name="OneVsOne" type="Button" parent="VBoxContainer"]
-margin_top = 327.0
-margin_right = 518.0
-margin_bottom = 426.0
+margin_top = 336.0
+margin_right = 531.0
+margin_bottom = 438.0
 text = "P_VS_P"
+
+[node name="BotVsBot" type="Button" parent="VBoxContainer"]
+margin_top = 448.0
+margin_right = 531.0
+margin_bottom = 550.0
+text = "B_VS_B"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
@@ -128,3 +134,4 @@ anims/FadeOut = SubResource( 2 )
 [connection signal="pressed" from="VBoxContainer/Arcade" to="." method="_on_Arcade_pressed"]
 [connection signal="pressed" from="VBoxContainer/Single Match" to="." method="_on_Single_Match_pressed"]
 [connection signal="pressed" from="VBoxContainer/OneVsOne" to="." method="_on_OneVsOne_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotVsBot" to="." method="_on_BotVsBot_pressed"]

@@ -39,9 +39,6 @@ tracks/0/keys = {
 
 [node name="DifficultySelection" type="Control"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
@@ -66,19 +63,19 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="Easy" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 323.0
+margin_top = 314.0
 margin_right = 520.0
-margin_bottom = 422.0
+margin_bottom = 416.0
 text = "EASY"
 
 [node name="Medium" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 430.0
+margin_top = 424.0
 margin_right = 520.0
-margin_bottom = 529.0
+margin_bottom = 526.0
 text = "MEDIUM"
 
 [node name="Hard" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 537.0
+margin_top = 534.0
 margin_right = 520.0
 margin_bottom = 636.0
 text = "HARD"
@@ -86,22 +83,22 @@ text = "HARD"
 [node name="Extreme" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_top = 644.0
 margin_right = 520.0
-margin_bottom = 743.0
+margin_bottom = 746.0
 text = "EXTREME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Legend" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 751.0
+margin_top = 754.0
 margin_right = 520.0
-margin_bottom = 850.0
+margin_bottom = 856.0
 text = "LEGEND"
 
 [node name="GoBack" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 858.0
+margin_top = 864.0
 margin_right = 520.0
-margin_bottom = 957.0
+margin_bottom = 966.0
 text = "GO_BACK"
 __meta__ = {
 "_edit_use_anchors_": false

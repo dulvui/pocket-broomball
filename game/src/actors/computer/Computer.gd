@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Computer
 
+export var opposite = false
+
 var speed = 1
 var power = 1
 
@@ -11,7 +13,7 @@ var freeze = false
 
 onready var player = get_parent().get_node("Player");
 onready var  ball = get_parent().get_node("Ball").get_node("RigidBody2D");
-onready var hit_pos = ball.get_node("ComputerHitPosition")
+var hit_pos
 
 var animation_player
 
@@ -21,14 +23,24 @@ func _ready():
 		speed = Global.away_team_speed / 3
 	if Global.away_team_power: 
 		power = Global.away_team_power
+	if opposite:
+		hit_pos = ball.get_node("ComputerHitPosition2")
+	else:
+		hit_pos = ball.get_node("ComputerHitPosition")
 
 func _physics_process(delta):
 	var ballpos = ball.global_position
 	
-	if ballpos.y < 640  and ballpos.y > global_position.y:
-		destination = hit_pos.global_position
+	if opposite:
+		if ballpos.y > 640  and ballpos.y < global_position.y:
+			destination = hit_pos.global_position
+		else:
+			destination = Vector2(ballpos.x,1280 - 120)
 	else:
-		destination = Vector2(ballpos.x,120)
+		if ballpos.y < 640  and ballpos.y > global_position.y:
+			destination = hit_pos.global_position
+		else:
+			destination = Vector2(ballpos.x,120)
 	
 	direction = (destination - global_position).normalized()
 	var distance_to_player = global_position.distance_to(destination)

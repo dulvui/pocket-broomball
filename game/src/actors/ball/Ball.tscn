@@ -37,6 +37,11 @@ position = Vector2( -202.838, 0.50515 )
 rotation = -3.14159
 scale = Vector2( 0.923824, 0.795064 )
 
+[node name="ComputerHitPosition2" type="Position2D" parent="RigidBody2D"]
+position = Vector2( 202.838, 0.505 )
+rotation = -3.14159
+scale = Vector2( 0.923824, 0.795064 )
+
 [node name="Smoothing2D" type="Node2D" parent="."]
 script = ExtResource( 6 )
 target = NodePath("../RigidBody2D")

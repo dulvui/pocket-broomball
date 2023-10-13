@@ -42,8 +42,21 @@ func _on_OneVsOne_pressed():
 	get_tree().change_scene("res://src/ui/game/multiplayer/Multiplayer.tscn")
 
 
+
+func _on_BotVsBot_pressed():
+	Global.click()
+	Global.set_home_team(null)
+	Global.set_away_team(null)
+	Global.home_team_power = 10
+	Global.home_team_speed = 10
+	animation_player.play("FadeOut")
+	yield(animation_player, "animation_finished" )
+	get_tree().change_scene("res://src/ui/game/bots/Bots.tscn")
+
+
 func _on_Back_pressed():
 	Global.click()
 	animation_player.play("FadeOut")
 	yield(animation_player, "animation_finished" )
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
+
