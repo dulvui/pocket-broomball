@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=11 format=2]
 
 [ext_resource path="res://assets/theme/button_style.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/theme/button_pressed_style.tres" type="StyleBox" id=2]
 [ext_resource path="res://assets/font/Carlito-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/theme/button-transparent.tres" type="StyleBox" id=4]
 
 [sub_resource type="DynamicFont" id=4]
 size = 86
@@ -50,7 +51,7 @@ Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 0
 Button/fonts/font = SubResource( 4 )
 Button/styles/disabled = ExtResource( 1 )
-Button/styles/focus = ExtResource( 1 )
+Button/styles/focus = ExtResource( 4 )
 Button/styles/hover = ExtResource( 1 )
 Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = ExtResource( 2 )
