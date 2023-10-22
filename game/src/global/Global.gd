@@ -223,7 +223,7 @@ func increase_stats():
 	if is_worldcup:
 		if final_teams[0]["name"] == selected_squad:
 			league_stats[current_league_name]["played"] += 1
-			league_stats[current_league_name]["wins"] += 1
+			league_stats[current_league_name]["win"] += 1
 		else:
 			league_stats[current_league_name]["played"] += 1
 	else:
@@ -231,7 +231,7 @@ func increase_stats():
 			if team["name"] == selected_squad:
 				if team["position"] == 0:
 					league_stats[current_league_name]["played"] += 1
-					league_stats[current_league_name]["wins"] += 1
+					league_stats[current_league_name]["win"] += 1
 				else:
 					league_stats[current_league_name]["played"] += 1
 

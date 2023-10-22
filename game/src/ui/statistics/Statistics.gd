@@ -18,7 +18,7 @@ func _ready():
 		$GridContainer.add_child(played_label)
 		
 		var win_label = Label.new()
-		win_label.set_text(str(Global.league_stats[league]["wins"]))
+		win_label.set_text(str(Global.league_stats[league]["win"]))
 		$GridContainer.add_child(win_label)
 
 
