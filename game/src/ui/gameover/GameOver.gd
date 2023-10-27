@@ -13,5 +13,7 @@ func _on_Replay_pressed():
 	get_tree().paused = false
 	if get_parent().get_name() == "SinglePlayer":
 		get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
+	elif get_parent().get_name() == "Bots":
+		get_tree().change_scene("res://src/ui/game/bots/Bots.tscn")
 	else:
 		get_tree().change_scene("res://src/ui/game/multiplayer/Multiplayer.tscn")
