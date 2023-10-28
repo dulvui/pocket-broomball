@@ -47,11 +47,10 @@ tracks/0/keys = {
 }
 
 [node name="Dashboard" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
@@ -59,12 +58,8 @@ __meta__ = {
 visible = false
 
 [node name="Content" type="Control" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Table" parent="Content" instance=ExtResource( 7 )]
 visible = false
@@ -94,9 +89,6 @@ margin_right = 697.393
 margin_bottom = 2064.0
 rect_scale = Vector2( 0.793933, 0.846419 )
 theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Table" type="VBoxContainer" parent="Content/Buttons"]
 margin_right = 554.0
@@ -106,13 +98,13 @@ custom_constants/separation = 12
 
 [node name="NextMatch" type="Button" parent="Content/Buttons/Table"]
 margin_right = 554.0
-margin_bottom = 99.0
+margin_bottom = 95.0
 text = "PLAY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons/Table"]
-margin_top = 111.0
+margin_top = 107.0
 margin_right = 554.0
-margin_bottom = 239.0
+margin_bottom = 235.0
 
 [node name="BroomballCoins" type="TextureRect" parent="Content/Buttons/Table/HBoxContainer"]
 margin_right = 128.0
@@ -148,13 +140,13 @@ custom_constants/separation = 12
 
 [node name="NewChampionship" type="Button" parent="Content/Buttons2/Table"]
 margin_right = 554.0
-margin_bottom = 99.0
+margin_bottom = 95.0
 text = "START_NEW"
 
 [node name="GoBack" type="Button" parent="Content/Buttons2/Table"]
-margin_top = 111.0
+margin_top = 107.0
 margin_right = 554.0
-margin_bottom = 210.0
+margin_bottom = 202.0
 text = "MENU"
 
 [node name="Matchday" type="Label" parent="Content"]
