@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var animation_player
 
@@ -6,11 +6,11 @@ func _ready():
 	animation_player = $AnimationPlayer
 	
 	if Global.show_pop_up:
-		$Content/PopupDialog.popup()
-		$Content/MarginContainer.hide()
+		$PopupDialog.popup()
+		$MarginContainer.hide()
 		
 	if OS.get_name() == "iOS":
-		$Content/MarginContainer/VBoxContainer/Exit.hide()
+		$VBoxContainer/Exit.hide()
 	
 	if Global.first_fade_in:
 		Global.first_fade_in = false
@@ -67,7 +67,7 @@ func _on_Online_pressed():
 	get_tree().change_scene("res://src/ui/online/OnlineDashboard.tscn")
 
 func _on_Okay_pressed():
-	$Content/PopupDialog.hide()
+	$PopupDialog.hide()
 
 
 func _on_SimonDalvai_pressed():
