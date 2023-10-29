@@ -39,42 +39,41 @@ AUSTRIA,Austria,Österreich,Austria,Autriche,Austria
 SLOVENIA,Slovenia,Slovenien,Slovenia,Slovénie,Eslovenia
 FRANCE,France,Frankreich,Francia,France,Francia
 RUSSIA,Russia,Russland,Russia,Russie,Rusia
-,Japan,Japan,Giappone,Japon,Japón
-JAPAN,Australia,Australien,Australia,Australie,Australia
-AUSTRALIA,Italy,Italien,Italia ,Italie,Italia
-ITALY,Switzerland,Schweiz,Svizzera,Suisse,Suiza
-SWITZERLAND,Usa,Usa,Stati uniti,États-unis,Estados Unidos
-USA,Canada,Kanada,Canada,Canada,Canadá
-CANADA,Group,Gruppe,Gruppo,Groupe,Grupo
-GROUP,Start new,Neustart,Rinizia,Nouveau départ,Empezar nuevo
-START_NEW,Team,Mannschaft,Squadra,Équipe,Equipo
-TEAM,Continue,Weiter,Continua,Continuer,Continuar
-CONTINUE,Buy,Kaufen,Compra,Acheter,Comprar
-BUY,Ball,Ball,Palla,Boule,Pelota
-BALL,Gloves,Handschuhe,Guanti,Gants,Guantes
-GLOVES,Stick,Schläger,Mazza,Crosse,Palo
-STICK,Field,Feld,Campo,Terrain,Campo
-FIELD,Helmet,Helm,Casco,Casque,Casco
-HELMET,Shop,Shop,Negozio,Boutique,Tienda
-SHOP,Yes,Ja,Si,Oui,Sí
-YES,No,Nein,No,No,No
-NO,YOUR CURRENT\nPROGRESS WILL\nBE LOST!\nCONTINUE?,DEIN AKTUELLER\nFORTSCHRITT\nGEHT VERLOREN!\nBIST DU SICHER?,IL TUO TORNEO\nATTUALE SARA'\nPERSO!\nCONTINUARE?,VOTRE PROGRES\nACTUEL SERA\nPERDU !\nCONTINUER ?,¡TU PROGRESO ACTUAL\nSE PERDERÁ!\n¿CONTINUAR?
-WARNING_NEW,GROUP A,GRUPPE A,GRUPPO A,GROUPE A,GRUPO A
-GROUP_A,GROUP B,GRUPPE B,GRUPPO B,GROUPE B,GRUPO B
-GROUP_B,GROUP C,GRUPPE C,GRUPPO C,GROUPE C,GRUPO C
-GROUP_C,GROUP D,GRUPPE D,GRUPPO D,GROUPE D,GRUPO D
-GROUP_D,G,S,G,J,G
-P,W,G,V,W,W
-W,L,V,P,P,L
-L,GD,TD,DR,DDB,GD
-GD,SEMI FINALS,SEMI FINALE,SEMI FINALE,SEMIFINALS,SEMIFINALES
-SEMI_FINALS,QUARTER FINALS,VIERTEL FINALE,QUARTI DI FINALE,QUART DE FINALES,CUARTOS DE FINALES
-QUARTER_FINALS,FINAL,FINALE,FINALE,FINAL,FINAL
-FINAL,WORLD CHAMPION,WELTMEISTER,CAMPIONE DEL MONDO,CHAMPION MONDIAL,CAMPEÓN MUNDIAL
-WORLD_CHAMPION,Add your team!,Mehr Teams,Più squadre,Plus d'équipes,¡Añade tu equipo!
-JOIN,Select,Auswählen,Seleziona,Sélectionner,Seleccionar
-SELECT,Selected,Ausgewählt,Selezionato,Sélectionné,Seleccionado
-SELECTED,Info,Infos,Info,Info,Información
-INFO,Website,Website,Sito web,Site web,Sitio web
-WEBSITE,Donate,Spenden,Donazione,Donation,Donar
-DONATE,,,,,
+JAPAN,Japan,Japan,Giappone,Japon,Japón
+AUSTRALIA,Australia,Australien,Australia,Australie,Australia
+ITALY,Italy,Italien,Italia ,Italie,Italia
+SWITZERLAND,Switzerland,Schweiz,Svizzera,Suisse,Suiza
+USA,Usa,Usa,Stati uniti,États-unis,Estados Unidos
+CANADA,Canada,Kanada,Canada,Canada,Canadá
+GROUP,Group,Gruppe,Gruppo,Groupe,Grupo
+START_NEW,Start new,Neustart,Rinizia,Nouveau départ,Empezar nuevo
+TEAM,Team,Mannschaft,Squadra,Équipe,Equipo
+CONTINUE,Continue,Weiter,Continua,Continuer,Continuar
+BUY,Buy,Kaufen,Compra,Acheter,Comprar
+BALL,Ball,Ball,Palla,Boule,Pelota
+GLOVES,Gloves,Handschuhe,Guanti,Gants,Guantes
+STICK,Stick,Schläger,Mazza,Crosse,Palo
+FIELD,Field,Feld,Campo,Terrain,Campo
+HELMET,Helmet,Helm,Casco,Casque,Casco
+SHOP,Shop,Shop,Negozio,Boutique,Tienda
+YES,Yes,Ja,Si,Oui,Sí
+NO,No,Nein,No,No,No
+WARNING_NEW,YOUR CURRENT\nPROGRESS WILL\nBE LOST!\nCONTINUE?,DEIN AKTUELLER\nFORTSCHRITT\nGEHT VERLOREN!\nBIST DU SICHER?,IL TUO TORNEO\nATTUALE SARA'\nPERSO!\nCONTINUARE?,VOTRE PROGRES\nACTUEL SERA\nPERDU !\nCONTINUER ?,¡TU PROGRESO ACTUAL\nSE PERDERÁ!\n¿CONTINUAR?
+GROUP_A,GROUP A,GRUPPE A,GRUPPO A,GROUPE A,GRUPO A
+GROUP_B,GROUP B,GRUPPE B,GRUPPO B,GROUPE B,GRUPO B
+GROUP_C,GROUP C,GRUPPE C,GRUPPO C,GROUPE C,GRUPO C
+GROUP_D,GROUP D,GRUPPE D,GRUPPO D,GROUPE D,GRUPO D
+P,G,S,G,J,G
+W,W,G,V,W,W
+L,L,V,P,P,L
+GD,GD,TD,DR,DDB,GD
+SEMI_FINALS,SEMI FINALS,SEMI FINALE,SEMI FINALE,SEMIFINALS,SEMIFINALES
+QUARTER_FINALS,QUARTER FINALS,VIERTEL FINALE,QUARTI DI FINALE,QUART DE FINALES,CUARTOS DE FINALES
+FINAL,FINAL,FINALE,FINALE,FINAL,FINAL
+WORLD_CHAMPION,WORLD CHAMPION,WELTMEISTER,CAMPIONE DEL MONDO,CHAMPION MONDIAL,CAMPEÓN MUNDIAL
+JOIN,Add your team!,Mehr Teams,Più squadre,Plus d'équipes,¡Añade tu equipo!
+SELECT,Select,Auswählen,Seleziona,Sélectionner,Seleccionar
+SELECTED,Selected,Ausgewählt,Selezionato,Sélectionné,Seleccionado
+INFO,Info,Infos,Info,Info,Información
+WEBSITE,Website,Website,Sito web,Site web,Sitio web
+DONATE,Donate,Spenden,Donazione,Donation,Donar
