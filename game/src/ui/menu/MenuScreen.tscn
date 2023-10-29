@@ -36,38 +36,39 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
-margin_top = 83.0
+margin_top = 135.0
 margin_right = 660.0
-margin_bottom = 178.0
+margin_bottom = 230.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "PLAY"
 
 [node name="Shop" type="Button" parent="VBoxContainer"]
-margin_top = 188.0
+margin_top = 240.0
 margin_right = 660.0
-margin_bottom = 283.0
+margin_bottom = 335.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "SHOP"
 
 [node name="Statistics" type="Button" parent="VBoxContainer"]
-margin_top = 293.0
+margin_top = 345.0
 margin_right = 660.0
-margin_bottom = 388.0
+margin_bottom = 440.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "HALL"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
-margin_top = 398.0
+margin_top = 450.0
 margin_right = 660.0
-margin_bottom = 493.0
+margin_bottom = 545.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "SETTINGS"
 
 [node name="Info" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 503.0
 margin_right = 660.0
 margin_bottom = 598.0
@@ -76,25 +77,25 @@ size_flags_vertical = 4
 text = "INFO"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
-margin_top = 608.0
+margin_top = 555.0
 margin_right = 660.0
-margin_bottom = 703.0
+margin_bottom = 650.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "EXIT"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 713.0
+margin_top = 660.0
 margin_right = 660.0
-margin_bottom = 753.0
+margin_bottom = 700.0
 size_flags_horizontal = 3
 custom_constants/separation = 40
 
 [node name="SimonDalvai" type="Button" parent="VBoxContainer"]
-margin_top = 763.0
+margin_top = 710.0
 margin_right = 660.0
-margin_bottom = 858.0
+margin_bottom = 805.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "simondalvai.org"

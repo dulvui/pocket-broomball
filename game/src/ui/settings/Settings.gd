@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 const LANGUAGES = {
 	"en" : "English",
@@ -11,12 +11,12 @@ const LANGUAGES = {
 onready var animation_player = $AnimationPlayer
 
 func _ready():
-	$MarginContainer/VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
+	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 	
 	update_dynamic_labels()
 	
 	if Global.FDROID:
-		$MarginContainer/VBoxContainer/RateAndReview.hide()
+		$VBoxContainer/RateAndReview.hide()
 		
 	animation_player.play("FadeIn")
 		
@@ -24,18 +24,18 @@ func _ready():
 func _on_RoundLimit_pressed():
 	Global.click()
 	round_limit_up()
-	$MarginContainer/VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
+	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 
 
 func _on_Music_pressed():
 	Global.toggle_music()
 	
 	if Global.music == "chill":
-		$MarginContainer/VBoxContainer/Music.text = tr("MUSIC_1")
+		$VBoxContainer/Music.text = tr("MUSIC_1")
 	elif Global.music == "energetic":
-		$MarginContainer/VBoxContainer/Music.text = tr("MUSIC_2")
+		$VBoxContainer/Music.text = tr("MUSIC_2")
 	else:
-		$MarginContainer/VBoxContainer/Music.text = tr("MUSIC_OFF")
+		$VBoxContainer/Music.text = tr("MUSIC_OFF")
 		
 	if Global.sfx:
 		Global.click()
@@ -43,12 +43,12 @@ func _on_Music_pressed():
 	
 func _on_Sfx_pressed():
 	if Global.sfx:
-		$MarginContainer/VBoxContainer/Sfx.text = tr("SFX_OFF")
+		$VBoxContainer/Sfx.text = tr("SFX_OFF")
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), true)
 		set_sfx(false)
 	else:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), false)
-		$MarginContainer/VBoxContainer/Sfx.text = tr("SFX_ON")
+		$VBoxContainer/Sfx.text = tr("SFX_ON")
 		set_sfx(true)
 	if Global.sfx:
 		Global.click()
@@ -140,18 +140,25 @@ func _on_Language_pressed():
 	update_dynamic_labels()
 	
 func update_dynamic_labels():
-	$MarginContainer/VBoxContainer/Language.text = LANGUAGES[Global.locale]
+	$VBoxContainer/Language.text = LANGUAGES[Global.locale]
 	
 	# update music and sfx labels
 	if Global.music == "chill":
-		$MarginContainer/VBoxContainer/Music.text = tr("MUSIC_1")
+		$VBoxContainer/Music.text = tr("MUSIC_1")
 	elif Global.music == "energetic":
-		$MarginContainer/VBoxContainer/Music.text = tr("MUSIC_2")
+		$VBoxContainer/Music.text = tr("MUSIC_2")
 	else:
-		$MarginContainer/VBoxContainer/Music.text = tr("MUSIC_OFF")
+		$VBoxContainer/Music.text = tr("MUSIC_OFF")
 		
 	if Global.sfx:
-		$MarginContainer/VBoxContainer/Sfx.text = tr("SFX_ON")
+		$VBoxContainer/Sfx.text = tr("SFX_ON")
 	else:
-		$MarginContainer/VBoxContainer/Sfx.text = tr("SFX_OFF")
+		$VBoxContainer/Sfx.text = tr("SFX_OFF")
 		
+
+
+func _on_Info_pressed():
+	Global.click()
+	animation_player.play("FadeOut")
+	yield(animation_player, "animation_finished")
+	get_tree().change_scene("res://src/ui/info/Info.tscn")

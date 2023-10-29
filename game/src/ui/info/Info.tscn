@@ -191,11 +191,11 @@ Simon"
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 642.0
 margin_right = 589.0
-margin_bottom = 1080.0
+margin_bottom = 1052.0
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
 margin_right = 589.0
-margin_bottom = 102.0
+margin_bottom = 95.0
 text = "Website"
 
 [node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
@@ -206,21 +206,21 @@ margin_bottom = -7.0
 text = "DONATE"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 112.0
+margin_top = 105.0
 margin_right = 589.0
-margin_bottom = 214.0
+margin_bottom = 200.0
 text = "Github"
 
 [node name="Join" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 224.0
+margin_top = 210.0
 margin_right = 589.0
-margin_bottom = 326.0
+margin_bottom = 305.0
 text = "JOIN"
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 336.0
+margin_top = 315.0
 margin_right = 589.0
-margin_bottom = 438.0
+margin_bottom = 410.0
 text = "GO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

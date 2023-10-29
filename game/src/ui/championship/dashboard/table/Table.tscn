@@ -19,9 +19,9 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 show_behind_parent = true
 margin_left = -650.0
-margin_top = -92.0
+margin_top = -94.0
 margin_right = 650.0
-margin_bottom = 92.0
+margin_bottom = 93.0
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
@@ -31,7 +31,7 @@ custom_constants/margin_bottom = 0
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1250.0
-margin_bottom = 184.0
+margin_bottom = 187.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,7 +40,7 @@ __meta__ = {
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1250.0
-margin_bottom = 184.0
+margin_bottom = 187.0
 rect_min_size = Vector2( 1200, 0 )
 custom_constants/margin_right = 35
 custom_constants/margin_top = 30
@@ -51,21 +51,21 @@ custom_constants/margin_bottom = 20
 margin_left = 35.0
 margin_top = 30.0
 margin_right = 1165.0
-margin_bottom = 114.0
+margin_bottom = 117.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 34
 columns = 6
 
 [node name="Position" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
-margin_right = 42.0
-margin_bottom = 84.0
+margin_right = 43.0
+margin_bottom = 87.0
 custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
 text = "#"
 
 [node name="Name" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
-margin_left = 76.0
-margin_right = 736.0
-margin_bottom = 84.0
+margin_left = 77.0
+margin_right = 730.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
@@ -73,33 +73,33 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "TEAM"
 
 [node name="Points" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
-margin_left = 770.0
-margin_right = 813.0
-margin_bottom = 84.0
+margin_left = 764.0
+margin_right = 808.0
+margin_bottom = 87.0
 custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
 text = "P"
 align = 1
 
 [node name="Win" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
-margin_left = 847.0
-margin_right = 922.0
-margin_bottom = 84.0
+margin_left = 842.0
+margin_right = 919.0
+margin_bottom = 87.0
 custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
 text = "W"
 align = 1
 
 [node name="Lost" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
-margin_left = 956.0
-margin_right = 991.0
-margin_bottom = 84.0
+margin_left = 953.0
+margin_right = 989.0
+margin_bottom = 87.0
 custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
 text = "L"
 align = 1
 
 [node name="GD" type="Label" parent="MarginContainer/MarginContainer/GridContainer"]
-margin_left = 1025.0
+margin_left = 1023.0
 margin_right = 1130.0
-margin_bottom = 84.0
+margin_bottom = 87.0
 custom_colors/font_color = Color( 0.862745, 0.698039, 0.0862745, 1 )
 text = "GD"
 align = 1

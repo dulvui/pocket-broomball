@@ -38,7 +38,7 @@ func _on_Back_pressed() -> void:
 	Global.click()
 	animation_player.play("FadeOut")
 	yield(animation_player, "animation_finished")
-	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
+	get_tree().change_scene("res://src/ui/settings/Settings.tscn")
 
 
 
