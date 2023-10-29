@@ -4,7 +4,8 @@ const LANGUAGES = {
 	"en" : "English",
 	"de" : "Deutsch",
 	"it" : "Italiano",
-	"fr" : "Français"
+	"fr" : "Français",
+	"es" : "Español",
 }
 
 onready var animation_player = $AnimationPlayer
@@ -128,6 +129,8 @@ func _on_Language_pressed():
 			locale = "it"
 		"it":
 			locale = "fr"
+		"fr":
+			locale = "es"
 		_:
 			locale = "en"
 		
