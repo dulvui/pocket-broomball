@@ -9,14 +9,18 @@ var current_index = {
 }
 
 onready var type_label:Label = $Content/Type/Label
+onready var price_label:Label = $Content/Price
 onready var buy_button:Button = $Content/VBoxContainer/Buy
-
+onready var current_item:Sprite = $Objects/CurrentItem
+onready var ball:Sprite = $Objects/Ball
+onready var animated_body:Node2D = $Objects/AnimatedBody
+onready var locker:AnimatedSprite = $Objects/Locker
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	current_index["BALL"] = ShopUtil.items["BALL"]["selected"]
-	$Content/CurrentItem.texture = ShopUtil.get_ball_texture()
-	$Content/Ball.texture = ShopUtil.get_ball_texture()
+	current_item.texture = ShopUtil.get_ball_texture()
+	ball.texture = ShopUtil.get_ball_texture()
 	buy_button.text = "SELECTED"
 	animation_player.play("FadeIn")
 
@@ -30,12 +34,12 @@ func _on_Buy_pressed():
 	Global.click()
 	var success = ShopUtil.select(current_type, current_index[current_type])
 	
-	if $Content/Locker.visible and success:
-		$Content/Locker.play("open")
-		yield($Content/Locker,"animation_finished")
-		$Content/Locker.play("idle")
-		$Content/Locker.hide()
-		$Content/Price.hide()
+	if locker.visible and success:
+		locker.play("open")
+		yield(locker,"animation_finished")
+		locker.play("idle")
+		locker.hide()
+		price_label.text = ""
 
 	_update()
 
@@ -80,25 +84,25 @@ func _update():
 	# update button text
 	if current_index[current_type] == ShopUtil.items[current_type]["selected"]:
 		buy_button.text = "SELECTED"
-		$Content/Locker.hide()
-		$Content/Price.hide()
+		locker.hide()
+		price_label.text = ""
 	elif current_index[current_type] in ShopUtil.items[current_type]["unlocked"]:
 		buy_button.text = "SELECT"
-		$Content/Locker.hide()
-		$Content/Price.hide()
+		locker.hide()
+		price_label.text = ""
 	else:
-		$Content/Locker.show()
-		$Content/Price.show()
-		$Content/Price.text = str(ShopUtil.items[current_type]["list"][current_index[current_type]]["price"])
+		locker.show()
+		price_label.show()
+		price_label.text = str(ShopUtil.items[current_type]["list"][current_index[current_type]]["price"])
 		buy_button.text = "BUY"
 	
 	# update textures
-	$Content/AnimatedBody.change_style()
-	$Content/CurrentItem.texture = ShopUtil.get_texture(current_type,current_index[current_type])
-	$Content/Ball.texture = ShopUtil.get_ball_texture()
+	animated_body.change_style()
+	current_item.texture = ShopUtil.get_texture(current_type,current_index[current_type])
+	ball.texture = ShopUtil.get_ball_texture()
 	
 	# scale if not ball
 	if current_type == "BALL":
-		$Content/CurrentItem.scale = Vector2(4,4)
+		current_item.scale = Vector2(4,4)
 	else:
-		$Content/CurrentItem.scale = Vector2(8,8)
+		current_item.scale = Vector2(8,8)
