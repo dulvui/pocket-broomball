@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 enum TYPES {BALL, STICK, HELMET}
 var current_type = "BALL"
@@ -8,7 +8,8 @@ var current_index = {
 	"HELMET": 0,
 }
 
-onready var type_label = $Content/Type/Label
+onready var type_label:Label = $Content/Type/Label
+onready var buy_button:Button = $Content/VBoxContainer/Buy
 
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
@@ -16,7 +17,7 @@ func _ready():
 	current_index["BALL"] = ShopUtil.items["BALL"]["selected"]
 	$Content/CurrentItem.texture = ShopUtil.get_ball_texture()
 	$Content/Ball.texture = ShopUtil.get_ball_texture()
-	$Content/CenterContainer/VBoxContainer/Buy.text = "SELECTED"
+	buy_button.text = "SELECTED"
 	animation_player.play("FadeIn")
 
 func _on_GoBack_pressed():
@@ -78,18 +79,18 @@ func _on_NextType_pressed():
 func _update():
 	# update button text
 	if current_index[current_type] == ShopUtil.items[current_type]["selected"]:
-		$Content/CenterContainer/VBoxContainer/Buy.text = "SELECTED"
+		buy_button.text = "SELECTED"
 		$Content/Locker.hide()
 		$Content/Price.hide()
 	elif current_index[current_type] in ShopUtil.items[current_type]["unlocked"]:
-		$Content/CenterContainer/VBoxContainer/Buy.text = "SELECT"
+		buy_button.text = "SELECT"
 		$Content/Locker.hide()
 		$Content/Price.hide()
 	else:
 		$Content/Locker.show()
 		$Content/Price.show()
 		$Content/Price.text = str(ShopUtil.items[current_type]["list"][current_index[current_type]]["price"])
-		$Content/CenterContainer/VBoxContainer/Buy.text = "BUY"
+		buy_button.text = "BUY"
 	
 	# update textures
 	$Content/AnimatedBody.change_style()
