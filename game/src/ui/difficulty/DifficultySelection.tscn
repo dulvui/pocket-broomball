@@ -72,50 +72,50 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="Easy" type="Button" parent="VBoxContainer"]
-margin_top = 81.0
-margin_right = 660.0
-margin_bottom = 176.0
+margin_top = 80.0
+margin_right = 659.0
+margin_bottom = 175.0
 text = "EASY"
 
 [node name="Medium" type="Button" parent="VBoxContainer"]
-margin_top = 184.0
-margin_right = 660.0
-margin_bottom = 279.0
+margin_top = 183.0
+margin_right = 659.0
+margin_bottom = 278.0
 text = "MEDIUM"
 
 [node name="Hard" type="Button" parent="VBoxContainer"]
-margin_top = 287.0
-margin_right = 660.0
-margin_bottom = 382.0
+margin_top = 286.0
+margin_right = 659.0
+margin_bottom = 381.0
 text = "HARD"
 
 [node name="Extreme" type="Button" parent="VBoxContainer"]
-margin_top = 390.0
-margin_right = 660.0
-margin_bottom = 485.0
+margin_top = 389.0
+margin_right = 659.0
+margin_bottom = 484.0
 text = "EXTREME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Legend" type="Button" parent="VBoxContainer"]
-margin_top = 493.0
-margin_right = 660.0
-margin_bottom = 588.0
+margin_top = 492.0
+margin_right = 659.0
+margin_bottom = 587.0
 text = "LEGEND"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 596.0
-margin_right = 660.0
-margin_bottom = 616.0
+margin_top = 595.0
+margin_right = 659.0
+margin_bottom = 615.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 624.0
-margin_right = 660.0
-margin_bottom = 719.0
+margin_top = 623.0
+margin_right = 659.0
+margin_bottom = 718.0
 text = "GO_BACK"
 __meta__ = {
 "_edit_use_anchors_": false
