@@ -9,7 +9,9 @@
 [ext_resource path="res://src/ui/gameover/GameOver.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/actors/player/PlayerTwo.tscn" type="PackedScene" id=10]
 
-[node name="Multiplayer" type="Node2D"]
+[node name="Multiplayer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 6 )
 
 [node name="Field" parent="." instance=ExtResource( 3 )]

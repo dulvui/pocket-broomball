@@ -1,8 +1,10 @@
 extends Control
 
+onready var buttons:VBoxContainer = $Buttons
+
 func _on_PauseButton_pressed():
 	Global.click()
-	$VBoxContainer.show()
+	buttons.show()
 	get_tree().paused = true
 	
 func _on_Menu_pressed():
@@ -17,5 +19,5 @@ func _on_Menu_pressed():
 
 func _on_Resume_pressed():
 	Global.click()
-	$VBoxContainer.hide()
+	buttons.hide()
 	get_tree().paused = false

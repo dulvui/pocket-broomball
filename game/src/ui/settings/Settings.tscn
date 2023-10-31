@@ -38,25 +38,25 @@ margin_bottom = 247.0
 text = "roundlimit"
 
 [node name="Music" type="Button" parent="VBoxContainer"]
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 95.0
 text = "MUSIC_ON"
 
 [node name="Sfx" type="Button" parent="VBoxContainer"]
 margin_top = 103.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 198.0
 text = "SFX_ON"
 
 [node name="RateAndReview" type="Button" parent="VBoxContainer"]
 margin_top = 206.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 301.0
 text = "RATE"
 
 [node name="MoreGames" type="Button" parent="VBoxContainer"]
 margin_top = 309.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 404.0
 text = "MORE_GAMES"
 
@@ -69,7 +69,7 @@ text = "JOIN"
 
 [node name="Info" type="Button" parent="VBoxContainer"]
 margin_top = 412.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 507.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -77,21 +77,21 @@ text = "INFO"
 
 [node name="Language" type="Button" parent="VBoxContainer"]
 margin_top = 515.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 610.0
 text = "LANGUAGE"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 618.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 638.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
 margin_top = 646.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 741.0
 text = "GO_BACK"
 

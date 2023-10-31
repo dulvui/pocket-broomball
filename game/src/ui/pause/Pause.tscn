@@ -6,37 +6,39 @@
 
 [node name="Pause" type="Control"]
 pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Buttons" type="VBoxContainer" parent="."]
 pause_mode = 2
 visible = false
-margin_left = 200.0
-margin_top = 525.0
-margin_right = 520.0
-margin_bottom = 805.0
-rect_scale = Vector2( 1.05417, 1.07493 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -140.0
+margin_right = 330.0
+margin_bottom = 140.0
 theme = ExtResource( 1 )
 custom_constants/separation = 26
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Resume" type="Button" parent="VBoxContainer"]
-margin_right = 320.0
-margin_bottom = 94.0
+[node name="Resume" type="Button" parent="Buttons"]
+margin_right = 660.0
+margin_bottom = 95.0
 text = "RESUME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Menu" type="Button" parent="VBoxContainer"]
-margin_top = 120.0
-margin_right = 320.0
-margin_bottom = 214.0
+[node name="Menu" type="Button" parent="Buttons"]
+margin_top = 121.0
+margin_right = 660.0
+margin_bottom = 216.0
 text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,16 +46,20 @@ __meta__ = {
 
 [node name="PauseButton" type="TextureButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0.470588 )
-margin_left = 592.479
-margin_top = 66.0447
-margin_right = 656.479
-margin_bottom = 130.045
+anchor_left = 0.823
+anchor_top = 0.052
+anchor_right = 0.921
+anchor_bottom = 0.107
+margin_left = -0.0809937
+margin_top = -0.515297
+margin_right = -6.64105
+margin_bottom = -6.91501
 rect_scale = Vector2( 1.10547, 1.10547 )
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Buttons/Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]

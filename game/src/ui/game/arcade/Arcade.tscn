@@ -17,7 +17,9 @@
 size = 100
 font_data = ExtResource( 8 )
 
-[node name="Arcade" type="Node2D"]
+[node name="Arcade" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="Field" parent="." instance=ExtResource( 5 )]
