@@ -65,59 +65,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.138
-anchor_top = 0.30825
-anchor_right = 0.862
-anchor_bottom = 0.81525
-margin_left = 0.139992
-margin_top = -0.560028
-margin_right = -0.140015
-margin_bottom = 0.47998
-__meta__ = {
-"_edit_use_anchors_": true
-}
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -245.0
+margin_right = 330.0
+margin_bottom = 405.0
 
 [node name="League" type="Button" parent="VBoxContainer"]
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 95.0
 text = "TOURNAMENT"
 
 [node name="Arcade" type="Button" parent="VBoxContainer"]
 margin_top = 105.0
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 200.0
 text = "ARCADE"
 
 [node name="Single Match" type="Button" parent="VBoxContainer"]
 margin_top = 210.0
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 305.0
 text = "P_VS_PC"
 
 [node name="OneVsOne" type="Button" parent="VBoxContainer"]
 margin_top = 315.0
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 410.0
 text = "P_VS_P"
 
 [node name="BotVsBot" type="Button" parent="VBoxContainer"]
 margin_top = 420.0
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 515.0
 text = "B_VS_B"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 525.0
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 545.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
@@ -125,7 +119,7 @@ custom_constants/separation = 20
 [node name="Back" type="Button" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 555.0
-margin_right = 521.0
+margin_right = 660.0
 margin_bottom = 650.0
 text = "GO_BACK"
 
