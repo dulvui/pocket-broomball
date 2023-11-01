@@ -7,7 +7,9 @@ func _ready():
 	TouchHelper.reset()
 	if Global.music:
 		Global.music_loop.fade_out()
+	if Global.sfx:
 		$Field/Sounds/Crowd.play()
+
 	var goals = $Field/Goals
 	goals.connect("away_goal",$Score/AwayScore,"goal")
 	goals.connect("home_goal",$Score/HomeScore,"goal")
