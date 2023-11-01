@@ -15,8 +15,11 @@ use_filter = true
 font_data = ExtResource( 5 )
 
 [node name="TextureProgress" type="TextureProgress"]
-margin_right = 408.0
-margin_bottom = 84.0
+anchor_right = 0.567
+anchor_bottom = 0.066
+margin_right = -0.240021
+margin_bottom = -0.479996
+rect_min_size = Vector2( 408, 84 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 3 )
@@ -28,9 +31,6 @@ tint_under = Color( 0.0627451, 0.0705882, 0.152941, 1 )
 tint_progress = Color( 0.137255, 0.658824, 0.756863, 1 )
 nine_patch_stretch = true
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0

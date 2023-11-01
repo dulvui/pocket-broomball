@@ -1,18 +1,24 @@
-extends Node2D
+extends Control
 
-var team_index
-var league_index
-var animation_player
+onready var price_label:Label = $VBoxContainer/Price
+onready var team_label:Label = $VBoxContainer/Team/TeamLabel
+onready var league_label:Label = $VBoxContainer/League/LeagueLabel
+onready var speed_bar:TextureProgress = $VBoxContainer/SpeedBar
+onready var power_bar:TextureProgress = $VBoxContainer/PowerBar
+onready var animation_player:AnimationPlayer = $AnimationPlayer
+onready var select_button:Button = $VBoxContainer/Select
+onready var locker:Node2D = $Locker
 
-var teams 
+var team_index:int
+var league_index:int
+var teams:Array
 
 func _ready():
 	team_index = 0
 	league_index = 0
-	animation_player = $AnimationPlayer
 	
 	set_teams()
-	$League.text = Teams.leagues[league_index].name
+	league_label.text = Teams.leagues[league_index].name
 	_set_team_first_time()
 	
 	animation_player.play("FadeIn")
@@ -24,24 +30,24 @@ func _set_team():
 #	yield(animation_player, "animation_completed")
 	
 	$Team.texture = team.icon
-	$Name.text = team["name"]
+	team_label.text = team["name"]
 	
 	if  not Global.unlocked_team_ids.has(team["id"]):
-		$Select.text = tr("BUY")
-		$Price.text = str(team["price"])
-		$Price.show()
-		$Price.modulate = Color(1,1,1,1)
+		select_button.text = tr("BUY")
+		price_label.text = str(team["price"])
+		price_label.show()
+		price_label.modulate = Color(1,1,1,1)
 #		$Team.modulate = Color(0,0,0,1)
-		$Locker.show()
+		locker.show()
 	else:
-		$Select.text = tr("PLAY")
-		$Price.hide()
+		select_button.text = tr("PLAY")
+		price_label.hide()
 #		$Team.modulate = Color(1,1,1,1)
-		$Locker.hide()
+		locker.hide()
 	
 	
-	$Power/Bar.value = team.power
-	$Speed/Bar.value = team.speed
+	power_bar.value = team.power
+	speed_bar.value = team.speed
 	
 #	animation_player.play("TeamFadeIn")
 #	yield(animation_player, "animation_completed")
@@ -50,23 +56,23 @@ func _set_team_first_time():
 	var team = teams[team_index]
 	
 	$Team.texture = team.icon
-	$Name.text = team["name"]
+	team_label.text = team["name"]
 	
 	if  not Global.unlocked_team_ids.has(team["id"]):
-		$Select.text = tr("BUY")
-		$Price.text = str(team["price"])
-		$Price.modulate = Color(1,1,1,1)
-		$Price.show()
+		select_button.text = tr("BUY")
+		price_label.text = str(team["price"])
+		price_label.modulate = Color(1,1,1,1)
+		price_label.show()
 #		$Team.modulate = Color(0,0,0,1)
-		$Locker.show()
+		locker.show()
 	else:
-		$Select.text = tr("PLAY")
-		$Price.hide()
+		select_button.text = tr("PLAY")
+		price_label.hide()
 #		$Team.modulate = Color(1,1,1,1)
-		$Locker.hide()
+		locker.hide()
 			
-	$Power/Bar.value = team.power
-	$Speed/Bar.value = team.speed
+	power_bar.value = team.power
+	speed_bar.value = team.speed
 	
 func _on_PrevTeam_pressed():
 	Global.click()
@@ -98,7 +104,7 @@ func _on_PrevLeague_pressed():
 #	animation_player.play("FadeOutLeague")
 #	yield(animation_player, "tween_completed")
 	
-	$League.text = Teams.leagues[league_index].name
+	league_label.text = Teams.leagues[league_index].name
 	
 #	animation_player.play("FadeInLeague")
 #	yield(animation_player, "tween_completed")
@@ -117,7 +123,7 @@ func _on_NextLeague_pressed():
 #	animation_player.play("FadeOutLeague")
 #	yield(animation_player, "tween_completed")
 	
-	$League.text = Teams.leagues[league_index].name
+	league_label.text = Teams.leagues[league_index].name
 	
 #	animation_player.play("FadeInLeague")
 #	yield(animation_player, "tween_completed")
@@ -128,12 +134,12 @@ func _on_Select_pressed():
 	var team = teams[team_index]
 	if not Global.unlocked_team_ids.has(team["id"]):
 		if unlock_team(team):
-			$Locker.play("open")
-			yield($Locker,"animation_finished")
-			$Locker.play("idle")
-			$Locker.hide()
-			$AnimationPlayer.play("Unlock")
-			$Select.text = tr("PLAY")
+			locker.play("open")
+			yield(locker,"animation_finished")
+			locker.play("idle")
+			locker.hide()
+			animation_player.play("Unlock")
+			select_button.text = tr("PLAY")
 	else:
 		Global.current_league_name = Teams.leagues[league_index]["name"]
 		Global.selected_squad = team["name"]
@@ -146,16 +152,16 @@ func _on_Select_pressed():
 			Global.is_worldcup = false
 			inizialize_matches()
 		
-		$AnimationPlayer.play("FadeOut")
-		yield($AnimationPlayer,"animation_finished")
+		animation_player.play("FadeOut")
+		yield(animation_player,"animation_finished")
 		get_tree().change_scene("res://src/ui/championship/dashboard/Dashboard.tscn")
 
 
 
 func _on_GoBack_pressed():
 	Global.click()
-	$AnimationPlayer.play("FadeOut")
-	yield($AnimationPlayer,"animation_finished")
+	animation_player.play("FadeOut")
+	yield(animation_player,"animation_finished")
 	get_tree().change_scene("res://src/ui/menu/play/Play.tscn")
 
 

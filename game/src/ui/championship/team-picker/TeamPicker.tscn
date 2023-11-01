@@ -1,9 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/ui/championship/team-picker/TeamPicker.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/next.png" type="Texture" id=3]
-[ext_resource path="res://assets/prev.png" type="Texture" id=4]
 [ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/ui/TextureProgress.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/ui/locker/Locker.tscn" type="PackedScene" id=7]
@@ -72,7 +70,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1.8, 1.8 ), Vector2( 3, 3 ), Vector2( 1.8, 1.8 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Price:modulate")
+tracks/2/path = NodePath("VBoxContainer/Price:modulate")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -84,64 +82,41 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="TeamPicker" type="Node2D"]
-modulate = Color( 1, 1, 1, 0 )
+[node name="TeamPicker" type="Control"]
+modulate = Color( 1, 1, 1, 0.9 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="NextTeam" type="TextureButton" parent="."]
-self_modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
-margin_left = 610.0
-margin_top = 665.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -640.0
+margin_right = 330.0
+margin_bottom = 640.0
+custom_constants/separation = 20
+
+[node name="League" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 660.0
-margin_bottom = 725.0
-rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_bottom = 267.0
+alignment = 1
 
-[node name="PrevTeam" type="TextureButton" parent="."]
-self_modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
-margin_left = 10.0
-margin_top = 665.0
-margin_right = 60.0001
-margin_bottom = 715.0
-rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="PrevLeague" type="Button" parent="VBoxContainer/League"]
+margin_top = 86.0
+margin_right = 81.0
+margin_bottom = 181.0
+size_flags_vertical = 4
+text = " < "
 
-[node name="PrevLeague" type="TextureButton" parent="."]
-self_modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
-margin_left = 10.0
-margin_top = 96.0
-margin_right = 60.0
-margin_bottom = 156.0
-rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NextLeague" type="TextureButton" parent="."]
-self_modulate = Color( 0.137255, 0.658824, 0.756863, 1 )
-margin_left = 610.0
-margin_top = 96.0
-margin_right = 660.0
-margin_bottom = 146.0
-rect_scale = Vector2( 2, 2 )
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="League" type="Label" parent="."]
-margin_left = 87.0
-margin_top = 59.0
-margin_right = 1011.0
-margin_bottom = 367.0
-rect_scale = Vector2( 0.59716, 0.59716 )
+[node name="LeagueLabel" type="Label" parent="VBoxContainer/League"]
+margin_left = 85.0
+margin_right = 575.0
+margin_bottom = 267.0
+rect_min_size = Vector2( 450, 0 )
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "italian broomball league"
@@ -149,75 +124,103 @@ align = 1
 valign = 1
 autowrap = true
 uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Name" type="Label" parent="."]
-margin_left = 39.2257
-margin_top = 692.03
-margin_right = 959.226
-margin_bottom = 776.03
-rect_scale = Vector2( 0.7, 0.7 )
+[node name="NextLeague" type="Button" parent="VBoxContainer/League"]
+margin_left = 579.0
+margin_top = 86.0
+margin_right = 660.0
+margin_bottom = 181.0
+size_flags_vertical = 4
+text = " > "
+
+[node name="Team" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 287.0
+margin_right = 660.0
+margin_bottom = 382.0
+alignment = 1
+
+[node name="PrevTeam" type="Button" parent="VBoxContainer/Team"]
+margin_right = 81.0
+margin_bottom = 95.0
+size_flags_vertical = 4
+text = " < "
+
+[node name="TeamLabel" type="Label" parent="VBoxContainer/Team"]
+margin_left = 85.0
+margin_top = 4.0
+margin_right = 575.0
+margin_bottom = 91.0
+size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10000"
 align = 1
+autowrap = true
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Speed" type="Node2D" parent="."]
-position = Vector2( -1.80908, -34.3184 )
+[node name="NextTeam" type="Button" parent="VBoxContainer/Team"]
+margin_left = 579.0
+margin_right = 660.0
+margin_bottom = 95.0
+size_flags_vertical = 4
+text = " > "
 
-[node name="Bar" parent="Speed" instance=ExtResource( 6 )]
-margin_left = 151.945
-margin_top = 917.787
-margin_right = 559.945
-margin_bottom = 1001.79
-text = "SPEED"
-
-[node name="Power" type="Node2D" parent="."]
-position = Vector2( 150.88, 783.361 )
-
-[node name="Bar" parent="Power" instance=ExtResource( 6 )]
-
-[node name="Select" type="Button" parent="."]
-margin_left = 149.0
-margin_top = 1001.0
-margin_right = 561.0
-margin_bottom = 1100.0
-theme = ExtResource( 2 )
-text = "PLAY"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Team" type="Sprite" parent="."]
-position = Vector2( 358.565, 430.375 )
-scale = Vector2( 1.8, 1.8 )
-
-[node name="GoBack" type="Button" parent="."]
-margin_left = 151.0
-margin_top = 1130.0
-margin_right = 561.0
-margin_bottom = 1229.0
-theme = ExtResource( 2 )
-text = "GO_BACK"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Price" type="Label" parent="."]
-margin_left = 66.358
-margin_top = 520.0
-margin_right = 666.358
-margin_bottom = 626.0
+[node name="Price" type="Label" parent="VBoxContainer"]
+margin_top = 402.0
+margin_right = 660.0
+margin_bottom = 508.0
 theme = ExtResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "00000"
 align = 1
+
+[node name="SpeedBar" parent="VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 528.0
+margin_right = 660.0
+margin_bottom = 612.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "SPEED"
+
+[node name="PowerBar" parent="VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 632.0
+margin_right = 660.0
+margin_bottom = 716.0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 736.0
+margin_right = 660.0
+margin_bottom = 796.0
+rect_min_size = Vector2( 0, 60 )
+
+[node name="Select" type="Button" parent="VBoxContainer"]
+margin_top = 816.0
+margin_right = 660.0
+margin_bottom = 911.0
+theme = ExtResource( 2 )
+text = "PLAY"
+
+[node name="GoBack" type="Button" parent="VBoxContainer"]
+margin_top = 931.0
+margin_right = 660.0
+margin_bottom = 1026.0
+theme = ExtResource( 2 )
+text = "GO_BACK"
+
+[node name="Team" type="Sprite" parent="."]
+position = Vector2( 358.565, 430.375 )
+scale = Vector2( 1.8, 1.8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 2 )
@@ -226,9 +229,9 @@ anims/Unlock = SubResource( 4 )
 
 [node name="Locker" parent="." instance=ExtResource( 7 )]
 
-[connection signal="pressed" from="NextTeam" to="." method="_on_NextTeam_pressed"]
-[connection signal="pressed" from="PrevTeam" to="." method="_on_PrevTeam_pressed"]
-[connection signal="pressed" from="PrevLeague" to="." method="_on_PrevLeague_pressed"]
-[connection signal="pressed" from="NextLeague" to="." method="_on_NextLeague_pressed"]
-[connection signal="pressed" from="Select" to="." method="_on_Select_pressed"]
-[connection signal="pressed" from="GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="pressed" from="VBoxContainer/League/PrevLeague" to="." method="_on_PrevLeague_pressed"]
+[connection signal="pressed" from="VBoxContainer/League/NextLeague" to="." method="_on_NextLeague_pressed"]
+[connection signal="pressed" from="VBoxContainer/Team/PrevTeam" to="." method="_on_PrevTeam_pressed"]
+[connection signal="pressed" from="VBoxContainer/Team/NextTeam" to="." method="_on_NextTeam_pressed"]
+[connection signal="pressed" from="VBoxContainer/Select" to="." method="_on_Select_pressed"]
+[connection signal="pressed" from="VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
