@@ -1,41 +1,26 @@
 extends Control
 
-var speed_bar
-var power_bar
-var freeze_bar
+onready var speed_bar:TextureProgress = $VBoxContainer/Speed/TextureProgress
+onready var power_bar:TextureProgress = $VBoxContainer/Power/TextureProgress
+onready var freeze_bar:TextureProgress = $VBoxContainer/Freeze/TextureProgress
 
-var speed_up_button
-var power_up_button
-var freeze_up_button
+onready var speed_up_button:Button = $VBoxContainer/Speed/SpeedUp
+onready var freeze_up_button:Button = $VBoxContainer/Freeze/FreezeUp
+onready var power_up_button:Button = $VBoxContainer/Power/PowerUp
 
-var animation_player
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	speed_bar = $MarginContainer/VBoxContainer/Speed/TextureProgress
-	power_bar = $MarginContainer/VBoxContainer/Power/TextureProgress
-	freeze_bar = $MarginContainer/VBoxContainer/Freeze/TextureProgress
-	
-	speed_up_button = $MarginContainer/VBoxContainer/Speed/SpeedUp
-	freeze_up_button = $MarginContainer/VBoxContainer/Freeze/FreezeUp
-	power_up_button = $MarginContainer/VBoxContainer/Power/PowerUp
-
 	speed_up_button.text = str(_get_price(Global.arcade_speed))
 	freeze_up_button.text = str(_get_price(Global.arcade_freeze))
 	power_up_button.text = str(_get_price(Global.arcade_power))
-	
-	animation_player = $AnimationPlayer
+
 	animation_player.play("Highscore")
 	
 	speed_bar.value = Global.arcade_speed
 	power_bar.value = Global.arcade_power
 	freeze_bar.value = Global.arcade_freeze
 	
-	if OS.get_name() == "iOS":
-		$MarginContainer/VBoxContainer/OnlineHighscore.show()
-		
-	
-	$MarginContainer/VBoxContainer/Highscore.text = str(Global.arcade_highscore)
-
 	animation_player.play("FadeIn")
 
 func _get_price(n):
@@ -56,8 +41,6 @@ func _on_Play_pressed():
 	
 	Global.set_home_team(null)
 	Global.set_away_team(null)
-	
-	
 	Global.click()
 	
 	animation_player.play("FadeOut")
@@ -81,7 +64,7 @@ func _on_SpeedUp_pressed():
 		Global.save_all_data()
 
 func _on_PowerUp_pressed():
-	Global.click()	
+	Global.click()
 	if Global.arcade_power < 10 and Global.use_coins(_get_price(Global.arcade_power)):
 		Global.arcade_power += 1
 		power_up_button.text = str(_get_price(Global.arcade_power))
@@ -96,7 +79,3 @@ func _on_FreezeUp_pressed():
 		freeze_up_button.text = str(_get_price(Global.arcade_freeze))
 		freeze_bar.value = Global.arcade_freeze
 		Global.save_all_data()
-
-
-func _on_OnlineHighscore_pressed():
-	Global.click()

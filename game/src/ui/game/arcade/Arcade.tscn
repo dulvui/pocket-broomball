@@ -74,7 +74,6 @@ position = Vector2( 375.177, 234.844 )
 
 [node name="GameOver" parent="." instance=ExtResource( 10 )]
 pause_mode = 2
-visible = false
 
 [node name="PowerUpTimer" type="Timer" parent="."]
 one_shot = true
