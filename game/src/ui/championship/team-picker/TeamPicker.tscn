@@ -101,20 +101,22 @@ custom_constants/separation = 20
 
 [node name="League" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 660.0
-margin_bottom = 267.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 350 )
 alignment = 1
 
 [node name="PrevLeague" type="Button" parent="VBoxContainer/League"]
-margin_top = 86.0
+margin_top = 127.0
 margin_right = 81.0
-margin_bottom = 181.0
+margin_bottom = 222.0
 size_flags_vertical = 4
 text = " < "
 
 [node name="LeagueLabel" type="Label" parent="VBoxContainer/League"]
 margin_left = 85.0
+margin_top = 41.0
 margin_right = 575.0
-margin_bottom = 267.0
+margin_bottom = 308.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
@@ -127,29 +129,31 @@ uppercase = true
 
 [node name="NextLeague" type="Button" parent="VBoxContainer/League"]
 margin_left = 579.0
-margin_top = 86.0
+margin_top = 127.0
 margin_right = 660.0
-margin_bottom = 181.0
+margin_bottom = 222.0
 size_flags_vertical = 4
 text = " > "
 
 [node name="Team" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 287.0
+margin_top = 370.0
 margin_right = 660.0
-margin_bottom = 382.0
+margin_bottom = 620.0
+rect_min_size = Vector2( 0, 250 )
 alignment = 1
 
 [node name="PrevTeam" type="Button" parent="VBoxContainer/Team"]
+margin_top = 77.0
 margin_right = 81.0
-margin_bottom = 95.0
+margin_bottom = 172.0
 size_flags_vertical = 4
 text = " < "
 
 [node name="TeamLabel" type="Label" parent="VBoxContainer/Team"]
 margin_left = 85.0
-margin_top = 4.0
+margin_top = 81.0
 margin_right = 575.0
-margin_bottom = 91.0
+margin_bottom = 168.0
 size_flags_horizontal = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -163,15 +167,16 @@ __meta__ = {
 
 [node name="NextTeam" type="Button" parent="VBoxContainer/Team"]
 margin_left = 579.0
+margin_top = 77.0
 margin_right = 660.0
-margin_bottom = 95.0
+margin_bottom = 172.0
 size_flags_vertical = 4
 text = " > "
 
 [node name="Price" type="Label" parent="VBoxContainer"]
-margin_top = 402.0
+margin_top = 640.0
 margin_right = 660.0
-margin_bottom = 508.0
+margin_bottom = 746.0
 theme = ExtResource( 2 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -181,9 +186,9 @@ align = 1
 [node name="SpeedBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 528.0
+margin_top = 766.0
 margin_right = 660.0
-margin_bottom = 612.0
+margin_bottom = 850.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 text = "SPEED"
@@ -191,30 +196,30 @@ text = "SPEED"
 [node name="PowerBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 632.0
+margin_top = 870.0
 margin_right = 660.0
-margin_bottom = 716.0
+margin_bottom = 954.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 736.0
+margin_top = 974.0
 margin_right = 660.0
-margin_bottom = 796.0
-rect_min_size = Vector2( 0, 60 )
+margin_bottom = 984.0
+rect_min_size = Vector2( 0, 10 )
 
 [node name="Select" type="Button" parent="VBoxContainer"]
-margin_top = 816.0
+margin_top = 1004.0
 margin_right = 660.0
-margin_bottom = 911.0
+margin_bottom = 1099.0
 theme = ExtResource( 2 )
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 931.0
+margin_top = 1119.0
 margin_right = 660.0
-margin_bottom = 1026.0
+margin_bottom = 1214.0
 theme = ExtResource( 2 )
 text = "GO_BACK"
 
