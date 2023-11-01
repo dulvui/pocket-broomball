@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/ui/game/arcade/ArcadeDashboard.gd" type="Script" id=4]
 [ext_resource path="res://src/ui/TextureProgress.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/leaderboardsComplex.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 124
@@ -14,39 +13,15 @@ font_data = ExtResource( 2 )
 [sub_resource type="Animation" id=2]
 resource_name = "FadeIn"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("MarginContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="Animation" id=3]
 resource_name = "FadeOut"
 length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("MarginContainer:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("MarginContainer/VBoxContainer/Highscore:rect_scale")
+tracks/0/path = NodePath("VBoxContainer/Highscore:rect_scale")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -66,102 +41,95 @@ script = ExtResource( 4 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 110.0
-margin_top = 10.0
-margin_right = -110.0
-margin_bottom = -10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 500.0
-margin_bottom = 1260.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -630.0
+margin_right = 330.0
+margin_bottom = 630.0
 custom_constants/separation = 24
 alignment = 1
 
-[node name="Highscore" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 97.0
-margin_right = 500.0
-margin_bottom = 221.0
+[node name="Highscore" type="Label" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 660.0
+margin_bottom = 196.0
 rect_pivot_offset = Vector2( 250, 62 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "32"
 align = 1
 
-[node name="Speed" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 245.0
-margin_right = 500.0
-margin_bottom = 451.0
+[node name="Speed" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 220.0
+margin_right = 660.0
+margin_bottom = 419.0
 
-[node name="TextureProgress" parent="MarginContainer/VBoxContainer/Speed" instance=ExtResource( 5 )]
-margin_right = 500.0
+[node name="TextureProgress" parent="VBoxContainer/Speed" instance=ExtResource( 5 )]
+margin_right = 660.0
 margin_bottom = 94.0
 rect_min_size = Vector2( 0, 94 )
 text = "SPEED"
 
-[node name="SpeedUp" type="Button" parent="MarginContainer/VBoxContainer/Speed"]
+[node name="SpeedUp" type="Button" parent="VBoxContainer/Speed"]
 margin_top = 104.0
-margin_right = 500.0
-margin_bottom = 206.0
+margin_right = 660.0
+margin_bottom = 199.0
 text = "64000"
 
-[node name="Power" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 475.0
-margin_right = 500.0
-margin_bottom = 681.0
+[node name="Power" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 443.0
+margin_right = 660.0
+margin_bottom = 642.0
 
-[node name="TextureProgress" parent="MarginContainer/VBoxContainer/Power" instance=ExtResource( 5 )]
-margin_right = 500.0
+[node name="TextureProgress" parent="VBoxContainer/Power" instance=ExtResource( 5 )]
+margin_right = 660.0
 margin_bottom = 94.0
 rect_min_size = Vector2( 0, 94 )
 
-[node name="PowerUp" type="Button" parent="MarginContainer/VBoxContainer/Power"]
+[node name="PowerUp" type="Button" parent="VBoxContainer/Power"]
 margin_top = 104.0
-margin_right = 500.0
-margin_bottom = 206.0
+margin_right = 660.0
+margin_bottom = 199.0
 text = "1000"
 
-[node name="Freeze" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 705.0
-margin_right = 500.0
-margin_bottom = 911.0
+[node name="Freeze" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 666.0
+margin_right = 660.0
+margin_bottom = 865.0
 
-[node name="TextureProgress" parent="MarginContainer/VBoxContainer/Freeze" instance=ExtResource( 5 )]
-margin_right = 500.0
+[node name="TextureProgress" parent="VBoxContainer/Freeze" instance=ExtResource( 5 )]
+margin_right = 660.0
 margin_bottom = 94.0
 rect_min_size = Vector2( 0, 94 )
 text = "FREEZE"
 
-[node name="FreezeUp" type="Button" parent="MarginContainer/VBoxContainer/Freeze"]
+[node name="FreezeUp" type="Button" parent="VBoxContainer/Freeze"]
 margin_top = 104.0
-margin_right = 500.0
-margin_bottom = 206.0
+margin_right = 660.0
+margin_bottom = 199.0
 text = "2000"
 
-[node name="OnlineHighscore" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-margin_top = 864.0
-margin_right = 500.0
-margin_bottom = 979.0
-text = "ONLINE"
-icon = ExtResource( 6 )
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 889.0
+margin_right = 660.0
+margin_bottom = 949.0
+rect_min_size = Vector2( 0, 60 )
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 935.0
-margin_right = 500.0
-margin_bottom = 1037.0
+[node name="Play" type="Button" parent="VBoxContainer"]
+margin_top = 973.0
+margin_right = 660.0
+margin_bottom = 1068.0
 text = "PLAY"
 
-[node name="GoBack" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 1061.0
-margin_right = 500.0
-margin_bottom = 1163.0
+[node name="GoBack" type="Button" parent="VBoxContainer"]
+margin_top = 1092.0
+margin_right = 660.0
+margin_bottom = 1187.0
 text = "GO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -169,9 +137,8 @@ anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 anims/Highscore = SubResource( 4 )
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Speed/SpeedUp" to="." method="_on_SpeedUp_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Power/PowerUp" to="." method="_on_PowerUp_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Freeze/FreezeUp" to="." method="_on_FreezeUp_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/OnlineHighscore" to="." method="_on_OnlineHighscore_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="pressed" from="VBoxContainer/Speed/SpeedUp" to="." method="_on_SpeedUp_pressed"]
+[connection signal="pressed" from="VBoxContainer/Power/PowerUp" to="." method="_on_PowerUp_pressed"]
+[connection signal="pressed" from="VBoxContainer/Freeze/FreezeUp" to="." method="_on_FreezeUp_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
