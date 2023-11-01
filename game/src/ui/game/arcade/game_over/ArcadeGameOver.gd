@@ -50,7 +50,3 @@ func _on_GameOver_visibility_changed():
 	if revived:
 		$CenterContainer/MarginContainer/VBoxContainer/Revive.hide()
 	animation_player.play("FadeIn")
-
-
-func _on_Highscore_pressed():
-	pass

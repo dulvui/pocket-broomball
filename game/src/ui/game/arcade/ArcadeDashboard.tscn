@@ -54,9 +54,9 @@ custom_constants/separation = 24
 alignment = 1
 
 [node name="Highscore" type="Label" parent="VBoxContainer"]
-margin_top = 72.0
+margin_top = 92.0
 margin_right = 660.0
-margin_bottom = 196.0
+margin_bottom = 216.0
 rect_pivot_offset = Vector2( 250, 62 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -64,9 +64,9 @@ text = "32"
 align = 1
 
 [node name="Speed" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 220.0
+margin_top = 240.0
 margin_right = 660.0
-margin_bottom = 419.0
+margin_bottom = 439.0
 
 [node name="TextureProgress" parent="VBoxContainer/Speed" instance=ExtResource( 5 )]
 margin_right = 660.0
@@ -81,9 +81,9 @@ margin_bottom = 199.0
 text = "64000"
 
 [node name="Power" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 443.0
+margin_top = 463.0
 margin_right = 660.0
-margin_bottom = 642.0
+margin_bottom = 662.0
 
 [node name="TextureProgress" parent="VBoxContainer/Power" instance=ExtResource( 5 )]
 margin_right = 660.0
@@ -97,9 +97,9 @@ margin_bottom = 199.0
 text = "1000"
 
 [node name="Freeze" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 666.0
+margin_top = 686.0
 margin_right = 660.0
-margin_bottom = 865.0
+margin_bottom = 885.0
 
 [node name="TextureProgress" parent="VBoxContainer/Freeze" instance=ExtResource( 5 )]
 margin_right = 660.0
@@ -115,21 +115,21 @@ text = "2000"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 889.0
+margin_top = 909.0
 margin_right = 660.0
-margin_bottom = 949.0
-rect_min_size = Vector2( 0, 60 )
+margin_bottom = 929.0
+rect_min_size = Vector2( 0, 20 )
 
 [node name="Play" type="Button" parent="VBoxContainer"]
-margin_top = 973.0
+margin_top = 953.0
 margin_right = 660.0
-margin_bottom = 1068.0
+margin_bottom = 1048.0
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 1092.0
+margin_top = 1072.0
 margin_right = 660.0
-margin_bottom = 1187.0
+margin_bottom = 1167.0
 text = "GO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

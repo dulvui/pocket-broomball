@@ -51,76 +51,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NewHighscore" parent="." instance=ExtResource( 8 )]
 visible = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 60.0
-margin_top = 250.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -330.0
+margin_top = -640.0
+margin_right = 330.0
+margin_bottom = 640.0
+custom_constants/separation = 12
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 418.0
 margin_right = 660.0
-margin_bottom = 378.0
+margin_bottom = 546.0
 rect_pivot_offset = Vector2( 300, 64 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Icon" type="TextureRect" parent="HBoxContainer"]
-margin_left = 104.0
-margin_right = 232.0
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 134.0
+margin_right = 262.0
 margin_bottom = 128.0
 texture = ExtResource( 4 )
 
-[node name="Coins" type="Label" parent="HBoxContainer"]
-margin_left = 236.0
+[node name="Coins" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 266.0
 margin_top = 12.0
-margin_right = 496.0
+margin_right = 526.0
 margin_bottom = 115.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "20000"
 align = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 10.0
-margin_top = 40.0
-margin_right = 710.0
-margin_bottom = 1240.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 558.0
+margin_right = 660.0
+margin_bottom = 648.0
+rect_min_size = Vector2( 0, 90 )
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
-margin_left = 162.0
-margin_top = 499.0
-margin_right = 538.0
-margin_bottom = 701.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
-margin_right = 376.0
-margin_bottom = 202.0
-custom_constants/separation = 12
-
-[node name="Highscore" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
+[node name="Highscore" type="Button" parent="VBoxContainer"]
 visible = false
 margin_right = 376.0
 margin_bottom = 115.0
 text = "ONLINE"
 icon = ExtResource( 6 )
 
-[node name="Replay" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
-margin_right = 376.0
-margin_bottom = 95.0
+[node name="Replay" type="Button" parent="VBoxContainer"]
+margin_top = 660.0
+margin_right = 660.0
+margin_bottom = 755.0
 text = "REPLAY"
 
-[node name="Continue" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer"]
-margin_top = 107.0
-margin_right = 376.0
-margin_bottom = 202.0
+[node name="Continue" type="Button" parent="VBoxContainer"]
+margin_top = 767.0
+margin_right = 660.0
+margin_bottom = 862.0
 text = "CONTINUE"
 
 [node name="Highscore" type="AudioStreamPlayer" parent="."]
@@ -132,6 +128,6 @@ anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 
 [connection signal="visibility_changed" from="." to="." method="_on_GameOver_visibility_changed"]
-[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Highscore" to="." method="_on_Highscore_pressed"]
-[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Replay" to="." method="_on_Replay_pressed"]
-[connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Highscore" to="." method="_on_Highscore_pressed"]
+[connection signal="pressed" from="VBoxContainer/Replay" to="." method="_on_Replay_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
