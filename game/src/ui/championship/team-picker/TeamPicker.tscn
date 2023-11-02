@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/ui/championship/team-picker/TeamPicker.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/theme/font_small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/ui/TextureProgress.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/ui/locker/Locker.tscn" type="PackedScene" id=7]
@@ -88,6 +89,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="Team" type="Sprite" parent="."]
+position = Vector2( 358.565, 430.375 )
+scale = Vector2( 1.6, 1.6 )
+
+[node name="Locker" parent="." instance=ExtResource( 7 )]
+position = Vector2( 358.565, 363 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -114,13 +122,14 @@ text = " < "
 
 [node name="LeagueLabel" type="Label" parent="VBoxContainer/League"]
 margin_left = 85.0
-margin_top = 41.0
 margin_right = 575.0
-margin_bottom = 308.0
+margin_bottom = 350.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "italian broomball league"
 align = 1
 valign = 1
@@ -135,30 +144,49 @@ margin_bottom = 222.0
 size_flags_vertical = 4
 text = " > "
 
-[node name="Team" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_top = 370.0
 margin_right = 660.0
-margin_bottom = 620.0
-rect_min_size = Vector2( 0, 250 )
+margin_bottom = 490.0
+rect_min_size = Vector2( 0, 120 )
+
+[node name="Price" type="Label" parent="VBoxContainer"]
+margin_top = 510.0
+margin_right = 660.0
+margin_bottom = 616.0
+theme = ExtResource( 2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00000"
+align = 1
+
+[node name="Team" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 636.0
+margin_right = 660.0
+margin_bottom = 756.0
+rect_min_size = Vector2( 0, 120 )
 alignment = 1
 
 [node name="PrevTeam" type="Button" parent="VBoxContainer/Team"]
-margin_top = 77.0
+margin_top = 12.0
 margin_right = 81.0
-margin_bottom = 172.0
+margin_bottom = 107.0
 size_flags_vertical = 4
 text = " < "
 
 [node name="TeamLabel" type="Label" parent="VBoxContainer/Team"]
 margin_left = 85.0
-margin_top = 81.0
 margin_right = 575.0
-margin_bottom = 168.0
+margin_bottom = 120.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
 text = "10000"
 align = 1
+valign = 1
 autowrap = true
 uppercase = true
 __meta__ = {
@@ -167,28 +195,18 @@ __meta__ = {
 
 [node name="NextTeam" type="Button" parent="VBoxContainer/Team"]
 margin_left = 579.0
-margin_top = 77.0
+margin_top = 12.0
 margin_right = 660.0
-margin_bottom = 172.0
+margin_bottom = 107.0
 size_flags_vertical = 4
 text = " > "
-
-[node name="Price" type="Label" parent="VBoxContainer"]
-margin_top = 640.0
-margin_right = 660.0
-margin_bottom = 746.0
-theme = ExtResource( 2 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 1 )
-text = "00000"
-align = 1
 
 [node name="SpeedBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 766.0
+margin_top = 776.0
 margin_right = 660.0
-margin_bottom = 850.0
+margin_bottom = 860.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 text = "SPEED"
@@ -196,43 +214,37 @@ text = "SPEED"
 [node name="PowerBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 870.0
+margin_top = 880.0
 margin_right = 660.0
-margin_bottom = 954.0
+margin_bottom = 964.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 974.0
+margin_top = 984.0
 margin_right = 660.0
-margin_bottom = 984.0
-rect_min_size = Vector2( 0, 10 )
+margin_bottom = 989.0
+rect_min_size = Vector2( 0, 5 )
 
 [node name="Select" type="Button" parent="VBoxContainer"]
-margin_top = 1004.0
+margin_top = 1009.0
 margin_right = 660.0
-margin_bottom = 1099.0
+margin_bottom = 1104.0
 theme = ExtResource( 2 )
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 1119.0
+margin_top = 1124.0
 margin_right = 660.0
-margin_bottom = 1214.0
+margin_bottom = 1219.0
 theme = ExtResource( 2 )
 text = "GO_BACK"
-
-[node name="Team" type="Sprite" parent="."]
-position = Vector2( 358.565, 430.375 )
-scale = Vector2( 1.8, 1.8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 2 )
 anims/FadeOut = SubResource( 3 )
 anims/Unlock = SubResource( 4 )
-
-[node name="Locker" parent="." instance=ExtResource( 7 )]
 
 [connection signal="pressed" from="VBoxContainer/League/PrevLeague" to="." method="_on_PrevLeague_pressed"]
 [connection signal="pressed" from="VBoxContainer/League/NextLeague" to="." method="_on_NextLeague_pressed"]

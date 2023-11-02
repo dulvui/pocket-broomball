@@ -35,13 +35,12 @@ func _set_team():
 	if  not Global.unlocked_team_ids.has(team["id"]):
 		select_button.text = tr("BUY")
 		price_label.text = str(team["price"])
-		price_label.show()
 		price_label.modulate = Color(1,1,1,1)
 #		$Team.modulate = Color(0,0,0,1)
 		locker.show()
 	else:
 		select_button.text = tr("PLAY")
-		price_label.hide()
+		price_label.text = ""
 #		$Team.modulate = Color(1,1,1,1)
 		locker.hide()
 	
@@ -62,12 +61,11 @@ func _set_team_first_time():
 		select_button.text = tr("BUY")
 		price_label.text = str(team["price"])
 		price_label.modulate = Color(1,1,1,1)
-		price_label.show()
 #		$Team.modulate = Color(0,0,0,1)
 		locker.show()
 	else:
 		select_button.text = tr("PLAY")
-		price_label.hide()
+		price_label.text = ""
 #		$Team.modulate = Color(1,1,1,1)
 		locker.hide()
 			
