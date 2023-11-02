@@ -8,6 +8,8 @@ const LANGUAGES = {
 	"es" : "Español",
 }
 
+onready var fade_effect:Tween = $FadeEffect 
+
 func _ready():
 	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 	
@@ -15,6 +17,8 @@ func _ready():
 	
 	if Global.FDROID:
 		$VBoxContainer/RateAndReview.hide()
+		
+	fade_effect.fade_in()
 
 func _on_RoundLimit_pressed():
 	Global.click()
@@ -82,6 +86,7 @@ func _on_RateAndReview_pressed():
 
 func _on_GoBack_pressed():
 	Global.click()
+	fade_effect.fade_out()
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 
