@@ -15,9 +15,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.042
@@ -29,14 +26,14 @@ alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 margin_top = 191.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 278.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Coins Bonus"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 288.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 375.0
 
 [node name="Base" type="Label" parent="VBoxContainer/HBoxContainer2"]
@@ -57,63 +54,63 @@ align = 2
 
 [node name="Goals" type="Label" parent="VBoxContainer"]
 margin_top = 385.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 472.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Home goals"
 
 [node name="AwayGoals" type="Label" parent="VBoxContainer"]
 margin_top = 482.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 569.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Away goals"
 
 [node name="CleanSheet" type="Label" parent="VBoxContainer"]
 margin_top = 579.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 666.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Clean sheet"
 
 [node name="VSplitContainer2" type="VSplitContainer" parent="VBoxContainer"]
 margin_top = 676.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 756.0
 rect_min_size = Vector2( 0, 80 )
 rect_pivot_offset = Vector2( -1841, -235 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 766.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 894.0
 custom_constants/separation = 20
 alignment = 1
 
 [node name="Coins" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-margin_left = 168.0
-margin_right = 296.0
+margin_left = 167.0
+margin_right = 295.0
 margin_bottom = 128.0
 texture = ExtResource( 3 )
 
 [node name="Total" type="Label" parent="VBoxContainer/HBoxContainer"]
-margin_left = 316.0
+margin_left = 315.0
 margin_top = 20.0
-margin_right = 492.0
+margin_right = 491.0
 margin_bottom = 107.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Wins"
 
 [node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer"]
 margin_top = 904.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 984.0
 rect_min_size = Vector2( 0, 80 )
 rect_pivot_offset = Vector2( -1841, -235 )
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 margin_top = 994.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 1089.0
 text = "CONTINUE"
 __meta__ = {

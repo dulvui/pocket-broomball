@@ -12,9 +12,6 @@ rect_scale = Vector2( 0.45, 0.45 )
 theme = ExtResource( 1 )
 use_top_left = true
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 show_behind_parent = true

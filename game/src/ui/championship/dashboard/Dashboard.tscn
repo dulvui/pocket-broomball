@@ -67,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 360.0
-margin_top = 464.63
-margin_right = 360.0
-margin_bottom = 464.63
+margin_left = 3.05176e-05
+margin_top = -216.0
+margin_right = 3.05176e-05
+margin_bottom = -216.0
 
 [node name="GroupStage" parent="Content" instance=ExtResource( 9 )]
 visible = false
@@ -121,45 +121,34 @@ custom_fonts/font = SubResource( 1 )
 text = "1000"
 align = 1
 
-[node name="Buttons2" type="MarginContainer" parent="Content"]
-margin_left = 143.393
-margin_top = 1025.0
-margin_right = 697.393
-margin_bottom = 2249.0
-rect_scale = Vector2( 0.793933, 0.846419 )
-theme = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Table" type="VBoxContainer" parent="Content/Buttons2"]
+[node name="NewChampionship" type="Button" parent="Content/Buttons/Table"]
+margin_top = 247.0
 margin_right = 554.0
-margin_bottom = 1224.0
-theme = ExtResource( 2 )
-custom_constants/separation = 12
-
-[node name="NewChampionship" type="Button" parent="Content/Buttons2/Table"]
-margin_right = 554.0
-margin_bottom = 95.0
+margin_bottom = 342.0
 text = "START_NEW"
 
-[node name="GoBack" type="Button" parent="Content/Buttons2/Table"]
-margin_top = 107.0
+[node name="GoBack" type="Button" parent="Content/Buttons/Table"]
+margin_top = 354.0
 margin_right = 554.0
-margin_bottom = 202.0
+margin_bottom = 449.0
 text = "MENU"
 
 [node name="Matchday" type="Label" parent="Content"]
-margin_left = 306.286
-margin_top = 76.15
-margin_right = 580.286
-margin_bottom = 160.15
+anchor_left = 0.365
+anchor_top = 0.031
+anchor_right = 0.607
+anchor_bottom = 0.074
+margin_left = 0.199982
+margin_top = 0.320007
+margin_right = 99.96
+margin_bottom = 32.28
 rect_scale = Vector2( 0.635103, 0.635103 )
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1/9"
+align = 1
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -198,7 +187,7 @@ margin_bottom = 373.0
 text = "WARNING_NEW"
 
 [connection signal="pressed" from="Content/Buttons/Table/NextMatch" to="." method="_on_NextMatch_pressed"]
-[connection signal="pressed" from="Content/Buttons2/Table/NewChampionship" to="." method="_on_NewChampionship_pressed"]
-[connection signal="pressed" from="Content/Buttons2/Table/GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="pressed" from="Content/Buttons/Table/NewChampionship" to="." method="_on_NewChampionship_pressed"]
+[connection signal="pressed" from="Content/Buttons/Table/GoBack" to="." method="_on_GoBack_pressed"]
 [connection signal="pressed" from="NewLeaguePopUp/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="NewLeaguePopUp/Okay" to="." method="_on_Okay_pressed"]
