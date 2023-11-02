@@ -50,36 +50,37 @@ margin_top = 13.7278
 margin_right = 46.5452
 margin_bottom = 13.7278
 
-[node name="Buttons" type="MarginContainer" parent="Content"]
-margin_left = 143.393
-margin_top = 840.0
-margin_right = 697.393
-margin_bottom = 2064.0
-rect_scale = Vector2( 0.793933, 0.846419 )
-theme = ExtResource( 2 )
-
-[node name="Table" type="VBoxContainer" parent="Content/Buttons"]
-margin_right = 554.0
-margin_bottom = 1224.0
+[node name="Buttons" type="VBoxContainer" parent="Content"]
+anchor_left = 0.042
+anchor_top = 0.593
+anchor_right = 0.958
+anchor_bottom = 0.944
+margin_left = -0.240002
+margin_top = -0.0400391
+margin_right = 0.239929
+margin_bottom = -0.320068
 theme = ExtResource( 2 )
 custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="NextMatch" type="Button" parent="Content/Buttons/Table"]
-margin_right = 554.0
+[node name="NextMatch" type="Button" parent="Content/Buttons"]
+margin_right = 660.0
 margin_bottom = 95.0
 text = "PLAY"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons/Table"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons"]
 margin_top = 107.0
-margin_right = 554.0
+margin_right = 660.0
 margin_bottom = 235.0
 
-[node name="BroomballCoins" type="TextureRect" parent="Content/Buttons/Table/HBoxContainer"]
+[node name="BroomballCoins" type="TextureRect" parent="Content/Buttons/HBoxContainer"]
 margin_right = 128.0
 margin_bottom = 128.0
 texture = ExtResource( 6 )
 
-[node name="PrizeMoney" type="Label" parent="Content/Buttons/Table/HBoxContainer"]
+[node name="PrizeMoney" type="Label" parent="Content/Buttons/HBoxContainer"]
 margin_left = 132.0
 margin_top = 22.0
 margin_right = 408.0
@@ -89,15 +90,15 @@ custom_fonts/font = SubResource( 1 )
 text = "1000"
 align = 1
 
-[node name="NewChampionship" type="Button" parent="Content/Buttons/Table"]
+[node name="NewChampionship" type="Button" parent="Content/Buttons"]
 margin_top = 247.0
-margin_right = 554.0
+margin_right = 660.0
 margin_bottom = 342.0
 text = "START_NEW"
 
-[node name="GoBack" type="Button" parent="Content/Buttons/Table"]
+[node name="GoBack" type="Button" parent="Content/Buttons"]
 margin_top = 354.0
-margin_right = 554.0
+margin_right = 660.0
 margin_bottom = 449.0
 text = "MENU"
 
@@ -150,8 +151,8 @@ margin_right = 595.0
 margin_bottom = 373.0
 text = "WARNING_NEW"
 
-[connection signal="pressed" from="Content/Buttons/Table/NextMatch" to="." method="_on_NextMatch_pressed"]
-[connection signal="pressed" from="Content/Buttons/Table/NewChampionship" to="." method="_on_NewChampionship_pressed"]
-[connection signal="pressed" from="Content/Buttons/Table/GoBack" to="." method="_on_GoBack_pressed"]
+[connection signal="pressed" from="Content/Buttons/NextMatch" to="." method="_on_NextMatch_pressed"]
+[connection signal="pressed" from="Content/Buttons/NewChampionship" to="." method="_on_NewChampionship_pressed"]
+[connection signal="pressed" from="Content/Buttons/GoBack" to="." method="_on_GoBack_pressed"]
 [connection signal="pressed" from="NewLeaguePopUp/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="NewLeaguePopUp/Okay" to="." method="_on_Okay_pressed"]

@@ -26,12 +26,12 @@ func _ready():
 				Global.add_coins(prize)
 				Global.increase_stats()
 				Global.league_prize_rewarded = true
-			$Content/Buttons/Table/NextMatch.hide()
-			$Content/Buttons/Table/HBoxContainer/PrizeMoney.text = str(prize)
+			$Content/Buttons/NextMatch.hide()
+			$Content/Buttons/HBoxContainer/PrizeMoney.text = str(prize)
 			$Confetti.show()
 			Global.save_all_data()
 		else:
-			$Content/Buttons/Table/HBoxContainer.hide()
+			$Content/Buttons/HBoxContainer.hide()
 	else:
 		if Global.match_day > Global.teams.size() - 2:
 			var prize = get_league_prize()
@@ -40,12 +40,12 @@ func _ready():
 				Global.add_coins(prize)
 				Global.increase_stats()
 				Global.league_prize_rewarded = true
-			$Content/Buttons/Table/NextMatch.hide()
-			$Content/Buttons/Table/HBoxContainer/PrizeMoney.text = str(prize)
+			$Content/Buttons/NextMatch.hide()
+			$Content/Buttons/HBoxContainer/PrizeMoney.text = str(prize)
 			$Confetti.show()
 			Global.save_all_data()
 		else:
-			$Content/Buttons/Table/HBoxContainer.hide()
+			$Content/Buttons/HBoxContainer.hide()
 	
 	if Global.is_worldcup:
 		set_up_world_cup()
