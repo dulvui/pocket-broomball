@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/ui/championship/team-picker/TeamPicker.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
@@ -11,38 +11,6 @@
 size = 106
 outline_size = 8
 font_data = ExtResource( 5 )
-
-[sub_resource type="Animation" id=2]
-length = 0.3
-step = 0.09
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-length = 0.3
-step = 0.09
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.27 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [sub_resource type="Animation" id=4]
 length = 0.5
@@ -84,7 +52,6 @@ tracks/2/keys = {
 }
 
 [node name="TeamPicker" type="Control"]
-modulate = Color( 1, 1, 1, 0.9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -242,8 +209,6 @@ theme = ExtResource( 2 )
 text = "GO_BACK"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 2 )
-anims/FadeOut = SubResource( 3 )
 anims/Unlock = SubResource( 4 )
 
 [connection signal="pressed" from="VBoxContainer/League/PrevLeague" to="." method="_on_PrevLeague_pressed"]

@@ -1,15 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/ui/settings/Settings.gd" type="Script" id=2]
 [ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=3]
-
-[sub_resource type="Animation" id=1]
-resource_name = "FadeIn"
-length = 0.2
-
-[sub_resource type="Animation" id=2]
-resource_name = "FadeOut"
-length = 0.2
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -107,10 +99,6 @@ rect_scale = Vector2( 0.793488, 0.042611 )
 [node name="EasterEggTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 1 )
-anims/FadeOut = SubResource( 2 )
 
 [connection signal="pressed" from="VBoxContainer/RoundLimit" to="." method="_on_RoundLimit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_Music_pressed"]

@@ -1,12 +1,9 @@
 extends Control
 
-var animation_player
-
 var show_confirm_pop = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animation_player = $AnimationPlayer
 	
 	# show matchday
 	if Global.match_day > 0:
@@ -54,8 +51,6 @@ func _ready():
 		set_up_world_cup()
 	else:
 		set_up_championship()
-			
-	animation_player.play("FadeIn")
 
 
 func set_up_championship():
@@ -73,8 +68,6 @@ func set_up_world_cup():
 
 func _on_GoBack_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished" )
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 
@@ -84,8 +77,6 @@ func _on_NewChampionship_pressed():
 		$NewLeaguePopUp.popup_centered()
 	else:
 		Global.new_league()
-		animation_player.play("FadeOut")
-		yield(animation_player, "animation_finished" )
 		get_tree().change_scene("res://src/ui/championship/Championship.tscn")
 
 func _on_NextMatch_pressed():
@@ -102,16 +93,12 @@ func _on_NextMatch_pressed():
 			next_matchday()
 			Global.set_home_team(Global.current_league_game["home"])
 			Global.set_away_team(Global.current_league_game["away"])
-			animation_player.play("FadeOut")
-			yield(animation_player, "animation_finished" )
 			get_tree().change_scene("res://src/ui/championship/preview/GamePreview.tscn")
 		else:
 			if next_matchday():
 				# finals
 				Global.set_home_team(Global.current_league_game["home"])
 				Global.set_away_team(Global.current_league_game["away"])
-				animation_player.play("FadeOut")
-				yield(animation_player, "animation_finished" )
 				get_tree().change_scene("res://src/ui/championship/preview/GamePreview.tscn")
 			else: # not in worldcup anymore
 #				Global.game_over(0,0,true)
@@ -121,8 +108,6 @@ func _on_NextMatch_pressed():
 				
 				Global.current_league_game = "simulation"
 	
-				animation_player.play("FadeOut")
-				yield(animation_player, "animation_finished" )
 				get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
 				
 	
@@ -131,8 +116,6 @@ func _on_NextMatch_pressed():
 		next_matchday()
 		Global.set_home_team(Global.current_league_game["home"])
 		Global.set_away_team(Global.current_league_game["away"])
-		animation_player.play("FadeOut")
-		yield(animation_player, "animation_finished" )
 		get_tree().change_scene("res://src/ui/championship/preview/GamePreview.tscn")
 
 
@@ -175,6 +158,4 @@ func _on_Cancel_pressed():
 func _on_Okay_pressed():
 	Global.click()
 	Global.new_league()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished" )
 	get_tree().change_scene("res://src/ui/championship/Championship.tscn")

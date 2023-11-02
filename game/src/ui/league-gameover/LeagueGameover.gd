@@ -2,21 +2,17 @@ extends Control
 
 var multyplier
 
-var animation_player
 
 var reward_earned = false
 
 var coins_label
 var coins
 
-onready var multiplier = $Multiplier
-
 var goal_stats
 
 func _ready():
 	goal_stats = $CenterContainer/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/GoalStats
 	coins_label = $CenterContainer/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins
-	animation_player = $AnimationPlayer
 	
 func _on_Menu_pressed():
 	Global.click()
@@ -90,8 +86,6 @@ func _on_Gameover_visibility_changed():
 			_calculateCoinsWin(home_score,away_score)
 			coins_label.text = str(coins)
 			goal_stats.text = _get_stats(home_score,away_score)
-		
-		animation_player.play("FadeIn")
 		get_tree().paused = true
 		
 func _calculateCoinsWin(home_goals, away_goals):
@@ -124,8 +118,6 @@ func _get_stats(home_goals, away_goals):
 
 func _on_GoBack_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished" )
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/championship/dashboard/Dashboard.tscn")
 

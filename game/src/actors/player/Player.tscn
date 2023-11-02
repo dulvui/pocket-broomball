@@ -30,5 +30,6 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeDetector"]
 shape = SubResource( 2 )
+
 [connection signal="body_entered" from="ChargeDetector" to="." method="_on_ChargeDetector_body_entered"]
 [connection signal="body_exited" from="ChargeDetector" to="." method="_on_ChargeDetector_body_exited"]

@@ -15,19 +15,15 @@ onready var current_item:Sprite = $Objects/CurrentItem
 onready var ball:Sprite = $Objects/Ball
 onready var animated_body:Node2D = $Objects/AnimatedBody
 onready var locker:AnimatedSprite = $Objects/Locker
-onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	current_index["BALL"] = ShopUtil.items["BALL"]["selected"]
 	current_item.texture = ShopUtil.get_ball_texture()
 	ball.texture = ShopUtil.get_ball_texture()
 	buy_button.text = "SELECTED"
-	animation_player.play("FadeIn")
 
 func _on_GoBack_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 func _on_Buy_pressed():

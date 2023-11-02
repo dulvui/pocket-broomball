@@ -21,13 +21,8 @@ func _ready():
 	league_label.text = Teams.leagues[league_index].name
 	_set_team_first_time()
 	
-	animation_player.play("FadeIn")
-	
 func _set_team():
 	var team = teams[team_index]
-	
-#	animation_player.play("TeamFadeOut")
-#	yield(animation_player, "animation_completed")
 	
 	$Team.texture = team.icon
 	team_label.text = team["name"]
@@ -36,20 +31,15 @@ func _set_team():
 		select_button.text = tr("BUY")
 		price_label.text = str(team["price"])
 		price_label.modulate = Color(1,1,1,1)
-#		$Team.modulate = Color(0,0,0,1)
 		locker.show()
 	else:
 		select_button.text = tr("PLAY")
 		price_label.text = ""
-#		$Team.modulate = Color(1,1,1,1)
 		locker.hide()
 	
 	
 	power_bar.value = team.power
 	speed_bar.value = team.speed
-	
-#	animation_player.play("TeamFadeIn")
-#	yield(animation_player, "animation_completed")
 	
 func _set_team_first_time():
 	var team = teams[team_index]
@@ -98,14 +88,8 @@ func _on_PrevLeague_pressed():
 	team_index = 0
 	_set_team()
 	
-		
-#	animation_player.play("FadeOutLeague")
-#	yield(animation_player, "tween_completed")
 	
 	league_label.text = Teams.leagues[league_index].name
-	
-#	animation_player.play("FadeInLeague")
-#	yield(animation_player, "tween_completed")
 	
 
 
@@ -118,13 +102,7 @@ func _on_NextLeague_pressed():
 	team_index = 0
 	_set_team()
 	
-#	animation_player.play("FadeOutLeague")
-#	yield(animation_player, "tween_completed")
-	
 	league_label.text = Teams.leagues[league_index].name
-	
-#	animation_player.play("FadeInLeague")
-#	yield(animation_player, "tween_completed")
 
 
 func _on_Select_pressed():
@@ -150,16 +128,12 @@ func _on_Select_pressed():
 			Global.is_worldcup = false
 			inizialize_matches()
 		
-		animation_player.play("FadeOut")
-		yield(animation_player,"animation_finished")
 		get_tree().change_scene("res://src/ui/championship/dashboard/Dashboard.tscn")
 
 
 
 func _on_GoBack_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
 	get_tree().change_scene("res://src/ui/menu/play/Play.tscn")
 
 

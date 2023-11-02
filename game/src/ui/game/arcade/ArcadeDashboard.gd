@@ -21,7 +21,6 @@ func _ready():
 	power_bar.value = Global.arcade_power
 	freeze_bar.value = Global.arcade_freeze
 	
-	animation_player.play("FadeIn")
 
 func _get_price(n):
 	if n == 10:
@@ -43,15 +42,11 @@ func _on_Play_pressed():
 	Global.set_away_team(null)
 	Global.click()
 	
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/game/arcade/Arcade.tscn")
 
 
 func _on_GoBack_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/menu/play/Play.tscn")
 
 

@@ -8,8 +8,6 @@ const LANGUAGES = {
 	"es" : "Español",
 }
 
-onready var animation_player = $AnimationPlayer
-
 func _ready():
 	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 	
@@ -17,9 +15,6 @@ func _ready():
 	
 	if Global.FDROID:
 		$VBoxContainer/RateAndReview.hide()
-		
-	animation_player.play("FadeIn")
-		
 
 func _on_RoundLimit_pressed():
 	Global.click()
@@ -87,8 +82,6 @@ func _on_RateAndReview_pressed():
 
 func _on_GoBack_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 
@@ -154,11 +147,7 @@ func update_dynamic_labels():
 		$VBoxContainer/Sfx.text = tr("SFX_ON")
 	else:
 		$VBoxContainer/Sfx.text = tr("SFX_OFF")
-		
-
 
 func _on_Info_pressed():
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/info/Info.tscn")

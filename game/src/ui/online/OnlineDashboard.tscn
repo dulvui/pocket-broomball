@@ -41,5 +41,6 @@ texture = ExtResource( 5 )
 [node name="Player2" type="Sprite" parent="."]
 position = Vector2( 367.44, 290.612 )
 texture = ExtResource( 5 )
+
 [connection signal="pressed" from="SearchGame" to="." method="_on_SearchGame_pressed"]
 [connection signal="pressed" from="GoBack" to="." method="_on_GoBack_pressed"]

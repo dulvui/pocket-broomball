@@ -81,8 +81,6 @@ margin_right = 660.0
 margin_bottom = 1021.0
 text = "GO_BACK"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="ComingSoon" type="Label" parent="."]
 visible = false
 margin_left = 32.0

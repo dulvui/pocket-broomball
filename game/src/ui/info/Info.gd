@@ -1,12 +1,8 @@
 extends Control
 
-onready var animation_player = $AnimationPlayer
-
 func _ready() -> void:
 	$VBoxContainer/Buttons/Donate.visible = Global.FDROID or OS.get_name() == "HTML5"
 	$VBoxContainer/Buttons/Website.visible = not $VBoxContainer/Buttons/Donate.visible
-	
-	animation_player.play("FadeIn")
 
 
 func _on_Website_pressed() -> void:
@@ -36,8 +32,6 @@ func _on_Join_pressed():
 
 func _on_Back_pressed() -> void:
 	Global.click()
-	animation_player.play("FadeOut")
-	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/ui/settings/Settings.tscn")
 
 

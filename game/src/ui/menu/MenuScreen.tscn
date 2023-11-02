@@ -1,18 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/ui/menu/MenuScreen.gd" type="Script" id=1]
 [ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=2]
-
-[sub_resource type="Animation" id=1]
-resource_name = "FadeIn"
-length = 0.2
-
-[sub_resource type="Animation" id=2]
-resource_name = "FadeOut"
-length = 0.2
-
-[sub_resource type="Animation" id=3]
-length = 0.2
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -37,7 +26,7 @@ alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 margin_top = 135.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 230.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -45,7 +34,7 @@ text = "PLAY"
 
 [node name="Shop" type="Button" parent="VBoxContainer"]
 margin_top = 240.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 335.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -53,7 +42,7 @@ text = "SHOP"
 
 [node name="Statistics" type="Button" parent="VBoxContainer"]
 margin_top = 345.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 440.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -61,7 +50,7 @@ text = "HALL"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 margin_top = 450.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 545.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -78,7 +67,7 @@ text = "INFO"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 margin_top = 555.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 650.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
@@ -87,23 +76,18 @@ text = "EXIT"
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 660.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 700.0
 size_flags_horizontal = 3
 custom_constants/separation = 40
 
 [node name="SimonDalvai" type="Button" parent="VBoxContainer"]
 margin_top = 710.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 805.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "simondalvai.org"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 1 )
-anims/FadeOut = SubResource( 2 )
-anims/FirstFadeIn = SubResource( 3 )
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_Shop_pressed"]
