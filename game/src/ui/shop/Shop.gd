@@ -9,7 +9,7 @@ var current_index = {
 }
 
 onready var type_label:Label = $Content/Type/Label
-onready var price_label:Label = $Content/Price
+onready var price_label:Label = $Content/ItemButtons/Price
 onready var buy_button:Button = $Content/VBoxContainer/Buy
 onready var current_item:Sprite = $Objects/CurrentItem
 onready var ball:Sprite = $Objects/Ball
