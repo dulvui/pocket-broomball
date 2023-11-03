@@ -1,0 +1,4 @@
+- Spanish translations thanks to @MxtAppz
+- Fix Bot vs Bot replay thanks to @Eiim 
+- No crowd sfx if disabled in multiplayer
+- Align all button sizes
