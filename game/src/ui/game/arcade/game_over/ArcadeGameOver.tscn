@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/FadeEffect.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/ui/game/arcade/game_over/ArcadeGameOver.gd" type="Script" id=3]
 [ext_resource path="res://assets/broomballcoin.png" type="Texture" id=4]
 [ext_resource path="res://assets/font/Carlito-Regular.ttf" type="DynamicFontData" id=5]
@@ -13,38 +14,6 @@ size = 102
 outline_size = 3
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "FadeIn"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "FadeOut"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
 [node name="GameOver" type="Control"]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
@@ -54,6 +23,9 @@ script = ExtResource( 3 )
 
 [node name="NewHighscore" parent="." instance=ExtResource( 8 )]
 visible = false
+
+[node name="FadeEffect" parent="." instance=ExtResource( 2 )]
+node_path = NodePath("../VBoxContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -122,10 +94,6 @@ text = "CONTINUE"
 [node name="Highscore" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeIn = SubResource( 2 )
-anims/FadeOut = SubResource( 3 )
 
 [connection signal="visibility_changed" from="." to="." method="_on_GameOver_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/Highscore" to="." method="_on_Highscore_pressed"]

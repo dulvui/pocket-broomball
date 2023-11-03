@@ -26,8 +26,6 @@ func set_collected_coins_and_score(collected_coins,score):
 func _on_Replay_pressed():
 	Global.click()
 	Global.add_coins(_coins * 50 * _score)
-	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/game/arcade/Arcade.tscn")
 
@@ -35,8 +33,6 @@ func _on_Replay_pressed():
 func _on_Continue_pressed():
 	Global.click()
 	Global.add_coins(_coins * 50 * _score)
-	animation_player.play("FadeOut")
-	yield(animation_player,"animation_finished")
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/game/arcade/ArcadeDashboard.tscn")
 
@@ -49,4 +45,3 @@ func _on_Revive_pressed():
 func _on_GameOver_visibility_changed():
 	if revived:
 		$CenterContainer/MarginContainer/VBoxContainer/Revive.hide()
-	animation_player.play("FadeIn")

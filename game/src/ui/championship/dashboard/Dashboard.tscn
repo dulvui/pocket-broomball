@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/ui/championship/dashboard/Dashboard.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/ui/championship/dashboard/table/Table.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/ui/championship/dashboard/final-stage/FinalStage.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/ui/championship/dashboard/group-stage/GroupStage.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/FadeEffect.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 84
@@ -21,6 +22,9 @@ theme = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="FadeEffect" parent="." instance=ExtResource( 10 )]
+node_path = NodePath("../Content")
 
 [node name="Confetti" parent="." instance=ExtResource( 4 )]
 visible = false
@@ -66,13 +70,13 @@ __meta__ = {
 }
 
 [node name="NextMatch" type="Button" parent="Content/Buttons"]
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 95.0
 text = "PLAY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons"]
 margin_top = 107.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 235.0
 
 [node name="BroomballCoins" type="TextureRect" parent="Content/Buttons/HBoxContainer"]
@@ -92,13 +96,13 @@ align = 1
 
 [node name="NewChampionship" type="Button" parent="Content/Buttons"]
 margin_top = 247.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 342.0
 text = "START_NEW"
 
 [node name="GoBack" type="Button" parent="Content/Buttons"]
 margin_top = 354.0
-margin_right = 660.0
+margin_right = 659.0
 margin_bottom = 449.0
 text = "MENU"
 

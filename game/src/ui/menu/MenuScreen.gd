@@ -1,7 +1,5 @@
 extends Control
 
-onready var fade_effect:Tween = $FadeEffect 
-
 func _ready():
 	if Global.show_pop_up:
 		$PopupDialog.popup()
@@ -13,13 +11,10 @@ func _ready():
 	if Global.first_fade_in:
 		Global.first_fade_in = false
 		Global.fade_in_goals()
-		
-	fade_effect.fade_in()
 
 
 func _on_Settings_pressed():
 	Global.click()
-	fade_effect.fade_out()
 	get_tree().change_scene("res://src/ui/settings/Settings.tscn")
 
 func _on_Statistics_pressed():

@@ -4,3 +4,5 @@
 
 [node name="FadeEffect" type="Tween"]
 script = ExtResource( 1 )
+
+[connection signal="tween_all_completed" from="." to="." method="_on_FadeEffect_tween_all_completed"]
