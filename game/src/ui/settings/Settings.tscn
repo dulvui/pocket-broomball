@@ -64,6 +64,7 @@ margin_bottom = 787.0
 text = "JOIN"
 
 [node name="Info" type="Button" parent="VBoxContainer"]
+visible = false
 margin_top = 412.0
 margin_right = 659.0
 margin_bottom = 507.0
@@ -72,23 +73,23 @@ size_flags_vertical = 4
 text = "INFO"
 
 [node name="Language" type="Button" parent="VBoxContainer"]
-margin_top = 515.0
+margin_top = 412.0
 margin_right = 659.0
-margin_bottom = 610.0
+margin_bottom = 507.0
 text = "LANGUAGE"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 618.0
+margin_top = 515.0
 margin_right = 659.0
-margin_bottom = 638.0
+margin_bottom = 535.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 646.0
+margin_top = 543.0
 margin_right = 659.0
-margin_bottom = 741.0
+margin_bottom = 638.0
 text = "GO_BACK"
 
 [node name="EasterEgg" type="Button" parent="."]

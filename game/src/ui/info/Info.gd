@@ -32,7 +32,7 @@ func _on_Join_pressed():
 
 func _on_Back_pressed() -> void:
 	Global.click()
-	get_tree().change_scene("res://src/ui/settings/Settings.tscn")
+	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 
 

@@ -54,3 +54,7 @@ func _on_SimonDalvai_pressed():
 	Global.click()
 	OS.shell_open("https://simondalvai.org")
 
+
+func _on_Info_pressed():
+	Global.click()
+	get_tree().change_scene("res://src/ui/info/Info.tscn")
