@@ -25,6 +25,7 @@ This game is open source, with no ads and no tracking.
   - [Setup](#setup)
     - [export\_presets.cfg](#export_presetscfg)
   - [Join with your Broomball team](#join-with-your-broomball-team)
+  - [Translations](#translations)
   - [Contributions](#contributions)
   - [Licenses and Copyrights](#licenses-and-copyrights)
   - [Licenses](#licenses)
@@ -52,10 +53,20 @@ If you want to see your broomball team or even the whole league in the game,
 just contact me at info@simondalvai.org  
 Or make a pull request with the team's logos, names and stats (speed, power) and I'll publish them!
 
+## Translations
+If you found typos or want to add a language to the game, please open a pull request.
+
+All words in the game with all it's languages are located in this file  
+`game/translations/translations.csv`
+
+The store descriptions are located here  
+`store-pages/`
+
 ## Contributions
-If you want to contribute to the project, please fork the repo,    
-make your changes and make a pull request with a short description  
-of the changes you made.
+If you want to contribute to the project, please fork the repo, make your changes and make a pull request with a short description of the changes you made.
+
+To be sure that your changes will be merged, you can open an issue first with the details of the changes.
+Then we will see together, if and how the change could be implemented.
 
 ## Licenses and Copyrights
 The game itself is licensed under the GNU AGPL v3.0 or later license and all  
