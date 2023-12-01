@@ -64,7 +64,6 @@ size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="Back" type="Button" parent="VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_top = 555.0
 margin_right = 660.0
 margin_bottom = 650.0
