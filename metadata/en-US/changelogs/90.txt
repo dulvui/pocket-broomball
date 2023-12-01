@@ -1,0 +1,2 @@
+- show "go back" button in play screen again
+- add flag to language button
