@@ -59,7 +59,6 @@ var match_day
 var current_league_game
 
 var first_open
-var show_pop_up = false
 
 var arcade_highscore
 var arcade_speed
@@ -93,7 +92,6 @@ func set_up():
 	
 	if first_open:
 		first_open = false
-		show_pop_up = true
 #		new_league()
 #		save_all_data()
 		config.set_value("first_open", version,first_open)

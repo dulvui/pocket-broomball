@@ -1,10 +1,6 @@
 extends Control
 
 func _ready():
-	if Global.show_pop_up:
-		$PopupDialog.popup()
-		$MarginContainer.hide()
-		
 	if OS.get_name() == "iOS":
 		$VBoxContainer/Exit.hide()
 	
