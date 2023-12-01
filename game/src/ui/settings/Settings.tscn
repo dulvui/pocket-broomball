@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/FadeEffect.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/settings/Settings.gd" type="Script" id=2]
 [ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/teams/national-teams/usa.png" type="Texture" id=4]
 
 [node name="Settings" type="Control"]
 anchor_right = 1.0
@@ -56,6 +57,21 @@ margin_right = 659.0
 margin_bottom = 404.0
 text = "MORE_GAMES"
 
+[node name="Language" type="Button" parent="VBoxContainer"]
+margin_top = 412.0
+margin_right = 659.0
+margin_bottom = 507.0
+text = "LANGUAGE"
+expand_icon = true
+
+[node name="Flag" type="TextureRect" parent="VBoxContainer/Language"]
+margin_left = 552.0
+margin_top = 12.0
+margin_right = 802.0
+margin_bottom = 262.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
 [node name="Join" type="Button" parent="VBoxContainer"]
 visible = false
 margin_top = 685.0
@@ -71,12 +87,6 @@ margin_bottom = 507.0
 size_flags_horizontal = 5
 size_flags_vertical = 4
 text = "INFO"
-
-[node name="Language" type="Button" parent="VBoxContainer"]
-margin_top = 412.0
-margin_right = 659.0
-margin_bottom = 507.0
-text = "LANGUAGE"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
@@ -110,9 +120,9 @@ one_shot = true
 [connection signal="pressed" from="VBoxContainer/Sfx" to="." method="_on_Sfx_pressed"]
 [connection signal="pressed" from="VBoxContainer/RateAndReview" to="." method="_on_RateAndReview_pressed"]
 [connection signal="pressed" from="VBoxContainer/MoreGames" to="." method="_on_MoreGames_pressed"]
+[connection signal="pressed" from="VBoxContainer/Language" to="." method="_on_Language_pressed"]
 [connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_Info_pressed"]
-[connection signal="pressed" from="VBoxContainer/Language" to="." method="_on_Language_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
 [connection signal="button_down" from="EasterEgg" to="." method="_on_EasterEgg_button_down"]
 [connection signal="button_up" from="EasterEgg" to="." method="_on_EasterEgg_button_up"]

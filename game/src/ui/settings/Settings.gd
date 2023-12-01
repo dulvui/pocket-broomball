@@ -8,6 +8,16 @@ const LANGUAGES = {
 	"es" : "Español",
 }
 
+const FLAGS = {
+	"en" : "usa.png",
+	"de" : "germany.png",
+	"it" : "italy.png",
+	"fr" : "france.png",
+	"es" : "spain.png",
+}
+
+onready var flag:TextureRect = $VBoxContainer/Language/Flag
+
 func _ready():
 	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 	
@@ -134,6 +144,8 @@ func _on_Language_pressed():
 	
 func update_dynamic_labels():
 	$VBoxContainer/Language.text = LANGUAGES[Global.locale]
+	flag.texture = load("res://assets/teams/national-teams/" + FLAGS[Global.locale])
+	
 	
 	# update music and sfx labels
 	if Global.music == "chill":
