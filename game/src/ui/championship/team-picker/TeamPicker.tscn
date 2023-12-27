@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/ui/championship/team-picker/TeamPicker.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/theme/font_small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/font/DSEG7ClassicMini-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/ui/TextureProgress.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/ui/locker/Locker.tscn" type="PackedScene" id=7]
@@ -81,22 +80,21 @@ rect_min_size = Vector2( 0, 350 )
 alignment = 1
 
 [node name="PrevLeague" type="Button" parent="VBoxContainer/League"]
-margin_top = 127.0
-margin_right = 81.0
-margin_bottom = 222.0
+margin_top = 139.0
+margin_right = 60.0
+margin_bottom = 211.0
 size_flags_vertical = 4
 text = " < "
 
 [node name="LeagueLabel" type="Label" parent="VBoxContainer/League"]
-margin_left = 85.0
-margin_right = 575.0
+margin_left = 64.0
+margin_right = 596.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 450, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 3 )
 text = "italian broomball league"
 align = 1
 valign = 1
@@ -104,10 +102,10 @@ autowrap = true
 uppercase = true
 
 [node name="NextLeague" type="Button" parent="VBoxContainer/League"]
-margin_left = 579.0
-margin_top = 127.0
+margin_left = 600.0
+margin_top = 139.0
 margin_right = 660.0
-margin_bottom = 222.0
+margin_bottom = 211.0
 size_flags_vertical = 4
 text = " > "
 
@@ -131,26 +129,25 @@ align = 1
 [node name="Team" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 636.0
 margin_right = 660.0
-margin_bottom = 756.0
-rect_min_size = Vector2( 0, 120 )
+margin_bottom = 776.0
+rect_min_size = Vector2( 0, 140 )
 alignment = 1
 
 [node name="PrevTeam" type="Button" parent="VBoxContainer/Team"]
-margin_top = 12.0
-margin_right = 81.0
-margin_bottom = 107.0
+margin_top = 34.0
+margin_right = 60.0
+margin_bottom = 106.0
 size_flags_vertical = 4
 text = " < "
 
 [node name="TeamLabel" type="Label" parent="VBoxContainer/Team"]
-margin_left = 85.0
-margin_right = 575.0
-margin_bottom = 120.0
+margin_left = 64.0
+margin_right = 596.0
+margin_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 3 )
 text = "10000"
 align = 1
 valign = 1
@@ -161,19 +158,19 @@ __meta__ = {
 }
 
 [node name="NextTeam" type="Button" parent="VBoxContainer/Team"]
-margin_left = 579.0
-margin_top = 12.0
+margin_left = 600.0
+margin_top = 34.0
 margin_right = 660.0
-margin_bottom = 107.0
+margin_bottom = 106.0
 size_flags_vertical = 4
 text = " > "
 
 [node name="SpeedBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 776.0
+margin_top = 796.0
 margin_right = 660.0
-margin_bottom = 860.0
+margin_bottom = 880.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 text = "SPEED"
@@ -181,30 +178,30 @@ text = "SPEED"
 [node name="PowerBar" parent="VBoxContainer" instance=ExtResource( 6 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 880.0
+margin_top = 900.0
 margin_right = 660.0
-margin_bottom = 964.0
+margin_bottom = 984.0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 984.0
+margin_top = 1004.0
 margin_right = 660.0
-margin_bottom = 989.0
+margin_bottom = 1009.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="Select" type="Button" parent="VBoxContainer"]
-margin_top = 1009.0
+margin_top = 1029.0
 margin_right = 660.0
-margin_bottom = 1104.0
+margin_bottom = 1101.0
 theme = ExtResource( 2 )
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 1124.0
+margin_top = 1121.0
 margin_right = 660.0
-margin_bottom = 1219.0
+margin_bottom = 1193.0
 theme = ExtResource( 2 )
 text = "GO_BACK"
 
