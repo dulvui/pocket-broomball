@@ -21,6 +21,8 @@ func _ready():
 	power_bar.value = Global.arcade_power
 	freeze_bar.value = Global.arcade_freeze
 	
+	$VBoxContainer/Highscore.text = str(Global.arcade_highscore)
+	
 
 func _get_price(n):
 	if n == 10:
