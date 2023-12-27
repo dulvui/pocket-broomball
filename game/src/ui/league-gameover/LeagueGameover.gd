@@ -1,20 +1,19 @@
 extends Control
 
-var multyplier
+const MatchRow:PackedScene = preload("res://src/ui/league-gameover/match-row/MatchRow.tscn")
 
+var multyplier
 
 var reward_earned = false
 
-var coins_label
+onready var coins_label = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins
+onready var goal_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/GoalStats
+onready var coins_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats
+
 var coins
 
-var goal_stats
+onready var teams = $Container/MarginContainer/MarginContainer/VBoxContainer/Teams
 
-onready var teams = $Container/MarginContainer/MarginContainer/VBoxContainer/GridContainer
-
-func _ready():
-	goal_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/GoalStats
-	coins_label = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins
 	
 func _on_Menu_pressed():
 	Global.click()
@@ -30,7 +29,7 @@ func _on_Gameover_visibility_changed():
 		
 		var dynamic_font = DynamicFont.new()
 		dynamic_font.font_data = load("res://assets/font/DSEG7ClassicMini-Bold.ttf")
-		dynamic_font.size = 120
+		dynamic_font.size = 62
 		
 		
 		# TODO show final stage in worldcup
@@ -58,32 +57,13 @@ func _on_Gameover_visibility_changed():
 			
 		for i in range(from , to):
 			if Global.matches[i]["home"]["id"] != 0 and Global.matches[i]["away"]["id"] != 0:
-				var short_label_home = Label.new()
-				var short_label_away = Label.new()
-				if Global.matches[i]["home"].has("short_name"):
-					short_label_home.text = Global.matches[i]["home"]["short_name"] + " "
-					short_label_away.text = " " + Global.matches[i]["away"]["short_name"]
-				else:
-					short_label_home.text = "   "
-					short_label_away.text = "   "
-				
-				var label = Label.new()
-				label.text =  "  " +str(Global.matches[i]["result"]) + "  "
-				label.add_font_override("font", dynamic_font)
-				
-				var home_icon = TextureRect.new()
-				var away_icon = TextureRect.new()
-				home_icon.texture = Global.matches[i]["home"]["icon"]
-				away_icon.texture = Global.matches[i]["away"]["icon"]
-				teams.add_child(short_label_home)
-				teams.add_child(home_icon)
-				teams.add_child(label)
-				teams.add_child(away_icon)
-				teams.add_child(short_label_away)
+				var match_row = MatchRow.instance()
+				match_row.set_up(Global.matches[i])
+				teams.add_child(match_row)
 		
-		# hide coins stast and don't give money, because simulation
+		# hide coins stats and don't give money, because simulation
 		if Global.current_league_game == null or Global.current_league_game is String:
-			$Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins.hide()
+			coins_stats.hide()
 		else:
 			_calculateCoinsWin(home_score,away_score)
 			coins_label.text = str(coins)

@@ -57,24 +57,24 @@ __meta__ = {
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 330.0
+margin_top = 373.0
 margin_right = 660.0
-margin_bottom = 412.0
+margin_bottom = 455.0
 
 [node name="GroupStage" parent="Content" instance=ExtResource( 9 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 192.0
+margin_top = 235.0
 margin_right = 660.0
-margin_bottom = 550.0
+margin_bottom = 593.0
 
 [node name="FinalStage" parent="Content" instance=ExtResource( 8 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 0.0
-margin_top = 0.0
+margin_top = 86.0
 margin_right = 660.0
 margin_bottom = 742.0
 rect_scale = Vector2( 1, 1 )
