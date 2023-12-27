@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/ui/background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/ui/statistics/Statistics.gd" type="Script" id=2]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=3]
 [ext_resource path="res://src/FadeEffect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/theme/airbroomball_theme_small_font.tres" type="Theme" id=5]
 
 [node name="Statistics" type="Control"]
 anchor_right = 1.0
@@ -32,28 +33,28 @@ __meta__ = {
 }
 
 [node name="Statistics" type="GridContainer" parent="."]
-anchor_left = 0.042
+anchor_left = 0.121
 anchor_top = 0.209
-anchor_right = 0.958
+anchor_right = 0.876
 anchor_bottom = 0.774
-margin_left = -0.240002
+margin_left = -0.120003
 margin_top = 0.47998
-margin_right = 990.24
-margin_bottom = 1085.28
-rect_scale = Vector2( 0.4, 0.4 )
+margin_right = 0.279968
+margin_bottom = 0.280029
+theme = ExtResource( 5 )
 custom_constants/vseparation = 40
 custom_constants/hseparation = 63
 columns = 2
 
 [node name="Name" type="Label" parent="Statistics"]
-margin_right = 279.0
-margin_bottom = 87.0
+margin_right = 105.0
+margin_bottom = 32.0
 text = "LEAGUE"
 
 [node name="Win" type="Label" parent="Statistics"]
-margin_left = 342.0
-margin_right = 497.0
-margin_bottom = 87.0
+margin_left = 168.0
+margin_right = 225.0
+margin_bottom = 32.0
 text = "WIN"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -69,19 +70,19 @@ alignment = 1
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 margin_right = 660.0
-margin_bottom = 87.0
+margin_bottom = 64.0
 text = "HALL"
 align = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 97.0
+margin_top = 74.0
 margin_right = 660.0
-margin_bottom = 916.0
+margin_bottom = 939.0
 size_flags_vertical = 3
 
 [node name="Menu" type="Button" parent="VBoxContainer"]
-margin_top = 926.0
+margin_top = 949.0
 margin_right = 660.0
 margin_bottom = 1021.0
 text = "GO_BACK"

@@ -10,9 +10,11 @@ var coins
 
 var goal_stats
 
+onready var teams = $Container/MarginContainer/MarginContainer/VBoxContainer/GridContainer
+
 func _ready():
-	goal_stats = $CenterContainer/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/GoalStats
-	coins_label = $CenterContainer/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins
+	goal_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/GoalStats
+	coins_label = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins
 	
 func _on_Menu_pressed():
 	Global.click()
@@ -73,15 +75,15 @@ func _on_Gameover_visibility_changed():
 				var away_icon = TextureRect.new()
 				home_icon.texture = Global.matches[i]["home"]["icon"]
 				away_icon.texture = Global.matches[i]["away"]["icon"]
-				$CenterContainer/MarginContainer/MarginContainer/VBoxContainer/GridContainer.add_child(short_label_home)
-				$CenterContainer/MarginContainer/MarginContainer/VBoxContainer/GridContainer.add_child(home_icon)
-				$CenterContainer/MarginContainer/MarginContainer/VBoxContainer/GridContainer.add_child(label)
-				$CenterContainer/MarginContainer/MarginContainer/VBoxContainer/GridContainer.add_child(away_icon)
-				$CenterContainer/MarginContainer/MarginContainer/VBoxContainer/GridContainer.add_child(short_label_away)
+				teams.add_child(short_label_home)
+				teams.add_child(home_icon)
+				teams.add_child(label)
+				teams.add_child(away_icon)
+				teams.add_child(short_label_away)
 		
 		# hide coins stast and don't give money, because simulation
 		if Global.current_league_game == null or Global.current_league_game is String:
-			$CenterContainer/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats.hide()
+			$Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins.hide()
 		else:
 			_calculateCoinsWin(home_score,away_score)
 			coins_label.text = str(coins)
