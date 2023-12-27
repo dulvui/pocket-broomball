@@ -6,9 +6,9 @@ var multyplier
 
 var reward_earned = false
 
-onready var coins_label = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats/Coins
-onready var goal_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/GoalStats
-onready var coins_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/VBoxContainer/CoinsStats
+onready var coins_label = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/CoinsStats/Coins
+onready var goal_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/GoalStats
+onready var coins_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats
 
 var coins
 

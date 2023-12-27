@@ -99,12 +99,12 @@ func _process(delta):
 			game_over = true
 			get_tree().paused = true
 			$Pause.queue_free()
-			Global.game_over(home_score.goals,away_score.goals)
 			$Player.queue_free()
 			$Computer.queue_free()
 			$Ball.queue_free()
 			$LeagueGameover.show()
 			Global.music_loop.fade_in()
-					
+			Global.game_over(home_score.goals,away_score.goals)
+
 
 

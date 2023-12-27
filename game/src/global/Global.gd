@@ -366,8 +366,6 @@ func game_over(home_goals,away_goals, simulation = false):
 			random_results()
 			_save_current_game(home_goals, away_goals)
 			
-
-			
 		match_day += 1
 		
 		# sort teams with points
@@ -378,7 +376,6 @@ func game_over(home_goals,away_goals, simulation = false):
 			teams.sort_custom(PointsSorter, "sort")
 		for i in range(0,teams.size()):
 			teams[i]["position"] = i
-		
 			
 		current_league_game = null
 		
