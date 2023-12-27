@@ -109,7 +109,6 @@ func _on_NextMatch_pressed():
 				Global.current_league_game = "simulation"
 	
 				get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
-				
 	
 	
 	else:
