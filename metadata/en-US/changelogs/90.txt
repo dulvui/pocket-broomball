@@ -1,2 +1,7 @@
 - show "go back" button in play screen again
-- add flag to language button
+- add flag to language button thanks to @RustoMCSpit
+- make buttons transparent thanks to @RustoMCSpit
+- fix issues with game over screen in tournaments
+- use better Godot UI elements
+- fix arcade highscore in dashboard
+- fix arcade game over screen
