@@ -77,14 +77,15 @@ func _process(delta):
 #			yield(player,"animation_finished")
 			$Field/Commentator.loose()
 		game_over = true
-		Global.game_over(home_score.goals,away_score.goals)
 		get_tree().paused = true
+		Global.game_over(home_score.goals,away_score.goals)
 		$Pause.queue_free()
 		$Player.queue_free()
 		$Computer.queue_free()
 		$Ball.queue_free()
 		$GameOver.show()
 		Global.music_loop.fade_in()
+		Global.current_league_game = null
 	elif  Global.current_league_game != null && (away_score.goals == 5 || home_score.goals == 5) && !game_over:
 			if home_score.goals == 5:
 				$Field/Commentator.win()
@@ -98,13 +99,14 @@ func _process(delta):
 				$Field/Commentator.loose()
 			game_over = true
 			get_tree().paused = true
+			Global.game_over(home_score.goals,away_score.goals)
 			$Pause.queue_free()
 			$Player.queue_free()
 			$Computer.queue_free()
 			$Ball.queue_free()
 			$LeagueGameover.show()
 			Global.music_loop.fade_in()
-			Global.game_over(home_score.goals,away_score.goals)
+			Global.current_league_game = null
 
 
 

@@ -377,7 +377,6 @@ func game_over(home_goals,away_goals, simulation = false):
 		for i in range(0,teams.size()):
 			teams[i]["position"] = i
 			
-		current_league_game = null
 		
 		save_all_data()
 	

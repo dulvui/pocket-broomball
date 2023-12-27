@@ -92,7 +92,7 @@ __meta__ = {
 
 [node name="Icon" type="TextureRect" parent="Container/MarginContainer/MarginContainer/VBoxContainer/Stats/CoinsStats"]
 margin_left = 345.0
-margin_right = 409.0
+margin_right = 345.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 64, 64 )
 texture = ExtResource( 5 )

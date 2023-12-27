@@ -25,13 +25,6 @@ func _on_Gameover_visibility_changed():
 		var home_score = get_parent().get_node("Score").get_node("HomeScore").goals
 		var away_score = get_parent().get_node("Score").get_node("AwayScore").goals
 		
-		
-		
-		var dynamic_font = DynamicFont.new()
-		dynamic_font.font_data = load("res://assets/font/DSEG7ClassicMini-Bold.ttf")
-		dynamic_font.size = 62
-		
-		
 		# TODO show final stage in worldcup
 		var from
 		var to
