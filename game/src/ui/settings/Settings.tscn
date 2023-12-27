@@ -35,40 +35,43 @@ margin_bottom = 247.0
 text = "roundlimit"
 
 [node name="Music" type="Button" parent="VBoxContainer"]
+margin_top = 68.0
 margin_right = 659.0
-margin_bottom = 95.0
+margin_bottom = 140.0
 text = "MUSIC_ON"
 
 [node name="Sfx" type="Button" parent="VBoxContainer"]
-margin_top = 103.0
+margin_top = 148.0
 margin_right = 659.0
-margin_bottom = 198.0
+margin_bottom = 220.0
 text = "SFX_ON"
 
 [node name="RateAndReview" type="Button" parent="VBoxContainer"]
-margin_top = 206.0
+margin_top = 228.0
 margin_right = 659.0
-margin_bottom = 301.0
+margin_bottom = 300.0
 text = "RATE"
 
 [node name="MoreGames" type="Button" parent="VBoxContainer"]
-margin_top = 309.0
+margin_top = 308.0
 margin_right = 659.0
-margin_bottom = 404.0
+margin_bottom = 380.0
 text = "MORE_GAMES"
 
 [node name="Language" type="Button" parent="VBoxContainer"]
-margin_top = 412.0
+margin_top = 388.0
 margin_right = 659.0
-margin_bottom = 507.0
+margin_bottom = 460.0
 text = "LANGUAGE"
 expand_icon = true
 
 [node name="Flag" type="TextureRect" parent="VBoxContainer/Language"]
-margin_left = 552.0
-margin_top = 12.0
-margin_right = 802.0
-margin_bottom = 262.0
+anchor_left = 0.86
+anchor_right = 0.955
+anchor_bottom = 1.0
+margin_left = 0.26001
+margin_right = 187.655
+margin_bottom = 178.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
@@ -90,16 +93,16 @@ text = "INFO"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 515.0
+margin_top = 468.0
 margin_right = 659.0
-margin_bottom = 535.0
+margin_bottom = 488.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 543.0
+margin_top = 496.0
 margin_right = 659.0
-margin_bottom = 638.0
+margin_bottom = 568.0
 text = "GO_BACK"
 
 [node name="EasterEgg" type="Button" parent="."]
