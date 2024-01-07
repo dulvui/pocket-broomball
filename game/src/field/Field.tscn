@@ -179,6 +179,7 @@ self_modulate = Color( 1, 1, 1, 0.470588 )
 position = Vector2( 360, 250 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 10 )
+flip_h = true
 flip_v = true
 
 [node name="Sounds" type="Node" parent="."]
