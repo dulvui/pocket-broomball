@@ -1,1 +1,2 @@
-- fix left category button in shop thanks to @david-hil
+- fix left category button in shop, thanks to @david-hil
+- h-flip away team icon, thanks to @david-hil
