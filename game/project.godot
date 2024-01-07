@@ -57,7 +57,6 @@ gdscript/warnings/unsafe_call_argument=true
 
 window/size/width=720
 window/size/height=1280
-window/size/resizable=false
 window/size/always_on_top=true
 window/size/test_width=360
 window/size/test_height=640

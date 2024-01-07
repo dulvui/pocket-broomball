@@ -1,0 +1,1 @@
+- fix left category button in shop thanks to @david-hil
