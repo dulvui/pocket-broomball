@@ -21,6 +21,7 @@ func _ready():
 	current_item.texture = ShopUtil.get_ball_texture()
 	ball.texture = ShopUtil.get_ball_texture()
 	buy_button.text = "SELECTED"
+	locker.visible = false
 
 func _on_GoBack_pressed():
 	Global.click()

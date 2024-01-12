@@ -44,6 +44,7 @@ rotation = -3.14159
 scale = Vector2( 0.6, 0.6 )
 
 [node name="Locker" parent="Objects" instance=ExtResource( 7 )]
+visible = false
 position = Vector2( 351, 644 )
 
 [node name="Content" type="VBoxContainer" parent="."]
