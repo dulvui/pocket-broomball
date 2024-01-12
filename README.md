@@ -140,6 +140,13 @@ game/assets/patterns/pattern_0024.png
 game/assets/patterns/pattern_0025.png
 ```
 
+"Simple icons" by simple-icons (https://github.com/simple-icons/simple-icons) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+```
+game/assets/link-buttons/codeberg.svg
+game/assets/link-buttons/mastodon.svg
+game/assets/link-buttons/github.svg
+```
+
 ### 3D assets
 "Star" by Savino (https://opengameart.org/content/star-0) is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```

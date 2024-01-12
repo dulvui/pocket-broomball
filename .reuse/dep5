@@ -64,6 +64,10 @@ Files: game/assets/font/DSEG7ClassicMini-Bold.ttf
 Copyright: 2022 Keshikan https://github.com/keshikan/DSEG
 License: OFL-1.1
 
+Files: game/assets/link-buttons/codeberg.svg game/assets/link-buttons/mastodon.svg game/assets/link-buttons/github.svg
+Copyright: simple-icons https://github.com/simple-icons/simple-icons
+License: CC0-1.0
+
 Files: game/assets/teams/*
 Copyright: 2022 The corresponding team organization
 License: No license defined

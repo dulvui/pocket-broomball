@@ -45,12 +45,27 @@ func _on_Online_pressed():
 func _on_Okay_pressed():
 	$PopupDialog.hide()
 
+func _on_Info_pressed():
+	Global.click()
+	get_tree().change_scene("res://src/ui/info/Info.tscn")
+
 
 func _on_SimonDalvai_pressed():
 	Global.click()
 	OS.shell_open("https://simondalvai.org")
 
 
-func _on_Info_pressed():
+func _on_Codeberg_pressed():
 	Global.click()
-	get_tree().change_scene("res://src/ui/info/Info.tscn")
+	OS.shell_open("https://codeberg.org/dulvui/pocket-broomball")
+
+
+func _on_Mastodon_pressed():
+	Global.click()
+	OS.shell_open("https://mastodon.social/@dulvui")
+
+
+func _on_Github_pressed():
+	Global.click()
+	OS.shell_open("https://github.com/dulvui/pocket-broomball")
+
