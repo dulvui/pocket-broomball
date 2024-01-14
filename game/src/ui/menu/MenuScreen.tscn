@@ -21,7 +21,7 @@ node_path = NodePath("../VBoxContainer")
 anchor_left = 0.042
 anchor_top = 0.291
 anchor_right = 0.958
-anchor_bottom = 0.938688
+anchor_bottom = 0.91525
 margin_left = -0.240002
 margin_top = 0.519989
 margin_right = 0.239929
@@ -87,13 +87,32 @@ margin_top = 492.0
 margin_right = 660.0
 margin_bottom = 582.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/separation = 90
+
+[node name="SimonDalvai" type="Button" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0.827451 )
+margin_top = 592.0
+margin_right = 660.0
+margin_bottom = 664.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "simondalvai.org"
+flat = true
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 674.0
+margin_right = 660.0
+margin_bottom = 684.0
+size_flags_horizontal = 3
+custom_constants/separation = 10
 
 [node name="LinkButtons" type="HBoxContainer" parent="VBoxContainer"]
 margin_left = 151.0
-margin_top = 592.0
+margin_top = 694.0
 margin_right = 509.0
-margin_bottom = 696.0
+margin_bottom = 798.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 custom_constants/separation = 35
@@ -130,31 +149,13 @@ size_flags_vertical = 3
 icon = ExtResource( 7 )
 flat = true
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = 706.0
-margin_right = 660.0
-margin_bottom = 716.0
-size_flags_horizontal = 3
-custom_constants/separation = 10
-
-[node name="SimonDalvai" type="Button" parent="VBoxContainer"]
-modulate = Color( 1, 1, 1, 0.827451 )
-margin_top = 726.0
-margin_right = 660.0
-margin_bottom = 828.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "simondalvai.org"
-flat = true
-
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Shop" to="." method="_on_Shop_pressed"]
 [connection signal="pressed" from="VBoxContainer/Statistics" to="." method="_on_Statistics_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_Info_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/SimonDalvai" to="." method="_on_SimonDalvai_pressed"]
 [connection signal="pressed" from="VBoxContainer/LinkButtons/Codeberg" to="." method="_on_Codeberg_pressed"]
 [connection signal="pressed" from="VBoxContainer/LinkButtons/Github" to="." method="_on_Github_pressed"]
 [connection signal="pressed" from="VBoxContainer/LinkButtons/Mastodon" to="." method="_on_Mastodon_pressed"]
-[connection signal="pressed" from="VBoxContainer/SimonDalvai" to="." method="_on_SimonDalvai_pressed"]
