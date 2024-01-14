@@ -41,6 +41,9 @@ anchor_bottom = 0.0
 margin_left = 152.0
 margin_right = 584.0
 margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Group2" type="HBoxContainer" parent="."]
 margin_top = 82.0
@@ -53,6 +56,9 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 432.0
 margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="GroupB" type="Label" parent="Group2"]
 margin_left = 452.0
@@ -81,6 +87,9 @@ anchor_bottom = 0.0
 margin_left = 152.0
 margin_right = 584.0
 margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Group4" type="HBoxContainer" parent="."]
 margin_top = 246.0
@@ -93,6 +102,9 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 432.0
 margin_bottom = 82.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="GroupD" type="Label" parent="Group4"]
 margin_left = 452.0
