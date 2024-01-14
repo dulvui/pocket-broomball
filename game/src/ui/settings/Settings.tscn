@@ -16,14 +16,14 @@ script = ExtResource( 2 )
 node_path = NodePath("../VBoxContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.042
-anchor_top = 0.307
-anchor_right = 0.958
-anchor_bottom = 0.805
-margin_left = -0.240002
-margin_top = 0.039978
-margin_right = 0.239929
-margin_bottom = 0.599854
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -250.0
+margin_right = 270.0
+margin_bottom = 250.0
 custom_constants/separation = 8
 alignment = 1
 
@@ -35,33 +35,32 @@ margin_bottom = 247.0
 text = "roundlimit"
 
 [node name="Music" type="Button" parent="VBoxContainer"]
-margin_top = 68.0
-margin_right = 659.0
-margin_bottom = 140.0
+margin_right = 540.0
+margin_bottom = 72.0
 text = "MUSIC_ON"
 
 [node name="Sfx" type="Button" parent="VBoxContainer"]
-margin_top = 148.0
-margin_right = 659.0
-margin_bottom = 220.0
+margin_top = 80.0
+margin_right = 540.0
+margin_bottom = 152.0
 text = "SFX_ON"
 
 [node name="RateAndReview" type="Button" parent="VBoxContainer"]
-margin_top = 228.0
-margin_right = 659.0
-margin_bottom = 300.0
+margin_top = 160.0
+margin_right = 540.0
+margin_bottom = 232.0
 text = "RATE"
 
 [node name="MoreGames" type="Button" parent="VBoxContainer"]
-margin_top = 308.0
-margin_right = 659.0
-margin_bottom = 380.0
+margin_top = 240.0
+margin_right = 540.0
+margin_bottom = 312.0
 text = "MORE_GAMES"
 
 [node name="Language" type="Button" parent="VBoxContainer"]
-margin_top = 388.0
-margin_right = 659.0
-margin_bottom = 460.0
+margin_top = 320.0
+margin_right = 540.0
+margin_bottom = 392.0
 text = "LANGUAGE"
 expand_icon = true
 
@@ -93,16 +92,16 @@ text = "INFO"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 468.0
-margin_right = 659.0
-margin_bottom = 488.0
+margin_top = 400.0
+margin_right = 540.0
+margin_bottom = 420.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 496.0
-margin_right = 659.0
-margin_bottom = 568.0
+margin_top = 428.0
+margin_right = 540.0
+margin_bottom = 500.0
 text = "GO_BACK"
 
 [node name="EasterEgg" type="Button" parent="."]

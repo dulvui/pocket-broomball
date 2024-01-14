@@ -21,52 +21,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -330.0
-margin_top = -245.0
-margin_right = 330.0
-margin_bottom = 405.0
+margin_left = -270.0
+margin_top = -256.0
+margin_right = 270.0
+margin_bottom = 256.0
 
 [node name="League" type="Button" parent="VBoxContainer"]
-margin_right = 660.0
-margin_bottom = 95.0
+margin_right = 540.0
+margin_bottom = 72.0
 text = "TOURNAMENT"
 
 [node name="Arcade" type="Button" parent="VBoxContainer"]
-margin_top = 105.0
-margin_right = 660.0
-margin_bottom = 200.0
+margin_top = 82.0
+margin_right = 540.0
+margin_bottom = 154.0
 text = "ARCADE"
 
 [node name="Single Match" type="Button" parent="VBoxContainer"]
-margin_top = 210.0
-margin_right = 660.0
-margin_bottom = 305.0
+margin_top = 164.0
+margin_right = 540.0
+margin_bottom = 236.0
 text = "P_VS_PC"
 
 [node name="OneVsOne" type="Button" parent="VBoxContainer"]
-margin_top = 315.0
-margin_right = 660.0
-margin_bottom = 410.0
+margin_top = 246.0
+margin_right = 540.0
+margin_bottom = 318.0
 text = "P_VS_P"
 
 [node name="BotVsBot" type="Button" parent="VBoxContainer"]
-margin_top = 420.0
-margin_right = 660.0
-margin_bottom = 515.0
+margin_top = 328.0
+margin_right = 540.0
+margin_bottom = 400.0
 text = "B_VS_B"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 525.0
-margin_right = 660.0
-margin_bottom = 545.0
+margin_top = 410.0
+margin_right = 540.0
+margin_bottom = 430.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="Back" type="Button" parent="VBoxContainer"]
-margin_top = 555.0
-margin_right = 660.0
-margin_bottom = 650.0
+margin_top = 440.0
+margin_right = 540.0
+margin_bottom = 512.0
 text = "GO_BACK"
 
 [connection signal="pressed" from="VBoxContainer/League" to="." method="_on_League_pressed"]

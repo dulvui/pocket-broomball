@@ -9,13 +9,17 @@ bg_color = Color( 0, 0, 0, 1 )
 [node name="Table" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 0.118
+margin_bottom = -0.0400085
 theme = ExtResource( 1 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 720.0
-margin_bottom = 151.04
+margin_bottom = 151.0
 custom_constants/margin_right = 35
 custom_constants/margin_top = 30
 custom_constants/margin_left = 35

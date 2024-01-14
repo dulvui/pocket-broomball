@@ -42,18 +42,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -330.0
+margin_left = -270.0
 margin_top = -630.0
-margin_right = 330.0
+margin_right = 270.0
 margin_bottom = 630.0
 custom_constants/separation = 24
 alignment = 1
 
 [node name="Highscore" type="Label" parent="VBoxContainer"]
 margin_top = 150.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 274.0
-rect_pivot_offset = Vector2( 330, 62 )
+rect_pivot_offset = Vector2( 270, 62 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "32"
@@ -62,76 +62,76 @@ valign = 1
 
 [node name="Speed" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 298.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 474.0
 
 [node name="TextureProgress" parent="VBoxContainer/Speed" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 94.0
 rect_min_size = Vector2( 0, 94 )
 text = "SPEED"
 
 [node name="SpeedUp" type="Button" parent="VBoxContainer/Speed"]
 margin_top = 104.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 176.0
 text = "64000"
 
 [node name="Power" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 498.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 674.0
 
 [node name="TextureProgress" parent="VBoxContainer/Power" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 94.0
 rect_min_size = Vector2( 0, 94 )
 
 [node name="PowerUp" type="Button" parent="VBoxContainer/Power"]
 margin_top = 104.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 176.0
 text = "1000"
 
 [node name="Freeze" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 698.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 874.0
 
 [node name="TextureProgress" parent="VBoxContainer/Freeze" instance=ExtResource( 5 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 94.0
 rect_min_size = Vector2( 0, 94 )
 text = "FREEZE"
 
 [node name="FreezeUp" type="Button" parent="VBoxContainer/Freeze"]
 margin_top = 104.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 176.0
 text = "2000"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_top = 898.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 918.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 margin_top = 942.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 1014.0
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
 margin_top = 1038.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 1110.0
 text = "GO_BACK"
 

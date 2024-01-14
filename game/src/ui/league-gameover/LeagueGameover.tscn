@@ -99,9 +99,12 @@ texture = ExtResource( 5 )
 expand = true
 
 [node name="GoBack" type="Button" parent="Container"]
+margin_left = 50.0
 margin_top = 680.0
-margin_right = 640.0
+margin_right = 590.0
 margin_bottom = 752.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "CONTINUE"
 __meta__ = {
 "_edit_use_anchors_": false

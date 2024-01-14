@@ -82,9 +82,12 @@ margin_bottom = 939.0
 size_flags_vertical = 3
 
 [node name="Menu" type="Button" parent="VBoxContainer"]
+margin_left = 60.0
 margin_top = 949.0
-margin_right = 660.0
+margin_right = 600.0
 margin_bottom = 1021.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "GO_BACK"
 
 [node name="ComingSoon" type="Label" parent="."]

@@ -30,21 +30,15 @@ node_path = NodePath("../Content")
 visible = false
 
 [node name="Content" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -330.0
-margin_top = -634.0
-margin_right = 330.0
-margin_bottom = 573.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_constants/separation = 22
 alignment = 1
 
 [node name="Matchday" type="Label" parent="Content"]
-margin_top = 370.0
-margin_right = 660.0
-margin_bottom = 434.0
+margin_top = 407.0
+margin_right = 720.0
+margin_bottom = 471.0
 theme = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1/9"
@@ -57,17 +51,17 @@ __meta__ = {
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 373.0
-margin_right = 660.0
-margin_bottom = 455.0
+margin_top = 266.0
+margin_right = 720.0
+margin_bottom = 348.0
 
 [node name="GroupStage" parent="Content" instance=ExtResource( 9 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 235.0
-margin_right = 660.0
-margin_bottom = 593.0
+margin_top = 318.0
+margin_right = 720.0
+margin_bottom = 646.0
 
 [node name="FinalStage" parent="Content" instance=ExtResource( 8 )]
 visible = false
@@ -81,9 +75,9 @@ rect_scale = Vector2( 1, 1 )
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Content"]
-margin_top = 456.0
-margin_right = 660.0
-margin_bottom = 836.0
+margin_top = 493.0
+margin_right = 720.0
+margin_bottom = 873.0
 theme = ExtResource( 2 )
 custom_constants/separation = 12
 __meta__ = {
@@ -91,26 +85,29 @@ __meta__ = {
 }
 
 [node name="NextMatch" type="Button" parent="Content/Buttons"]
-margin_right = 660.0
+margin_left = 90.0
+margin_right = 630.0
 margin_bottom = 72.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "PLAY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Content/Buttons"]
 margin_top = 84.0
-margin_right = 660.0
+margin_right = 720.0
 margin_bottom = 212.0
 alignment = 1
 
 [node name="BroomballCoins" type="TextureRect" parent="Content/Buttons/HBoxContainer"]
-margin_left = 126.0
-margin_right = 254.0
+margin_left = 156.0
+margin_right = 284.0
 margin_bottom = 128.0
 texture = ExtResource( 6 )
 
 [node name="PrizeMoney" type="Label" parent="Content/Buttons/HBoxContainer"]
-margin_left = 258.0
+margin_left = 288.0
 margin_top = 22.0
-margin_right = 534.0
+margin_right = 564.0
 margin_bottom = 106.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
@@ -118,15 +115,21 @@ text = "1000"
 align = 1
 
 [node name="NewChampionship" type="Button" parent="Content/Buttons"]
+margin_left = 90.0
 margin_top = 224.0
-margin_right = 660.0
+margin_right = 630.0
 margin_bottom = 296.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "START_NEW"
 
 [node name="GoBack" type="Button" parent="Content/Buttons"]
+margin_left = 90.0
 margin_top = 308.0
-margin_right = 660.0
+margin_right = 630.0
 margin_bottom = 380.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "MENU"
 
 [node name="NewLeaguePopUp" type="Popup" parent="."]

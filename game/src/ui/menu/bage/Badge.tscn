@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="Badge" type="Control"]
+anchor_right = 0.065
+anchor_bottom = 0.029
+margin_right = 31.2
+margin_bottom = 24.88
+rect_scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.839216 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.972549, 0.0666667, 0.0666667, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}

@@ -75,19 +75,27 @@ rect_min_size = Vector2( 0, 90 )
 visible = false
 margin_right = 376.0
 margin_bottom = 115.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "ONLINE"
 icon = ExtResource( 6 )
 
 [node name="Replay" type="Button" parent="VBoxContainer"]
+margin_left = 60.0
 margin_top = 683.0
-margin_right = 660.0
+margin_right = 600.0
 margin_bottom = 755.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "REPLAY"
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
+margin_left = 60.0
 margin_top = 767.0
-margin_right = 660.0
+margin_right = 600.0
 margin_bottom = 839.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 text = "CONTINUE"
 
 [node name="Highscore" type="AudioStreamPlayer" parent="."]

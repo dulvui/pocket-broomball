@@ -13,23 +13,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -330.0
+margin_left = -270.0
 margin_top = -640.0
-margin_right = 330.0
+margin_right = 270.0
 margin_bottom = 640.0
 custom_constants/separation = 21
 alignment = 1
 
 [node name="Replay" type="Button" parent="VBoxContainer"]
-margin_top = 534.0
-margin_right = 660.0
+margin_top = 557.0
+margin_right = 540.0
 margin_bottom = 629.0
 text = "REPLAY"
 
 [node name="Menu" type="Button" parent="VBoxContainer"]
 margin_top = 650.0
-margin_right = 660.0
-margin_bottom = 745.0
+margin_right = 540.0
+margin_bottom = 722.0
 text = "MENU"
 
 [connection signal="pressed" from="VBoxContainer/Replay" to="." method="_on_Replay_pressed"]

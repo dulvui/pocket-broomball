@@ -33,6 +33,7 @@ margin_top = -542.0
 margin_right = 330.0
 margin_bottom = 510.0
 custom_constants/separation = 42
+alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 margin_right = 660.0
@@ -195,37 +196,41 @@ All the best,
 Simon"
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+margin_left = 60.0
 margin_top = 816.0
-margin_right = 660.0
+margin_right = 600.0
 margin_bottom = 1052.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
+alignment = 1
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 72.0
 text = "WEBSITE"
 
 [node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 72.0
 text = "DONATE"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
 margin_top = 82.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 154.0
 text = "Github"
 
 [node name="Join" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 82.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 154.0
 text = "JOIN"
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
 margin_top = 164.0
-margin_right = 660.0
+margin_right = 540.0
 margin_bottom = 236.0
 text = "GO_BACK"
 

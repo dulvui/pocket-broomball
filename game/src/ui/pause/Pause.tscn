@@ -9,9 +9,6 @@ pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 pause_mode = 2
@@ -20,15 +17,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -330.0
+margin_left = -275.0
 margin_top = -85.0
-margin_right = 330.0
+margin_right = 275.0
 margin_bottom = 85.0
 theme = ExtResource( 1 )
 custom_constants/separation = 26
 
 [node name="Resume" type="Button" parent="Buttons"]
-margin_right = 660.0
+margin_right = 550.0
 margin_bottom = 72.0
 text = "RESUME"
 __meta__ = {
@@ -37,7 +34,7 @@ __meta__ = {
 
 [node name="Menu" type="Button" parent="Buttons"]
 margin_top = 98.0
-margin_right = 660.0
+margin_right = 550.0
 margin_bottom = 170.0
 text = "MENU"
 __meta__ = {

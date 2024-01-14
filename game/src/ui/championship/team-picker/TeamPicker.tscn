@@ -192,16 +192,22 @@ margin_bottom = 1009.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="Select" type="Button" parent="VBoxContainer"]
+margin_left = 60.0
 margin_top = 1029.0
-margin_right = 660.0
+margin_right = 600.0
 margin_bottom = 1101.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 theme = ExtResource( 2 )
 text = "PLAY"
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
+margin_left = 60.0
 margin_top = 1121.0
-margin_right = 660.0
+margin_right = 600.0
 margin_bottom = 1193.0
+rect_min_size = Vector2( 540, 0 )
+size_flags_horizontal = 4
 theme = ExtResource( 2 )
 text = "GO_BACK"
 
