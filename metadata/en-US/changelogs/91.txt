@@ -1,3 +1,4 @@
 - fix left category button in shop, thanks to @david-hil
 - h-flip away team icon, thanks to @david-hil
 - fix first ball locked in shop, thanks to @G-B-FutureMartian 
+- minor UI redesign
