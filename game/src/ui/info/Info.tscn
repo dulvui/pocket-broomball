@@ -36,8 +36,9 @@ custom_constants/separation = 42
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 margin_right = 660.0
-margin_bottom = 600.0
+margin_bottom = 774.0
 rect_min_size = Vector2( 589, 600 )
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "This game is open source under the [url=https://github.com/dulvui/pocket-broomball/blob/main/LICENSE]AGPL-3.0-or-later[/url] license.
@@ -194,9 +195,9 @@ All the best,
 Simon"
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 642.0
+margin_top = 816.0
 margin_right = 660.0
-margin_bottom = 960.0
+margin_bottom = 1052.0
 
 [node name="Website" type="Button" parent="VBoxContainer/Buttons"]
 margin_right = 660.0
@@ -205,27 +206,27 @@ text = "WEBSITE"
 
 [node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
-margin_top = -109.0
-margin_right = 589.0
-margin_bottom = -7.0
+margin_right = 660.0
+margin_bottom = 72.0
 text = "DONATE"
 
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
+visible = false
 margin_top = 82.0
 margin_right = 660.0
 margin_bottom = 154.0
 text = "Github"
 
 [node name="Join" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 164.0
+margin_top = 82.0
 margin_right = 660.0
-margin_bottom = 236.0
+margin_bottom = 154.0
 text = "JOIN"
 
 [node name="Back" type="Button" parent="VBoxContainer/Buttons"]
-margin_top = 246.0
+margin_top = 164.0
 margin_right = 660.0
-margin_bottom = 318.0
+margin_bottom = 236.0
 text = "GO_BACK"
 
 [connection signal="meta_clicked" from="VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
