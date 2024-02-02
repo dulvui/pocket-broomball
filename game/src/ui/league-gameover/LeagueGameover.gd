@@ -55,13 +55,22 @@ func _on_Gameover_visibility_changed():
 				teams.add_child(match_row)
 		
 		# hide coins stats and don't give money, because simulation
-		if Global.current_league_game == null or Global.current_league_game is String:
+		if _no_coins():
 			coins_stats.hide()
 		else:
 			_calculateCoinsWin(home_score,away_score)
 			coins_label.text = str(coins)
 			goal_stats.text = _get_stats(home_score,away_score)
 		get_tree().paused = true
+		
+func _no_coins() -> bool:
+	if Global.current_league_game == null:
+		return true
+	if Global.current_league_game["home"]["id"] == 0: # break team
+		return true
+	if Global.current_league_game["away"]["id"] == 0:
+		return true
+	return false
 		
 func _calculateCoinsWin(home_goals, away_goals):
 	var win = home_goals > away_goals

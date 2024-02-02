@@ -105,8 +105,8 @@ func _on_NextMatch_pressed():
 #				get_tree().change_scene("res://src/ui/championship/dashboard/Dashboard.tscn")
 				Global.set_home_team(null)
 				Global.set_away_team(null)
-				
-				Global.current_league_game = "simulation"
+#
+#				Global.current_league_game = "simulation"
 	
 				get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
 	
