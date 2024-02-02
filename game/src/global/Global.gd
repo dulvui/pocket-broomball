@@ -274,12 +274,11 @@ func game_over(home_goals,away_goals, simulation = false):
 			if match_day < 5: # 5 = 6 - 1 because 24 + 24 ritorno
 				random_world_cup_results()
 				_save_current_game(home_goals, away_goals)
+				sort_table()
 			elif match_day == 5: # create final stage
 				random_world_cup_results()
 				_save_current_game(home_goals, away_goals)
-				
-#				is_group_stage = false
-				
+				sort_table()
 				create_quarter_finals()
 				
 			elif match_day == 6: # semi stage
@@ -365,20 +364,24 @@ func game_over(home_goals,away_goals, simulation = false):
 		else:
 			random_results()
 			_save_current_game(home_goals, away_goals)
+			sort_table()
 			
 		match_day += 1
 		
 		# sort teams with points
-		if is_worldcup:
-			for group in groups:
-				group.sort_custom(PointsSorter, "sort")
-		else:
-			teams.sort_custom(PointsSorter, "sort")
-		for i in range(0,teams.size()):
-			teams[i]["position"] = i
+
 			
 		
 		save_all_data()
+		
+func sort_table() -> void:
+	if is_worldcup:
+		for group in groups:
+			group.sort_custom(PointsSorter, "sort")
+	else:
+		teams.sort_custom(PointsSorter, "sort")
+		for i in range(0,teams.size()):
+			teams[i]["position"] = i
 	
 func create_quarter_finals():
 	# create final teams
