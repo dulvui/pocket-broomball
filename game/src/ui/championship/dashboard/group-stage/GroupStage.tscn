@@ -36,6 +36,7 @@ __meta__ = {
 }
 
 [node name="Group1" parent="Group1" instance=ExtResource( 2 )]
+anchor_left = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 152.0
@@ -52,8 +53,10 @@ margin_bottom = 164.0
 custom_constants/separation = 20
 
 [node name="Group2" parent="Group2" instance=ExtResource( 2 )]
+anchor_left = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
 margin_right = 432.0
 margin_bottom = 82.0
 __meta__ = {
@@ -82,6 +85,7 @@ margin_bottom = 57.0
 text = "GROUP_C"
 
 [node name="Group3" parent="Group3" instance=ExtResource( 2 )]
+anchor_left = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 152.0
@@ -98,8 +102,10 @@ margin_bottom = 328.0
 custom_constants/separation = 20
 
 [node name="Group4" parent="Group4" instance=ExtResource( 2 )]
+anchor_left = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
+margin_left = 0.0
 margin_right = 432.0
 margin_bottom = 82.0
 __meta__ = {

@@ -52,9 +52,9 @@ visible = false
 anchor_left = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
+margin_left = 144.0
 margin_top = 441.0
-margin_right = 720.0
+margin_right = 576.0
 margin_bottom = 523.0
 __meta__ = {
 "_edit_use_anchors_": true
@@ -73,14 +73,15 @@ margin_bottom = 646.0
 
 [node name="FinalStage" parent="Content" instance=ExtResource( 8 )]
 visible = false
+anchor_left = 0.0
+anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 86.0
-margin_right = 660.0
-margin_bottom = 742.0
-rect_scale = Vector2( 1, 1 )
-size_flags_vertical = 3
+margin_left = 10.0
+margin_top = 182.0
+margin_right = 710.0
+margin_bottom = 782.0
+size_flags_vertical = 5
 
 [node name="Buttons" type="VBoxContainer" parent="Content"]
 margin_top = 493.0
