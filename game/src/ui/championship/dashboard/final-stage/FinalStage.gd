@@ -2,33 +2,32 @@ extends Control
 
 
 func set_up():
-	var temp = Global.matches
-	
-	if Global.final_teams.size() == 1:
-		$Winner.text = Global.final_teams[0]["name"]
-		$GridContainer.hide()
-	else:
-		for matchz in Global.matches:
-			if matchz["result"] == ":":
-				var home_short = Label.new()
-				home_short.text = matchz["home"]["short_name"]
-				$GridContainer.add_child(home_short)
-				
-				var vs_label = Label.new()
-				vs_label.text = "vs"
-				$GridContainer.add_child(vs_label)
-				
-				var away_short = Label.new()
-				away_short.text = matchz["away"]["short_name"]
-				$GridContainer.add_child(away_short)
-				
 	match Global.final_teams.size():
 		4:
-			$StageName.text = tr("SEMI FINALS")
+			$VBoxContainer/StageName.text = tr("SEMI FINALS")
+			$VBoxContainer/VBoxContainer/Match3.hide()
+			$VBoxContainer/VBoxContainer/Match4.hide()
 		2:
-			$StageName.text = tr("FINAL")
+			$VBoxContainer/StageName.text = tr("FINAL")
+			$VBoxContainer/VBoxContainer/Match2.hide()
+			$VBoxContainer/VBoxContainer/Match4.hide()
+			$VBoxContainer/VBoxContainer/Match3.hide()
+			$VBoxContainer/VBoxContainer/Match4.hide()
 		1:
-			$StageName.text = tr("WORLD CHAMPION")
-			$WinnerIcon.texture = Global.final_teams[0]["icon"]
-
+			$VBoxContainer/StageName.text = tr("WORLD CHAMPION")
+			$VBoxContainer/Winner.text = Global.final_teams[0]["name"]
+			$VBoxContainer/WinnerIcon.texture = Global.final_teams[0]["icon"]
+			$VBoxContainer/VBoxContainer.hide()
+		_:
+			$VBoxContainer/StageName.text = tr("QUARTER FINALS")
+	
+	if Global.final_teams.size() > 1:
+		var counter:int = 1
+		for matchz in Global.matches:
+			if matchz["result"] == ":":
+				var match_box:HBoxContainer = get_node("VBoxContainer/VBoxContainer/Match" + str(counter))
+				match_box.get_node("Home").text = matchz["home"]["short_name"].to_upper()
+				match_box.get_node("Away").text = matchz["away"]["short_name"].to_upper()
+				
+				counter += 1
 

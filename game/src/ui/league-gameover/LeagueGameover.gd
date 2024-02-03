@@ -66,6 +66,8 @@ func _on_Gameover_visibility_changed():
 func _no_coins() -> bool:
 	if Global.current_league_game == null:
 		return true
+	if Global.current_league_game is String and Global.current_league_game == "simulation":
+		return true
 	if Global.current_league_game["home"]["id"] == 0: # break team
 		return true
 	if Global.current_league_game["away"]["id"] == 0:

@@ -30,7 +30,7 @@ func _ready():
 	
 	
 	# break game or simulation
-	if (Global.is_worldcup and Global.current_league_game is String) or (Global.current_league_game != null and Global.current_league_game["away"]["id"] == 0):
+	if (Global.is_worldcup and Global.current_league_game is String and Global.current_league_game == "simulation") or (Global.current_league_game != null and Global.current_league_game["away"]["id"] == 0):
 		game_over = true
 		get_tree().paused = true
 		$Pause.queue_free()
