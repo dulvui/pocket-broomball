@@ -528,7 +528,8 @@ func _load_worldcup_teams():
 			"goal_diference": 0 , "wins" : 0, "speed" : 8, "power" : 8,
 			"lost":0, "icon" : switzerland_icon, "goal_difference":0 , "price": 50000},
 			
-	{"colors" : ["#BF4756", "#52517E", "#e6eaee"], "short_name" :  "USA","id" : -11, "name":"USA","position": 7, "points": 0 ,
+	# Use USAT for name to differ with shortname to prevent automated transalation
+	{"colors" : ["#BF4756", "#52517E", "#e6eaee"], "short_name" :  "USA","id" : -11, "name":"USAT","position": 7, "points": 0 ,
 		"goal_diference": 0 , "wins" : 0, "speed" : 10, "power" : 9,
 		"lost":0, "icon" : usa_icon, "goal_difference":0, "price":100000},
 		
