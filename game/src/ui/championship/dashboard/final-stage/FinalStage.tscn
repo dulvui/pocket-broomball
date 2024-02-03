@@ -29,58 +29,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -223.0
-margin_top = -247.5
-margin_right = 223.0
-margin_bottom = 249.5
-alignment = 1
+margin_left = -304.0
+margin_top = -248.5
+margin_right = 304.0
+margin_bottom = 248.5
 
 [node name="StageName" type="Label" parent="VBoxContainer"]
-margin_top = 26.0
-margin_right = 446.0
-margin_bottom = 90.0
+margin_right = 608.0
+margin_bottom = 64.0
 text = "QUARTER FINALS"
 align = 1
 
 [node name="Winner" type="Label" parent="VBoxContainer"]
-margin_top = 100.0
-margin_right = 446.0
-margin_bottom = 164.0
+margin_top = 74.0
+margin_right = 608.0
+margin_bottom = 138.0
 align = 1
 
 [node name="WinnerIcon" type="TextureRect" parent="VBoxContainer"]
-margin_top = 174.0
-margin_right = 446.0
-margin_bottom = 174.0
+margin_top = 148.0
+margin_right = 608.0
+margin_bottom = 148.0
 stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 184.0
-margin_right = 446.0
-margin_bottom = 470.0
+margin_top = 158.0
+margin_right = 608.0
+margin_bottom = 444.0
 alignment = 1
 
 [node name="Match1" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-margin_right = 446.0
+margin_right = 608.0
 margin_bottom = 64.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match1"]
-margin_right = 146.0
+margin_right = 200.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "USA"
 
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match1"]
-margin_left = 150.0
-margin_right = 296.0
+margin_left = 204.0
+margin_right = 404.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match1"]
-margin_left = 300.0
-margin_right = 446.0
+margin_left = 408.0
+margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "ITA"
@@ -88,26 +86,26 @@ align = 2
 
 [node name="Match2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 margin_top = 74.0
-margin_right = 446.0
+margin_right = 608.0
 margin_bottom = 138.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match2"]
-margin_right = 146.0
+margin_right = 200.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "USA"
 
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match2"]
-margin_left = 150.0
-margin_right = 296.0
+margin_left = 204.0
+margin_right = 404.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match2"]
-margin_left = 300.0
-margin_right = 446.0
+margin_left = 408.0
+margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "ITA"
@@ -115,26 +113,26 @@ align = 2
 
 [node name="Match3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 margin_top = 148.0
-margin_right = 446.0
+margin_right = 608.0
 margin_bottom = 212.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match3"]
-margin_right = 146.0
+margin_right = 200.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "IND"
 
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match3"]
-margin_left = 150.0
-margin_right = 296.0
+margin_left = 204.0
+margin_right = 404.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match3"]
-margin_left = 300.0
-margin_right = 446.0
+margin_left = 408.0
+margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "ITA"
@@ -142,26 +140,26 @@ align = 2
 
 [node name="Match4" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
 margin_top = 222.0
-margin_right = 446.0
+margin_right = 608.0
 margin_bottom = 286.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match4"]
-margin_right = 146.0
+margin_right = 200.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "USA"
 
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match4"]
-margin_left = 150.0
-margin_right = 296.0
+margin_left = 204.0
+margin_right = 404.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match4"]
-margin_left = 300.0
-margin_right = 446.0
+margin_left = 408.0
+margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "ITA"
