@@ -341,24 +341,6 @@ func game_over(home_goals,away_goals, simulation = false):
 				matches.append({"home": final_teams[0],"away": final_teams[1], "result":":"})
 			else:
 				final_teams = []
-				# FINAL finished, worldcup end
-				
-				if not simulation:
-					_save_current_game(home_goals, away_goals)
-					
-					if home_goals > away_goals:
-						final_teams.append(current_league_game["home"])
-					else:
-						final_teams.append(current_league_game["away"])
-				else:
-					if randi()%2 == 0:
-						final_teams.append(matches[-1]["home"])
-						matches[-1]["result"] = str(5) + ":" + str(randi()%5)
-					else:
-						final_teams.append(matches[-1]["away"])
-						matches[-1]["result"] = str(randi()%5) + ":" + str(5)
-					
-					
 		
 		# normal league
 		else:
@@ -367,10 +349,6 @@ func game_over(home_goals,away_goals, simulation = false):
 			sort_table()
 			
 		match_day += 1
-		
-		# sort teams with points
-
-			
 		
 		save_all_data()
 		
