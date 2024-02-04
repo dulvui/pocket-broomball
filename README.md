@@ -3,8 +3,9 @@
 [![iOS upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml)
 [![itch.io upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-itchio.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-itchio.yml)
 
-The world's first Broomball video game made with Godot Engine.  
-This game is open source, with no ads and no tracking.
+The world's first Broomball video game made with Godot Engine.
+This game is **Free and Open Source**, with **no ads** and **no tracking**.  
+This source code is available on [Github](https://github.com/dulvui/pocket-broomball) and [Codeberg](https://codeberg.org/dulvui/pocket-broomball)
 
 <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
 <a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
