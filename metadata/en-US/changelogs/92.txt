@@ -1,0 +1,5 @@
+- Count last round robin in world cup before seeding elimination round, thanks to @Nobody1231234
+- Add icons and fix alignments of world cup final stage dashboard
+- Fix translations for 'Points' and 'USA'
+- Reduce button transparency
+- Fix coins info box in game over screen
