@@ -27,7 +27,11 @@ func set_up():
 			if matchz["result"] == ":":
 				var match_box:HBoxContainer = get_node("VBoxContainer/VBoxContainer/Match" + str(counter))
 				match_box.get_node("Home").text = matchz["home"]["short_name"].to_upper()
+				match_box.get_node("HomeIcon").texture = matchz["home"]["icon"]
+				
 				match_box.get_node("Away").text = matchz["away"]["short_name"].to_upper()
+				match_box.get_node("AwayIcon").texture = matchz["away"]["icon"]
+				
 				
 				counter += 1
 

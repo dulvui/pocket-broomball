@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/ui/championship/dashboard/final-stage/FinalStage.gd" type="Script" id=1]
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/teams/national-teams/italy.png" type="Texture" id=3]
 
 [node name="FinalStage" type="Control"]
 anchor_left = 0.5
@@ -63,21 +64,37 @@ margin_right = 608.0
 margin_bottom = 64.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match1"]
-margin_right = 200.0
+margin_right = 157.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "USA"
 
+[node name="HomeIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match1"]
+margin_left = 161.0
+margin_right = 221.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match1"]
-margin_left = 204.0
-margin_right = 404.0
+margin_left = 225.0
+margin_right = 382.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
+[node name="AwayIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match1"]
+margin_left = 386.0
+margin_right = 446.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match1"]
-margin_left = 408.0
+margin_left = 450.0
 margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
@@ -90,21 +107,37 @@ margin_right = 608.0
 margin_bottom = 138.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match2"]
-margin_right = 200.0
+margin_right = 157.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "USA"
 
+[node name="HomeIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match2"]
+margin_left = 161.0
+margin_right = 221.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match2"]
-margin_left = 204.0
-margin_right = 404.0
+margin_left = 225.0
+margin_right = 382.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
+[node name="AwayIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match2"]
+margin_left = 386.0
+margin_right = 446.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match2"]
-margin_left = 408.0
+margin_left = 450.0
 margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
@@ -117,21 +150,37 @@ margin_right = 608.0
 margin_bottom = 212.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match3"]
-margin_right = 200.0
+margin_right = 157.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "IND"
 
+[node name="HomeIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match3"]
+margin_left = 161.0
+margin_right = 221.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match3"]
-margin_left = 204.0
-margin_right = 404.0
+margin_left = 225.0
+margin_right = 382.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
+[node name="AwayIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match3"]
+margin_left = 386.0
+margin_right = 446.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match3"]
-margin_left = 408.0
+margin_left = 450.0
 margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
@@ -144,21 +193,37 @@ margin_right = 608.0
 margin_bottom = 286.0
 
 [node name="Home" type="Label" parent="VBoxContainer/VBoxContainer/Match4"]
-margin_right = 200.0
+margin_right = 157.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "USA"
 
+[node name="HomeIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match4"]
+margin_left = 161.0
+margin_right = 221.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Versus" type="Label" parent="VBoxContainer/VBoxContainer/Match4"]
-margin_left = 204.0
-margin_right = 404.0
+margin_left = 225.0
+margin_right = 382.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
 text = "vs"
 align = 1
 
+[node name="AwayIcon" type="TextureRect" parent="VBoxContainer/VBoxContainer/Match4"]
+margin_left = 386.0
+margin_right = 446.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 60, 60 )
+texture = ExtResource( 3 )
+expand = true
+
 [node name="Away" type="Label" parent="VBoxContainer/VBoxContainer/Match4"]
-margin_left = 408.0
+margin_left = 450.0
 margin_right = 608.0
 margin_bottom = 64.0
 size_flags_horizontal = 3
