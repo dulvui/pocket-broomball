@@ -59,11 +59,11 @@ func set_up_championship():
 
 func set_up_world_cup():
 	if Global.final_teams.size() == 0:
-		$Content/GroupStage.show()
 		$Content/GroupStage.set_up()
+		$Content/GroupStage.show()
 	else:
-		$Content/FinalStage.show()
 		$Content/FinalStage.set_up()
+		$Content/FinalStage.show()
 		
 
 func _on_GoBack_pressed():
