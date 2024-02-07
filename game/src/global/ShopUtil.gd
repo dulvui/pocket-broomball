@@ -51,7 +51,7 @@ func _load_balls():
 				{
 					"id" : 6,
 					"price" : 50000,
-					"texture": load("res://assets/shop/ball/orange.png")
+					"texture": load("res://assets/shop/ball/black.png")
 				},
 				{
 					"id" : 7,
