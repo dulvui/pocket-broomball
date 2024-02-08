@@ -1,11 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Node2D
 
 signal freeze
 
-var animation_player
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func _ready():
-	animation_player = $AnimationPlayer
 	animation_player.play("Spawn")
 	$Duration.start()
 

@@ -1,12 +1,16 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
-func _on_Menu_pressed():
+func _on_Menu_pressed() -> void:
 	Global.click()
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 
-func _on_Replay_pressed():
+func _on_Replay_pressed() -> void:
 	Global.click()
 	if Global.music:
 		Global.music_loop.fade_out()

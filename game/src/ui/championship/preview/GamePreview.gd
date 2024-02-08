@@ -1,21 +1,18 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
-var animation_player
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 
-var home_icon
-var home_name
+onready var home_icon:Sprite = $Control/Home/HomeIcon
+onready var home_name:Label = $Control/Home/HomeName
 
-var away_icon
-var away_name
+onready var away_icon:Sprite = $Control/Away/AwayIcon
+onready var away_name:Label = $Control/Away/AwayName
 
 func _ready():
-	animation_player = $AnimationPlayer
-	
-	home_icon = $Control/Home/HomeIcon
-	home_name = $Control/Home/HomeName
-	
-	away_icon = $Control/Away/AwayIcon
-	away_name = $Control/Away/AwayName
 	
 	home_icon.texture = Global.home_team_icon
 	home_name.text = Global.home_team_name

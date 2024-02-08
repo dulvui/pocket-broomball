@@ -1,7 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Node2D
 
+export var singleplayer:bool = true
 
-export var singleplayer = true
-
-func _ready():
+func _ready() -> void:
 	$Smoothing2D/Sprite.texture = ShopUtil.get_ball_texture()

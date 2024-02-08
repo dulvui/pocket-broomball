@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
-func _ready():
+func _ready() -> void:
 	if OS.get_name() == "iOS":
 		$VBoxContainer/Exit.hide()
 	
@@ -9,16 +13,16 @@ func _ready():
 		Global.fade_in_goals()
 
 
-func _on_Settings_pressed():
+func _on_Settings_pressed() -> void:
 	Global.click()
 	get_tree().change_scene("res://src/ui/settings/Settings.tscn")
 
-func _on_Statistics_pressed():
+func _on_Statistics_pressed() -> void:
 	Global.click()
 	get_tree().change_scene("res://src/ui/statistics/Statistics.tscn")
 	
 
-func _on_Play_pressed():
+func _on_Play_pressed() -> void:
 	Global.click()
 	get_tree().change_scene("res://src/ui/menu/play/Play.tscn")
 

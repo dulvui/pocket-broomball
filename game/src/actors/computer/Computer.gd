@@ -1,24 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends KinematicBody2D
 class_name Computer
 
-export var opposite = false
+export var opposite:bool = false
 
-var speed = 1
-var power = 1
+var speed:int = 1
+var power:int = 1
 
-var destination
-var direction
+var destination:Vector2
+var direction:Vector2
+var hit_pos:Position2D
 
-var freeze = false
+var freeze:bool = false
 
-onready var player = get_parent().get_node("Player");
-onready var  ball = get_parent().get_node("Ball").get_node("RigidBody2D");
-var hit_pos
+onready var animation_player:AnimationPlayer = $Body/AnimationPlayer
+onready var player:Player = get_parent().get_node("Player");
+onready var ball:RigidBody2D = get_parent().get_node("Ball").get_node("RigidBody2D");
 
-var animation_player
 
-func _ready():
-	animation_player = $Body/AnimationPlayer
+func _ready() -> void:
 	if Global.away_team_speed: 
 		speed = Global.away_team_speed / 3
 	if Global.away_team_power: 
@@ -28,8 +31,8 @@ func _ready():
 	else:
 		hit_pos = ball.get_node("ComputerHitPosition")
 
-func _physics_process(delta):
-	var ballpos = ball.global_position
+func _physics_process(delta:float) -> void:
+	var ballpos:Vector2 = ball.global_position
 	
 	if opposite:
 		if ballpos.y > 640  and ballpos.y < global_position.y:
@@ -52,10 +55,10 @@ func _physics_process(delta):
 	look_at(ballpos)
 
 
-func _on_ChargeDetector_body_entered(body):
+func _on_ChargeDetector_body_entered(body:Node) -> void:
 	animation_player.play("Charge")
 
-func level_up():
+func level_up() -> void:
 	speed += 0.05
 	power += 0.05
 	if speed > 3.5:
@@ -63,5 +66,5 @@ func level_up():
 	if power > 4:
 		power = 4
 
-func _on_ChargeDetector_body_exited(body):
+func _on_ChargeDetector_body_exited(body:Node) -> void:
 	animation_player.play("Shoot")

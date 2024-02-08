@@ -2,12 +2,10 @@
 
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-extends Label
+extends %BASE%
 
+func _ready()%VOID_RETURN%:
+	pass
 
-var goals:int = 0
-	
-	
-func goal() -> void:
-	goals += 1
-	set_text(str(goals))
+func _process(delta%FLOAT_TYPE%)%VOID_RETURN%:
+   pass

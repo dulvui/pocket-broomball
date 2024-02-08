@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
 onready var price_label:Label = $VBoxContainer/Price
@@ -13,7 +17,7 @@ var team_index:int
 var league_index:int
 var teams:Array
 
-func _ready():
+func _ready() -> void:
 	team_index = 0
 	league_index = 0
 	
@@ -21,7 +25,7 @@ func _ready():
 	league_label.text = Teams.leagues[league_index].name
 	_set_team_first_time()
 	
-func _set_team():
+func _set_team() -> void:
 	var team = teams[team_index]
 	
 	$Team.texture = team.icon
@@ -41,8 +45,8 @@ func _set_team():
 	power_bar.value = team.power
 	speed_bar.value = team.speed
 	
-func _set_team_first_time():
-	var team = teams[team_index]
+func _set_team_first_time() -> void:
+	var team:Dictionary = teams[team_index]
 	
 	$Team.texture = team.icon
 	team_label.text = team["name"]
@@ -62,7 +66,7 @@ func _set_team_first_time():
 	power_bar.value = team.power
 	speed_bar.value = team.speed
 	
-func _on_PrevTeam_pressed():
+func _on_PrevTeam_pressed() -> void:
 	Global.click()
 	team_index -= 1
 	if team_index == -1:
@@ -70,7 +74,7 @@ func _on_PrevTeam_pressed():
 	_set_team()
 
 
-func _on_NextTeam_pressed():
+func _on_NextTeam_pressed() -> void:
 	Global.click()
 	team_index += 1
 	if team_index == teams.size():
@@ -78,7 +82,7 @@ func _on_NextTeam_pressed():
 	_set_team()
 
 
-func _on_PrevLeague_pressed():
+func _on_PrevLeague_pressed() -> void:
 	Global.click()
 	league_index -= 1
 	if league_index == -1:
@@ -93,7 +97,7 @@ func _on_PrevLeague_pressed():
 	
 
 
-func _on_NextLeague_pressed():
+func _on_NextLeague_pressed() -> void:
 	Global.click()
 	league_index += 1
 	if league_index == Teams.leagues.size():
@@ -105,7 +109,7 @@ func _on_NextLeague_pressed():
 	league_label.text = Teams.leagues[league_index].name
 
 
-func _on_Select_pressed():
+func _on_Select_pressed() -> void:
 	Global.click()
 	var team = teams[team_index]
 	if not Global.unlocked_team_ids.has(team["id"]):
@@ -132,13 +136,13 @@ func _on_Select_pressed():
 
 
 
-func _on_GoBack_pressed():
+func _on_GoBack_pressed() -> void:
 	Global.click()
 	get_tree().change_scene("res://src/ui/menu/play/Play.tscn")
 
 
 # add for world cup rounds and then final stage
-func inizialize_matches():
+func inizialize_matches() -> void:
 	Global.matches = []
 	Global.match_day = 0
 	var random_teams = Global.teams.duplicate(true)
@@ -178,7 +182,7 @@ func inizialize_matches():
 #		o += 1
 #		print(str(o) + ": " + matchz["home"]["name"] + " : " + matchz["away"]["name"])
 
-func inizialize_worldcup_matches():
+func inizialize_worldcup_matches() -> void:
 	Global.matches = []
 	Global.groups = []
 	Global.match_day = 0
@@ -260,7 +264,7 @@ func inizialize_worldcup_matches():
 	print(Global.matches.size())
 	print(Global.matches.size())
 	
-func unlock_team(team):
+func unlock_team(team:Dictionary) -> bool:
 	if Global.coins - team["price"] < 0:
 		return false
 	Global.coins -= team["price"]
@@ -268,16 +272,16 @@ func unlock_team(team):
 	Global.save_all_data()
 	return true
 		
-func _shift_array(array):
+func _shift_array(array:Array) -> void:
 	var temp = array[0]
 	for i in range(array.size() - 1):
 		array[i] = array[i+1]
 	array[array.size() - 1] = temp
 
-func set_teams():
+func set_teams() -> void:
 	Global.teams = Teams.leagues[league_index].teams.duplicate(true)
 	teams = Teams.leagues[league_index].teams.duplicate(true)
 	for team in teams:
 		if team["id"] == 0:
 			teams.erase(team)
-#	teams
+

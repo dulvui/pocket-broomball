@@ -1,19 +1,23 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Node
 
 enum TYPES {BALL, STICK, HELMET}
-var items = {}
+var items:Dictionary = {}
 
 
-func _ready():
+func _ready() -> void:
 	for type in TYPES:
 		items[type] = {}
 
-func load_assets():
+func load_assets() -> void:
 	_load_balls()
 	_load_sticks()
 	_load_helmets()
 
-func _load_balls():
+func _load_balls() -> void:
 		items["BALL"] = {
 			"selected" : 0,
 			"unlocked" : [0],
@@ -150,7 +154,7 @@ func _load_sticks():
 			]
 		}
 		
-func _load_helmets():
+func _load_helmets() -> void:
 		items["HELMET"] = {
 			"selected" : 0,
 			"unlocked" : [0],
@@ -209,7 +213,7 @@ func _load_helmets():
 		}
 
 
-func select(type,id):
+func select(type:String,id:int) -> bool:
 	if id in items[type]["unlocked"]:
 		items[type]["selected"] = id
 		return true
@@ -219,15 +223,15 @@ func select(type,id):
 		return true
 	return false
 	
-func get_texture(type,index=null):
-	if index != null:
+func get_texture(type:String,index:int=-1) -> Texture:
+	if index < 0:
 		return items[type]["list"][index]["texture"]
 	return items[type]["list"][items[type]["selected"]]["texture"]
 	
-func get_random_texture(type):
+func get_random_texture(type:String) -> Texture:
 	return items[type]["list"][randi() % items[type]["list"].size()]["texture"]
 	
-func get_ball_texture(index=null):
-	if index != null:
+func get_ball_texture(index:int=-1) -> Texture:
+	if index < 0:
 		return items["BALL"]["list"][index]["texture"]
 	return items["BALL"]["list"][items["BALL"]["selected"]]["texture"]

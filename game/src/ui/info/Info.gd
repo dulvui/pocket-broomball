@@ -15,17 +15,17 @@ func _on_Github_pressed() -> void:
 	OS.shell_open("https://github.com/dulvui/pocket-broomball")
 
 
-func _on_RichTextLabel_meta_clicked(meta) -> void:
+func _on_RichTextLabel_meta_clicked(meta:String) -> void:
 	OS.shell_open(meta)
 	Global.click()
 
 
-func _on_Donate_pressed():
+func _on_Donate_pressed() -> void:
 	Global.click()
 	OS.shell_open("https://simondalvai.org/donate")
 	
 
-func _on_Join_pressed():
+func _on_Join_pressed() -> void:
 	Global.click()
 	OS.shell_open("https://github.com/dulvui/pocket-broomball#join-with-your-broomball-team")
 	

@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
-func set_up_teams(teams):
+func set_up_teams(teams:Array) -> void:
 	var position = 1
 	for team in teams:
 		if team["id"] != 0:
@@ -37,8 +41,8 @@ func set_up_teams(teams):
 				name_label.add_color_override("font_color", Color(35/255.0,168/255.0,193/255.0,1))
 				points_label.add_color_override("font_color", Color(35/255.0,168/255.0,193/255.0,1))
 
-func set_up():
-	var position = 1
+func set_up() -> void:
+	var position:int = 1
 	
 	for team in Global.teams:
 		if team["id"] != 0:

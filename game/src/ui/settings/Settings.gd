@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
-const LANGUAGES = {
+const LANGUAGES:Dictionary = {
 	"en" : "English",
 	"de" : "Deutsch",
 	"it" : "Italiano",
@@ -8,7 +12,7 @@ const LANGUAGES = {
 	"es" : "Español",
 }
 
-const FLAGS = {
+const FLAGS:Dictionary = {
 	"en" : "usa.png",
 	"de" : "germany.png",
 	"it" : "italy.png",
@@ -18,7 +22,7 @@ const FLAGS = {
 
 onready var flag:TextureRect = $VBoxContainer/Language/Flag
 
-func _ready():
+func _ready() -> void:
 	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 	
 	update_dynamic_labels()
@@ -26,13 +30,13 @@ func _ready():
 	if Global.FDROID:
 		$VBoxContainer/RateAndReview.hide()
 
-func _on_RoundLimit_pressed():
+func _on_RoundLimit_pressed() -> void:
 	Global.click()
 	round_limit_up()
 	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
 
 
-func _on_Music_pressed():
+func _on_Music_pressed() -> void:
 	Global.toggle_music()
 	
 	if Global.music == "chill":
@@ -46,7 +50,7 @@ func _on_Music_pressed():
 		Global.click()
 	
 	
-func _on_Sfx_pressed():
+func _on_Sfx_pressed() -> void:
 	if Global.sfx:
 		$VBoxContainer/Sfx.text = tr("SFX_OFF")
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), true)
@@ -58,8 +62,8 @@ func _on_Sfx_pressed():
 	if Global.sfx:
 		Global.click()
 		
-func set_music(enabled):
-	Global.music = enabled
+func set_music(type:String) -> void:
+	Global.music = type
 	
 	if Global.music:
 		Global.music_loop.fade_in()
@@ -69,20 +73,20 @@ func set_music(enabled):
 	Global.config.set_value("sound","music",Global.music)
 	Global.save()
 	
-func set_sfx(enabled):
+func set_sfx(enabled:bool) -> void:
 	Global.sfx = enabled
 	Global.config.set_value("sound","sfx",Global.sfx)
 	Global.save()
 	
 
-func round_limit_up():
+func round_limit_up() -> void:
 	Global.round_limit += 1
 	if Global.round_limit > 9:
 		Global.round_limit = 1
 	Global.config.set_value("round_limit", "amount",Global.round_limit)
 	Global.save()
 
-func _on_RateAndReview_pressed():
+func _on_RateAndReview_pressed() -> void:
 	Global.click()
 	if OS.get_name() == "iOS":
 		OS.shell_open("https://itunes.apple.com/app/id1511009171?action=write-review")
@@ -90,12 +94,12 @@ func _on_RateAndReview_pressed():
 		OS.shell_open("https://play.google.com/store/apps/details?id=com.salvai.broomball")
 
 
-func _on_GoBack_pressed():
+func _on_GoBack_pressed() -> void:
 	Global.click()
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
 
-func _on_MoreGames_pressed():
+func _on_MoreGames_pressed() -> void:
 	Global.click()
 	if OS.get_name() == "iOS":
 		OS.shell_open("https://appstore.com/simondalvai")

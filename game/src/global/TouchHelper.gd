@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # This will track the position of every pointer in its public `state` property, which is a
 # Dictionary, in which each key is a pointer id (integer) and each value its position (Vector2).
 # It works by listening to input events not handled by other means.

@@ -1,28 +1,27 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
-var game_over = false
+var game_over:bool = false
 
-var home_score
-var away_score
-var goals
+onready var home_score:Label = $Score/HomeScore
+onready var away_score:Label = $Score/AwayScore
+onready var goals:Node2D = $Field/Goals
+onready var animation_player:AnimationPlayer = $AnimationPlayer
 
-var animation_player
 
 
-func _ready():
+func _ready() -> void:
 	get_tree().paused = false
 	TouchHelper.reset()
-	home_score = $Score/HomeScore
-	away_score = $Score/AwayScore
-	
-	animation_player = $AnimationPlayer
 	
 	if Global.music:
 		Global.music_loop.fade_out()
 	if Global.sfx:
 		$Field/Sounds/Crowd.play()
-		
-	goals = $Field/Goals
+
 	goals.connect("home_goal",self,"_home_goal")
 	goals.connect("away_goal",self,"_away_goal")
 	
@@ -30,16 +29,13 @@ func _ready():
 	
 	
 	# break game or simulation
-	if (Global.is_worldcup and Global.current_league_game is String) or (Global.current_league_game != null and Global.current_league_game["away"]["id"] == 0):
+	if (Global.is_worldcup and "simulation" in Global.current_league_game) or (not Global.current_league_game.empty() and Global.current_league_game["away"]["id"] == 0):
 		game_over = true
 		get_tree().paused = true
 		$Pause.queue_free()
 		
 		# for simulation
-		if Global.current_league_game is String:
-			Global.game_over(0,0, true)
-		else:
-			Global.game_over(0,0)
+		Global.game_over(0,0, Global.is_worldcup and "simulation")
 			
 		$Player.queue_free()
 		$Computer.queue_free()
@@ -48,23 +44,21 @@ func _ready():
 		$LeagueGameover.show()
 		Global.music_loop.fade_in()
 	
-func _home_goal():
-	print('home')
+func _home_goal() -> void:
 	home_score.goal()
 	$Field.goal_sound()
 	$Field/Commentator.home_goal()
 	$Ball/RigidBody2D.on_home_goal()
 		
 
-func _away_goal():
-	print("away")
+func _away_goal() -> void:
 	away_score.goal()
 	$Field.goal_sound()
 	$Field/Commentator.away_goal()
 	$Ball/RigidBody2D.on_away_goal()
 		
 	
-func _process(delta):
+func _process(delta:float) -> void:
 	if Global.current_league_game == null &&  (away_score.goals == Global.round_limit || home_score.goals == Global.round_limit) && !game_over:
 		if home_score.goals == Global.round_limit:
 			$Field/Commentator.win()

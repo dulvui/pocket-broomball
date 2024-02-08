@@ -1,13 +1,11 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
 signal next
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-
-func _on_Continue_pressed():
+func _on_Continue_pressed() -> void:
 	emit_signal("next")
 	hide()

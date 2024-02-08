@@ -44,10 +44,10 @@ ShopUtil="*res://src/global/ShopUtil.gd"
 Teams="*res://src/global/Teams.gd"
 Global="*res://src/global/Global.tscn"
 TouchHelper="*res://src/global/TouchHelper.gd"
-Server="res://src/global/Server.gd"
 
 [debug]
 
+gdscript/warnings/unused_class_variable=true
 gdscript/warnings/unsafe_property_access=true
 gdscript/warnings/unsafe_method_access=true
 gdscript/warnings/unsafe_cast=true

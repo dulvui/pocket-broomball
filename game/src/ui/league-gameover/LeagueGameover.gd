@@ -1,33 +1,33 @@
+# SPDX-FileCopyrightText: 2023 Simon Dalvai <info@simondalvai.org>
+
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 extends Control
 
 const MatchRow:PackedScene = preload("res://src/ui/league-gameover/match-row/MatchRow.tscn")
 
-var multyplier
+onready var coins_label:Label = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/CoinsStats/Coins
+onready var goal_stats:Label = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/GoalStats
+onready var coins_stats:VBoxContainer = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats
+onready var teams:VBoxContainer = $Container/MarginContainer/MarginContainer/VBoxContainer/Teams
 
-var reward_earned = false
+var reward_earned:bool = false
+var coins:int
 
-onready var coins_label = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/CoinsStats/Coins
-onready var goal_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/GoalStats
-onready var coins_stats = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats
 
-var coins
-
-onready var teams = $Container/MarginContainer/MarginContainer/VBoxContainer/Teams
-
-	
-func _on_Menu_pressed():
+func _on_Menu_pressed() -> void:
 	Global.click()
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
-func _on_Gameover_visibility_changed():
+func _on_Gameover_visibility_changed() -> void:
 	if is_visible_in_tree():
-		var home_score = get_parent().get_node("Score").get_node("HomeScore").goals
-		var away_score = get_parent().get_node("Score").get_node("AwayScore").goals
+		var home_score:int = get_parent().get_node("Score").get_node("HomeScore").goals
+		var away_score:int = get_parent().get_node("Score").get_node("AwayScore").goals
 		
 		# TODO show final stage in worldcup
-		var from
-		var to
+		var from:int
+		var to:int
 		
 		if Global.is_worldcup:
 			if Global.final_teams.size() == 0 or Global.final_teams.size() == 8: # show last matchday
@@ -66,7 +66,7 @@ func _on_Gameover_visibility_changed():
 func _no_coins() -> bool:
 	if Global.current_league_game == null:
 		return true
-	if Global.current_league_game is String and Global.current_league_game == "simulation":
+	if "simulation" in Global.current_league_game:
 		return true
 	if Global.current_league_game["home"]["id"] == 0: # break team
 		return true
@@ -74,8 +74,8 @@ func _no_coins() -> bool:
 		return true
 	return false
 		
-func _calculateCoinsWin(home_goals, away_goals):
-	var win = home_goals > away_goals
+func _calculateCoinsWin(home_goals:int, away_goals:int) -> void:
+	var win:bool = home_goals > away_goals
 	coins = 0
 	
 	if win:
@@ -91,8 +91,8 @@ func _calculateCoinsWin(home_goals, away_goals):
 	Global.add_coins(coins)
 	
 	
-func _get_stats(home_goals, away_goals):
-	var stats
+func _get_stats(home_goals:int, away_goals:int) -> String:
+	var stats:String
 	if home_goals > away_goals:
 		if away_goals == 0:
 			stats = "750 + 100x%s - 50x%s =" % [home_goals, away_goals]
@@ -102,7 +102,7 @@ func _get_stats(home_goals, away_goals):
 		stats = "300 + 100x%s - 50x%s =" % [home_goals, away_goals]
 	return stats
 
-func _on_GoBack_pressed():
+func _on_GoBack_pressed() -> void:
 	Global.click()
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/championship/dashboard/Dashboard.tscn")
