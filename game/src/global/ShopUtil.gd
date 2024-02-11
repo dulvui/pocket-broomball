@@ -224,7 +224,7 @@ func select(type:String,id:int) -> bool:
 	return false
 	
 func get_texture(type:String,index:int=-1) -> Texture:
-	if index < 0:
+	if index >= 0:
 		return items[type]["list"][index]["texture"]
 	return items[type]["list"][items[type]["selected"]]["texture"]
 	
@@ -232,6 +232,6 @@ func get_random_texture(type:String) -> Texture:
 	return items[type]["list"][randi() % items[type]["list"].size()]["texture"]
 	
 func get_ball_texture(index:int=-1) -> Texture:
-	if index < 0:
+	if index >= 0:
 		return items["BALL"]["list"][index]["texture"]
 	return items["BALL"]["list"][items["BALL"]["selected"]]["texture"]
