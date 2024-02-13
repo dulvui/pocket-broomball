@@ -1,1 +1,3 @@
+- add 7 new striped balls
 - replace duplicate orange ball with black ball thanks to @G-B-FutureMartian
+- minor refactoring and performance optimizations
