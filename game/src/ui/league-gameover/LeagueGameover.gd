@@ -64,7 +64,7 @@ func _on_Gameover_visibility_changed() -> void:
 		get_tree().paused = true
 		
 func _no_coins() -> bool:
-	if Global.current_league_game == null:
+	if Global.current_league_game.empty():
 		return true
 	if "simulation" in Global.current_league_game:
 		return true

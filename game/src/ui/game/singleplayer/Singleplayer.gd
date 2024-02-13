@@ -57,7 +57,7 @@ func _away_goal() -> void:
 		
 	
 func _process(delta:float) -> void:
-	if Global.current_league_game == null &&  (away_score.goals == Global.round_limit || home_score.goals == Global.round_limit) && !game_over:
+	if Global.current_league_game.empty() &&  (away_score.goals == Global.round_limit || home_score.goals == Global.round_limit) && !game_over:
 		if home_score.goals == Global.round_limit:
 			$Field/Commentator.win()
 #			var player = $Player/Body/AnimationPlayer

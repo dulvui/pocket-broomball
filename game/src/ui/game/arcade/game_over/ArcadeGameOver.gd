@@ -24,7 +24,7 @@ func is_highscore(highscore:int) -> void:
 func set_collected_coins_and_score(collected_coins:int ,score:int) -> void:
 	_coins = collected_coins
 	_score = score
-	$HBoxContainer/Coins.text = str(collected_coins * 50) + "x" + str(score) 
+	$VBoxContainer/HBoxContainer/Coins.text = str(collected_coins * 50) + "x" + str(score) 
 	Global.music_loop.fade_in()
 	
 func _on_Replay_pressed() -> void:

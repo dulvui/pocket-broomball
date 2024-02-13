@@ -79,7 +79,7 @@ func _process(delta:float) -> void:
 		$Ball.queue_free()
 		$GameOver.show()
 		Global.music_loop.fade_in()
-	elif  Global.current_league_game != null && (away_score.goals == 5 || home_score.goals == 5) && !game_over:
+	elif  not Global.current_league_game.empty() && (away_score.goals == 5 || home_score.goals == 5) && !game_over:
 			if home_score.goals == 5:
 				$Field/Commentator.win()
 #				var player = $Player/Body/AnimationPlayer

@@ -36,9 +36,9 @@ var away_team_icon:Texture
 var away_team_name:String
 var away_team_colors:Array
 
-var home_team_speed:int
+var home_team_speed:float
 var home_team_power:int
-var away_team_speed:int
+var away_team_speed:float
 var away_team_power:int
 
 var league_started:bool
@@ -269,7 +269,7 @@ func save() -> void:
 
 
 func game_over(home_goals:int,away_goals:int, simulation:bool = false) -> void:
-	if current_league_game != null or simulation:
+	if not current_league_game.empty() or simulation:
 		if is_worldcup:
 		
 		# group stage TODO make better since league after 6 is broken

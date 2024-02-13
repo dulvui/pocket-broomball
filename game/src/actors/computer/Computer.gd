@@ -7,7 +7,7 @@ class_name Computer
 
 export var opposite:bool = false
 
-var speed:int = 1
+var speed:float = 1.0
 var power:int = 1
 
 var destination:Vector2
@@ -48,9 +48,9 @@ func _physics_process(delta:float) -> void:
 	direction = (destination - global_position).normalized()
 	var distance_to_player = global_position.distance_to(destination)
 	if not freeze:
-		move_and_slide(direction * speed* Global.speed_factor * distance_to_player)
+		move_and_slide(direction * speed * Global.speed_factor * distance_to_player)
 	else:
-		move_and_slide(direction * speed* Global.speed_factor * distance_to_player * 0.1)
+		move_and_slide(direction * speed * Global.speed_factor * distance_to_player * 0.1)
 		
 	look_at(ballpos)
 
