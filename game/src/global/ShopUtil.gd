@@ -91,6 +91,41 @@ func _load_balls() -> void:
 					"id" : 13,
 					"price" : 200000,
 					"texture": load("res://assets/shop/ball/pink-azure.png")
+				},
+				{
+					"id" : 14,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/red-white-stripes.png")
+				},
+				{
+					"id" : 15,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/blue-white-stripes.png")
+				},
+				{
+					"id" : 16,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/green-white-stripes.png")
+				},
+				{
+					"id" : 17,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/white-black-stripes.png")
+				},
+				{
+					"id" : 18,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/yellow-black-stripes.png")
+				},
+				{
+					"id" : 19,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/yellow-green-stripes.png")
+				},
+				{
+					"id" : 20,
+					"price" : 300000,
+					"texture": load("res://assets/shop/ball/yellow-white-stripes.png")
 				}
 				
 			]

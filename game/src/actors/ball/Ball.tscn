@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/shop/ball/orange.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/ball/ball_physicsmaterial.tres" type="PhysicsMaterial" id=2]
@@ -10,6 +10,8 @@
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 22.6274
+
+[sub_resource type="ShaderMaterial" id=3]
 
 [node name="Ball" type="Node2D"]
 script = ExtResource( 7 )
@@ -48,6 +50,7 @@ target = NodePath("../RigidBody2D")
 flags = 7
 
 [node name="Sprite" type="Sprite" parent="Smoothing2D"]
+material = SubResource( 3 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
