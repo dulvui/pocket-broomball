@@ -16,6 +16,7 @@ func _on_Menu_pressed() -> void:
 		Global.music_loop.fade_in()
 	Global.click()
 	if not Global.current_league_game.empty():
+#		Global.game_over(5,0)
 		Global.game_over(0,5)
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")

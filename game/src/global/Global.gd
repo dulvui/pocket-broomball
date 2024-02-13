@@ -422,10 +422,10 @@ func create_quarter_finals() -> void:
 	matches.append({"home": groups[1][0],"away":groups[2][1], "result":":"})
 	matches.append({"home": groups[2][0],"away":groups[3][1], "result":":"})
 	matches.append({"home": groups[3][0],"away":groups[0][1], "result":":"})
-	
+
 	# make sure you play always at home
-	for i in range(-5, -1, 1):
-		if matches[i]["away"]["name"] == selected_squad:
+	for i in range(matches.size(), 0, -1):
+		if "result" == ":" and matches[i]["away"]["name"] == selected_squad:
 			matches[i] = {"home": matches[i]["away"],"away":matches[i]["home"], "result":":"}
 			break # finished for sure
 
