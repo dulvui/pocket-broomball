@@ -28,39 +28,38 @@ custom_constants/separation = 8
 alignment = 1
 
 [node name="RoundLimit" type="Button" parent="VBoxContainer"]
-visible = false
-margin_top = 148.0
-margin_right = 520.0
-margin_bottom = 247.0
-text = "roundlimit"
-
-[node name="Music" type="Button" parent="VBoxContainer"]
 margin_right = 540.0
 margin_bottom = 72.0
-text = "MUSIC_ON"
+text = "ROUNDLIMIT"
 
-[node name="Sfx" type="Button" parent="VBoxContainer"]
+[node name="Music" type="Button" parent="VBoxContainer"]
 margin_top = 80.0
 margin_right = 540.0
 margin_bottom = 152.0
-text = "SFX_ON"
+text = "MUSIC_ON"
 
-[node name="RateAndReview" type="Button" parent="VBoxContainer"]
+[node name="Sfx" type="Button" parent="VBoxContainer"]
 margin_top = 160.0
 margin_right = 540.0
 margin_bottom = 232.0
-text = "RATE"
+text = "SFX_ON"
 
-[node name="MoreGames" type="Button" parent="VBoxContainer"]
+[node name="RateAndReview" type="Button" parent="VBoxContainer"]
 margin_top = 240.0
 margin_right = 540.0
 margin_bottom = 312.0
-text = "MORE_GAMES"
+text = "RATE"
 
-[node name="Language" type="Button" parent="VBoxContainer"]
+[node name="MoreGames" type="Button" parent="VBoxContainer"]
 margin_top = 320.0
 margin_right = 540.0
 margin_bottom = 392.0
+text = "MORE_GAMES"
+
+[node name="Language" type="Button" parent="VBoxContainer"]
+margin_top = 400.0
+margin_right = 540.0
+margin_bottom = 472.0
 text = "LANGUAGE"
 expand_icon = true
 
@@ -92,16 +91,16 @@ text = "INFO"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 400.0
+margin_top = 480.0
 margin_right = 540.0
-margin_bottom = 420.0
+margin_bottom = 500.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 428.0
+margin_top = 508.0
 margin_right = 540.0
-margin_bottom = 500.0
+margin_bottom = 580.0
 text = "GO_BACK"
 
 [node name="EasterEgg" type="Button" parent="."]

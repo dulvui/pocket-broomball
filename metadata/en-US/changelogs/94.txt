@@ -1,1 +1,2 @@
-- sShow music name in settings, thanks to @RustoMCSpit
+- Change 'Goals for victory' in settings, thanks to @inson1
+- Show music name in settings, thanks to @RustoMCSpit

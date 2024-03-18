@@ -23,7 +23,7 @@ const FLAGS:Dictionary = {
 onready var flag:TextureRect = $VBoxContainer/Language/Flag
 
 func _ready() -> void:
-	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
+	$VBoxContainer/RoundLimit.set_text(tr("ROUNDLIMIT") + " " +str(Global.round_limit))
 	
 	update_dynamic_labels()
 	
@@ -33,7 +33,7 @@ func _ready() -> void:
 func _on_RoundLimit_pressed() -> void:
 	Global.click()
 	round_limit_up()
-	$VBoxContainer/RoundLimit.set_text("roundlimit "+str(Global.round_limit))
+	$VBoxContainer/RoundLimit.set_text(tr("ROUNDLIMIT")+ " " +str(Global.round_limit))
 
 
 func _on_Music_pressed() -> void:
@@ -150,6 +150,7 @@ func update_dynamic_labels():
 	$VBoxContainer/Language.text = LANGUAGES[Global.locale]
 	flag.texture = load("res://assets/teams/national-teams/" + FLAGS[Global.locale])
 	
+	$VBoxContainer/RoundLimit.set_text(tr("ROUNDLIMIT")+ " " +str(Global.round_limit))
 	
 	# update music and sfx labels
 	if Global.music == "chill":
