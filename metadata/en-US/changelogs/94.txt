@@ -1,2 +1,3 @@
 - Change 'Goals for victory' in settings, thanks to @inson1
 - Show music name in settings, thanks to @RustoMCSpit
+- Show 'win/lost' text in game over view, thanks to @inson1
