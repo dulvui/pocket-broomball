@@ -78,3 +78,9 @@ INFO,Info,Infos,Info,Info,Información
 WEBSITE,Website,Website,Sito web,Site web,Sitio web
 DONATE,Donate,Spenden,Donazione,Donation,Donar
 ROUNDLIMIT,Goals for win,Tore für Sieg,Gol per vittoria,Buts par victoire,Goles por victoria
+PLAYER_1_WIN,Player 1 wins!,Spieler 1 gewinnt!,Giocatore 1 vince!,Joueur 1 gagne!,Jugador 1 gana!
+PLAYER_2_WIN,Player 2 wins!,Spieler 2 gewinnt!,Giocatore 2 vince!,Joueur 2 gagne!,Jugador 2 gana!
+BOT_1_WIN,Bot 1 wins!,Bot 1 gewinnt!,Bot 1 vince!,Bot 1 gagne!,Bot 1 gana!
+BOT_2_WIN,Bot 2 wins!,Bot 2 gewinnt!,Bot 2 vince!,Bot 2 gagne!,Bot 2 gana!
+YOU_WIN,You win!,Du gewinnst!,Hai vinto!,Vous avez gagné!,Has ganado!
+YOU_LOST,You loose...,Du verlierst...,Hai perso...,Vous avez perdu...,Has perdido...
