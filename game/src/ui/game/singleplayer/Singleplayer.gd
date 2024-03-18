@@ -75,6 +75,7 @@ func _process(delta:float) -> void:
 		$Player.queue_free()
 		$Computer.queue_free()
 		$Ball.queue_free()
+		$GameOver.single_player_winner(home_score.goals == Global.round_limit)
 		$GameOver.show()
 		Global.music_loop.fade_in()
 		Global.current_league_game = {}

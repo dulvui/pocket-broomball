@@ -31,6 +31,7 @@ func _process(delta:float) -> void:
 		$Player.queue_free()
 		$Player2.queue_free()
 		$Ball.queue_free()
+		$GameOver.multiplayer_winner($Score/HomeScore.goals == Global.round_limit)
 		$GameOver.show()
 		if Global.music:
 			Global.music_loop.fade_in()

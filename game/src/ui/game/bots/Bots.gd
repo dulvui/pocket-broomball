@@ -60,16 +60,7 @@ func _away_goal() -> void:
 	
 func _process(delta:float) -> void:
 	if Global.current_league_game == null &&  (away_score.goals == Global.round_limit || home_score.goals == Global.round_limit) && !game_over:
-		if home_score.goals == Global.round_limit:
-			$Field/Commentator.win()
-#			var player = $Player/Body/AnimationPlayer
-#			player.play("Win")
-#			yield(player,"animation_finished")
-		else:
-#			var player = $Computer/Body/AnimationPlayer
-#			player.play("Win")
-#			yield(player,"animation_finished")
-			$Field/Commentator.loose()
+		$Field/Commentator.win()
 		game_over = true
 		Global.game_over(home_score.goals,away_score.goals)
 		get_tree().paused = true
@@ -77,6 +68,7 @@ func _process(delta:float) -> void:
 		$Computer2.queue_free()
 		$Computer.queue_free()
 		$Ball.queue_free()
+		$GameOver.bots_winner(home_score.goals == Global.round_limit)
 		$GameOver.show()
 		Global.music_loop.fade_in()
 	elif  not Global.current_league_game.empty() && (away_score.goals == 5 || home_score.goals == 5) && !game_over:
