@@ -123,6 +123,8 @@ func load_data() -> void:
 	sfx = config.get_value("sound", "sfx", true)
 	music = config.get_value("sound", "music-type", "chill")
 	coins = config.get_value("coins", "amount", 0)
+	round_limit = config.get_value("game", "round_limit", 5)
+	
 	
 	#league
 	league_prize_rewarded = config.get_value("league", "prize_rewarded", false)
@@ -177,6 +179,8 @@ func save_all_data() -> void:
 	config.set_value("coins","amount",coins)
 	config.set_value("sound","sfx",sfx)
 	config.set_value("sound","music-type",music)
+	config.set_value("sound","music-type",music)
+	config.set_value("game", "round_limit", round_limit)
 	
 	# league
 	config.set_value("league","match_day", match_day)
