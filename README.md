@@ -94,17 +94,26 @@ assets made by myself are licensed under the [CC-BY-SA-4.0](https://creativecomm
 
 ### Audio
 
-"The heist" Royalty-Free Music by https://audiohub.com is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)
-```
-game/assets/audio/heist.ogg
-```
+Files: game/assets/sounds/chill-music.ogg
+Copyright: 2016 furbyguy https://freesound.org/people/furbyguy/sounds/365187/
+License: CC0-1.0
 
-"Snares and Crash" by LMMS (https://github.com/LMMS/assets) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
-```
-game/assets/audio/snare05.ogg
-game/assets/audio/snare02.ogg
-game/assets/audio/crash02.ogg
-```
+Files: game/assets/sounds/music.ogg
+Copyright: 2017 furbyguy https://freesound.org/people/furbyguy/sounds/388101/
+License: CC0-1.0
+
+Files: game/assets/sounds/croud.ogg
+Copyright: 2017 giddster https://freesound.org/people/giddster/sounds/406214/
+License: CC0-1.0
+
+Files: game/assets/sounds/horn.ogg
+Copyright: 2012 santino_c https://freesound.org/people/santino_c/sounds/170825/
+License: CC0-1.0
+
+Files: game/assets/sounds/hit.ogg
+Copyright: 2012 volivieri https://freesound.org/people/volivieri/sounds/37155/
+License: CC-BY-3.0
+
 ### 2D assets
 
 

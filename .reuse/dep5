@@ -27,8 +27,8 @@ Files: game/icon.png
 Copyright: 2022 Broomball icon created by Freepik - https://flaticon.com
 License: Flaticon License
 
-Files: game/assets/sounds/commentator/* game/assets/sounds/click.wav game/assets/leaderboardsComplex.png
-      game/assets/video.png game/assets/sounds/click.wav game/assets/next.png game/assets/prev.png
+Files: game/assets/sounds/commentator/* game/assets/sounds/click.ogg game/assets/leaderboardsComplex.png
+      game/assets/video.png game/assets/sounds/click.ogg game/assets/next.png game/assets/prev.png
 Copyright: 2010 - 2022 https://kenney.nl
 License: CC0-1.0
 
@@ -36,11 +36,11 @@ Files: game/assets/snowflake.png
 Copyright: 2014 mkwong98 https://opengameart.org/content/snow-flake
 License: CC0-1.0
 
-Files: game/assets/sounds/chill-music.wav
+Files: game/assets/sounds/chill-music.ogg
 Copyright: 2016 furbyguy https://freesound.org/people/furbyguy/sounds/365187/
 License: CC0-1.0
 
-Files: game/assets/sounds/music.wav
+Files: game/assets/sounds/music.ogg
 Copyright: 2017 furbyguy https://freesound.org/people/furbyguy/sounds/388101/
 License: CC0-1.0
 
@@ -48,11 +48,11 @@ Files: game/assets/sounds/croud.ogg
 Copyright: 2017 giddster https://freesound.org/people/giddster/sounds/406214/
 License: CC0-1.0
 
-Files: game/assets/sounds/horn.wav
+Files: game/assets/sounds/horn.ogg
 Copyright: 2012 santino_c https://freesound.org/people/santino_c/sounds/170825/
 License: CC0-1.0
 
-Files: game/assets/sounds/hit.wav
+Files: game/assets/sounds/hit.ogg
 Copyright: 2012 volivieri https://freesound.org/people/volivieri/sounds/37155/
 License: CC-BY-3.0
 
