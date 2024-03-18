@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.simondalvai.pocket-broomball</id>
+  <name>Pocket Broomball</name>
+  <developer_name>Simon Dalvai</developer_name>
+  <launchable type="desktop-id">org.simondalvai.pocket-broomball.desktop</launchable>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>World's first Broomball video game</summary>
+  <url type="homepage">https://simondalvai.org/games/pocket-broomball</url>
+  <url type="bugtracker">https://github.com/dulvui/pocket-broomball/issues</url>
+  <url type="donation">https://simondalvai.org/donate</url>
+  <url type="vcs-browser">https://github.com/dulvui/pocket-broomball</url>
+  <description>
+    <p>The coolest winter sport has finally come to your Linux machine!
+    </p>
+    <p>
+      Win the Championship and unlock all the 100+ real-world teams of the following leagues
+    </p>
+    <ul>
+      <li>North American Broomball League</li>
+      <li>Maritime Broomball Association</li>
+      <li>Penrith Broomball competition</li>
+      <li>Ontario League</li>
+      <li>Italian Broomball League</li>
+      <li>Swiss Broomball Association A + B</li>
+      <li>International Women League</li>
+      <li>International League</li>
+    </ul>
+    <p>Main features</p>
+    <ul>
+      <li>100+ real-world teams</li>
+      <li>20+ different styled balls to collect</li>
+      <li>Privacy friendly</li>
+      <li>Offline game</li>
+      <li>Created with Godot Engine 3</li>
+    </ul>
+    <p>PS: If you want to add a broomball team to the game, send me a mail at info@simondalvai.org</p>
+  </description>
+  <branding>
+    <color type="primary" scheme_preference="light">#fdf6e3</color>
+    <color type="primary" scheme_preference="dark">#002b36</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <image>
+        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-1.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-2.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-3.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image>
+        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-4.png
+      </image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="5.2.0" date="2024-03-18">
+      <description>
+        <ul>
+          <li>levels functionality</li>
+          <li>user interface refactoring</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/pocket-broomball/releases/tag/v5.2.0</url>
+    </release>
+  </releases>
+</component>

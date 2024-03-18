@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Pocket Broomball
+GenericName=Pocket Broomball
+Comment=World's first Broomball video game
+Exec=godot-runner
+Icon=org.simondalvai.pocket-broomball
+Type=Application
+Categories=Game
