@@ -4,6 +4,6 @@ Name=Pocket Broomball
 GenericName=Pocket Broomball
 Comment=World's first Broomball video game
 Exec=godot-runner
-Icon=org.simondalvai.pocket-broomball
+Icon=org.simondalvai.pocketbroomball
 Type=Application
 Categories=Game
