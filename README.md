@@ -25,6 +25,7 @@ This source code is available on [Github](https://github.com/dulvui/pocket-broom
 ## Table of contents
 - [Pocket Broomball](#pocket-broomball)
   - [Table of contents](#table-of-contents)
+  - [Roadmap](#roadmap)
   - [Setup](#setup)
     - [export\_presets.cfg](#export_presetscfg)
   - [Join with your Broomball team](#join-with-your-broomball-team)
@@ -37,6 +38,9 @@ This source code is available on [Github](https://github.com/dulvui/pocket-broom
     - [2D assets](#2d-assets)
     - [3D assets](#3d-assets)
     - [Font](#font)
+
+## Roadmap
+Features/issues lists are visible in the [Roadmap](ROADMAP.md) 
 
 ## Setup
 Get the latest version of the Godot Engine editor and check out the  
