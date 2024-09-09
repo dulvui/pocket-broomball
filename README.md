@@ -122,70 +122,9 @@ License: CC-BY-3.0
 
 ### 2D assets
 
-
-"Game Icons" by kenney.nl (https://www.kenney.nl/assets/game-icons) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
-```
-game/assets/star.png
-game/assets/right.png
-game/assets/musicOn.png
-game/assets/musicOff.png
-game/assets/left.png
-game/assets/audioOn.png
-game/assets/audioOff.png
-game/assets/arrowDown.png
-game/assets/information.png
-game/assets/pointer.png
-```
-
-"Patterns Pack" by kenney.nl (https://www.kenney.nl/assets/pattern-pack) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
-```
-game/assets/patterns/pattern_04.png
-game/assets/patterns/pattern_09.png
-game/assets/patterns/pattern_27.png
-```
-
-"Patterns Pack 2" by kenney.nl (https://www.kenney.nl/assets/pattern-pack-2) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
-```
-README.md
-game/assets/patterns/pattern_0001.png
-game/assets/patterns/pattern_0003.png
-game/assets/patterns/pattern_0007.png
-game/assets/patterns/pattern_0008.png
-game/assets/patterns/pattern_0021.png
-game/assets/patterns/pattern_0024.png
-game/assets/patterns/pattern_0025.png
-```
-
 "Simple icons" by simple-icons (https://github.com/simple-icons/simple-icons) are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 ```
 game/assets/link-buttons/codeberg.svg
 game/assets/link-buttons/mastodon.svg
 game/assets/link-buttons/github.svg
-```
-
-### 3D assets
-"Star" by Savino (https://opengameart.org/content/star-0) is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/)
-```
-game/assets/obj/star.obj
-```
-
-"Volleyball" by PatelDev (https://skfb.ly/6VWCM) is licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/).
-```
-game/assets/obj/Volleyball.obj
-```
-
-"Football" by siixarn (https://skfb.ly/KqJH) is licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/).
-```
-game/assets/obj/Football.blend.obj
-``` 
-
-"Octoball" by EZduzziteh (https://opengameart.org/content/some-more-wire-balls) is licensed under [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/)
-```
-game/assets/obj/Octoball.obj
-```
-
-### Font
-"manrope.thin.otf" by sharanda (https://github.com/sharanda/manrope) is licensed under [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-```
-game/assets/font/manrope.thin.otf
 ```
