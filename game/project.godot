@@ -96,6 +96,7 @@ translations=PoolStringArray( "res://translations/translations.de.translation", 
 
 common/physics_fps=240
 2d/default_gravity_vector=Vector2( 0, 0 )
+common/physics_interpolation=true
 2d/enable_object_picking=true
 
 [rendering]

@@ -7,4 +7,4 @@ extends Node2D
 export var singleplayer:bool = true
 
 func _ready() -> void:
-	$Smoothing2D/Sprite.texture = ShopUtil.get_ball_texture()
+	$RigidBody2D/Sprite.texture = ShopUtil.get_ball_texture()
