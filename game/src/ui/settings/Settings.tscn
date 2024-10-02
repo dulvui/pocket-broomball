@@ -44,22 +44,16 @@ margin_right = 540.0
 margin_bottom = 232.0
 text = "SFX_ON"
 
-[node name="RateAndReview" type="Button" parent="VBoxContainer"]
+[node name="MoreGames" type="Button" parent="VBoxContainer"]
 margin_top = 240.0
 margin_right = 540.0
 margin_bottom = 312.0
-text = "RATE"
-
-[node name="MoreGames" type="Button" parent="VBoxContainer"]
-margin_top = 320.0
-margin_right = 540.0
-margin_bottom = 392.0
 text = "MORE_GAMES"
 
 [node name="Language" type="Button" parent="VBoxContainer"]
-margin_top = 400.0
+margin_top = 320.0
 margin_right = 540.0
-margin_bottom = 472.0
+margin_bottom = 392.0
 text = "LANGUAGE"
 expand_icon = true
 
@@ -91,16 +85,16 @@ text = "INFO"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 480.0
+margin_top = 400.0
 margin_right = 540.0
-margin_bottom = 500.0
+margin_bottom = 420.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 508.0
+margin_top = 428.0
 margin_right = 540.0
-margin_bottom = 580.0
+margin_bottom = 500.0
 text = "GO_BACK"
 
 [node name="EasterEgg" type="Button" parent="."]
@@ -119,7 +113,6 @@ one_shot = true
 [connection signal="pressed" from="VBoxContainer/RoundLimit" to="." method="_on_RoundLimit_pressed"]
 [connection signal="pressed" from="VBoxContainer/Music" to="." method="_on_Music_pressed"]
 [connection signal="pressed" from="VBoxContainer/Sfx" to="." method="_on_Sfx_pressed"]
-[connection signal="pressed" from="VBoxContainer/RateAndReview" to="." method="_on_RateAndReview_pressed"]
 [connection signal="pressed" from="VBoxContainer/MoreGames" to="." method="_on_MoreGames_pressed"]
 [connection signal="pressed" from="VBoxContainer/Language" to="." method="_on_Language_pressed"]
 [connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_Join_pressed"]

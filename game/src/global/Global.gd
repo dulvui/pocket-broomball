@@ -7,8 +7,6 @@ extends Node
 # increase to show 'Whats new' screen
 var version:String = "9"
 
-const FDROID:bool = false
-
 var first_fade_in:bool = true
 
 var sfx:bool

@@ -1,9 +1,5 @@
 extends Control
 
-func _ready() -> void:
-	$VBoxContainer/Buttons/Donate.visible = Global.FDROID or OS.get_name() == "HTML5"
-	$VBoxContainer/Buttons/Website.visible = not $VBoxContainer/Buttons/Donate.visible
-
 
 func _on_Website_pressed() -> void:
 	Global.click()
@@ -19,11 +15,6 @@ func _on_RichTextLabel_meta_clicked(meta:String) -> void:
 	OS.shell_open(meta)
 	Global.click()
 
-
-func _on_Donate_pressed() -> void:
-	Global.click()
-	OS.shell_open("https://simondalvai.org/donate")
-	
 
 func _on_Join_pressed() -> void:
 	Global.click()

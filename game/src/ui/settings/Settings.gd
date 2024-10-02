@@ -22,13 +22,12 @@ const FLAGS:Dictionary = {
 
 onready var flag:TextureRect = $VBoxContainer/Language/Flag
 
+
 func _ready() -> void:
 	$VBoxContainer/RoundLimit.set_text(tr("ROUNDLIMIT") + " " +str(Global.round_limit))
 	
 	update_dynamic_labels()
-	
-	if Global.FDROID:
-		$VBoxContainer/RateAndReview.hide()
+
 
 func _on_RoundLimit_pressed() -> void:
 	Global.click()
@@ -48,8 +47,8 @@ func _on_Music_pressed() -> void:
 		
 	if Global.sfx:
 		Global.click()
-	
-	
+
+
 func _on_Sfx_pressed() -> void:
 	if Global.sfx:
 		$VBoxContainer/Sfx.text = tr("SFX_OFF")
@@ -61,7 +60,8 @@ func _on_Sfx_pressed() -> void:
 		set_sfx(true)
 	if Global.sfx:
 		Global.click()
-		
+
+
 func set_music(type:String) -> void:
 	Global.music = type
 	
@@ -72,7 +72,8 @@ func set_music(type:String) -> void:
 		
 	Global.config.set_value("sound","music",Global.music)
 	Global.save()
-	
+
+
 func set_sfx(enabled:bool) -> void:
 	Global.sfx = enabled
 	Global.config.set_value("sound","sfx",Global.sfx)
@@ -86,13 +87,6 @@ func round_limit_up() -> void:
 	Global.config.set_value("round_limit", "amount",Global.round_limit)
 	Global.save()
 
-func _on_RateAndReview_pressed() -> void:
-	Global.click()
-	if OS.get_name() == "iOS":
-		OS.shell_open("https://itunes.apple.com/app/id1511009171?action=write-review")
-	else:
-		OS.shell_open("https://play.google.com/store/apps/details?id=com.salvai.broomball")
-
 
 func _on_GoBack_pressed() -> void:
 	Global.click()
@@ -105,7 +99,6 @@ func _on_MoreGames_pressed() -> void:
 		OS.shell_open("https://appstore.com/simondalvai")
 	else:
 		OS.shell_open("https://play.google.com/store/apps/dev?id=7836644900810357474&hl=en")
-
 
 
 func _on_EasterEgg_button_down():

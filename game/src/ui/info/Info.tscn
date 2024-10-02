@@ -53,10 +53,6 @@ Godot Engine by Juan Linietsky, Ariel Manzur and contributors
 MIT
 [url=https://godotengine.org/license]godotengine.org/license[/url]
 
-\"Smoothing addon\"
-Copyright: 2019 Lawnjelly [url=https://github.com/lawnjelly/smoothing-addon][/url]
-License: MIT
-
 [b]Audio[/b]
 \"Chill music\"
 Copyright: 2016 furbyguy[url=https://freesound.org/people/furbyguy/sounds/365187/]freesound.org/people/furbyguy/sounds/365187/[/url]
@@ -128,10 +124,6 @@ Code
 Godot Engine by Juan Linietsky, Ariel Manzur and contributors
 MIT
 godotengine.org/license
-
-\"Smoothing addon\"
-Copyright: 2019 Lawnjelly 
-License: MIT
 
 Audio
 \"Chill music\"
@@ -209,12 +201,6 @@ margin_right = 540.0
 margin_bottom = 72.0
 text = "WEBSITE"
 
-[node name="Donate" type="Button" parent="VBoxContainer/Buttons"]
-visible = false
-margin_right = 540.0
-margin_bottom = 72.0
-text = "DONATE"
-
 [node name="Github" type="Button" parent="VBoxContainer/Buttons"]
 visible = false
 margin_top = 82.0
@@ -236,7 +222,6 @@ text = "GO_BACK"
 
 [connection signal="meta_clicked" from="VBoxContainer/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Website" to="." method="_on_Website_pressed"]
-[connection signal="pressed" from="VBoxContainer/Buttons/Donate" to="." method="_on_Donate_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Github" to="." method="_on_Github_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/Back" to="." method="_on_Back_pressed"]
