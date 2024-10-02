@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/field/Goals.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/field/RoundCorners.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://src/actors/computer/Computer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/ui/game/arcade/game_over/ArcadeGameOver.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/ui/pause/Pause.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/broomballcentral.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -23,23 +22,6 @@ anchor_bottom = 1.0
 script = ExtResource( 3 )
 
 [node name="Field" parent="." instance=ExtResource( 5 )]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 242.174
-margin_top = 624.562
-margin_right = 282.174
-margin_bottom = 664.562
-rect_scale = Vector2( 6.20948, 0.806925 )
-color = Color( 0.933333, 0.933333, 0.933333, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BroombalCentral" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.85098 )
-position = Vector2( 360, 640 )
-scale = Vector2( 0.764549, 0.764549 )
-texture = ExtResource( 12 )
 
 [node name="PowerUps" type="Node2D" parent="."]
 

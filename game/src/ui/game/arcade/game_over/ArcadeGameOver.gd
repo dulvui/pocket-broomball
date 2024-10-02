@@ -9,7 +9,6 @@ var revived:bool = false
 var _coins:int = 0
 var _score:int = 0
 
-onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	if OS.get_name() == "iOS":

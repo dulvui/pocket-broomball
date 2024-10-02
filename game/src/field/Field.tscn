@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/field.png" type="Texture" id=1]
 [ext_resource path="res://src/field/RoundCorners.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://src/field/Goals.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/field/wall_physicsmaterial.tres" type="PhysicsMaterial" id=9]
 [ext_resource path="res://assets/teams/australian-teams/DoonsideDirtSquirrels.png" type="Texture" id=10]
-[ext_resource path="res://assets/broomballcentral.png" type="Texture" id=11]
 [ext_resource path="res://assets/teams/australian-teams/BlacktownPirates.png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -36,9 +35,6 @@ margin_right = 180.0
 margin_bottom = 320.0
 rect_scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MiddleLines" type="Node2D" parent="."]
 
@@ -197,10 +193,3 @@ volume_db = 10.0
 position = Vector2( 368.273, 636.613 )
 
 [node name="Commentator" parent="." instance=ExtResource( 7 )]
-
-[node name="BroomballCentral" type="Sprite" parent="."]
-visible = false
-self_modulate = Color( 1, 1, 1, 0.627451 )
-position = Vector2( 368.503, 736 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 11 )

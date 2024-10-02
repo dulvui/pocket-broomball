@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/theme/airbroomball_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/animated-player/animated-player_arm.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/animated-player/animated-player_head.png" type="Texture" id=4]
 [ext_resource path="res://assets/animated-player/animated-player_upper-arm.png" type="Texture" id=5]
 [ext_resource path="res://assets/animated-player/animated-player_shoulder.png" type="Texture" id=6]
-[ext_resource path="res://assets/broomballcentral.png" type="Texture" id=7]
 [ext_resource path="res://src/actors/AnimatedBody.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
@@ -992,7 +991,6 @@ __meta__ = {
 position = Vector2( 1.46414, 2.43291 )
 rotation = 0.021869
 scale = Vector2( 0.0354797, 0.0354797 )
-texture = ExtResource( 7 )
 
 [node name="LeftShoulder" type="Sprite" parent="Body"]
 position = Vector2( -25.0415, -9.11794 )
@@ -1018,7 +1016,6 @@ __meta__ = {
 position = Vector2( -1.22406, 0.992279 )
 rotation = 0.0274226
 scale = Vector2( 0.0354797, 0.0354797 )
-texture = ExtResource( 7 )
 
 [node name="Head" type="Sprite" parent="Body"]
 position = Vector2( -10.1578, -9.76715 )

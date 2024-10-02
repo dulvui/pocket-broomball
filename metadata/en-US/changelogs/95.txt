@@ -1,0 +1,4 @@
+- New icon
+- Update to Godot 3.6
+- Use Godot 3.6 physics interpolation over smoothing add-on
+- Target latest Android SDK level 34
