@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Roadmap
 List of features/issues for future versions of PocketBroomball.  
 So users from [Codeberg](https://codeberg.org/dulvui/pocket-broomball) and [Github](https://codeberg.org/dulvui/pocket-broomball) can track issues/features with ease.
@@ -27,6 +33,7 @@ List of features that are currently worked on.
 Features/issues that are added/solved in specific version
 
 - 5.2.1
+    - new icon
     - update to Godot 3.6
     - use Godot 3.6 physics interpolation over [smoothing addon](https://github.com/lawnjelly/smoothing-addon)
     - target latest Android SDK level 34

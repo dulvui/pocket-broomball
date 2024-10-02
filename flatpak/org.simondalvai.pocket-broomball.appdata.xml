@@ -65,6 +65,16 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="5.2.1" date="2024-10-02">
+      <description>
+        <ul>
+          <li>new icon</li>
+          <li>update to godot 3.6</li>
+          <li>use godot 3.6 physics interpolation</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/pocket-broomball/releases/tag/v5.2.0</url>
+    </release>
     <release version="5.2.0" date="2024-03-18">
       <description>
         <ul>
