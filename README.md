@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Pocket Broomball
 [![Android upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-android.yml)
 [![iOS upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml)
@@ -36,15 +42,14 @@ This source code is available on [Github](https://github.com/dulvui/pocket-broom
   - [Third party assets](#third-party-assets)
     - [Audio](#audio)
     - [2D assets](#2d-assets)
-    - [3D assets](#3d-assets)
-    - [Font](#font)
+    - [Fonts](#fonts)
 
 ## Roadmap
 Features/issues lists are visible in the [Roadmap](ROADMAP.md) 
 
 ## Setup
-Get the latest version of the Godot Engine editor and check out the  
-repo. Then open the `game/project.godot` file with the editor.
+Get the version of the Godot Engine 3.x editor and check out the repo.
+Then open the `game/project.godot` file with the editor.
 
 For further instructions, like exporting to mobile, please read the official [Godot Docs](https://docs.godotengine.org/en/stable/).
 
@@ -52,12 +57,11 @@ For further instructions, like exporting to mobile, please read the official [Go
 
 To be able to export for Android or iOS, copy the `export_presets.exmaple` file and fill in your values.
 ```sh
-cp game/export_presets.example game/export_presets.cfg
+cp game/export_presets.[platform].example game/export_presets.cfg
 ```
 
 ## Join with your Broomball team
-If you want to see your broomball team or even the whole league in the game,  
-just contact me at info@simondalvai.org  
+If you want to see your broomball team or even the whole league in the game, just contact me at info@simondalvai.org  
 Or make a pull request with the team's logos, names and stats (speed, power) and I'll publish them!
 
 ## Translations
@@ -76,48 +80,39 @@ To be sure that your changes will be merged, you can open an issue first with th
 Then we will see together, if and how the change could be implemented.
 
 ## Licenses and Copyrights
-The game itself is licensed under the GNU AGPL v3.0 or later license and all  
-assets made by myself are licensed under the CC-BY-SA-4.0 license.  
+The game itself is licensed under the GNU AGPL v3.0 or later license and all assets made by myself are licensed under the CC-BY-SA-4.0 license.  
 All third parties assets and code have different licenses and copyrights holders.
 
 This project uses the [FSFE reuse tool](https://github.com/fsfe/reuse-tool) to license files.  
-But because currently no all assets have a valid license, `reuse lint` fails.  
-Check out all licenses and copyrights holders [here](.reuse/dep5).  
+Check out all licenses and copyrights holders [here](.RESUE.toml).  
 The corresponding full license texts can be found in the LICENSES/ directory.
-
-Note: The team logos where send to me by themselves, so I'm authorized to use them.  
-      Since they haven't issued a license for the logos, no license is available and  
-      all rights belong to the corresponding team.  
-      If you want to use them, please contact me at info@simondalvai.org or the  
-      teams directly.
 
 ## Licenses
 The game itself is licensed under the [GNU AGPL v3.0](LICENSE) license and all  
 assets made by myself are licensed under the [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-
 ## Third party assets
 
 ### Audio
 
-Files: game/assets/sounds/chill-music.ogg
-Copyright: 2016 furbyguy https://freesound.org/people/furbyguy/sounds/365187/
+Files: game/assets/sounds/chill-music.ogg  
+Copyright: 2016 furbyguy https://freesound.org/people/furbyguy/sounds/365187/  
 License: CC0-1.0
 
-Files: game/assets/sounds/music.ogg
-Copyright: 2017 furbyguy https://freesound.org/people/furbyguy/sounds/388101/
+Files: game/assets/sounds/music.ogg  
+Copyright: 2017 furbyguy https://freesound.org/people/furbyguy/sounds/388101/  
 License: CC0-1.0
 
-Files: game/assets/sounds/croud.ogg
-Copyright: 2017 giddster https://freesound.org/people/giddster/sounds/406214/
+Files: game/assets/sounds/croud.ogg  
+Copyright: 2017 giddster https://freesound.org/people/giddster/sounds/406214/  
 License: CC0-1.0
 
-Files: game/assets/sounds/horn.ogg
-Copyright: 2012 santino_c https://freesound.org/people/santino_c/sounds/170825/
+Files: game/assets/sounds/horn.ogg  
+Copyright: 2012 santino_c https://freesound.org/people/santino_c/sounds/170825/  
 License: CC0-1.0
 
-Files: game/assets/sounds/hit.ogg
-Copyright: 2012 volivieri https://freesound.org/people/volivieri/sounds/37155/
+Files: game/assets/sounds/hit.ogg  
+Copyright: 2012 volivieri https://freesound.org/people/volivieri/sounds/37155/  
 License: CC-BY-3.0
 
 ### 2D assets
@@ -128,3 +123,18 @@ game/assets/link-buttons/codeberg.svg
 game/assets/link-buttons/mastodon.svg
 game/assets/link-buttons/github.svg
 ```
+
+**The team logos** where send to me by themselves.  
+Since they haven't issued a license for the logos, no license is available and
+all rights belong to the corresponding team.  
+If you want to use them, please contact me at info@simondalvai.org or the  
+teams directly.
+
+### Fonts
+"Carlito Regular"  
+Copyright: 2022 Łukasz Dziedzic https://www.1001fonts.com/carlito-font.html  
+License: OFL-1.1
+
+"DSEG7ClassicMini Bold"  
+Copyright: 2022 Keshikan https://github.com/keshikan/DSEG  
+License: OFL-1.1
