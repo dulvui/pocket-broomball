@@ -35,7 +35,7 @@ jobs:
       - name: Godot HTML5 export
         uses: dulvui/godot-html-export@v1
         with:
-          godot-verions: 3.6
+          godot-version: 3.6
           working-directory: $WORKING_DIRECTORY
           create-export-preset-cfg: false
 
