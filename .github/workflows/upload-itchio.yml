@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 name: itch.io upload 
 
 on:
@@ -29,8 +33,9 @@ jobs:
         run: cp game/export_presets.html.example game/export_presets.cfg
 
       - name: Godot HTML5 export
-        uses: dulvui/godot-html-export@v0.0.2
+        uses: dulvui/godot-html-export@v1
         with:
+          godot-verions: 3.6
           working-directory: $WORKING_DIRECTORY
           create-export-preset-cfg: false
 

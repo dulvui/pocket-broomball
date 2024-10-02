@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 name: Android upload
 
 on:
@@ -79,7 +83,7 @@ jobs:
 
       # GODOT EXPORT
       - name: Godot Android export
-        uses: dulvui/godot-android-export@v3.1.0
+        uses: dulvui/godot-android-export@v3
         with:
           godot-version: 3.6
           working-directory: $WORKING_DIRECTORY
