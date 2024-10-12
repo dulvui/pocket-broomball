@@ -84,7 +84,7 @@ The game itself is licensed under the GNU AGPL v3.0 or later license and all ass
 All third parties assets and code have different licenses and copyrights holders.
 
 This project uses the [FSFE reuse tool](https://github.com/fsfe/reuse-tool) to license files.  
-Check out all licenses and copyrights holders [here](.RESUE.toml).  
+Check out all licenses and copyrights holders [here](REUSE.toml).  
 The corresponding full license texts can be found in the LICENSES/ directory.
 
 ## Licenses
