@@ -83,8 +83,9 @@ alignment = 1
 margin_top = 139.0
 margin_right = 60.0
 margin_bottom = 211.0
+rect_min_size = Vector2( 60, 0 )
 size_flags_vertical = 4
-text = " < "
+text = "<"
 
 [node name="LeagueLabel" type="Label" parent="VBoxContainer/League"]
 margin_left = 64.0
@@ -106,8 +107,9 @@ margin_left = 600.0
 margin_top = 139.0
 margin_right = 660.0
 margin_bottom = 211.0
+rect_min_size = Vector2( 60, 0 )
 size_flags_vertical = 4
-text = " > "
+text = ">"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -137,8 +139,9 @@ alignment = 1
 margin_top = 34.0
 margin_right = 60.0
 margin_bottom = 106.0
+rect_min_size = Vector2( 60, 0 )
 size_flags_vertical = 4
-text = " < "
+text = "<"
 
 [node name="TeamLabel" type="Label" parent="VBoxContainer/Team"]
 margin_left = 64.0
@@ -162,27 +165,64 @@ margin_left = 600.0
 margin_top = 34.0
 margin_right = 660.0
 margin_bottom = 106.0
+rect_min_size = Vector2( 60, 0 )
 size_flags_vertical = 4
-text = " > "
+text = ">"
 
-[node name="SpeedBar" parent="VBoxContainer" instance=ExtResource( 6 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Speed" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 796.0
 margin_right = 660.0
 margin_bottom = 880.0
-size_flags_horizontal = 1
+custom_constants/separation = 10
+
+[node name="SpeedMinus" type="Button" parent="VBoxContainer/Speed"]
+margin_right = 60.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 60, 0 )
+text = "-"
+
+[node name="SpeedBar" parent="VBoxContainer/Speed" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_right = 590.0
+margin_bottom = 84.0
 size_flags_vertical = 1
 text = "SPEED"
 
-[node name="PowerBar" parent="VBoxContainer" instance=ExtResource( 6 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpeedPlus" type="Button" parent="VBoxContainer/Speed"]
+margin_left = 600.0
+margin_right = 660.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 60, 0 )
+text = "+"
+
+[node name="Power" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 900.0
 margin_right = 660.0
 margin_bottom = 984.0
-size_flags_horizontal = 1
+custom_constants/separation = 10
+
+[node name="PowerMinus" type="Button" parent="VBoxContainer/Power"]
+margin_right = 60.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 60, 0 )
+text = "-"
+
+[node name="PowerBar" parent="VBoxContainer/Power" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_right = 590.0
+margin_bottom = 84.0
 size_flags_vertical = 1
+
+[node name="PowerPlus" type="Button" parent="VBoxContainer/Power"]
+margin_left = 600.0
+margin_right = 660.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 60, 0 )
+text = "+"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -218,5 +258,9 @@ anims/Unlock = SubResource( 4 )
 [connection signal="pressed" from="VBoxContainer/League/NextLeague" to="." method="_on_NextLeague_pressed"]
 [connection signal="pressed" from="VBoxContainer/Team/PrevTeam" to="." method="_on_PrevTeam_pressed"]
 [connection signal="pressed" from="VBoxContainer/Team/NextTeam" to="." method="_on_NextTeam_pressed"]
+[connection signal="pressed" from="VBoxContainer/Speed/SpeedMinus" to="." method="_on_SpeedMinus_pressed"]
+[connection signal="pressed" from="VBoxContainer/Speed/SpeedPlus" to="." method="_on_SpeedPlus_pressed"]
+[connection signal="pressed" from="VBoxContainer/Power/PowerMinus" to="." method="_on_PowerMinus_pressed"]
+[connection signal="pressed" from="VBoxContainer/Power/PowerPlus" to="." method="_on_PowerPlus_pressed"]
 [connection signal="pressed" from="VBoxContainer/Select" to="." method="_on_Select_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]

@@ -161,3 +161,8 @@ func update_dynamic_labels():
 func _on_Info_pressed():
 	Global.click()
 	get_tree().change_scene("res://src/ui/info/Info.tscn")
+
+
+func _on_ResetTeams_pressed():
+	Global.teams_mods = {}
+	Global.save_all_data()

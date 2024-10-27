@@ -439,7 +439,6 @@ func  _load_ontario_teams():
 	var mildmay_moose_icon = load("res://assets/teams/ontario-league/mildmay-moose.png")
 	
 	
-		
 	ontario_teams = [
 	 {"colors" : ["#E6D409", "#FEFEFE", "#e6eaee"], "short_name" :  "TND","id" : 82, "name":"Thunder","position": 3, "points": 0 ,
 						 "goal_diference": 0 , "wins" : 0, "speed" : 4, "power" : 4, 
@@ -459,7 +458,7 @@ func  _load_ontario_teams():
 	{"colors" : ["#E1DBD1", "#55222B", "#e6eaee"], "short_name" :  "BOY","id" : 91, "name":"Boys","position": 3, "points": 0 ,
 						 "goal_diference": 0 , "wins" : 0, "speed" : 10, "power" : 9,
 						 "lost":0, "icon" : les_boys_icon, "goal_difference":0, "price":100000},
-	{"colors" : ["#F6F6F6", "#fffff", "#060606"], "short_name" :  "MMO","id" : 92, "name":"Mildmay Moose","position": 3, "points": 0 ,
+	{"colors" : ["#F6F6F6", "#ffffff", "#060606"], "short_name" :  "MMO","id" : 92, "name":"Mildmay Moose","position": 3, "points": 0 ,
 						 "goal_diference": 0 , "wins" : 0, "speed" : 10, "power" : 9,
 						 "lost":0, "icon" : mildmay_moose_icon, "goal_difference":0, "price":100000},
 	]

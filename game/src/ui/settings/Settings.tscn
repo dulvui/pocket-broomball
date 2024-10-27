@@ -71,6 +71,12 @@ margin_bottom = 178.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 4 )
 
+[node name="ResetTeams" type="Button" parent="VBoxContainer"]
+margin_top = 400.0
+margin_right = 540.0
+margin_bottom = 472.0
+text = "RESET_TEAMS"
+
 [node name="Join" type="Button" parent="VBoxContainer"]
 visible = false
 margin_top = 685.0
@@ -89,16 +95,16 @@ text = "INFO"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 400.0
+margin_top = 480.0
 margin_right = 540.0
-margin_bottom = 420.0
+margin_bottom = 500.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="GoBack" type="Button" parent="VBoxContainer"]
-margin_top = 428.0
+margin_top = 508.0
 margin_right = 540.0
-margin_bottom = 500.0
+margin_bottom = 580.0
 text = "GO_BACK"
 
 [node name="EasterEgg" type="Button" parent="."]
@@ -119,6 +125,7 @@ one_shot = true
 [connection signal="pressed" from="VBoxContainer/Sfx" to="." method="_on_Sfx_pressed"]
 [connection signal="pressed" from="VBoxContainer/MoreGames" to="." method="_on_MoreGames_pressed"]
 [connection signal="pressed" from="VBoxContainer/Language" to="." method="_on_Language_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResetTeams" to="." method="_on_ResetTeams_pressed"]
 [connection signal="pressed" from="VBoxContainer/Join" to="." method="_on_Join_pressed"]
 [connection signal="pressed" from="VBoxContainer/Info" to="." method="_on_Info_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoBack" to="." method="_on_GoBack_pressed"]
