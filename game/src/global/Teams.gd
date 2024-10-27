@@ -16,7 +16,7 @@ var world_cup_teams
 var break_team
 
 
-#lasy ID 92
+#next team ID 93
 
 func load_teams():
 	
@@ -436,6 +436,7 @@ func  _load_ontario_teams():
 	var gamblers_icon = load("res://assets/teams/ontario-league/gamblers.png")
 	var sting_icon = load("res://assets/teams/ontario-league/sting.png")
 	var les_boys_icon = load("res://assets/teams/ontario-league/lesboys.png")
+	var mildmay_moose_icon = load("res://assets/teams/ontario-league/mildmay-moose.png")
 	
 	
 		
@@ -458,6 +459,9 @@ func  _load_ontario_teams():
 	{"colors" : ["#E1DBD1", "#55222B", "#e6eaee"], "short_name" :  "BOY","id" : 91, "name":"Boys","position": 3, "points": 0 ,
 						 "goal_diference": 0 , "wins" : 0, "speed" : 10, "power" : 9,
 						 "lost":0, "icon" : les_boys_icon, "goal_difference":0, "price":100000},
+	{"colors" : ["#F6F6F6", "#fffff", "#060606"], "short_name" :  "MMO","id" : 92, "name":"Mildmay Moose","position": 3, "points": 0 ,
+						 "goal_diference": 0 , "wins" : 0, "speed" : 10, "power" : 9,
+						 "lost":0, "icon" : mildmay_moose_icon, "goal_difference":0, "price":100000},
 	]
 func _load_worldcup_teams():
 	var italy_icon = load("res://assets/teams/national-teams/italy.png")
@@ -539,4 +543,4 @@ func _load_worldcup_teams():
 	]
 
 
-# 91 TEAMS next ID 92!!!! national teams are negative for now
+# 92 TEAMS next ID 93!!!! national teams are negative for now
