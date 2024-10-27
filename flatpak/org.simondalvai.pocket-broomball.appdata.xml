@@ -65,6 +65,15 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="6.0.0" date="2024-10-27">
+      <description>
+        <ul>
+          <li>New team in Ontario League: Mildmay Moose</li>
+          <li>Power and speed can now be modified</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/pocket-broomball/releases/tag/v6.0.0</url>
+    </release>
     <release version="5.2.1" date="2024-10-02">
       <description>
         <ul>
