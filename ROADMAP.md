@@ -28,9 +28,15 @@ Features/issues that will [probably] be added/solved in future
 ## In progress
 List of features that are currently worked on.
 
+- The possibility to change speed and power breaks the game mechanics - https://github.com/dulvui/pocket-broomball/issues/39
+
 
 ## Done 
 Features/issues that are added/solved in specific version
+
+- 6.0.0
+    - New team in Ontario League: Mildmay Moose
+    - Power and speed can now be modified
 
 - 5.2.1
     - new icon
