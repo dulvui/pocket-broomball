@@ -12,6 +12,7 @@ SPDX-License-Identifier: CC0-1.0
 
 The world's first Broomball video game made with Godot Engine.
 This game is **Free and Open Source**, with **no ads** and **no tracking**.  
+
 This source code is available on [Github](https://github.com/dulvui/pocket-broomball) and [Codeberg](https://codeberg.org/dulvui/pocket-broomball)
 
 <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
