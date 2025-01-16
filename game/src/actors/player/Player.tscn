@@ -4,22 +4,23 @@
 [ext_resource path="res://src/actors/player/Player.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 9.58413
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 220.098
+radius = 173.702
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 7
 script = ExtResource( 2 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
-position = Vector2( -23.0952, 29.4067 )
+position = Vector2( -22.0952, 29.4067 )
 shoulder_color = Color( 0.054902, 0.027451, 0.870588, 1 )
 arm_color = Color( 0.192157, 0.313726, 0.980392, 1 )
 upper_arm_color = Color( 0.317647, 0.376471, 0.984314, 1 )
 
 [node name="BodyShape" type="CollisionShape2D" parent="."]
-position = Vector2( -6.63419, 6.63422 )
+position = Vector2( 2.36581, 6.63422 )
 scale = Vector2( 7.26567, 7.26567 )
 shape = SubResource( 1 )
 
@@ -29,6 +30,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChargeDetector"]
+position = Vector2( 1.62331, 0 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="ChargeDetector" to="." method="_on_ChargeDetector_body_entered"]

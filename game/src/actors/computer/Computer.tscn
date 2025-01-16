@@ -7,7 +7,7 @@
 radius = 65.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 188.779
+radius = 147.504
 
 [node name="Computer" type="KinematicBody2D"]
 collision_mask = 29
@@ -17,7 +17,7 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
-position = Vector2( -37.4938, 29.1615 )
+position = Vector2( -25.4938, 29.1615 )
 shoulder_color = Color( 0.0352941, 0.65098, 0.247059, 1 )
 arm_color = Color( 0.239216, 0.745098, 0.0980392, 1 )
 upper_arm_color = Color( 0.505882, 0.803922, 0.0705882, 1 )
