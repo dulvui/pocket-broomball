@@ -4,7 +4,7 @@
 
 extends Node2D
 
-export var singleplayer:bool = true
+export var singleplayer: bool = true
 
 func _ready() -> void:
 	$RigidBody2D/Sprite.texture = ShopUtil.get_ball_texture()

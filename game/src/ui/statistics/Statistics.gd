@@ -13,8 +13,8 @@ func _ready() -> void:
 		statistics.add_child(name_label)
 		
 		var stats_label:Label = Label.new()
-		var wins:int = Global.league_stats[league]["win"]
-		var played:int = Global.league_stats[league]["played"]
+		var wins: int = Global.league_stats[league]["win"]
+		var played: int = Global.league_stats[league]["played"]
 		stats_label.set_text("%d/%d"%[wins,played])
 		statistics.add_child(stats_label)
 		

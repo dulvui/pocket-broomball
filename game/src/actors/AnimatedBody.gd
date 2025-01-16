@@ -7,7 +7,7 @@ extends Node2D
 export var shoulder_color:Color
 export var arm_color:Color
 export var upper_arm_color:Color
-export var computer:bool = false
+export var computer: bool = false
 
 onready var left_team_logo:Sprite = $Body/LeftShoulder/TeamLogo
 onready var right_team_logo:Sprite = $Body/RightShoulder/TeamLogo
@@ -77,6 +77,6 @@ func change_style() -> void:
 	head.texture = ShopUtil.get_texture("HELMET")
 
 
-func _on_AnimationPlayer_animation_finished(anim_name:String) -> void:
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "Shoot":
 		animation_player.play("Idle")

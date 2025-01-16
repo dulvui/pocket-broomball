@@ -8,8 +8,8 @@ extends AudioStreamPlayer2D
 var tween_out:Tween
 var tween_in:Tween
 
-export var transition_duration:float = 0.5
-export var transition_type:int = 1 # TRANS_SINE
+export var transition_duration: float = 0.5
+export var transition_type: int = 1 # TRANS_SINE
 
 func _ready() -> void:
 	tween_out = Tween.new()

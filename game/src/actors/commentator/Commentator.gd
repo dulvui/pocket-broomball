@@ -4,8 +4,8 @@
 
 extends Node2D
 
-var home_goals:int = 0
-var away_goals:int = 0
+var home_goals: int = 0
+var away_goals: int = 0
 
 func _ready() -> void:
 	if Global.sfx:

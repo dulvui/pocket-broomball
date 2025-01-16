@@ -11,5 +11,5 @@ func _ready() -> void:
 	Global.set_up()
 	$AnimationPlayer.play("FadeOut")
 
-func _on_AnimationPlayer_animation_finished(anim_name:String) -> void:
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")

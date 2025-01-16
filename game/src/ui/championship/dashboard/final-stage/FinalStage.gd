@@ -6,7 +6,7 @@ extends Control
 
 
 func set_up() -> void:
-	var match_count:int = 8
+	var match_count: int = 8
 	match Global.final_teams.size():
 		4:
 			$VBoxContainer/StageName.text = tr("SEMI FINALS")
@@ -32,7 +32,7 @@ func set_up() -> void:
 	
 	if Global.final_teams.size() > 1:
 		for counter in range(1, match_count + 1):
-			var matchz:Dictionary = Global.matches[-counter]
+			var matchz: Dictionary = Global.matches[-counter]
 			if matchz["result"] == ":":
 				var match_box:HBoxContainer = get_node("VBoxContainer/VBoxContainer/Match" + str(counter))
 				match_box.get_node("Home").text = matchz["home"]["short_name"].to_upper()

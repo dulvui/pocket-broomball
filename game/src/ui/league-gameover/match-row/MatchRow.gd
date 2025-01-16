@@ -4,7 +4,7 @@
 
 extends HBoxContainer
 
-func set_up(matchz:Dictionary) -> void:
+func set_up(matchz: Dictionary) -> void:
 	if matchz["home"].has("short_name"):
 		$HomeTeam.text = matchz["home"]["short_name"] + " "
 		$AwayTeam.text = " " + matchz["away"]["short_name"]

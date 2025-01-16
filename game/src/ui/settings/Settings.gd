@@ -4,7 +4,7 @@
 
 extends Control
 
-const LANGUAGES:Dictionary = {
+const LANGUAGES: Dictionary = {
 	"en" : "English",
 	"de" : "Deutsch",
 	"it" : "Italiano",
@@ -12,7 +12,7 @@ const LANGUAGES:Dictionary = {
 	"es" : "Español",
 }
 
-const FLAGS:Dictionary = {
+const FLAGS: Dictionary = {
 	"en" : "usa.png",
 	"de" : "germany.png",
 	"it" : "italy.png",
@@ -20,7 +20,7 @@ const FLAGS:Dictionary = {
 	"es" : "spain.png",
 }
 
-onready var flag:TextureRect = $VBoxContainer/Language/Flag
+onready var flag: TextureRect = $VBoxContainer/Language/Flag
 
 
 func _ready() -> void:
@@ -62,7 +62,7 @@ func _on_Sfx_pressed() -> void:
 		Global.click()
 
 
-func set_music(type:String) -> void:
+func set_music(type: String) -> void:
 	Global.music = type
 	
 	if Global.music:
@@ -74,7 +74,7 @@ func set_music(type:String) -> void:
 	Global.save()
 
 
-func set_sfx(enabled:bool) -> void:
+func set_sfx(enabled: bool) -> void:
 	Global.sfx = enabled
 	Global.config.set_value("sound","sfx",Global.sfx)
 	Global.save()

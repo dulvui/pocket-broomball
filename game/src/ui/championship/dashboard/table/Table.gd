@@ -4,7 +4,7 @@
 
 extends Control
 
-func set_up_teams(teams:Array) -> void:
+func set_up_teams(teams: Array) -> void:
 	var position = 1
 	for team in teams:
 		if team["id"] != 0:
@@ -42,7 +42,7 @@ func set_up_teams(teams:Array) -> void:
 				points_label.add_color_override("font_color", Color(35/255.0,168/255.0,193/255.0,1))
 
 func set_up() -> void:
-	var position:int = 1
+	var position: int = 1
 	
 	for team in Global.teams:
 		if team["id"] != 0:

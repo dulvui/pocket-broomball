@@ -5,7 +5,7 @@
 extends Label
 
 
-var goals:int = 0
+var goals: int = 0
 	
 	
 func goal() -> void:

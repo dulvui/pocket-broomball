@@ -4,11 +4,11 @@
 
 extends Control
 
-var game_over:bool = false
+var game_over: bool = false
 
 onready var home_score:Label = $Score/HomeScore
 onready var away_score:Label = $Score/AwayScore
-onready var goals:Node2D = $Field/Goals
+onready var goals: Node2D = $Field/Goals
 onready var animation_player:AnimationPlayer = $AnimationPlayer
 
 
@@ -58,7 +58,7 @@ func _away_goal() -> void:
 	$Ball/RigidBody2D.on_away_goal()
 		
 	
-func _process(delta:float) -> void:
+func _process(delta: float) -> void:
 	if Global.current_league_game == null &&  (away_score.goals == Global.round_limit || home_score.goals == Global.round_limit) && !game_over:
 		$Field/Commentator.win()
 		game_over = true

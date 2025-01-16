@@ -25,7 +25,8 @@ func _ready() -> void:
 	set_teams()
 	league_label.text = Teams.leagues[league_index].name
 	_set_team_first_time()
-	
+
+
 func _set_team() -> void:
 	var team: Dictionary = teams[team_index]
 	
@@ -47,7 +48,7 @@ func _set_team() -> void:
 
 
 func _set_team_first_time() -> void:
-	var team:Dictionary = teams[team_index]
+	var team: Dictionary = teams[team_index]
 	
 	$Team.texture = team.icon
 	team_label.text = team["name"]
@@ -66,7 +67,8 @@ func _set_team_first_time() -> void:
 			
 	power_bar.value = Global.get_team_power(team)
 	speed_bar.value = Global.get_team_speed(team)
-	
+
+
 func _on_PrevTeam_pressed() -> void:
 	Global.click()
 	team_index -= 1
@@ -182,6 +184,7 @@ func inizialize_matches() -> void:
 #		o += 1
 #		print(str(o) + ": " + matchz["home"]["name"] + " : " + matchz["away"]["name"])
 
+
 func inizialize_worldcup_matches() -> void:
 	Global.matches = []
 	Global.groups = []
@@ -247,22 +250,18 @@ func inizialize_worldcup_matches() -> void:
 	for i in 6:
 		for j in 4:
 			Global.matches.append(group_matches[j][i])
-	print(Global.matches.size())
 	
-	# ritorno
+	# second rund
 	for i in Global.matches.size():
 		var matchz = Global.matches[i]
 		var opposide_match
 		
-		# to make sure you play always at home
+		# make sure you play always at home
 		if matchz["home"]["name"] == Global.selected_squad:
 			opposide_match = {"home": matchz["home"],"away":matchz["away"], "result":":"}
 		else:
 			opposide_match = {"home": matchz["away"],"away":matchz["home"], "result":":"}
 		Global.matches.append(opposide_match)
-		
-	print(Global.matches.size())
-	print(Global.matches.size())
 
 
 func unlock_team(team: Dictionary) -> bool:
@@ -274,7 +273,7 @@ func unlock_team(team: Dictionary) -> bool:
 	return true
 
 
-func _shift_array(array:Array) -> void:
+func _shift_array(array: Array) -> void:
 	var temp = array[0]
 	for i in range(array.size() - 1):
 		array[i] = array[i+1]

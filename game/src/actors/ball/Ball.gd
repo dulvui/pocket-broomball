@@ -6,21 +6,23 @@ extends RigidBody2D
 
 class_name Ball
 
-var max_speed:int = 1800
+var max_speed: int = 1800
 
-var reset_home:bool
-var reset_away:bool
-var stop_home:bool
-var stop_away:bool
+var reset_home: bool
+var reset_away: bool
+var stop_home: bool
+var stop_away: bool
 
-var computer:Node2D
+var computer: Node2D
 
 onready var hit_sound:AudioStreamPlayer2D = $HitSound
+
 
 func _ready() -> void:
 	if get_parent().singleplayer:
 		computer = get_parent().get_parent().get_node("Computer")
 #to set max speed of ball
+
 
 func _integrate_forces(state:Physics2DDirectBodyState) -> void:
 	if abs(get_linear_velocity().x) > max_speed or abs(get_linear_velocity().y) > max_speed:
@@ -66,9 +68,10 @@ func on_away_goal() -> void:
 	stop_away = true
 	yield(get_tree().create_timer(1.5), "timeout")
 	reset_away = true
+
 	
-func _on_RigidBody2D_body_entered(body:Node) -> void:
-	var speed:float = linear_velocity.length()
+func _on_RigidBody2D_body_entered(body: Node) -> void:
+	var speed: float = linear_velocity.length()
 	if body is Computer || body is Player:
 		var impulse:Vector2 = (global_position - body.global_position).normalized() * Global.power_factor  * body.power
 		speed = impulse.length()

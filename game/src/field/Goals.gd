@@ -7,7 +7,7 @@ extends Node2D
 signal home_goal
 signal away_goal
 
-var goal:bool = false
+var goal: bool = false
 
 onready var timer:Timer = $Timer
 
@@ -15,14 +15,14 @@ onready var timer:Timer = $Timer
 func reset() -> void:
 	goal = false
 
-func _on_AwayBallDetector_body_entered(body:Node) -> void:
+func _on_AwayBallDetector_body_entered(body: Node) -> void:
 	if not goal:
 		goal = true
 		timer.start()
 		emit_signal("home_goal")
 
 
-func _on_HomeBallDetector_body_entered(body:Node) -> void:
+func _on_HomeBallDetector_body_entered(body: Node) -> void:
 	if not goal:
 		goal = true
 		timer.start()

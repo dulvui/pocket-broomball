@@ -11,9 +11,9 @@ onready var score_label:Label = $Score
 onready var powerup_timer:Timer = $PowerUpTimer
 onready var effect_timer:Timer = $EffectTimer
 
-var game_over:bool = false
-var score:int = 0
-var collected_coins:int = 0
+var game_over: bool = false
+var score: int = 0
+var collected_coins: int = 0
 
 
 func _ready() -> void:

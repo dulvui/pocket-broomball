@@ -4,13 +4,13 @@
 
 extends Tween
 
-const DURATON:float = 0.2
+const DURATON: float = 0.2
 
-export var node_path:NodePath
-export var node_path2:NodePath
+export var node_path: NodePath
+export var node_path2: NodePath
 
-var node:Node
-var node2:Node
+var node: Node
+var node2: Node
 
 func _ready() -> void:
 	if node_path:

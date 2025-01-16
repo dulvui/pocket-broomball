@@ -21,19 +21,19 @@ func _on_Replay_pressed() -> void:
 	else:
 		get_tree().change_scene("res://src/ui/game/multiplayer/Multiplayer.tscn")
 
-func single_player_winner(win:bool) -> void:
+func single_player_winner(win: bool) -> void:
 	if win:
 		$VBoxContainer/Winner.text = tr("YOU_WIN")
 	else:
 		$VBoxContainer/Winner.text = tr("YOU_LOST")
 		
-func multiplayer_winner(home_win:bool) -> void:
+func multiplayer_winner(home_win: bool) -> void:
 	if home_win:
 		$VBoxContainer/Winner.text = tr("PLAYER_1_WIN")
 	else:
 		$VBoxContainer/Winner.text = tr("PLAYER_2_WIN")
 		
-func bots_winner(home_win:bool) -> void:
+func bots_winner(home_win: bool) -> void:
 	if home_win:
 		$VBoxContainer/Winner.text = tr("BOT_1_WIN")
 	else:

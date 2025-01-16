@@ -11,8 +11,7 @@ onready var goal_stats:Label = $Container/MarginContainer/MarginContainer/VBoxCo
 onready var coins_stats:VBoxContainer = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats
 onready var teams:VBoxContainer = $Container/MarginContainer/MarginContainer/VBoxContainer/Teams
 
-var reward_earned:bool = false
-var coins:int
+var coins: int
 
 
 func _on_Menu_pressed() -> void:
@@ -20,14 +19,15 @@ func _on_Menu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
 
+
 func _on_Gameover_visibility_changed() -> void:
 	if is_visible_in_tree():
-		var home_score:int = get_parent().get_node("Score").get_node("HomeScore").goals
-		var away_score:int = get_parent().get_node("Score").get_node("AwayScore").goals
+		var home_score: int = get_parent().get_node("Score").get_node("HomeScore").goals
+		var away_score: int = get_parent().get_node("Score").get_node("AwayScore").goals
 		
 		# TODO show final stage in worldcup
-		var from:int
-		var to:int
+		var from: int
+		var to: int
 		
 		if Global.is_worldcup:
 			if Global.final_teams.size() == 0 or Global.final_teams.size() == 8: # show last matchday
@@ -62,7 +62,8 @@ func _on_Gameover_visibility_changed() -> void:
 			coins_label.text = str(coins)
 			goal_stats.text = _get_stats(home_score,away_score)
 		get_tree().paused = true
-		
+
+
 func _no_coins() -> bool:
 	if Global.current_league_game.empty():
 		return true
@@ -73,9 +74,10 @@ func _no_coins() -> bool:
 	if Global.current_league_game["away"]["id"] == 0:
 		return true
 	return false
-		
-func _calculateCoinsWin(home_goals:int, away_goals:int) -> void:
-	var win:bool = home_goals > away_goals
+
+
+func _calculateCoinsWin(home_goals: int, away_goals: int) -> void:
+	var win: bool = home_goals > away_goals
 	coins = 0
 	
 	if win:
@@ -89,10 +91,10 @@ func _calculateCoinsWin(home_goals:int, away_goals:int) -> void:
 	if away_goals == 0:
 		coins += 250
 	Global.add_coins(coins)
-	
-	
-func _get_stats(home_goals:int, away_goals:int) -> String:
-	var stats:String
+
+
+func _get_stats(home_goals: int, away_goals: int) -> String:
+	var stats: String
 	if home_goals > away_goals:
 		if away_goals == 0:
 			stats = "750 + 100x%s - 50x%s =" % [home_goals, away_goals]
@@ -101,6 +103,7 @@ func _get_stats(home_goals:int, away_goals:int) -> String:
 	else:
 		stats = "300 + 100x%s - 50x%s =" % [home_goals, away_goals]
 	return stats
+
 
 func _on_GoBack_pressed() -> void:
 	Global.click()

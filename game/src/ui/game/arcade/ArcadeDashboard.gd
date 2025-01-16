@@ -4,9 +4,9 @@
 
 extends Control
 
-onready var speed_bar:TextureProgress = $VBoxContainer/Speed/TextureProgress
-onready var power_bar:TextureProgress = $VBoxContainer/Power/TextureProgress
-onready var freeze_bar:TextureProgress = $VBoxContainer/Freeze/TextureProgress
+onready var speed_bar: TextureProgress = $VBoxContainer/Speed/TextureProgress
+onready var power_bar: TextureProgress = $VBoxContainer/Power/TextureProgress
+onready var freeze_bar: TextureProgress = $VBoxContainer/Freeze/TextureProgress
 
 onready var speed_up_button:Button = $VBoxContainer/Speed/SpeedUp
 onready var freeze_up_button:Button = $VBoxContainer/Freeze/FreezeUp
@@ -28,10 +28,10 @@ func _ready() -> void:
 	$VBoxContainer/Highscore.text = str(Global.arcade_highscore)
 	
 
-func _get_price(n:int) -> String:
+func _get_price(n: int) -> String:
 	return str(_get_price_int(n))
 	
-func _get_price_int(n:int) -> int:
+func _get_price_int(n: int) -> int:
 	if n == 10:
 		return -1
 	var price = 1000

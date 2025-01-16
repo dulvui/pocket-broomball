@@ -5,7 +5,7 @@
 extends Node
 
 enum TYPES {BALL, STICK, HELMET}
-var items:Dictionary = {}
+var items: Dictionary = {}
 
 
 func _ready() -> void:
@@ -248,7 +248,7 @@ func _load_helmets() -> void:
 		}
 
 
-func select(type:String,id:int) -> bool:
+func select(type: String,id: int) -> bool:
 	if id in items[type]["unlocked"]:
 		items[type]["selected"] = id
 		return true
@@ -258,15 +258,15 @@ func select(type:String,id:int) -> bool:
 		return true
 	return false
 	
-func get_texture(type:String,index:int=-1) -> Texture:
+func get_texture(type: String,index: int=-1) -> Texture:
 	if index >= 0:
 		return items[type]["list"][index]["texture"]
 	return items[type]["list"][items[type]["selected"]]["texture"]
 	
-func get_random_texture(type:String) -> Texture:
+func get_random_texture(type: String) -> Texture:
 	return items[type]["list"][randi() % items[type]["list"].size()]["texture"]
 	
-func get_ball_texture(index:int=-1) -> Texture:
+func get_ball_texture(index: int=-1) -> Texture:
 	if index >= 0:
 		return items["BALL"]["list"][index]["texture"]
 	return items["BALL"]["list"][items["BALL"]["selected"]]["texture"]

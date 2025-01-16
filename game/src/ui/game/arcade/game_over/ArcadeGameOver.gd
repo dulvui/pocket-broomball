@@ -4,10 +4,10 @@
 
 extends Control
 
-var revived:bool = false
+var revived: bool = false
 
-var _coins:int = 0
-var _score:int = 0
+var _coins: int = 0
+var _score: int = 0
 
 
 func _ready() -> void:
@@ -15,12 +15,12 @@ func _ready() -> void:
 		$CenterContainer/MarginContainer/VBoxContainer/Highscore.show()
 
 	
-func is_highscore(highscore:int) -> void:
+func is_highscore(highscore: int) -> void:
 	if highscore:
 		$Highscore.play()
 		$NewHighscore.show()
 
-func set_collected_coins_and_score(collected_coins:int ,score:int) -> void:
+func set_collected_coins_and_score(collected_coins: int ,score: int) -> void:
 	_coins = collected_coins
 	_score = score
 	$VBoxContainer/HBoxContainer/Coins.text = str(collected_coins * 50) + "x" + str(score) 

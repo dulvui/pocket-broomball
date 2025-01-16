@@ -4,7 +4,7 @@
 
 extends Control
 
-var show_confirm_pop:bool = true
+var show_confirm_pop: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,6 +57,7 @@ func set_up_championship() -> void:
 	$Content/Table.show()
 	$Content/Table.set_up()
 
+
 func set_up_world_cup() -> void:
 	if Global.final_teams.size() == 0:
 		$Content/GroupStage.set_up()
@@ -79,38 +80,24 @@ func _on_NewChampionship_pressed() -> void:
 		Global.new_league()
 		get_tree().change_scene("res://src/ui/championship/Championship.tscn")
 
+
 func _on_NextMatch_pressed() -> void:
 	Global.click()
 	
-	# check if worldcup
-	# if yes check if groupstage
-	# if not check if still in cup
-	# if not only show results of simulation
-	
 	if Global.is_worldcup:
-		if Global.final_teams.size() == 0:
-			# group stage
-			next_matchday()
+		if next_matchday():
+			# still competing in world cup
 			Global.set_home_team(Global.current_league_game["home"])
 			Global.set_away_team(Global.current_league_game["away"])
 			get_tree().change_scene("res://src/ui/championship/preview/GamePreview.tscn")
 		else:
-			if next_matchday():
-				# finals
-				Global.set_home_team(Global.current_league_game["home"])
-				Global.set_away_team(Global.current_league_game["away"])
-				get_tree().change_scene("res://src/ui/championship/preview/GamePreview.tscn")
-			else: # not in worldcup anymore
-#				Global.game_over(0,0,true)
-#				get_tree().change_scene("res://src/ui/championship/dashboard/Dashboard.tscn")
-				Global.set_home_team({})
-				Global.set_away_team({})
-#
-				Global.current_league_game = {"simulation": true}
-	
-				get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
-	
-	
+			# not in worldcup anymore
+			Global.set_home_team({})
+			Global.set_away_team({})
+
+			Global.current_league_game = {"simulation": true}
+			# opens match but since simulation is set to true, will immedailty show final result
+			get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
 	else:
 		next_matchday()
 		Global.set_home_team(Global.current_league_game["home"])
@@ -119,11 +106,13 @@ func _on_NextMatch_pressed() -> void:
 
 
 func next_matchday() -> bool:
-	for matchz in Global.matches:
+	for i in range(0, Global.matches.size() -1):
+		var matchz: Dictionary = Global.matches[i]
 		if matchz["result"] == ":" and matchz["home"]["name"] == Global.selected_squad:
 			Global.current_league_game = matchz
 			return true
-	return false # retunrs fasle if out of worldcup
+	return false # returns false if out of worldcup
+
 
 func get_league_prize() -> int:
 	# TODO world cup league prize
@@ -146,7 +135,6 @@ func get_league_prize() -> int:
 					_:
 						return 1000 * Global.teams.size()
 	return 1000
-
 
 
 func _on_Cancel_pressed() -> void:
