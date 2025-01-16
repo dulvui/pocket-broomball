@@ -21,8 +21,7 @@ var freeze: bool = false
 var shooting_time: float = 0
 
 onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
-onready var player: Player = get_parent().get_node("Player");
-onready var ball: RigidBody2D = get_parent().get_node("Ball").get_node("RigidBody2D");
+onready var ball: RigidBody2D = get_parent().get_node("Ball").get_node("RigidBody2D")
 
 
 func _ready() -> void:
@@ -68,11 +67,11 @@ func _physics_process(delta: float) -> void:
 		direction = global_position.direction_to(destination)
 	
 	# move
-	var distance_to_player = global_position.distance_to(destination)
-	if not freeze:
-		move_and_slide(direction * speed * Global.speed_factor * distance_to_player)
+	var distance: float = global_position.distance_to(destination)
+	if freeze:
+		move_and_slide(direction * speed * Global.speed_factor * distance * 0.1)
 	else:
-		move_and_slide(direction * speed * Global.speed_factor * distance_to_player * 0.1)
+		move_and_slide(direction * speed * Global.speed_factor * distance)
 		
 	look_at(ballpos)
 
