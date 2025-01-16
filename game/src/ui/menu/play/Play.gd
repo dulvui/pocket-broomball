@@ -28,6 +28,8 @@ func _on_OneVsOne_pressed() -> void:
 	Global.set_away_team({})
 	Global.home_team_power = 10
 	Global.home_team_speed = 10
+	Global.away_team_power = 10
+	Global.away_team_speed = 10
 	get_tree().change_scene("res://src/ui/game/multiplayer/Multiplayer.tscn")
 
 
@@ -39,7 +41,7 @@ func _on_BotVsBot_pressed() -> void:
 	Global.away_team_speed = 10
 	Global.home_team_power = 2
 	Global.home_team_speed = 2
-	get_tree().change_scene("res://src/ui/game/bots/Bots.tscn")
+	get_tree().change_scene("res://src/ui/bots-difficulty/BotsDifficultySelection.tscn")
 
 
 func _on_Back_pressed() -> void:
