@@ -5,20 +5,20 @@
 extends KinematicBody2D
 class_name Computer
 
-export var opposite:bool = false
+export var opposite: bool = false
 
-var speed:float = 1.0
-var power:int = 1
+var speed: float = 1.0
+var power: int = 1
 
-var destination:Vector2
-var direction:Vector2
-var hit_pos:Position2D
+var destination: Vector2
+var direction: Vector2
+var hit_pos: Position2D
 
-var freeze:bool = false
+var freeze: bool = false
 
-onready var animation_player:AnimationPlayer = $Body/AnimationPlayer
-onready var player:Player = get_parent().get_node("Player");
-onready var ball:RigidBody2D = get_parent().get_node("Ball").get_node("RigidBody2D");
+onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
+onready var player: Player = get_parent().get_node("Player");
+onready var ball: RigidBody2D = get_parent().get_node("Ball").get_node("RigidBody2D");
 
 
 func _ready() -> void:
@@ -31,21 +31,24 @@ func _ready() -> void:
 	else:
 		hit_pos = ball.get_node("ComputerHitPosition")
 
-func _physics_process(delta:float) -> void:
-	var ballpos:Vector2 = ball.global_position
+
+func _physics_process(delta: float) -> void:
+	var ballpos: Vector2 = ball.global_position
 	
+	# set destination
 	if opposite:
-		if ballpos.y > 640  and ballpos.y < global_position.y:
+		if ballpos.y > 640 and ballpos.y < global_position.y:
 			destination = hit_pos.global_position
 		else:
-			destination = Vector2(ballpos.x,1280 - 120)
+			destination = Vector2(ballpos.x, 1280 - 120)
 	else:
-		if ballpos.y < 640  and ballpos.y > global_position.y:
+		if ballpos.y < 640 and ballpos.y > global_position.y:
 			destination = hit_pos.global_position
 		else:
-			destination = Vector2(ballpos.x,120)
+			destination = Vector2(ballpos.x, 120)
 	
-	direction = (destination - global_position).normalized()
+	#move
+	direction = global_position.direction_to(destination)
 	var distance_to_player = global_position.distance_to(destination)
 	if not freeze:
 		move_and_slide(direction * speed * Global.speed_factor * distance_to_player)
@@ -55,8 +58,9 @@ func _physics_process(delta:float) -> void:
 	look_at(ballpos)
 
 
-func _on_ChargeDetector_body_entered(body:Node) -> void:
+func _on_ChargeDetector_body_entered(body: Node) -> void:
 	animation_player.play("Charge")
+
 
 func level_up() -> void:
 	speed += 0.05
@@ -66,5 +70,6 @@ func level_up() -> void:
 	if power > 4:
 		power = 4
 
-func _on_ChargeDetector_body_exited(body:Node) -> void:
+
+func _on_ChargeDetector_body_exited(body: Node) -> void:
 	animation_player.play("Shoot")
