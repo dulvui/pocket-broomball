@@ -5,7 +5,7 @@
 extends KinematicBody2D
 class_name Computer
 
-export var opposite: bool = false
+export var lower_half: bool = false
 
 var speed: float = 1.0
 var power: int = 1
@@ -26,7 +26,7 @@ func _ready() -> void:
 		speed = Global.away_team_speed / 3
 	if Global.away_team_power: 
 		power = Global.away_team_power
-	if opposite:
+	if lower_half:
 		hit_pos = ball.get_node("ComputerHitPosition2")
 	else:
 		hit_pos = ball.get_node("ComputerHitPosition")
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	var ballpos: Vector2 = ball.global_position
 	
 	# set destination
-	if opposite:
+	if lower_half:
 		if ballpos.y > 640 and ballpos.y < global_position.y:
 			destination = hit_pos.global_position
 		else:

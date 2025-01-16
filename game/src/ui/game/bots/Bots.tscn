@@ -67,7 +67,7 @@ position = Vector2( 358.436, 266.879 )
 [node name="Computer2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 378, 1022 )
 collision_mask = 7
-opposite = true
+lower_half = true
 
 [node name="Pause" parent="." instance=ExtResource( 7 )]
 
