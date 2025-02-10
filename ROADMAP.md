@@ -27,15 +27,15 @@ Features/issues that will [probably] be added/solved in future
 List of features that are currently worked on.
 
 - The possibility to change speed and power breaks the game mechanics - https://github.com/dulvui/pocket-broomball/issues/39
-- Game occasionally stuck if the Bot opponent jams the ball against the wall - https://github.com/dulvui/pocket-broomball/issues/40
-- In World Cup the quarter-final match is skipped if you're on the right side of the table - https://github.com/dulvui/pocket-broomball/issues/41
-- progressive knockback on ball hits - https://github.com/dulvui/pocket-broomball/issues/23
 
 ## Done 
 Features/issues that are added/solved in specific version
 
 - 6.1.0
     - bot vs bot with custom difficulties - https://github.com/dulvui/pocket-broomball/issues/26
+    - Game occasionally stuck if the Bot opponent jams the ball against the wall - https://github.com/dulvui/pocket-broomball/issues/40
+    - In World Cup the quarter-final match is skipped if you're on the right side of the table - https://github.com/dulvui/pocket-broomball/issues/41
+    - progressive knockback on ball hits - https://github.com/dulvui/pocket-broomball/issues/23
 
 - 6.0.0
     - New team in Ontario League: Mildmay Moose

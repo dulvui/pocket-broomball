@@ -1,0 +1,4 @@
+- Added: Bot vs Bot power and speed can be changed
+- Fixed: Game occasionally stuck if the Bot opponent jams the ball against the wall
+- Fixed: In World Cup the quarter-final match is skipped if you're on the right side of the table
+- Fixed: progressive knockback on ball hits
