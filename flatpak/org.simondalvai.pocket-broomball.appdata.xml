@@ -65,6 +65,17 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="6.1.0" date="2025-02-10">
+      <description>
+        <ul>
+          <li>Added: Bot vs Bot power and speed can be changed</li>
+          <li>Fixed: Game occasionally stuck if the Bot opponent jams the ball against the wall</li>
+          <li>Fixed: In World Cup the quarter-final match is skipped if you're on the right side of the table</li>
+          <li>Fixed: progressive knockback on ball hits</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/pocket-broomball/releases/tag/v6.1.0</url>
+    </release>
     <release version="6.0.0" date="2024-10-27">
       <description>
         <ul>
