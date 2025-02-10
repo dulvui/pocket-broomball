@@ -12,13 +12,13 @@ var current_index: Dictionary = {
 	"HELMET": 0,
 }
 
-onready var type_label:Label = $Content/Type/Label
-onready var price_label:Label = $Content/ItemButtons/Price
-onready var buy_button:Button = $Content/VBoxContainer/Buy
-onready var current_item:Sprite = $Objects/CurrentItem
-onready var ball:Sprite = $Objects/Ball
+onready var type_label: Label = $Content/Type/Label
+onready var price_label: Label = $Content/ItemButtons/Price
+onready var buy_button: Button = $Content/VBoxContainer/Buy
+onready var current_item: Sprite = $Objects/CurrentItem
+onready var ball: Sprite = $Objects/Ball
 onready var animated_body: Node2D = $Objects/AnimatedBody
-onready var locker:AnimatedSprite = $Objects/Locker
+onready var locker: AnimatedSprite = $Objects/Locker
 
 func _ready() -> void:
 	current_index["BALL"] = ShopUtil.items["BALL"]["selected"]
@@ -107,3 +107,5 @@ func _update() -> void:
 		current_item.scale = Vector2(4,4)
 	else:
 		current_item.scale = Vector2(8,8)
+
+

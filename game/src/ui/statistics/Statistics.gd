@@ -4,15 +4,15 @@
 
 extends Control
 
-onready var statistics:GridContainer = $Statistics
+onready var statistics: GridContainer = $Statistics
 
 func _ready() -> void:
 	for league in Global.league_stats:
-		var name_label:Label = Label.new()
+		var name_label: Label = Label.new()
 		name_label.set_text(league)
 		statistics.add_child(name_label)
 		
-		var stats_label:Label = Label.new()
+		var stats_label: Label = Label.new()
 		var wins: int = Global.league_stats[league]["win"]
 		var played: int = Global.league_stats[league]["played"]
 		stats_label.set_text("%d/%d"%[wins,played])

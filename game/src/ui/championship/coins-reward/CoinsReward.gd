@@ -6,6 +6,7 @@ extends Control
 
 signal next
 
+
 func _on_Continue_pressed() -> void:
 	emit_signal("next")
 	hide()

@@ -11,7 +11,7 @@ func _ready() -> void:
 	Global.current_league_game = {}
 	Global.home_team_power = 10
 	Global.home_team_speed = 10
-	
+
 
 func _on_Easy_pressed() -> void:
 	Global.click()
@@ -32,7 +32,6 @@ func _on_Hard_pressed() -> void:
 	Global.away_team_power = 6
 	Global.away_team_speed = 6
 	get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")
-	
 
 
 func _on_Extreme_pressed() -> void:

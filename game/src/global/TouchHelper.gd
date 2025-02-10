@@ -15,23 +15,24 @@ var away_pressed = false
 var state = {}
 var _os2own = {}
 
+
 func _input(event):
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			# Down
-			if !_os2own.has(event.index): # Defensively discard index if already known
+			if !_os2own.has(event.index):  # Defensively discard index if already known
 				if event.position.y > 640:
 					if !home_pressed:
 						home_pressed = true
-						state["home"] = event.position - Vector2(0,80) #to make plazer above finger
+						state["home"] = event.position - Vector2(0, 80)  #to make plazer above finger
 						_os2own[event.index] = "home"
 				elif !away_pressed:
 					away_pressed = true
-					state["away"] = event.position + Vector2(0,80)
+					state["away"] = event.position + Vector2(0, 80)
 					_os2own[event.index] = "away"
 		else:
 			# Up
-			if _os2own.has(event.index): # Defensively discard index if not known
+			if _os2own.has(event.index):  # Defensively discard index if not known
 				var ptr_id = _os2own[event.index]
 				state.erase(ptr_id)
 				_os2own.erase(event.index)
@@ -43,15 +44,16 @@ func _input(event):
 
 	elif event is InputEventScreenDrag:
 		# Move
-		if _os2own.has(event.index): # Defensively discard index if not known
+		if _os2own.has(event.index):  # Defensively discard index if not known
 			var ptr_id = _os2own[event.index]
 			if ptr_id == "home":
-				state[ptr_id] = event.position - Vector2(0,80)
+				state[ptr_id] = event.position - Vector2(0, 80)
 			else:
-				state[ptr_id] = event.position + Vector2(0,80)
+				state[ptr_id] = event.position + Vector2(0, 80)
 		return true
 
 	return false
+
 
 func reset():
 	home_pressed = false

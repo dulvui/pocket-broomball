@@ -6,6 +6,7 @@ extends Control
 
 var game_over: bool = false
 
+
 func _ready() -> void:
 	get_tree().paused = false
 	TouchHelper.reset()
@@ -15,17 +16,24 @@ func _ready() -> void:
 		$Field/Sounds/Crowd.play()
 
 	var goals: Node2D = $Field/Goals
-	goals.connect("away_goal",$Score/AwayScore,"goal")
-	goals.connect("home_goal",$Score/HomeScore,"goal")
-	goals.connect("away_goal",$Field,"goal_sound")
-	goals.connect("home_goal",$Field,"goal_sound")
-	goals.connect("away_goal",$Field/Commentator,"away_goal")
-	goals.connect("home_goal",$Field/Commentator,"home_goal")
-	goals.connect("away_goal",$Ball/RigidBody2D,"on_away_goal")
-	goals.connect("home_goal",$Ball/RigidBody2D,"on_home_goal")
-	
+	goals.connect("away_goal", $Score/AwayScore, "goal")
+	goals.connect("home_goal", $Score/HomeScore, "goal")
+	goals.connect("away_goal", $Field, "goal_sound")
+	goals.connect("home_goal", $Field, "goal_sound")
+	goals.connect("away_goal", $Field/Commentator, "away_goal")
+	goals.connect("home_goal", $Field/Commentator, "home_goal")
+	goals.connect("away_goal", $Ball/RigidBody2D, "on_away_goal")
+	goals.connect("home_goal", $Ball/RigidBody2D, "on_home_goal")
+
+
 func _process(delta: float) -> void:
-	if !game_over && ($Score/AwayScore.goals == Global.round_limit || $Score/HomeScore.goals == Global.round_limit):
+	if (
+		!game_over
+		&& (
+			$Score/AwayScore.goals == Global.round_limit
+			|| $Score/HomeScore.goals == Global.round_limit
+		)
+	):
 		game_over = true
 		$Pause.queue_free()
 		$Player.queue_free()

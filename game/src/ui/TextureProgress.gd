@@ -4,7 +4,7 @@
 
 extends TextureProgress
 
-export(String, "POWER", "SPEED", "FREEZE") var text = "POWER"
+export(String, "POWER", "SPEED", "FREEZE") var text: String = "POWER"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

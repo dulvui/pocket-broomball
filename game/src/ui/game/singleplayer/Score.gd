@@ -4,10 +4,9 @@
 
 extends Label
 
-
 var goals: int = 0
-	
-	
+
+
 func goal() -> void:
 	goals += 1
 	set_text(str(goals))

@@ -7,29 +7,34 @@ extends Node2D
 var home_goals: int = 0
 var away_goals: int = 0
 
+
 func _ready() -> void:
 	if Global.sfx:
 		$Ready.play()
-	
+
 
 func _on_Ready_finished() -> void:
 	if Global.sfx:
 		$Go.play()
-	
+
+
 func win() -> void:
 	if Global.sfx:
 		$Win.play()
-		
+
+
 func loose() -> void:
 	if Global.sfx:
 		$Loose.play()
-		
+
+
 func home_goal() -> void:
 	home_goals += 1
 	_play_goal(home_goals)
 	yield(get_tree().create_timer(0.5), "timeout")
 	_play_goal(away_goals)
-	
+
+
 func away_goal() -> void:
 	away_goals += 1
 	_play_goal(home_goals)

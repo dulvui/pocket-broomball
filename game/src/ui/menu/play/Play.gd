@@ -4,6 +4,7 @@
 
 extends Control
 
+
 func _on_League_pressed() -> void:
 	Global.click()
 	if Global.league_started:
@@ -47,4 +48,3 @@ func _on_BotVsBot_pressed() -> void:
 func _on_Back_pressed() -> void:
 	Global.click()
 	get_tree().change_scene("res://src/ui/menu/MenuScreen.tscn")
-

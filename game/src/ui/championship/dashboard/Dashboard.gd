@@ -6,18 +6,18 @@ extends Control
 
 var show_confirm_pop: bool = true
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	# show matchday
 	if Global.match_day > 0:
 		if Global.is_worldcup:
-			$Content/Matchday.text = ("%s/" % (Global.match_day) )+ str(9)
+			$Content/Matchday.text = ("%s/" % (Global.match_day)) + str(9)
 		else:
-			$Content/Matchday.text = ("%s/" % (Global.match_day) )+ str(Global.teams.size() -1)
+			$Content/Matchday.text = ("%s/" % (Global.match_day)) + str(Global.teams.size() - 1)
 	else:
 		$Content/Matchday.text = ""
-	
+
 	if Global.is_worldcup:
 		if Global.match_day > 8:
 			var prize = get_league_prize()
@@ -46,7 +46,7 @@ func _ready() -> void:
 			Global.save_all_data()
 		else:
 			$Content/Buttons/HBoxContainer.hide()
-	
+
 	if Global.is_worldcup:
 		set_up_world_cup()
 	else:
@@ -65,7 +65,7 @@ func set_up_world_cup() -> void:
 	else:
 		$Content/FinalStage.set_up()
 		$Content/FinalStage.show()
-		
+
 
 func _on_GoBack_pressed() -> void:
 	Global.click()
@@ -83,7 +83,7 @@ func _on_NewChampionship_pressed() -> void:
 
 func _on_NextMatch_pressed() -> void:
 	Global.click()
-	
+
 	if Global.is_worldcup:
 		if next_matchday():
 			# still competing in world cup
@@ -106,17 +106,17 @@ func _on_NextMatch_pressed() -> void:
 
 
 func next_matchday() -> bool:
-	for i in range(0, Global.matches.size() -1):
+	for i in range(0, Global.matches.size() - 1):
 		var matchz: Dictionary = Global.matches[i]
 		if matchz["result"] == ":" and matchz["home"]["name"] == Global.selected_squad:
 			Global.current_league_game = matchz
 			return true
-	return false # returns false if out of worldcup
+	return false  # returns false if out of worldcup
 
 
 func get_league_prize() -> int:
 	# TODO world cup league prize
-	
+
 	if Global.is_worldcup:
 		if Global.final_teams[0]["name"] == Global.selected_squad:
 			return 250000

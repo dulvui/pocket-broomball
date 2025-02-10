@@ -40,7 +40,6 @@ var away_team_power: int
 
 var league_started: bool
 
-
 # league
 var teams: Array
 var matches: Array = []
@@ -50,12 +49,11 @@ var teams_mods: Dictionary
 # worldcup
 var is_worldcup: bool
 #var is_group_stage # if group stage or final stage
-var is_in_worlcup: bool # if group stage or final stage
+var is_in_worlcup: bool  # if group stage or final stage
 
 # to save teams for table, but matches has normal matches so no new var is needed
 var groups: Array = []
 var final_teams: Array = []
-
 
 var match_day: int
 var current_league_game: Dictionary
@@ -85,31 +83,31 @@ func _ready() -> void:
 
 func set_up() -> void:
 	load_data()
-	
+
 	TranslationServer.set_locale(locale)
-	
+
 	# to unlock national teams
 #	for i in range(-1,-20,-1):
 #		unlocked_team_ids.append(i)
-	
+
 	if first_open:
 		first_open = false
 #		new_league()
 #		save_all_data()
-		config.set_value("first_open", version,first_open)
+		config.set_value("first_open", version, first_open)
 		save()
-	
+
 	if music == "chill":
 		music_loop = $ChillMusic
 	if music == "energetic":
 		music_loop = $Music
-	
+
 	if music == "off":
 		music_loop = $ChillMusic
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), true)
-	
+
 	music_loop.play()
-		
+
 	if not sfx:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Sfx"), true)
 
@@ -117,7 +115,7 @@ func set_up() -> void:
 func load_data() -> void:
 	config = ConfigFile.new()
 	config.load("user://settings.cfg")
-	
+
 	# general
 	locale = config.get_value("i18n", "locale", locale_to_lang(TranslationServer.get_locale()))
 	first_open = config.get_value("first_open", version, true)
@@ -125,43 +123,40 @@ func load_data() -> void:
 	music = config.get_value("sound", "music-type", "chill")
 	coins = config.get_value("coins", "amount", 0)
 	round_limit = config.get_value("game", "round_limit", 5)
-	
+
 	#league
 	league_prize_rewarded = config.get_value("league", "prize_rewarded", false)
 	matches = config.get_value("league", "matches", [])
 	match_day = config.get_value("league", "match_day", 0)
-	unlocked_team_ids = config.get_value("league", "unlocked_team_ids", [1,2,-1,-2])
+	unlocked_team_ids = config.get_value("league", "unlocked_team_ids", [1, 2, -1, -2])
 	teams_mods = config.get_value("league", "teams_mods", {})
-	
+
 	#unlock india and germany, if not unlocked yet
 	if not -1 in unlocked_team_ids:
 		unlocked_team_ids.append(-1)
 		unlocked_team_ids.append(-2)
-	
+
 	league_started = config.get_value("league", "league_started", false)
 	selected_squad = config.get_value("league", "selected_squad", "")
 	if not config.has_section_key("league", "statistics"):
 		league_stats = {}
 		for league in Teams.leagues:
-			var league_stat = {
-				"win" : 0,
-				"played" : 0
-			}
+			var league_stat = {"win": 0, "played": 0}
 			league_stats[league["name"]] = league_stat
 	else:
 		league_stats = config.get_value("league", "statistics")
 	current_league_name = config.get_value("league", "current_league_name", "")
-	teams = config.get_value("league","teams", [])
-	
+	teams = config.get_value("league", "teams", [])
+
 	# arcade
 	arcade_highscore = config.get_value("arcade", "highscore", 0)
 	arcade_speed = config.get_value("arcade", "speed", 1)
 	arcade_power = config.get_value("arcade", "power", 1)
 	arcade_freeze = config.get_value("arcade", "freeze", 1)
-	
+
 	# worldcup
-	is_worldcup = config.get_value("worldcup","is_worldcup", false)
-	is_in_worlcup = config.get_value("worldcup","is_in_worlcup", false)
+	is_worldcup = config.get_value("worldcup", "is_worldcup", false)
+	is_in_worlcup = config.get_value("worldcup", "is_in_worlcup", false)
 	groups = config.get_value("worldcup", "groups", [])
 	final_teams = config.get_value("worldcup", "final_teams", [])
 #	is_group_stage = config.get_value("worldcup", "is_group_stage", true)
@@ -175,37 +170,37 @@ func load_data() -> void:
 func save_all_data() -> void:
 	# general
 	config.set_value("i18n", "locale", locale)
-	config.set_value("first_open", version,first_open)
-	config.set_value("coins","amount",coins)
-	config.set_value("sound","sfx",sfx)
-	config.set_value("sound","music-type",music)
-	config.set_value("sound","music-type",music)
+	config.set_value("first_open", version, first_open)
+	config.set_value("coins", "amount", coins)
+	config.set_value("sound", "sfx", sfx)
+	config.set_value("sound", "music-type", music)
+	config.set_value("sound", "music-type", music)
 	config.set_value("game", "round_limit", round_limit)
-	
+
 	# league
-	config.set_value("league","match_day", match_day)
-	config.set_value("league","league_started", league_started)
-	config.set_value("league","unlocked_team_ids", unlocked_team_ids)
-	config.set_value("league","selected_squad", selected_squad)
-	config.set_value("league","teams", teams)
+	config.set_value("league", "match_day", match_day)
+	config.set_value("league", "league_started", league_started)
+	config.set_value("league", "unlocked_team_ids", unlocked_team_ids)
+	config.set_value("league", "selected_squad", selected_squad)
+	config.set_value("league", "teams", teams)
 	config.set_value("league", "prize_rewarded", league_prize_rewarded)
-	config.set_value("league","matches", matches)
+	config.set_value("league", "matches", matches)
 	config.set_value("league", "statistics", league_stats)
 	config.set_value("league", "current_league_name", current_league_name)
 	config.set_value("league", "teams_mods", teams_mods)
-	
+
 	# arcade
 	config.set_value("arcade", "highscore", arcade_highscore)
 	config.set_value("arcade", "speed", arcade_speed)
 	config.set_value("arcade", "power", arcade_power)
 	config.set_value("arcade", "freeze", arcade_freeze)
-	
+
 	# worldcup
-	config.set_value("worldcup","is_worldcup", is_worldcup)
-	config.set_value("worldcup","is_in_worlcup", is_in_worlcup)
+	config.set_value("worldcup", "is_worldcup", is_worldcup)
+	config.set_value("worldcup", "is_in_worlcup", is_in_worlcup)
 #	config.set_value("worldcup","is_group_stage", is_group_stage)
-	config.set_value("worldcup","final_teams", final_teams)
-	config.set_value("worldcup","groups", groups)
+	config.set_value("worldcup", "final_teams", final_teams)
+	config.set_value("worldcup", "groups", groups)
 
 	#shop
 	for type in ShopUtil.TYPES.keys():
@@ -216,11 +211,11 @@ func save_all_data() -> void:
 
 
 func locale_to_lang(_locale: String) -> String:
-	if "en" in  _locale:
+	if "en" in _locale:
 		return "en"
-	elif "de" in  _locale:
+	elif "de" in _locale:
 		return "de"
-	elif "it" in  _locale:
+	elif "it" in _locale:
 		return "it"
 	else:
 		return "en"
@@ -254,7 +249,7 @@ func _find_team(name: String) -> Dictionary:
 	return {}
 
 
-func toggle_music()  -> void:
+func toggle_music() -> void:
 	if music == "off":
 		music = "chill"
 		music_loop.stop()
@@ -269,7 +264,7 @@ func toggle_music()  -> void:
 	else:
 		music = "off"
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), true)
-	config.set_value("sound","music-type",music)
+	config.set_value("sound", "music-type", music)
 	save()
 
 
@@ -277,52 +272,52 @@ func save() -> void:
 	config.save("user://settings.cfg")
 
 
-func game_over(home_goals: int,away_goals: int, simulation: bool = false) -> void:
+func game_over(home_goals: int, away_goals: int, simulation: bool = false) -> void:
 	if not current_league_game.empty() or simulation:
 		if is_worldcup:
 			# group stage TODO make better since league after 6 is broken
 			if match_day < 5:
 				random_world_cup_results()
 				_save_current_game(home_goals, away_goals)
-			elif match_day == 5: # create final stage
+			elif match_day == 5:  # create final stage
 				random_world_cup_results()
 				_save_current_game(home_goals, away_goals)
 				create_quarter_finals()
-				
-			elif match_day == 6: # semi stage
+
+			elif match_day == 6:  # semi stage
 				# calc random results, HOW TO SIMULATE IF NOT PLAYING ANYMORE?
 				# prize is given after cup finished
 				final_teams = []
-				
+
 				if not simulation:
 					_save_current_game(home_goals, away_goals)
-					if home_goals > away_goals: # win, go to seminfinals
+					if home_goals > away_goals:  # win, go to seminfinals
 						final_teams.append(current_league_game["home"])
 					else:
 						final_teams.append(current_league_game["away"])
-					
+
 				# random result for other matches
-				for i in range(-5,-1):
-					if matches[i+1]["home"]["name"] != selected_squad:
-						if randi()%2 == 0:
-							final_teams.append(matches[i+1]["home"])
-							matches[i+1]["result"] = str(5) + ":" + str(randi() % 5)
+				for i in range(-5, -1):
+					if matches[i + 1]["home"]["name"] != selected_squad:
+						if randi() % 2 == 0:
+							final_teams.append(matches[i + 1]["home"])
+							matches[i + 1]["result"] = str(5) + ":" + str(randi() % 5)
 						else:
-							final_teams.append(matches[i+1]["away"])
-							matches[i+1]["result"] = str(randi() % 5) + ":" + str(5)
-							
+							final_teams.append(matches[i + 1]["away"])
+							matches[i + 1]["result"] = str(randi() % 5) + ":" + str(5)
+
 				if final_teams.size() != 4:
 					print("ERROR SEMIFINAL TEAMS ARE NOT 4")
-				
-				matches.append({"home": final_teams[0],"away":final_teams[1], "result":":"})
-				matches.append({"home": final_teams[2],"away":final_teams[3], "result":":"})
-				
-			elif match_day == 7: # semi final
+
+				matches.append({"home": final_teams[0], "away": final_teams[1], "result": ":"})
+				matches.append({"home": final_teams[2], "away": final_teams[3], "result": ":"})
+
+			elif match_day == 7:  # semi final
 				final_teams = []
-				
+
 				if not simulation:
 					_save_current_game(home_goals, away_goals)
-					if home_goals > away_goals: # win, go to seminfinals
+					if home_goals > away_goals:  # win, go to seminfinals
 						final_teams.append(current_league_game["home"])
 					else:
 						final_teams.append(current_league_game["away"])
@@ -333,7 +328,7 @@ func game_over(home_goals: int,away_goals: int, simulation: bool = false) -> voi
 					else:
 						final_teams.append(matches[-2]["away"])
 						matches[-2]["result"] = str(randi() % 5) + ":" + str(5)
-				
+
 				# random result for other matches
 				if randi() % 2 == 0:
 					final_teams.append(matches[-1]["home"])
@@ -341,15 +336,15 @@ func game_over(home_goals: int,away_goals: int, simulation: bool = false) -> voi
 				else:
 					final_teams.append(matches[-1]["away"])
 					matches[-1]["result"] = str(randi() % 5) + ":" + str(5)
-				
+
 				# add final match
-				matches.append({"home": final_teams[0],"away": final_teams[1], "result":":"})
+				matches.append({"home": final_teams[0], "away": final_teams[1], "result": ":"})
 			else:
 				final_teams = []
 				# FINAL finished, worldcup end
 				if not simulation:
 					_save_current_game(home_goals, away_goals)
-					
+
 					if home_goals > away_goals:
 						final_teams.append(current_league_game["home"])
 					else:
@@ -361,21 +356,21 @@ func game_over(home_goals: int,away_goals: int, simulation: bool = false) -> voi
 					else:
 						final_teams.append(matches[-1]["away"])
 						matches[-1]["result"] = str(randi() % 5) + ":" + str(5)
-		
+
 		# normal league
 		else:
 			random_results()
 			_save_current_game(home_goals, away_goals)
-			
+
 		match_day += 1
 		save_all_data()
 
 
-func _save_current_game(home_goals: int,away_goals: int) -> void:
+func _save_current_game(home_goals: int, away_goals: int) -> void:
 	if "home" in current_league_game and "away" in current_league_game:
 		var home_team = _get_team_from_name(current_league_game["home"]["name"])
 		var away_team = _get_team_from_name(current_league_game["away"]["name"])
-		
+
 		if away_team["id"] != 0:
 			if home_goals > away_goals:
 				home_team["wins"] += 1
@@ -385,12 +380,12 @@ func _save_current_game(home_goals: int,away_goals: int) -> void:
 				away_team["wins"] += 1
 				away_team["points"] += 3
 				home_team["lost"] += 1
-			
+
 		away_team["goal_difference"] += away_goals - home_goals
 		home_team["goal_difference"] += home_goals - away_goals
-			
+
 		current_league_game["result"] = str(home_goals) + " : " + str(away_goals)
-		
+
 		sort_table()
 
 
@@ -400,24 +395,24 @@ func sort_table() -> void:
 			group.sort_custom(PointsSorter, "sort")
 	else:
 		teams.sort_custom(PointsSorter, "sort")
-		for i in range(0,teams.size()):
+		for i in range(0, teams.size()):
 			teams[i]["position"] = i
 
 
 func create_quarter_finals() -> void:
 	# create final teams
-	final_teams.append(groups[0][0]) # A1
-	final_teams.append(groups[0][1]) # A2
-	
-	final_teams.append(groups[1][0]) # B1
-	final_teams.append(groups[1][1]) # B2
-	
-	final_teams.append(groups[2][0]) # C1
-	final_teams.append(groups[2][1]) # C2
-	
-	final_teams.append(groups[3][0]) # D1
-	final_teams.append(groups[3][1]) # D2
-	
+	final_teams.append(groups[0][0])  # A1
+	final_teams.append(groups[0][1])  # A2
+
+	final_teams.append(groups[1][0])  # B1
+	final_teams.append(groups[1][1])  # B2
+
+	final_teams.append(groups[2][0])  # C1
+	final_teams.append(groups[2][1])  # C2
+
+	final_teams.append(groups[3][0])  # D1
+	final_teams.append(groups[3][1])  # D2
+
 	matches.append({"home": groups[0][0], "away": groups[1][1], "result": ":"})
 	matches.append({"home": groups[1][0], "away": groups[2][1], "result": ":"})
 	matches.append({"home": groups[2][0], "away": groups[3][1], "result": ":"})
@@ -441,14 +436,17 @@ func random_world_cup_results() -> void:
 	var from: int = match_day * 8
 	var to: int = (match_day + 1) * 8
 	for i in range(from, to):
-		if matches[i]["home"]["name"] != selected_squad and matches[i]["away"]["name"] != selected_squad:
+		if (
+			matches[i]["home"]["name"] != selected_squad
+			and matches[i]["away"]["name"] != selected_squad
+		):
 			var home_team: Dictionary = _get_team_from_name(matches[i]["home"]["name"])
 			var away_team: Dictionary = _get_team_from_name(matches[i]["away"]["name"])
-			
+
 			var home_win: int = randi() % 2
 			var home_goals: int
 			var away_goals: int
-			
+
 			# break team
 			if home_team["id"] == 0:
 				away_goals = 0
@@ -456,7 +454,7 @@ func random_world_cup_results() -> void:
 			elif away_team["id"] == 0:
 				home_goals = 0
 				away_goals = 0
-				
+
 			elif home_win:
 				home_goals = 5
 				away_goals = randi() % 5
@@ -469,26 +467,29 @@ func random_world_cup_results() -> void:
 				away_team["wins"] += 1
 				away_team["points"] += 3
 				home_team["lost"] += 1
-				
+
 			away_team["goal_difference"] += away_goals - home_goals
 			home_team["goal_difference"] += home_goals - away_goals
-			
+
 			matches[i]["result"] = str(home_goals) + " : " + str(away_goals)
 
 
 func random_results() -> void:
 	var from: int = match_day * (teams.size() / 2)
 	var to: int = (match_day + 1) * (teams.size() / 2)
-	
-	for i in range(from,to):
-		if matches[i]["home"]["name"] != selected_squad and matches[i]["away"]["name"] != selected_squad:
+
+	for i in range(from, to):
+		if (
+			matches[i]["home"]["name"] != selected_squad
+			and matches[i]["away"]["name"] != selected_squad
+		):
 			var home_team: Dictionary = _get_team_from_name(matches[i]["home"]["name"])
 			var away_team: Dictionary = _get_team_from_name(matches[i]["away"]["name"])
-			
-			var home_win: bool = randi()&1
+
+			var home_win: bool = randi() & 1
 			var home_goals: int
 			var away_goals: int
-			
+
 			# break team
 			if home_team["id"] == 0:
 				away_goals = 0
@@ -496,29 +497,29 @@ func random_results() -> void:
 			elif away_team["id"] == 0:
 				home_goals = 0
 				away_goals = 0
-				
+
 			elif home_win:
 				home_goals = 5
-				away_goals = randi()%5
+				away_goals = randi() % 5
 				home_team["wins"] += 1
 				home_team["points"] += 3
 				away_team["lost"] += 1
 			else:
 				away_goals = 5
-				home_goals = randi()%5
+				home_goals = randi() % 5
 				away_team["wins"] += 1
 				away_team["points"] += 3
 				home_team["lost"] += 1
-				
+
 			away_team["goal_difference"] += away_goals - home_goals
 			home_team["goal_difference"] += home_goals - away_goals
-			
+
 			matches[i]["result"] = str(home_goals) + " : " + str(away_goals)
 
 
 func add_coins(more: int) -> void:
 	coins += more
-	config.set_value("coins","amount",coins)
+	config.set_value("coins", "amount", coins)
 	save()
 
 
@@ -526,7 +527,7 @@ func use_coins(less: int) -> bool:
 	if coins - less < 0:
 		return false
 	coins -= less
-	config.set_value("coins","amount",coins)
+	config.set_value("coins", "amount", coins)
 	save()
 	return true
 
@@ -575,14 +576,14 @@ func new_league() -> void:
 	league_started = false
 	teams = []
 	matches = []
-	
+
 	groups = []
 	final_teams = []
 
 #	is_group_stage = true
 	is_in_worlcup = false
 	is_worldcup = false
-	
+
 	match_day = 0
 	current_league_game = {}
 	selected_squad = ""
@@ -598,15 +599,21 @@ func click() -> void:
 
 # to save on close
 func _notification(event: int) -> void:
-	if event == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST or event == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+	if (
+		event == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST
+		or event == MainLoop.NOTIFICATION_WM_QUIT_REQUEST
+	):
 #		if current_league_game != null:
 #			game_over(0,5) # game over a tavolino on exit
 		save_all_data()
-	
+
 
 class PointsSorter:
 	static func sort(a: Dictionary, b: Dictionary) -> bool:
-		if a["points"] > b["points"] or (a["points"] == b["points"] and a["goal_difference"] > b["goal_difference"]):
+		if (
+			a["points"] > b["points"]
+			or (a["points"] == b["points"] and a["goal_difference"] > b["goal_difference"])
+		):
 			return true
 		return false
 
@@ -623,5 +630,3 @@ func _get_team_from_name(name: String) -> Dictionary:
 			if name == team["name"]:
 				return team
 		return {}
-
-

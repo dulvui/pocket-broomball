@@ -29,15 +29,16 @@ func set_up() -> void:
 		_:
 			$VBoxContainer/StageName.text = tr("QUARTER FINALS")
 			match_count = 8
-	
+
 	if Global.final_teams.size() > 1:
 		for counter in range(1, match_count + 1):
 			var matchz: Dictionary = Global.matches[-counter]
 			if matchz["result"] == ":":
-				var match_box:HBoxContainer = get_node("VBoxContainer/VBoxContainer/Match" + str(counter))
+				var match_box: HBoxContainer = get_node(
+					"VBoxContainer/VBoxContainer/Match" + str(counter)
+				)
 				match_box.get_node("Home").text = matchz["home"]["short_name"].to_upper()
 				match_box.get_node("HomeIcon").texture = matchz["home"]["icon"]
-				
+
 				match_box.get_node("Away").text = matchz["away"]["short_name"].to_upper()
 				match_box.get_node("AwayIcon").texture = matchz["away"]["icon"]
-				

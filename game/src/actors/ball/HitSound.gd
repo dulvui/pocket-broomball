@@ -25,7 +25,7 @@ func hit(hit_speed: float) -> void:
 	elif hits < MAX_HITS and delay == 0:
 		hits += 1
 		delay = 0.1
-		var audio_stream_player:AudioStreamPlayer2D = self.duplicate(DUPLICATE_USE_INSTANCING)
+		var audio_stream_player: AudioStreamPlayer2D = self.duplicate(DUPLICATE_USE_INSTANCING)
 		get_parent().add_child(audio_stream_player)
 		audio_stream_player.stream = stream
 		audio_stream_player.play()
