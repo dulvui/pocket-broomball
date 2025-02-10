@@ -39,7 +39,7 @@ func _ready() -> void:
 		get_tree().paused = true
 		$Pause.queue_free()
 		
-		Global.game_over(0,0, "simulation" in Global.current_league_game)
+		Global.game_over(0, 0, "simulation" in Global.current_league_game)
 		
 		$Player.queue_free()
 		$Computer.queue_free()
@@ -109,4 +109,10 @@ func _process(delta: float) -> void:
 		Global.current_league_game = {}
 
 
+func _on_Loose_pressed() -> void:
+	away_score.goals = 5
+
+
+func _on_Win_pressed() -> void:
+	home_score.goals = 5
 

@@ -106,7 +106,7 @@ func _on_NextMatch_pressed() -> void:
 
 
 func next_matchday() -> bool:
-	for i in range(0, Global.matches.size() - 1):
+	for i in range(0, Global.matches.size()):
 		var matchz: Dictionary = Global.matches[i]
 		if matchz["result"] == ":" and matchz["home"]["name"] == Global.selected_squad:
 			Global.current_league_game = matchz

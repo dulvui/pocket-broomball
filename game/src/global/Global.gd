@@ -284,7 +284,7 @@ func game_over(home_goals: int, away_goals: int, simulation: bool = false) -> vo
 				_save_current_game(home_goals, away_goals)
 				create_quarter_finals()
 
-			elif match_day == 6:  # semi stage
+			elif match_day == 6:  # semi final stage
 				# calc random results, HOW TO SIMULATE IF NOT PLAYING ANYMORE?
 				# prize is given after cup finished
 				final_teams = []
@@ -297,20 +297,27 @@ func game_over(home_goals: int, away_goals: int, simulation: bool = false) -> vo
 						final_teams.append(current_league_game["away"])
 
 				# random result for other matches
-				for i in range(-5, -1):
-					if matches[i + 1]["home"]["name"] != selected_squad:
+				for i in range(-4, 0, 1):
+					if matches[i]["home"]["name"] != selected_squad:
 						if randi() % 2 == 0:
-							final_teams.append(matches[i + 1]["home"])
-							matches[i + 1]["result"] = str(5) + ":" + str(randi() % 5)
+							final_teams.append(matches[i]["home"])
+							matches[i]["result"] = str(5) + " : " + str(randi() % 5)
 						else:
-							final_teams.append(matches[i + 1]["away"])
-							matches[i + 1]["result"] = str(randi() % 5) + ":" + str(5)
+							final_teams.append(matches[i]["away"])
+							matches[i]["result"] = str(randi() % 5) + " : " + str(5)
 
 				if final_teams.size() != 4:
 					print("ERROR SEMIFINAL TEAMS ARE NOT 4")
 
-				matches.append({"home": final_teams[0], "away": final_teams[1], "result": ":"})
-				matches.append({"home": final_teams[2], "away": final_teams[3], "result": ":"})
+				# add semi final match and make sure selected team plays at home
+				if final_teams[1]["name"] == Global.selected_squad:
+					matches.append({"home": final_teams[1], "away": final_teams[0], "result": ":"})
+				else:
+					matches.append({"home": final_teams[0], "away": final_teams[1], "result": ":"})
+				if final_teams[3]["name"] == Global.selected_squad:
+					matches.append({"home": final_teams[3], "away": final_teams[2], "result": ":"})
+				else:
+					matches.append({"home": final_teams[2], "away": final_teams[3], "result": ":"})
 
 			elif match_day == 7:  # semi final
 				final_teams = []
@@ -324,7 +331,7 @@ func game_over(home_goals: int, away_goals: int, simulation: bool = false) -> vo
 				else:
 					if randi() % 2 == 0:
 						final_teams.append(matches[-2]["home"])
-						matches[-2]["result"] = str(5) + ":" + str(randi() % 5)
+						matches[-2]["result"] = str(5) + " : " + str(randi() % 5)
 					else:
 						final_teams.append(matches[-2]["away"])
 						matches[-2]["result"] = str(randi() % 5) + ":" + str(5)
@@ -332,19 +339,21 @@ func game_over(home_goals: int, away_goals: int, simulation: bool = false) -> vo
 				# random result for other matches
 				if randi() % 2 == 0:
 					final_teams.append(matches[-1]["home"])
-					matches[-1]["result"] = str(5) + ":" + str(randi() % 5)
+					matches[-1]["result"] = str(5) + " : " + str(randi() % 5)
 				else:
 					final_teams.append(matches[-1]["away"])
-					matches[-1]["result"] = str(randi() % 5) + ":" + str(5)
+					matches[-1]["result"] = str(randi() % 5) + " : " + str(5)
 
-				# add final match
-				matches.append({"home": final_teams[0], "away": final_teams[1], "result": ":"})
+				# add final match and make sure selected team plays at home
+				if final_teams[1]["name"] == Global.selected_squad:
+					matches.append({"home": final_teams[1], "away": final_teams[0], "result": ":"})
+				else:
+					matches.append({"home": final_teams[0], "away": final_teams[1], "result": ":"})
 			else:
 				final_teams = []
 				# FINAL finished, worldcup end
 				if not simulation:
 					_save_current_game(home_goals, away_goals)
-
 					if home_goals > away_goals:
 						final_teams.append(current_league_game["home"])
 					else:
@@ -352,10 +361,10 @@ func game_over(home_goals: int, away_goals: int, simulation: bool = false) -> vo
 				else:
 					if randi() % 2 == 0:
 						final_teams.append(matches[-1]["home"])
-						matches[-1]["result"] = str(5) + ":" + str(randi() % 5)
+						matches[-1]["result"] = str(5) + " : " + str(randi() % 5)
 					else:
 						final_teams.append(matches[-1]["away"])
-						matches[-1]["result"] = str(randi() % 5) + ":" + str(5)
+						matches[-1]["result"] = str(randi() % 5) + " : " + str(5)
 
 		# normal league
 		else:
@@ -424,6 +433,7 @@ func create_quarter_finals() -> void:
 	while i > 0 and matches[i]["result"] == ":":
 		if matches[i]["away"]["name"] == selected_squad:
 			matches[i] = {"home": matches[i]["away"], "away": matches[i]["home"], "result": ":"}
+			return
 		i -= 1
 
 

@@ -97,3 +97,26 @@ one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeIn = SubResource( 1 )
+
+[node name="Win" type="Button" parent="."]
+visible = false
+anchor_right = 0.132
+anchor_bottom = 0.056
+margin_left = 57.0
+margin_top = 187.0
+margin_right = 56.96
+margin_bottom = 187.32
+text = "win"
+
+[node name="Loose" type="Button" parent="."]
+visible = false
+anchor_right = 0.132
+anchor_bottom = 0.056
+margin_left = 552.0
+margin_top = 181.0
+margin_right = 596.96
+margin_bottom = 181.32
+text = "loose"
+
+[connection signal="pressed" from="Win" to="." method="_on_Win_pressed"]
+[connection signal="pressed" from="Loose" to="." method="_on_Loose_pressed"]
