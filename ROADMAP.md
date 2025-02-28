@@ -31,6 +31,9 @@ List of features that are currently worked on.
 ## Done 
 Features/issues that are added/solved in specific version
 
+- 6.1.1
+    - Opponent player refuses to play - https://github.com/dulvui/pocket-broomball/issues/43
+
 - 6.1.0
     - bot vs bot with custom difficulties - https://github.com/dulvui/pocket-broomball/issues/26
     - Game occasionally stuck if the Bot opponent jams the ball against the wall - https://github.com/dulvui/pocket-broomball/issues/40
