@@ -5,12 +5,13 @@
 extends KinematicBody2D
 class_name Computer
 
-const MAX_SHOOT_TIME: float = 0.8
+const MAX_SHOOT_TIME: float = 4.0
+const COOL_DOWN_TIME: float = MAX_SHOOT_TIME + 2.0
 
 export var lower_half: bool = false
 
 var speed: float = 1.0
-var power: int = 1
+var power: float = 1.0
 
 var destination: Vector2
 var direction: Vector2
@@ -47,12 +48,14 @@ func _physics_process(delta: float) -> void:
 			is_shooting = true
 		else:
 			destination = Vector2(ballpos.x, 1280 - 120)
+			shooting_time = 0
 	else:
 		if ballpos.y < 640 and ballpos.y > global_position.y:
 			destination = hit_pos.global_position
 			is_shooting = true
 		else:
 			destination = Vector2(ballpos.x, 120)
+			shooting_time = 0
 	
 	
 	if is_shooting:
@@ -62,6 +65,9 @@ func _physics_process(delta: float) -> void:
 	if is_shooting and shooting_time > MAX_SHOOT_TIME:
 		# away from ball
 		direction = destination.direction_to(global_position)
+		# reset shooting time, to make player go towards ball again
+		if shooting_time > COOL_DOWN_TIME:
+			shooting_time = 0
 	else:
 		# towards ball
 		direction = global_position.direction_to(destination)
@@ -76,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	look_at(ballpos)
 
 
-func _on_ChargeDetector_body_entered(body: Node) -> void:
+func _on_ChargeDetector_body_entered(_body: Node) -> void:
 	animation_player.play("Charge")
 
 
@@ -89,6 +95,7 @@ func level_up() -> void:
 		power = 4
 
 
-func _on_ChargeDetector_body_exited(body: Node) -> void:
+func _on_ChargeDetector_body_exited(_body: Node) -> void:
 	animation_player.play("Shoot")
-	shooting_time = 0
+
+
