@@ -1,0 +1,1 @@
+- Fixed: Certain SFX cannot be disabled

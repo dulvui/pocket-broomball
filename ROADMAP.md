@@ -28,8 +28,11 @@ List of features that are currently worked on.
 
 - The possibility to change speed and power breaks the game mechanics - https://github.com/dulvui/pocket-broomball/issues/39
 
-## Done 
+## Done
 Features/issues that are added/solved in specific version
+
+- 6.1.2
+    - Certain SFX cannot be disabled - https://github.com/dulvui/pocket-broomball/issues/44
 
 - 6.1.1
     - Opponent player refuses to play - https://github.com/dulvui/pocket-broomball/issues/43

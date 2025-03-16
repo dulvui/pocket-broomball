@@ -65,6 +65,14 @@
   </screenshots>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="6.1.2" date="2025-03-15">
+      <description>
+        <ul>
+          <li>Fixed: Certain SFX cannot be disabled</li>
+        </ul>
+      </description>
+      <url>https://github.com/dulvui/pocket-broomball/releases/tag/v6.1.2</url>
+    </release>
     <release version="6.1.1" date="2025-02-28">
       <description>
         <ul>
