@@ -183,13 +183,16 @@ flip_v = true
 [node name="Crowd" type="AudioStreamPlayer2D" parent="Sounds"]
 position = Vector2( 368.273, 636.613 )
 stream = ExtResource( 6 )
+bus = "Sfx"
 
 [node name="GoalSound" type="AudioStreamPlayer2D" parent="Sounds"]
 position = Vector2( 368.273, 636.613 )
 stream = ExtResource( 4 )
 volume_db = 10.0
+bus = "Sfx"
 
 [node name="GoalCheer" type="AudioStreamPlayer2D" parent="Sounds"]
 position = Vector2( 368.273, 636.613 )
+bus = "Sfx"
 
 [node name="Commentator" parent="." instance=ExtResource( 7 )]

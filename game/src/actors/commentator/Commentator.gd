@@ -9,23 +9,19 @@ var away_goals: int = 0
 
 
 func _ready() -> void:
-	if Global.sfx:
-		$Ready.play()
+	$Ready.play()
 
 
 func _on_Ready_finished() -> void:
-	if Global.sfx:
-		$Go.play()
+	$Go.play()
 
 
 func win() -> void:
-	if Global.sfx:
-		$Win.play()
+	$Win.play()
 
 
 func loose() -> void:
-	if Global.sfx:
-		$Loose.play()
+	$Loose.play()
 
 
 func home_goal() -> void:
@@ -43,25 +39,24 @@ func away_goal() -> void:
 
 
 func _play_goal(goal):
-	if Global.sfx:
-		match goal:
-			1:
-				$Goal1.play()
-			2:
-				$Goal2.play()
-			3:
-				$Goal3.play()
-			4:
-				$Goal4.play()
-			5:
-				$Goal5.play()
-			6:
-				$Goal6.play()
-			7:
-				$Goal7.play()
-			8:
-				$Goal8.play()
-			9:
-				$Goal9.play()
-			10:
-				$Goal10.play()
+	match goal:
+		1:
+			$Goal1.play()
+		2:
+			$Goal2.play()
+		3:
+			$Goal3.play()
+		4:
+			$Goal4.play()
+		5:
+			$Goal5.play()
+		6:
+			$Goal6.play()
+		7:
+			$Goal7.play()
+		8:
+			$Goal8.play()
+		9:
+			$Goal9.play()
+		10:
+			$Goal10.play()

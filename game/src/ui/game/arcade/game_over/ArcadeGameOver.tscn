@@ -101,6 +101,7 @@ text = "CONTINUE"
 [node name="Highscore" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
+bus = "Sfx"
 
 [connection signal="visibility_changed" from="." to="." method="_on_GameOver_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/Highscore" to="." method="_on_Highscore_pressed"]

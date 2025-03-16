@@ -23,11 +23,8 @@ func _ready() -> void:
 	
 	score_label.text = str(0)
 	
-	
-	if Global.music:
-		Global.music_loop.fade_out()
-	if Global.sfx:
-		$Field/Sounds/Crowd.play()
+	Global.music_loop.fade_out()
+	$Field/Sounds/Crowd.play()
 	
 	powerup_timer.start()
 

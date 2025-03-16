@@ -12,8 +12,7 @@ func _on_PauseButton_pressed() -> void:
 	get_tree().paused = true
 	
 func _on_Menu_pressed() -> void:
-	if Global.music:
-		Global.music_loop.fade_in()
+	Global.music_loop.fade_in()
 	Global.click()
 	if not Global.current_league_game.empty():
 #		Global.game_over(5,0)

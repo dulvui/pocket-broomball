@@ -17,6 +17,5 @@ func _ready() -> void:
 
 
 func goal_sound() -> void:
-	if Global.sfx:
-		goal_cheer.play()
-		goal_sound.play()
+	goal_cheer.play()
+	goal_sound.play()

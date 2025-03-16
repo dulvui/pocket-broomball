@@ -77,5 +77,5 @@ func _on_RigidBody2D_body_entered(body: Node) -> void:
 		speed = impulse.length()
 		apply_central_impulse(impulse)
 		body.animation_player.play("Shoot")
-	if Global.sfx:
-		hit_sound.hit(speed)
+
+	hit_sound.hit(speed)

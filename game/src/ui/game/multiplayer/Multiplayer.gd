@@ -10,10 +10,9 @@ var game_over: bool = false
 func _ready() -> void:
 	get_tree().paused = false
 	TouchHelper.reset()
-	if Global.music:
-		Global.music_loop.fade_out()
-	if Global.sfx:
-		$Field/Sounds/Crowd.play()
+
+	Global.music_loop.fade_out()
+	$Field/Sounds/Crowd.play()
 
 	var goals: Node2D = $Field/Goals
 	goals.connect("away_goal", $Score/AwayScore, "goal")
@@ -41,6 +40,5 @@ func _process(delta: float) -> void:
 		$Ball.queue_free()
 		$GameOver.multiplayer_winner($Score/HomeScore.goals == Global.round_limit)
 		$GameOver.show()
-		if Global.music:
-			Global.music_loop.fade_in()
+		Global.music_loop.fade_in()
 		get_tree().paused = true

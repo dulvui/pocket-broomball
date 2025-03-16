@@ -13,8 +13,7 @@ func _on_Menu_pressed() -> void:
 
 func _on_Replay_pressed() -> void:
 	Global.click()
-	if Global.music:
-		Global.music_loop.fade_out()
+	Global.music_loop.fade_out()
 	get_tree().paused = false
 	if get_parent().get_name() == "SinglePlayer":
 		get_tree().change_scene("res://src/ui/game/singleplayer/Singleplayer.tscn")

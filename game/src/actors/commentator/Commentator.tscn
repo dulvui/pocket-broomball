@@ -22,46 +22,60 @@ script = ExtResource( 9 )
 
 [node name="Goal1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
+bus = "Sfx"
 
 [node name="Goal2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+bus = "Sfx"
 
 [node name="Goal3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+bus = "Sfx"
 
 [node name="Goal4" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+bus = "Sfx"
 
 [node name="Goal5" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
+bus = "Sfx"
 
 [node name="Goal6" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
+bus = "Sfx"
 
 [node name="Goal7" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
+bus = "Sfx"
 
 [node name="Goal8" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
+bus = "Sfx"
 
 [node name="Goal9" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
+bus = "Sfx"
 
 [node name="Goal10" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 14 )
+bus = "Sfx"
 
 [node name="Go" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 8 )
+bus = "Sfx"
 
 [node name="Ready" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+bus = "Sfx"
 
 [node name="Win" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2
 stream = ExtResource( 5 )
+bus = "Sfx"
 
 [node name="Loose" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
+bus = "Sfx"
 
 [connection signal="finished" from="Ready" to="." method="_on_Ready_finished"]

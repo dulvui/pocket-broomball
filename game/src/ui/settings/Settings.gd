@@ -45,8 +45,7 @@ func _on_Music_pressed() -> void:
 	else:
 		$VBoxContainer/Music.text = tr("MUSIC_OFF")
 		
-	if Global.sfx:
-		Global.click()
+	Global.click()
 
 
 func _on_Sfx_pressed() -> void:

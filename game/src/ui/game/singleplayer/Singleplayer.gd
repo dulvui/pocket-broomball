@@ -16,10 +16,8 @@ func _ready() -> void:
 	get_tree().paused = false
 	TouchHelper.reset()
 	
-	if Global.music:
-		Global.music_loop.fade_out()
-	if Global.sfx:
-		$Field/Sounds/Crowd.play()
+	Global.music_loop.fade_out()
+	$Field/Sounds/Crowd.play()
 		
 	goals = $Field/Goals
 	goals.connect("home_goal",self,"_home_goal")
