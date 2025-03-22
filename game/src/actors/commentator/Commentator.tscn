@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sounds/commentator/2.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/commentator/you_win.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/sounds/commentator/ready.ogg" type="AudioStream" id=6]
-[ext_resource path="res://assets/sounds/commentator/you_loose.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/commentator/you_lose.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/sounds/commentator/go.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/actors/commentator/Commentator.gd" type="Script" id=9]
 [ext_resource path="res://assets/sounds/commentator/7.ogg" type="AudioStream" id=10]
@@ -73,7 +73,7 @@ pause_mode = 2
 stream = ExtResource( 5 )
 bus = "Sfx"
 
-[node name="Loose" type="AudioStreamPlayer2D" parent="."]
+[node name="Lose" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2
 stream = ExtResource( 7 )
 bus = "Sfx"

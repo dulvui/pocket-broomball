@@ -72,7 +72,7 @@ func _process(delta: float) -> void:
 #			var player = $Computer/Body/AnimationPlayer
 #			player.play("Win")
 #			yield(player,"animation_finished")
-			$Field/Commentator.loose()
+			$Field/Commentator.lose()
 		game_over = true
 		get_tree().paused = true
 		Global.game_over(home_score.goals,away_score.goals)
@@ -94,7 +94,7 @@ func _process(delta: float) -> void:
 #				var player = $Computer/Body/AnimationPlayer
 #				player.play("Win")
 #				yield(player,"animation_finished")
-			$Field/Commentator.loose()
+			$Field/Commentator.lose()
 		game_over = true
 		get_tree().paused = true
 		Global.game_over(home_score.goals,away_score.goals)
@@ -107,7 +107,7 @@ func _process(delta: float) -> void:
 		Global.current_league_game = {}
 
 
-func _on_Loose_pressed() -> void:
+func _on_Lose_pressed() -> void:
 	away_score.goals = 5
 
 

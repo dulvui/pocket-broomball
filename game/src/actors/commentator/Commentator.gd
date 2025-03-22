@@ -20,8 +20,8 @@ func win() -> void:
 	$Win.play()
 
 
-func loose() -> void:
-	$Loose.play()
+func lose() -> void:
+	$Lose.play()
 
 
 func home_goal() -> void:
