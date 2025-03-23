@@ -6,10 +6,10 @@ extends Control
 
 const MatchRow:PackedScene = preload("res://src/ui/league-gameover/match-row/MatchRow.tscn")
 
-onready var coins_label:Label = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/CoinsStats/Coins
-onready var goal_stats:Label = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats/GoalStats
-onready var coins_stats:VBoxContainer = $Container/MarginContainer/MarginContainer/VBoxContainer/Stats
-onready var teams:VBoxContainer = $Container/MarginContainer/MarginContainer/VBoxContainer/Teams
+onready var coins_label: Label = get_node("%Coins")
+onready var goal_stats: Label = get_node("%GoalStats")
+onready var coins_stats: VBoxContainer = get_node("%Stats")
+onready var teams: VBoxContainer = get_node("%Teams")
 
 var coins: int
 
