@@ -31,6 +31,8 @@ List of features that are currently worked on.
 ## Done
 Features/issues that are added/solved in specific version
 
+- 6.1.3
+    - Some tournament results pages cover up continue button - https://github.com/dulvui/pocket-broomball/issues/45
 - 6.1.2
     - Certain SFX cannot be disabled - https://github.com/dulvui/pocket-broomball/issues/44
 

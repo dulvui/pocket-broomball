@@ -1,0 +1,1 @@
+- Fixed: Some tournament results pages cover up continue button
