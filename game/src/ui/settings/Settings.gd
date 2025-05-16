@@ -21,6 +21,7 @@ const FLAGS: Dictionary = {
 }
 
 onready var flag: TextureRect = $VBoxContainer/Language/Flag
+onready var reset_team_confirm: Popup = $ResetTeamsConfirm
 
 
 func _ready() -> void:
@@ -163,5 +164,15 @@ func _on_Info_pressed():
 
 
 func _on_ResetTeams_pressed():
+	reset_team_confirm.popup_centered()
+
+
+func _on_Okay_pressed() -> void:
 	Global.teams_mods = {}
 	Global.save_all_data()
+	reset_team_confirm.hide()
+
+
+func _on_Cancel_pressed() -> void:
+	reset_team_confirm.hide()
+
