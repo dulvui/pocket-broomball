@@ -8,9 +8,9 @@
   <metadata_license>CC0-1.0</metadata_license>
   <summary>World's first Broomball video game</summary>
   <url type="homepage">https://simondalvai.org/games/pocket-broomball</url>
-  <url type="bugtracker">https://github.com/dulvui/pocket-broomball/issues</url>
+  <url type="bugtracker">https://codeberg.org/dulvui/pocket-broomball/issues</url>
   <url type="donation">https://simondalvai.org/donate</url>
-  <url type="vcs-browser">https://github.com/dulvui/pocket-broomball</url>
+  <url type="vcs-browser">https://codeberg.org/dulvui/pocket-broomball</url>
   <description>
     <p>The coolest winter sport has finally come to your Linux machine!
     </p>
@@ -44,22 +44,22 @@
   <screenshots>
     <screenshot type="default">
       <image>
-        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-1.png
+        https://codeberg.org/dulvui/pocket-broomball/src/commit/b1e0e5f9ba008220b547aa05e4e2dc188bd6882f/metadata/en-US/images/phoneScreenshots/screenshot-1.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-2.png
+        https://codeberg.org/dulvui/pocket-broomball/src/commit/b1e0e5f9ba008220b547aa05e4e2dc188bd6882f/metadata/en-US/images/phoneScreenshots/screenshot-2.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-3.png
+        https://codeberg.org/dulvui/pocket-broomball/src/commit/b1e0e5f9ba008220b547aa05e4e2dc188bd6882f/metadata/en-US/images/phoneScreenshots/screenshot-3.png
       </image>
     </screenshot>
     <screenshot>
       <image>
-        https://raw.githubusercontent.com/dulvui/pocket-broomball/cce5ae61b71d21ec0104c8a76d6bb66dff60d37e/metadata/en-US/images/phoneScreenshots/screenshot-4.png
+        https://codeberg.org/dulvui/pocket-broomball/src/commit/b1e0e5f9ba008220b547aa05e4e2dc188bd6882f/metadata/en-US/images/phoneScreenshots/screenshot-4.png
       </image>
     </screenshot>
   </screenshots>
