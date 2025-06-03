@@ -3,20 +3,18 @@ SPDX-FileCopyrightText: 2024 Simon Dalvai <info@simondalvai.org>
 
 SPDX-License-Identifier: CC0-1.0
 -->
+# MOVED TO CODEBERG
+The main repository is on now [Codeberg](https://codeberg.org/dulvui/pocket-broomball).  
+FOSS should be hosted by FOSS.
+
+---
 
 # Pocket Broomball
-[![Android upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-android.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-android.yml)
-[![iOS upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-ios.yml)
-[![itch.io upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-itchio.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-itchio.yml)
-[![Linux upload](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-linux.yml/badge.svg)](https://github.com/dulvui/pocket-broomball/actions/workflows/upload-linux.yml)
 
 The world's first Broomball video game made with Godot Engine.
 This game is **Free and Open Source**, with **no ads** and **no tracking**.  
 
-This source code is available on [Github](https://github.com/dulvui/pocket-broomball) and [Codeberg](https://codeberg.org/dulvui/pocket-broomball)
-
 <a href="https://play.google.com/store/apps/details?id=com.salvai.broomball" target="_blank"><img src="store-images/PlayStore.svg" alt="Get it on Google Play" height="49"></a>
-<a href="https://apps.apple.com/app/pocket-broomball/id1511009171" target="_blank"><img src="store-images/AppStore.svg" alt="Download on the App Store" height="50" ></a>
 <a href="https://f-droid.org/en/packages/com.simondalvai.pocketbroomball/" target="_blank"><img src="store-images/get-it-on-en.webp" alt="Get it on F-Droid" height="50px" ></a>
 <a href="https://github.com/dulvui/pocket-broomball/releases/" target="_blank"><img src="store-images/Github.webp" alt="Get it on Github" height="50px" ></a>
 <a href="https://flathub.org/apps/org.simondalvai.pocket-broomball" target="_blank"><img src="store-images/flathub.webp" alt="Get it on Flathub" height="50px" ></a>
